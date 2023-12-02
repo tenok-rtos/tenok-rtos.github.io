@@ -1,0 +1,12 @@
+<map id="include/tenok/stdio.h" name="include/tenok/stdio.h">
+<area shape="rect" id="node1" title=" " alt="" coords="199,5,358,32"/>
+<area shape="rect" id="node2" href="$pthread_8h.html" title=" " alt="" coords="221,155,305,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="18,229,89,256"/>
+<area shape="rect" id="node7" title=" " alt="" coords="295,304,369,331"/>
+<area shape="rect" id="node8" title=" " alt="" coords="296,80,371,107"/>
+<area shape="rect" id="node9" href="$reent_8h.html" title=" " alt="" coords="177,80,271,107"/>
+<area shape="rect" id="node10" href="$types_8h.html" title=" " alt="" coords="5,155,101,181"/>
+<area shape="rect" id="node3" title=" " alt="" coords="375,229,457,256"/>
+<area shape="rect" id="node5" href="$sys_2sched_8h.html" title=" " alt="" coords="252,229,351,256"/>
+<area shape="rect" id="node6" href="$list_8h.html" title=" " alt="" coords="113,229,228,256"/>
+</map>

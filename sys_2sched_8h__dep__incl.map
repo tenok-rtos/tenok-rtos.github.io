@@ -1,0 +1,13 @@
+<map id="include/tenok/sys/sched.h" name="include/tenok/sys/sched.h">
+<area shape="rect" id="node1" title=" " alt="" coords="405,5,595,32"/>
+<area shape="rect" id="node2" href="$thread_8h.html" title=" " alt="" coords="525,80,696,107"/>
+<area shape="rect" id="node9" href="$pthread_8h.html" title=" " alt="" coords="313,80,489,107"/>
+<area shape="rect" id="node3" href="$wait_8h.html" title=" " alt="" coords="545,155,703,181"/>
+<area shape="rect" id="node4" href="$fs_8h.html" title=" " alt="" coords="357,229,470,256"/>
+<area shape="rect" id="node6" href="$kernel_8h.html" title=" " alt="" coords="539,304,709,331"/>
+<area shape="rect" id="node5" href="$reg__file_8h.html" title=" " alt="" coords="365,304,515,331"/>
+<area shape="rect" id="node7" href="$pipe_8h.html" title=" " alt="" coords="5,304,163,331"/>
+<area shape="rect" id="node8" href="$kernel_2poll_8h.html" title=" " alt="" coords="187,304,341,331"/>
+<area shape="rect" id="node10" href="$stdio_8h.html" title=" " alt="" coords="167,229,326,256"/>
+<area shape="rect" id="node11" href="$reent_8h.html" title=" " alt="" coords="284,155,471,181"/>
+</map>

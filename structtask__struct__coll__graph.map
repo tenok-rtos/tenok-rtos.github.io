@@ -1,0 +1,9 @@
+<map id="task_struct" name="task_struct">
+<area shape="rect" id="node1" title=" " alt="" coords="10,150,105,177"/>
+<area shape="rect" id="node3" href="$structthread__info.html" title=" " alt="" coords="242,277,338,304"/>
+<area shape="rect" id="node2" href="$structlist__head.html" title=" " alt="" coords="121,7,202,33"/>
+<area shape="rect" id="node6" href="$structthread__once.html" title=" " alt="" coords="272,150,374,177"/>
+<area shape="rect" id="node4" href="$structkfifo.html" title=" " alt="" coords="399,150,450,177"/>
+<area shape="rect" id="node5" href="$structtimespec.html" title=" " alt="" coords="488,150,571,177"/>
+<area shape="rect" id="node7" href="$structsigaction.html" title=" " alt="" coords="628,150,709,177"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="pipe" name="pipe">
+<area shape="rect" id="node1" title=" " alt="" coords="68,291,119,317"/>
+<area shape="rect" id="node2" href="$structkfifo.html" title=" " alt="" coords="5,201,56,228"/>
+<area shape="rect" id="node3" href="$structlist__head.html" title=" " alt="" coords="146,7,227,33"/>
+<area shape="rect" id="node4" href="$structfile.html" title=" " alt="" coords="204,201,247,228"/>
+<area shape="rect" id="node5" href="$structinode.html" title=" " alt="" coords="236,97,295,124"/>
+<area shape="rect" id="node6" href="$structfile__operations.html" title=" " alt="" coords="319,97,438,124"/>
+</map>
