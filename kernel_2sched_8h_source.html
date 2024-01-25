@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Tenok: include/kernel/interrupt.h Source File</title>
+<title>Tenok: include/kernel/sched.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -68,20 +68,17 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">interrupt.h</div>  </div>
+<div class="title">sched.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="interrupt_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef __KERNEL_INTERRUPT_H__</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define __KERNEL_INTERRUPT_H__</span></div>
+<a href="kernel_2sched_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef __KERNEL_SCHED_H__</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define __KERNEL_SCHED_H__</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="interrupt_8h.html#ae6fd493c423e6f2cd1ef55ecbecf4f32">   12</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="interrupt_8h.html#ae6fd493c423e6f2cd1ef55ecbecf4f32">preempt_disable</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keywordtype">void</span> <a class="code" href="kernel_2sched_8h.html#ac48128e72b303ea22d8ec641a9516b15">schedule</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="interrupt_8h.html#a63f517f5c268f48aad30e493a14a2aad">   19</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="interrupt_8h.html#a63f517f5c268f48aad30e493a14a2aad">preempt_enable</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="ainterrupt_8h_html_a63f517f5c268f48aad30e493a14a2aad"><div class="ttname"><a href="interrupt_8h.html#a63f517f5c268f48aad30e493a14a2aad">preempt_enable</a></div><div class="ttdeci">void preempt_enable(void)</div><div class="ttdoc">Enable all interrupts.</div></div>
-<div class="ttc" id="ainterrupt_8h_html_ae6fd493c423e6f2cd1ef55ecbecf4f32"><div class="ttname"><a href="interrupt_8h.html#ae6fd493c423e6f2cd1ef55ecbecf4f32">preempt_disable</a></div><div class="ttdeci">void preempt_disable(void)</div><div class="ttdoc">Disable all interrupts.</div></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="akernel_2sched_8h_html_ac48128e72b303ea22d8ec641a9516b15"><div class="ttname"><a href="kernel_2sched_8h.html#ac48128e72b303ea22d8ec641a9516b15">schedule</a></div><div class="ttdeci">void schedule(void)</div><div class="ttdoc">Relinquish CPU and select next thread to run.</div><div class="ttdef"><b>Definition:</b> kernel.c:3176</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

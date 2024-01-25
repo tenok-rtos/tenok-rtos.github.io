@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['daemon_2eh_18',['daemon.h',['../daemon_8h.html',1,'']]],
+  ['daemon_2eh_17',['daemon.h',['../daemon_8h.html',1,'']]],
+  ['declare_5fwait_5fqueue_5fhead_18',['DECLARE_WAIT_QUEUE_HEAD',['../wait_8h.html#a8b26febb18e5b984b5ae94b9412b065e',1,'wait.h']]],
   ['delay_5fticks_19',['delay_ticks',['../tenok_8h.html#a1e3b16194b1e16ab6088df1c62087b27',1,'sched.c']]],
   ['dentry_20',['dentry',['../structdentry.html',1,'']]],
   ['development_20tools_20setup_21',['Development Tools Setup',['../md_docs_1_environment_setup.html',1,'']]],

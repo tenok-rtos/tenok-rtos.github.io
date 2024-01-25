@@ -68,6 +68,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">wait.h File Reference</div>  </div>
@@ -75,18 +77,36 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="list_8h_source.html">common/list.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="kernel_8h_source.html">kernel/kernel.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="kernel_2sched_8h_source.html">kernel/sched.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="thread_8h_source.html">kernel/thread.h</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for wait.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="wait_8h__incl.png" border="0" usemap="#ainclude_2kernel_2wait_8h" alt=""/></div>
 <map name="ainclude_2kernel_2wait_8h" id="ainclude_2kernel_2wait_8h">
-<area shape="rect" title=" " alt="" coords="47,5,204,32"/>
-<area shape="rect" title=" " alt="" coords="5,80,88,107"/>
-<area shape="rect" href="list_8h.html" title=" " alt="" coords="69,155,184,181"/>
-<area shape="rect" href="thread_8h.html" title=" " alt="" coords="163,80,283,107"/>
-<area shape="rect" title=" " alt="" coords="136,229,211,256"/>
-<area shape="rect" href="sys_2sched_8h.html" title=" " alt="" coords="259,155,357,181"/>
+<area shape="rect" title=" " alt="" coords="599,5,756,32"/>
+<area shape="rect" title=" " alt="" coords="507,229,589,256"/>
+<area shape="rect" href="list_8h.html" title=" " alt="" coords="941,229,1056,256"/>
+<area shape="rect" href="kernel_8h.html" title=" " alt="" coords="618,80,737,107"/>
+<area shape="rect" href="kernel_2sched_8h.html" title=" " alt="" coords="1358,80,1474,107"/>
+<area shape="rect" href="thread_8h.html" title=" " alt="" coords="1307,155,1427,181"/>
+<area shape="rect" title=" " alt="" coords="876,304,951,331"/>
+<area shape="rect" href="pthread_8h.html" title=" " alt="" coords="957,155,1041,181"/>
+<area shape="rect" title=" " alt="" coords="355,304,426,331"/>
+<area shape="rect" href="kernel_2signal_8h.html" title=" " alt="" coords="521,155,594,181"/>
+<area shape="rect" href="limits_8h.html" title=" " alt="" coords="51,304,149,331"/>
+<area shape="rect" title=" " alt="" coords="118,453,199,480"/>
+<area shape="rect" href="resource_8h.html" title=" " alt="" coords="1065,155,1181,181"/>
+<area shape="rect" href="task_8h.html" title=" " alt="" coords="419,229,482,256"/>
+<area shape="rect" href="util_8h.html" title=" " alt="" coords="614,229,730,256"/>
+<area shape="rect" href="fs_8h.html" title=" " alt="" coords="230,155,293,181"/>
+<area shape="rect" href="kfifo_8h.html" title=" " alt="" coords="669,155,776,181"/>
+<area shape="rect" href="kernel_2time_8h.html" title=" " alt="" coords="801,155,909,181"/>
+<area shape="rect" href="tenok_2sys_2sched_8h.html" title=" " alt="" coords="1119,229,1217,256"/>
+<area shape="rect" href="syslimits_8h.html" title=" " alt="" coords="51,379,170,405"/>
+<area shape="rect" href="dirent_8h.html" title=" " alt="" coords="51,229,123,256"/>
+<area shape="rect" href="types_8h.html" title=" " alt="" coords="147,229,243,256"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -94,7 +114,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="wait_8h__dep__incl.png" border="0" usemap="#ainclude_2kernel_2wait_8hdep" alt=""/></div>
 <map name="ainclude_2kernel_2wait_8hdep" id="ainclude_2kernel_2wait_8hdep">
-<area shape="rect" title=" " alt="" coords="103,5,261,32"/>
+<area shape="rect" title=" " alt="" coords="11,5,169,32"/>
 <area shape="rect" href="fs_8h.html" title=" " alt="" coords="217,80,331,107"/>
 <area shape="rect" href="kernel_8h.html" title=" " alt="" coords="5,155,175,181"/>
 <area shape="rect" href="reg__file_8h.html" title=" " alt="" coords="199,155,349,181"/>
@@ -105,6 +125,24 @@ This graph shows which files directly or indirectly include this file:</div>
 </div>
 <p><a href="wait_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a8b26febb18e5b984b5ae94b9412b065e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wait_8h.html#a8b26febb18e5b984b5ae94b9412b065e">DECLARE_WAIT_QUEUE_HEAD</a>(name)&#160;&#160;&#160;<a class="el" href="list_8h.html#a42f0e72af970a790b60a740af8c9ecd0">LIST_HEAD</a>(name)</td></tr>
+<tr class="memdesc:a8b26febb18e5b984b5ae94b9412b065e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declare and initialize a wait queue.  <a href="wait_8h.html#a8b26febb18e5b984b5ae94b9412b065e">More...</a><br /></td></tr>
+<tr class="separator:a8b26febb18e5b984b5ae94b9412b065e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a759d8a479756ceb875be2debcb80359a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wait_8h.html#a759d8a479756ceb875be2debcb80359a">init_waitqueue_head</a>(wq)&#160;&#160;&#160;<a class="el" href="list_8h.html#af8fefe2d35c3f2ef3a3fc693d0080c48">INIT_LIST_HEAD</a>(wq)</td></tr>
+<tr class="memdesc:a759d8a479756ceb875be2debcb80359a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the wait queue.  <a href="wait_8h.html#a759d8a479756ceb875be2debcb80359a">More...</a><br /></td></tr>
+<tr class="separator:a759d8a479756ceb875be2debcb80359a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bf010a70d3424e372091b847b5b6d4a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wait_8h.html#a8bf010a70d3424e372091b847b5b6d4a">wait_event</a>(wq_head,  condition)</td></tr>
+<tr class="memdesc:a8bf010a70d3424e372091b847b5b6d4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait until the condition became true.  <a href="wait_8h.html#a8bf010a70d3424e372091b847b5b6d4a">More...</a><br /></td></tr>
+<tr class="separator:a8bf010a70d3424e372091b847b5b6d4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a13ccf5d03d518b289c0ff1a825e9ad37"><td class="memItemLeft" align="right" valign="top"><a id="a13ccf5d03d518b289c0ff1a825e9ad37"></a>
+typedef struct <a class="el" href="structlist__head.html">list_head</a>&#160;</td><td class="memItemRight" valign="bottom"><b>wait_queue_head_t</b></td></tr>
+<tr class="separator:a13ccf5d03d518b289c0ff1a825e9ad37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a76df04ee5969b9a7e309877fc1106c9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wait_8h.html#a76df04ee5969b9a7e309877fc1106c9b">prepare_to_wait</a> (struct <a class="el" href="structlist__head.html">list_head</a> *wait_list, struct <a class="el" href="structthread__info.html">thread_info</a> *thread, int state)</td></tr>
@@ -116,16 +154,130 @@ Functions</h2></td></tr>
 <tr class="memitem:ab1bc46e7c480408ccfd0d806a3620d6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wait_8h.html#ab1bc46e7c480408ccfd0d806a3620d6b">wake_up_all</a> (struct <a class="el" href="structlist__head.html">list_head</a> *wait_list)</td></tr>
 <tr class="memdesc:ab1bc46e7c480408ccfd0d806a3620d6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wake up all threads from the wait list.  <a href="wait_8h.html#ab1bc46e7c480408ccfd0d806a3620d6b">More...</a><br /></td></tr>
 <tr class="separator:ab1bc46e7c480408ccfd0d806a3620d6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af18d974c73b0dbf90f33447b431ed321"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wait_8h.html#af18d974c73b0dbf90f33447b431ed321">finish_wait</a> (struct <a class="el" href="structthread__info.html">thread_info</a> **wait)</td></tr>
-<tr class="memdesc:af18d974c73b0dbf90f33447b431ed321"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the thread from a wait list into a ready list and set it to be ready.  <a href="wait_8h.html#af18d974c73b0dbf90f33447b431ed321">More...</a><br /></td></tr>
-<tr class="separator:af18d974c73b0dbf90f33447b431ed321"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb4aa7004a1f817d050ba3b5a4d539fd"><td class="memItemLeft" align="right" valign="top"><a id="aeb4aa7004a1f817d050ba3b5a4d539fd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>__finish_wait</b> (struct <a class="el" href="structthread__info.html">thread_info</a> *thread)</td></tr>
-<tr class="separator:aeb4aa7004a1f817d050ba3b5a4d539fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad24b4c724e662b9fc3159ebd937cf913"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wait_8h.html#ad24b4c724e662b9fc3159ebd937cf913">finish_wait</a> (struct <a class="el" href="structthread__info.html">thread_info</a> *thread)</td></tr>
+<tr class="memdesc:ad24b4c724e662b9fc3159ebd937cf913"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the thread from a wait list into a ready list and set it to be ready.  <a href="wait_8h.html#ad24b4c724e662b9fc3159ebd937cf913">More...</a><br /></td></tr>
+<tr class="separator:ad24b4c724e662b9fc3159ebd937cf913"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a8b26febb18e5b984b5ae94b9412b065e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b26febb18e5b984b5ae94b9412b065e">&#9670;&nbsp;</a></span>DECLARE_WAIT_QUEUE_HEAD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DECLARE_WAIT_QUEUE_HEAD</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">name</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="list_8h.html#a42f0e72af970a790b60a740af8c9ecd0">LIST_HEAD</a>(name)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Declare and initialize a wait queue. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Name of the wait queue variable. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a759d8a479756ceb875be2debcb80359a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a759d8a479756ceb875be2debcb80359a">&#9670;&nbsp;</a></span>init_waitqueue_head</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define init_waitqueue_head</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">wq</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="list_8h.html#af8fefe2d35c3f2ef3a3fc693d0080c48">INIT_LIST_HEAD</a>(wq)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize the wait queue. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>The wait queue to initialize. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8bf010a70d3424e372091b847b5b6d4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bf010a70d3424e372091b847b5b6d4a">&#9670;&nbsp;</a></span>wait_event</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define wait_event</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">wq_head, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">condition&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> {                                                         \</div>
+<div class="line">        CURRENT_THREAD_INFO(curr_thread);                        \</div>
+<div class="line">        while (1) {                                              \</div>
+<div class="line">            if (condition)                                       \</div>
+<div class="line">                break;                                           \</div>
+<div class="line">            prepare_to_wait(&amp;wq_head, curr_thread, THREAD_WAIT); \</div>
+<div class="line">            schedule();                                          \</div>
+<div class="line">        }                                                        \</div>
+<div class="line">    } <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment -->
+<p>Wait until the condition became true. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">wq_head</td><td>The wait queue to sleep. </td></tr>
+    <tr><td class="paramname">condition</td><td>The condition to wait until true. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="af18d974c73b0dbf90f33447b431ed321"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af18d974c73b0dbf90f33447b431ed321">&#9670;&nbsp;</a></span>finish_wait()</h2>
+<a id="ad24b4c724e662b9fc3159ebd937cf913"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad24b4c724e662b9fc3159ebd937cf913">&#9670;&nbsp;</a></span>finish_wait()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -133,8 +285,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>__finish_wait</b> (st
         <tr>
           <td class="memname">void finish_wait </td>
           <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structthread__info.html">thread_info</a> **&#160;</td>
-          <td class="paramname"><em>wait</em></td><td>)</td>
+          <td class="paramtype">struct <a class="el" href="structthread__info.html">thread_info</a> *&#160;</td>
+          <td class="paramname"><em>thread</em></td><td>)</td>
           <td></td>
         </tr>
       </table>

@@ -1,4 +1,9 @@
 <map id="include/common/util.h" name="include/common/util.h">
-<area shape="rect" id="node1" title=" " alt="" coords="7,5,173,32"/>
-<area shape="rect" id="node2" href="$kernel_8h.html" title=" " alt="" coords="5,80,175,107"/>
+<area shape="rect" id="node1" title=" " alt="" coords="117,5,283,32"/>
+<area shape="rect" id="node2" href="$kernel_8h.html" title=" " alt="" coords="115,80,285,107"/>
+<area shape="rect" id="node3" href="$wait_8h.html" title=" " alt="" coords="121,155,279,181"/>
+<area shape="rect" id="node4" href="$fs_8h.html" title=" " alt="" coords="201,229,314,256"/>
+<area shape="rect" id="node5" href="$reg__file_8h.html" title=" " alt="" coords="5,304,155,331"/>
+<area shape="rect" id="node6" href="$pipe_8h.html" title=" " alt="" coords="179,304,336,331"/>
+<area shape="rect" id="node7" href="$kernel_2poll_8h.html" title=" " alt="" coords="361,304,514,331"/>
 </map>

@@ -95,9 +95,6 @@ $(function() {
 <li>chdir()
 : <a class="el" href="unistd_8h.html#a03af571dfb595681bfa203c83385c07b">unistd.h</a>
 </li>
-<li>check_systick_event()
-: <a class="el" href="port_8h.html#ac929c63848dfa50ee7646e60129319ef">port.h</a>
-</li>
 <li>clock_getres()
 : <a class="el" href="tenok_2time_8h.html#a7edb6ce725a63f165054e9a489a66413">time.h</a>
 </li>
@@ -150,7 +147,7 @@ $(function() {
 : <a class="el" href="stdio_8h.html#af86fa14728c9bad5418a6d29cad9f9ff">stdio.h</a>
 </li>
 <li>finish_wait()
-: <a class="el" href="wait_8h.html#af18d974c73b0dbf90f33447b431ed321">wait.h</a>
+: <a class="el" href="wait_8h.html#ad24b4c724e662b9fc3159ebd937cf913">wait.h</a>
 </li>
 <li>fopen()
 : <a class="el" href="stdio_8h.html#a3f9b52a165c4c6a3b099ec5a2615adad">stdio.h</a>
@@ -183,14 +180,24 @@ $(function() {
 <li>get_proc_mode()
 : <a class="el" href="port_8h.html#a1317b81e79bd5830dcc6a6ff6f5502da">port.h</a>
 </li>
-<li>get_syscall_info()
-: <a class="el" href="port_8h.html#a0fb8810b4e100e106dd3a871dc2e683c">port.h</a>
+<li>get_syscall_args()
+: <a class="el" href="port_8h.html#a08c203bf7a107819b846ef8fc56fbd49">port.h</a>
+</li>
+<li>get_syscall_num()
+: <a class="el" href="port_8h.html#a4de5d69829b84bcdd18e2deaf753493f">port.h</a>
 </li>
 <li>getcwd()
 : <a class="el" href="unistd_8h.html#a3284211bd28346254245c9d4fd071d7f">unistd.h</a>
 </li>
 <li>getpid()
 : <a class="el" href="unistd_8h.html#a939cb25a305fe68aad9b365077f1a8c7">unistd.h</a>
+</li>
+</ul>
+
+
+<h3><a id="index_h"></a>- h -</h3><ul>
+<li>halt()
+: <a class="el" href="port_8h.html#aee01d3a42fbcda425a19cbc4bd0194cd">port.h</a>
 </li>
 </ul>
 
@@ -413,10 +420,10 @@ $(function() {
 : <a class="el" href="tenok_2poll_8h.html#aa97ba0bfbedf1784e648dd753a92449d">poll.h</a>
 </li>
 <li>preempt_disable()
-: <a class="el" href="interrupt_8h.html#ae6fd493c423e6f2cd1ef55ecbecf4f32">interrupt.h</a>
+: <a class="el" href="preempt_8h.html#ae6fd493c423e6f2cd1ef55ecbecf4f32">preempt.h</a>
 </li>
 <li>preempt_enable()
-: <a class="el" href="interrupt_8h.html#a63f517f5c268f48aad30e493a14a2aad">interrupt.h</a>
+: <a class="el" href="preempt_8h.html#a63f517f5c268f48aad30e493a14a2aad">preempt.h</a>
 </li>
 <li>prepare_to_wait()
 : <a class="el" href="wait_8h.html#a76df04ee5969b9a7e309877fc1106c9b">wait.h</a>
@@ -568,19 +575,22 @@ $(function() {
 
 <h3><a id="index_s"></a>- s -</h3><ul>
 <li>sched_get_priority_max()
-: <a class="el" href="sched_8h.html#afaebd1698caeb9b9b9e614ad84edd609">sched.h</a>
+: <a class="el" href="tenok_2sched_8h.html#afaebd1698caeb9b9b9e614ad84edd609">sched.h</a>
 </li>
 <li>sched_get_priority_min()
-: <a class="el" href="sched_8h.html#af1f370fc36ea6b22ed42b5ee3cf82a81">sched.h</a>
+: <a class="el" href="tenok_2sched_8h.html#af1f370fc36ea6b22ed42b5ee3cf82a81">sched.h</a>
 </li>
 <li>sched_rr_get_interval()
-: <a class="el" href="sched_8h.html#a761d3ef9e8d86918e92b2b5c0d3e60e0">sched.h</a>
+: <a class="el" href="tenok_2sched_8h.html#a761d3ef9e8d86918e92b2b5c0d3e60e0">sched.h</a>
 </li>
 <li>sched_start()
 : <a class="el" href="tenok_8h.html#a406ed4d86e3f2e062e6d7b0930c69de1">tenok.h</a>
 </li>
 <li>sched_yield()
-: <a class="el" href="sched_8h.html#a357cd4b34c13011749dfffb42b489f09">sched.h</a>
+: <a class="el" href="tenok_2sched_8h.html#a357cd4b34c13011749dfffb42b489f09">sched.h</a>
+</li>
+<li>schedule()
+: <a class="el" href="kernel_2sched_8h.html#ac48128e72b303ea22d8ec641a9516b15">sched.h</a>
 </li>
 <li>sem_destroy()
 : <a class="el" href="tenok_2semaphore_8h.html#a6bc9a7dd941a9b5e319715b767af5682">semaphore.h</a>
@@ -638,9 +648,6 @@ $(function() {
 </li>
 <li>sprintf()
 : <a class="el" href="stdio_8h.html#a3082155ec11e7229f7a20439b31a169e">stdio.h</a>
-</li>
-<li>syscall()
-: <a class="el" href="port_8h.html#aa52d15acf2d41f34d0ea03e780cfabca">port.h</a>
 </li>
 </ul>
 

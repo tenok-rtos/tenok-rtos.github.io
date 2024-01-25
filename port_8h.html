@@ -96,9 +96,15 @@ Macros</h2></td></tr>
 <tr class="separator:aeab79a59087261a101b32e6ef4277625"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7f3881d41e6018e4a63736133b6308e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>SYSCALL</b>(num)</td></tr>
 <tr class="separator:ad7f3881d41e6018e4a63736133b6308e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed0b5fa8f49cc41497fc8c32bc9c3d6d"><td class="memItemLeft" align="right" valign="top"><a id="aed0b5fa8f49cc41497fc8c32bc9c3d6d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>SAVE_SYSCALL_RETVAL</b>(ptr)&#160;&#160;&#160;asm volatile(&quot;mov %0, r0&quot; : &quot;=r&quot;(*ptr));</td></tr>
+<tr class="separator:aed0b5fa8f49cc41497fc8c32bc9c3d6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ada0ca484e7676b338a8f4dc442dcd8db"><td class="memItemLeft" align="right" valign="top"><a id="ada0ca484e7676b338a8f4dc442dcd8db"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>system_ticks_update</b> (void)</td></tr>
+<tr class="separator:ada0ca484e7676b338a8f4dc442dcd8db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1317b81e79bd5830dcc6a6ff6f5502da"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="port_8h.html#a1317b81e79bd5830dcc6a6ff6f5502da">get_proc_mode</a> (void)</td></tr>
 <tr class="memdesc:a1317b81e79bd5830dcc6a6ff6f5502da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current ARM processor mode.  <a href="port_8h.html#a1317b81e79bd5830dcc6a6ff6f5502da">More...</a><br /></td></tr>
 <tr class="separator:a1317b81e79bd5830dcc6a6ff6f5502da"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -120,15 +126,15 @@ Functions</h2></td></tr>
 <tr class="memitem:ac4d3d3935cd85ce582f0dc134a496407"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="port_8h.html#ac4d3d3935cd85ce582f0dc134a496407">__stack_init</a> (uint32_t **stack_top, uint32_t func, uint32_t return_handler, uint32_t args[4])</td></tr>
 <tr class="memdesc:ac4d3d3935cd85ce582f0dc134a496407"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize thread stack.  <a href="port_8h.html#ac4d3d3935cd85ce582f0dc134a496407">More...</a><br /></td></tr>
 <tr class="separator:ac4d3d3935cd85ce582f0dc134a496407"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac929c63848dfa50ee7646e60129319ef"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="port_8h.html#ac929c63848dfa50ee7646e60129319ef">check_systick_event</a> (void *sp)</td></tr>
-<tr class="memdesc:ac929c63848dfa50ee7646e60129319ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the kernel is returned from user space via systick.  <a href="port_8h.html#ac929c63848dfa50ee7646e60129319ef">More...</a><br /></td></tr>
-<tr class="separator:ac929c63848dfa50ee7646e60129319ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fb8810b4e100e106dd3a871dc2e683c"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="port_8h.html#a0fb8810b4e100e106dd3a871dc2e683c">get_syscall_info</a> (void *sp, unsigned long *pargs[4])</td></tr>
-<tr class="memdesc:a0fb8810b4e100e106dd3a871dc2e683c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get syscall number and arguments.  <a href="port_8h.html#a0fb8810b4e100e106dd3a871dc2e683c">More...</a><br /></td></tr>
-<tr class="separator:a0fb8810b4e100e106dd3a871dc2e683c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa52d15acf2d41f34d0ea03e780cfabca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="port_8h.html#aa52d15acf2d41f34d0ea03e780cfabca">syscall</a> (unsigned long func, unsigned long *args[4], bool *syscall_pending)</td></tr>
-<tr class="memdesc:aa52d15acf2d41f34d0ea03e780cfabca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute a syscall handler. The function passes syscall arguments and return value to the thread stack.  <a href="port_8h.html#aa52d15acf2d41f34d0ea03e780cfabca">More...</a><br /></td></tr>
-<tr class="separator:aa52d15acf2d41f34d0ea03e780cfabca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4de5d69829b84bcdd18e2deaf753493f"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="port_8h.html#a4de5d69829b84bcdd18e2deaf753493f">get_syscall_num</a> (void *sp)</td></tr>
+<tr class="memdesc:a4de5d69829b84bcdd18e2deaf753493f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get syscall number.  <a href="port_8h.html#a4de5d69829b84bcdd18e2deaf753493f">More...</a><br /></td></tr>
+<tr class="separator:a4de5d69829b84bcdd18e2deaf753493f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08c203bf7a107819b846ef8fc56fbd49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="port_8h.html#a08c203bf7a107819b846ef8fc56fbd49">get_syscall_args</a> (void *sp, unsigned long *pargs[4])</td></tr>
+<tr class="memdesc:a08c203bf7a107819b846ef8fc56fbd49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get syscall arguments.  <a href="port_8h.html#a08c203bf7a107819b846ef8fc56fbd49">More...</a><br /></td></tr>
+<tr class="separator:a08c203bf7a107819b846ef8fc56fbd49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee01d3a42fbcda425a19cbc4bd0194cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="port_8h.html#aee01d3a42fbcda425a19cbc4bd0194cd">halt</a> (void)</td></tr>
+<tr class="memdesc:aee01d3a42fbcda425a19cbc4bd0194cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Halt the system by trapping into an infinity loop.  <a href="port_8h.html#aee01d3a42fbcda425a19cbc4bd0194cd">More...</a><br /></td></tr>
+<tr class="separator:aee01d3a42fbcda425a19cbc4bd0194cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62f63c6c7367e52ea030ca1cd0fe439e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="port_8h.html#a62f63c6c7367e52ea030ca1cd0fe439e">__idle</a> (void)</td></tr>
 <tr class="memdesc:a62f63c6c7367e52ea030ca1cd0fe439e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trigger platform-specific idling.  <a href="port_8h.html#a62f63c6c7367e52ea030ca1cd0fe439e">More...</a><br /></td></tr>
 <tr class="separator:a62f63c6c7367e52ea030ca1cd0fe439e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -312,38 +318,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ac929c63848dfa50ee7646e60129319ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac929c63848dfa50ee7646e60129319ef">&#9670;&nbsp;</a></span>check_systick_event()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool check_systick_event </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>sp</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Check if the kernel is returned from user space via systick. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">sp</td><td>The stack pointer points to the top of the thread stack. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">bool</td><td>true if it is returned via systick; otherwise false. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a1317b81e79bd5830dcc6a6ff6f5502da"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1317b81e79bd5830dcc6a6ff6f5502da">&#9670;&nbsp;</a></span>get_proc_mode()</h2>
 
@@ -370,14 +344,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a0fb8810b4e100e106dd3a871dc2e683c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0fb8810b4e100e106dd3a871dc2e683c">&#9670;&nbsp;</a></span>get_syscall_info()</h2>
+<a id="a08c203bf7a107819b846ef8fc56fbd49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08c203bf7a107819b846ef8fc56fbd49">&#9670;&nbsp;</a></span>get_syscall_args()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned long get_syscall_info </td>
+          <td class="memname">void get_syscall_args </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>sp</em>, </td>
@@ -396,7 +370,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get syscall number and arguments. </p>
+<p>Get syscall arguments. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">sp</td><td>The stack pointer points to the top of the thread stack. </td></tr>
@@ -407,6 +381,70 @@ Functions</h2></td></tr>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">unsigned</td><td>long: The current syscall number. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4de5d69829b84bcdd18e2deaf753493f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4de5d69829b84bcdd18e2deaf753493f">&#9670;&nbsp;</a></span>get_syscall_num()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long get_syscall_num </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>sp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get syscall number. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sp</td><td>The stack pointer points to the top of the thread stack. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">unsigned</td><td>long: The current syscall number. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aee01d3a42fbcda425a19cbc4bd0194cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee01d3a42fbcda425a19cbc4bd0194cd">&#9670;&nbsp;</a></span>halt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void halt </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Halt the system by trapping into an infinity loop. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -508,56 +546,6 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">A</td><td>dummy stack memory space to provide. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aa52d15acf2d41f34d0ea03e780cfabca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa52d15acf2d41f34d0ea03e780cfabca">&#9670;&nbsp;</a></span>syscall()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void syscall </td>
-          <td>(</td>
-          <td class="paramtype">unsigned long&#160;</td>
-          <td class="paramname"><em>func</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned long *&#160;</td>
-          <td class="paramname"><em>args</em>[4], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool *&#160;</td>
-          <td class="paramname"><em>syscall_pending</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Execute a syscall handler. The function passes syscall arguments and return value to the thread stack. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">func</td><td>The syscall handler function to execute. </td></tr>
-    <tr><td class="paramname">args</td><td>The pointers to the syscall arguments. </td></tr>
-    <tr><td class="paramname">syscall_pending</td><td>The pointer to the syscall pending flag of the thread. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">None</td><td></td></tr>
   </table>
   </dd>
 </dl>

@@ -78,29 +78,48 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="list_8h.html">common/list.h</a>&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="thread_8h.html">kernel/thread.h</a>&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">void</span> <a class="code" href="wait_8h.html#a76df04ee5969b9a7e309877fc1106c9b">prepare_to_wait</a>(<span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *wait_list,</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                     <span class="keyword">struct</span> <a class="code" href="structthread__info.html">thread_info</a> *thread,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                     <span class="keywordtype">int</span> state);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> <a class="code" href="wait_8h.html#adaf1c7df7b40eccebaa180cb9b5e3df5">wake_up</a>(<span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *wait_list);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">void</span> <a class="code" href="wait_8h.html#ab1bc46e7c480408ccfd0d806a3620d6b">wake_up_all</a>(<span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *wait_list);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">void</span> <a class="code" href="wait_8h.html#af18d974c73b0dbf90f33447b431ed321">finish_wait</a>(<span class="keyword">struct</span> <a class="code" href="structthread__info.html">thread_info</a> **wait);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordtype">void</span> __finish_wait(<span class="keyword">struct</span> <a class="code" href="structthread__info.html">thread_info</a> *thread);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="kernel_8h.html">kernel/kernel.h</a>&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="kernel_2sched_8h.html">kernel/sched.h</a>&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="thread_8h.html">kernel/thread.h</a>&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> <a class="code" href="structlist__head.html">wait_queue_head_t</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="wait_8h.html#a8b26febb18e5b984b5ae94b9412b065e">   21</a></span>&#160;<span class="preprocessor">#define DECLARE_WAIT_QUEUE_HEAD(name) LIST_HEAD(name)</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="wait_8h.html#a759d8a479756ceb875be2debcb80359a">   28</a></span>&#160;<span class="preprocessor">#define init_waitqueue_head(wq) INIT_LIST_HEAD(wq)</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="wait_8h.html#a8bf010a70d3424e372091b847b5b6d4a">   36</a></span>&#160;<span class="preprocessor">#define wait_event(wq_head, condition)                           \</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">    do {                                                         \</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">        CURRENT_THREAD_INFO(curr_thread);                        \</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">        while (1) {                                              \</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">            if (condition)                                       \</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">                break;                                           \</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">            prepare_to_wait(&amp;wq_head, curr_thread, THREAD_WAIT); \</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">            schedule();                                          \</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">        }                                                        \</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">    } while (0)</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordtype">void</span> <a class="code" href="wait_8h.html#a76df04ee5969b9a7e309877fc1106c9b">prepare_to_wait</a>(<span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *wait_list,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                     <span class="keyword">struct</span> <a class="code" href="structthread__info.html">thread_info</a> *thread,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                     <span class="keywordtype">int</span> state);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">void</span> <a class="code" href="wait_8h.html#adaf1c7df7b40eccebaa180cb9b5e3df5">wake_up</a>(<span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *wait_list);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordtype">void</span> <a class="code" href="wait_8h.html#ab1bc46e7c480408ccfd0d806a3620d6b">wake_up_all</a>(<span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *wait_list);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keywordtype">void</span> <a class="code" href="wait_8h.html#ad24b4c724e662b9fc3159ebd937cf913">finish_wait</a>(<span class="keyword">struct</span> <a class="code" href="structthread__info.html">thread_info</a> *thread);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="akernel_2sched_8h_html"><div class="ttname"><a href="kernel_2sched_8h.html">sched.h</a></div></div>
+<div class="ttc" id="akernel_8h_html"><div class="ttname"><a href="kernel_8h.html">kernel.h</a></div></div>
 <div class="ttc" id="alist_8h_html"><div class="ttname"><a href="list_8h.html">list.h</a></div></div>
 <div class="ttc" id="astructlist__head_html"><div class="ttname"><a href="structlist__head.html">list_head</a></div><div class="ttdef"><b>Definition:</b> list.h:111</div></div>
 <div class="ttc" id="astructthread__info_html"><div class="ttname"><a href="structthread__info.html">thread_info</a></div><div class="ttdef"><b>Definition:</b> kernel.h:68</div></div>
 <div class="ttc" id="athread_8h_html"><div class="ttname"><a href="thread_8h.html">thread.h</a></div></div>
-<div class="ttc" id="await_8h_html_a76df04ee5969b9a7e309877fc1106c9b"><div class="ttname"><a href="wait_8h.html#a76df04ee5969b9a7e309877fc1106c9b">prepare_to_wait</a></div><div class="ttdeci">void prepare_to_wait(struct list_head *wait_list, struct thread_info *thread, int state)</div><div class="ttdoc">Suspend current thread and place it into a wait list with a new state.</div><div class="ttdef"><b>Definition:</b> kernel.c:559</div></div>
-<div class="ttc" id="await_8h_html_ab1bc46e7c480408ccfd0d806a3620d6b"><div class="ttname"><a href="wait_8h.html#ab1bc46e7c480408ccfd0d806a3620d6b">wake_up_all</a></div><div class="ttdeci">void wake_up_all(struct list_head *wait_list)</div><div class="ttdoc">Wake up all threads from the wait list.</div><div class="ttdef"><b>Definition:</b> kernel.c:588</div></div>
-<div class="ttc" id="await_8h_html_adaf1c7df7b40eccebaa180cb9b5e3df5"><div class="ttname"><a href="wait_8h.html#adaf1c7df7b40eccebaa180cb9b5e3df5">wake_up</a></div><div class="ttdeci">void wake_up(struct list_head *wait_list)</div><div class="ttdoc">Wake up the highest priority thread from the wait list.</div><div class="ttdef"><b>Definition:</b> kernel.c:567</div></div>
-<div class="ttc" id="await_8h_html_af18d974c73b0dbf90f33447b431ed321"><div class="ttname"><a href="wait_8h.html#af18d974c73b0dbf90f33447b431ed321">finish_wait</a></div><div class="ttdeci">void finish_wait(struct thread_info **wait)</div><div class="ttdoc">Move the thread from a wait list into a ready list and set it to be ready.</div><div class="ttdef"><b>Definition:</b> kernel.c:609</div></div>
+<div class="ttc" id="await_8h_html_a76df04ee5969b9a7e309877fc1106c9b"><div class="ttname"><a href="wait_8h.html#a76df04ee5969b9a7e309877fc1106c9b">prepare_to_wait</a></div><div class="ttdeci">void prepare_to_wait(struct list_head *wait_list, struct thread_info *thread, int state)</div><div class="ttdoc">Suspend current thread and place it into a wait list with a new state.</div><div class="ttdef"><b>Definition:</b> kernel.c:603</div></div>
+<div class="ttc" id="await_8h_html_ab1bc46e7c480408ccfd0d806a3620d6b"><div class="ttname"><a href="wait_8h.html#ab1bc46e7c480408ccfd0d806a3620d6b">wake_up_all</a></div><div class="ttdeci">void wake_up_all(struct list_head *wait_list)</div><div class="ttdoc">Wake up all threads from the wait list.</div><div class="ttdef"><b>Definition:</b> kernel.c:653</div></div>
+<div class="ttc" id="await_8h_html_ad24b4c724e662b9fc3159ebd937cf913"><div class="ttname"><a href="wait_8h.html#ad24b4c724e662b9fc3159ebd937cf913">finish_wait</a></div><div class="ttdeci">void finish_wait(struct thread_info *thread)</div><div class="ttdoc">Move the thread from a wait list into a ready list and set it to be ready.</div><div class="ttdef"><b>Definition:</b> kernel.c:615</div></div>
+<div class="ttc" id="await_8h_html_adaf1c7df7b40eccebaa180cb9b5e3df5"><div class="ttname"><a href="wait_8h.html#adaf1c7df7b40eccebaa180cb9b5e3df5">wake_up</a></div><div class="ttdeci">void wake_up(struct list_head *wait_list)</div><div class="ttdoc">Wake up the highest priority thread from the wait list.</div><div class="ttdef"><b>Definition:</b> kernel.c:627</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

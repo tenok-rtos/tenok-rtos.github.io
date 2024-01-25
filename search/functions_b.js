@@ -1,20 +1,10 @@
 var searchData=
 [
-  ['malloc_533',['malloc',['../stdlib_8h.html#a7ac38fce3243a7dcf448301ee9ffd392',1,'mm.c']]],
-  ['minfo_534',['minfo',['../tenok_8h.html#a69a976c8dccc1ece2499fa4f09167aa4',1,'mm.c']]],
-  ['mkfifo_535',['mkfifo',['../stat_8h.html#a097a953859f943469263ae6f11669470',1,'file.c']]],
-  ['mknod_536',['mknod',['../stat_8h.html#ae92589973c691560ce2a6a97043872cf',1,'file.c']]],
-  ['mount_537',['mount',['../mount_8h.html#ae77fcaaa4a9edce0cafe9eef1d9d8629',1,'file.c']]],
-  ['mpool_5falloc_538',['mpool_alloc',['../mpool_8h.html#a7dab7e09f61dcf1b6bd4d2dabacd9524',1,'mpool.h']]],
-  ['mpool_5finit_539',['mpool_init',['../mpool_8h.html#a60b9183e414b21960dd29d4f1811cbed',1,'mpool.c']]],
-  ['mq_5fclose_540',['mq_close',['../tenok_2mqueue_8h.html#a3fbd3906296be63451c64d69be2bc371',1,'mqueue.c']]],
-  ['mq_5fgetattr_541',['mq_getattr',['../tenok_2mqueue_8h.html#a8fafe8b1183830322f8ff875f4e6cb4c',1,'mqueue.c']]],
-  ['mq_5fopen_542',['mq_open',['../tenok_2mqueue_8h.html#a3397c2dadbe0a5113ff67cd284990a94',1,'mqueue.c']]],
-  ['mq_5freceive_543',['mq_receive',['../tenok_2mqueue_8h.html#ab89c825740fe27d3821ccbe32bd68dfa',1,'mqueue.c']]],
-  ['mq_5fsend_544',['mq_send',['../tenok_2mqueue_8h.html#af13b6f0b3b15e14624b0c50050d062a4',1,'mqueue.c']]],
-  ['mq_5fsetattr_545',['mq_setattr',['../tenok_2mqueue_8h.html#ae6191194d2451804656942f7c8da6c71',1,'mqueue.c']]],
-  ['mutex_5finit_546',['mutex_init',['../mutex_8h.html#a3029ce425032b167692de6c265676a0b',1,'mutex.c']]],
-  ['mutex_5fis_5flocked_547',['mutex_is_locked',['../mutex_8h.html#af6184e0422d24714e3485d139f776ef8',1,'mutex.c']]],
-  ['mutex_5flock_548',['mutex_lock',['../mutex_8h.html#a78a574e9c2b09bb00d53bbfe262c892c',1,'mutex.c']]],
-  ['mutex_5funlock_549',['mutex_unlock',['../mutex_8h.html#aa46844346d7946f83a90ca5fbb22f37c',1,'mutex.c']]]
+  ['list_5fadd_531',['list_add',['../list_8h.html#a221a74d55162a5f9351c3ad989fa08f4',1,'list.c']]],
+  ['list_5fdel_532',['list_del',['../list_8h.html#ac32a18fe87fa883f9679ca4bc4b88693',1,'list.c']]],
+  ['list_5fdel_5finit_533',['list_del_init',['../list_8h.html#a90c598c7e340b11c3ae9f9cbb415a4d7',1,'list.c']]],
+  ['list_5fempty_534',['list_empty',['../list_8h.html#a4e4fb53df346702e31a3c03b23769cb2',1,'list.c']]],
+  ['list_5fis_5flast_535',['list_is_last',['../list_8h.html#ac2f0fecd0fceee7e5a9cb5550639e87a',1,'list.c']]],
+  ['list_5fmove_536',['list_move',['../list_8h.html#a7d1de96ef90e72bd5ba765e67cb83b74',1,'list.c']]],
+  ['lseek_537',['lseek',['../unistd_8h.html#a7c7b0aa1b2a9ff1e9c9524b038f4d213',1,'file.c']]]
 ];

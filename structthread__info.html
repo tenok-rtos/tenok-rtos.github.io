@@ -104,15 +104,18 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>stack_size</b></td>
 <tr class="memitem:a498ca3a090002d23404b29a577c66a0b"><td class="memItemLeft" align="right" valign="top"><a id="a498ca3a090002d23404b29a577c66a0b"></a>
 unsigned long *&#160;</td><td class="memItemRight" valign="bottom"><b>syscall_args</b> [4]</td></tr>
 <tr class="separator:a498ca3a090002d23404b29a577c66a0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac149e7c411e856dd30e975988dc75800"><td class="memItemLeft" align="right" valign="top"><a id="ac149e7c411e856dd30e975988dc75800"></a>
-struct <a class="el" href="structtimespec.html">timespec</a>&#160;</td><td class="memItemRight" valign="bottom"><b>syscall_timeout</b></td></tr>
-<tr class="separator:ac149e7c411e856dd30e975988dc75800"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac057fbcf0810fdd46013a8bf02dd95a6"><td class="memItemLeft" align="right" valign="top"><a id="ac057fbcf0810fdd46013a8bf02dd95a6"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>syscall_pending</b></td></tr>
-<tr class="separator:ac057fbcf0810fdd46013a8bf02dd95a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39e7d80eb4515a2f46b9aced183415cb"><td class="memItemLeft" align="right" valign="top"><a id="a39e7d80eb4515a2f46b9aced183415cb"></a>
+unsigned long *&#160;</td><td class="memItemRight" valign="bottom"><b>syscall_stack_top</b></td></tr>
+<tr class="separator:a39e7d80eb4515a2f46b9aced183415cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78d8f6d32cea93de8c93e17d639689e8"><td class="memItemLeft" align="right" valign="top"><a id="a78d8f6d32cea93de8c93e17d639689e8"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>syscall_mode</b></td></tr>
+<tr class="separator:a78d8f6d32cea93de8c93e17d639689e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc014c10c3c45fe6701f5650e22374d1"><td class="memItemLeft" align="right" valign="top"><a id="acc014c10c3c45fe6701f5650e22374d1"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>syscall_is_timeout</b></td></tr>
 <tr class="separator:acc014c10c3c45fe6701f5650e22374d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac149e7c411e856dd30e975988dc75800"><td class="memItemLeft" align="right" valign="top"><a id="ac149e7c411e856dd30e975988dc75800"></a>
+struct <a class="el" href="structtimespec.html">timespec</a>&#160;</td><td class="memItemRight" valign="bottom"><b>syscall_timeout</b></td></tr>
+<tr class="separator:ac149e7c411e856dd30e975988dc75800"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d57359c19d7572d56f3c6730fa847e7"><td class="memItemLeft" align="right" valign="top"><a id="a7d57359c19d7572d56f3c6730fa847e7"></a>
 void *&#160;</td><td class="memItemRight" valign="bottom"><b>retval</b></td></tr>
 <tr class="separator:a7d57359c19d7572d56f3c6730fa847e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,6 +128,9 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>file_request_size</
 <tr class="memitem:acdbd2680fc90435502e5073da5a15952"><td class="memItemLeft" align="right" valign="top"><a id="acdbd2680fc90435502e5073da5a15952"></a>
 uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>sleep_ticks</b></td></tr>
 <tr class="separator:acdbd2680fc90435502e5073da5a15952"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a655d9cb0d6d65e56eadd2fb36909d536"><td class="memItemLeft" align="right" valign="top"><a id="a655d9cb0d6d65e56eadd2fb36909d536"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>preempt_cnt</b></td></tr>
+<tr class="separator:a655d9cb0d6d65e56eadd2fb36909d536"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a927b5351c729e8d9b25a2466fdbfaccc"><td class="memItemLeft" align="right" valign="top"><a id="a927b5351c729e8d9b25a2466fdbfaccc"></a>
 uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>tid</b></td></tr>
 <tr class="separator:a927b5351c729e8d9b25a2466fdbfaccc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,6 +149,9 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>priority</b></td><
 <tr class="memitem:a7d2e479c55d940d37392644d189aedc5"><td class="memItemLeft" align="right" valign="top"><a id="a7d2e479c55d940d37392644d189aedc5"></a>
 uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>original_priority</b></td></tr>
 <tr class="separator:a7d2e479c55d940d37392644d189aedc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac18d47c8c9a57d93c5e7d457574ee9e9"><td class="memItemLeft" align="right" valign="top"><a id="ac18d47c8c9a57d93c5e7d457574ee9e9"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>kernel_thread</b></td></tr>
+<tr class="separator:ac18d47c8c9a57d93c5e7d457574ee9e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c1e6830f1d16fe17dd65334230f7539"><td class="memItemLeft" align="right" valign="top"><a id="a8c1e6830f1d16fe17dd65334230f7539"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>priority_inherited</b></td></tr>
 <tr class="separator:a8c1e6830f1d16fe17dd65334230f7539"><td class="memSeparator" colspan="2">&#160;</td></tr>

@@ -1,0 +1,8 @@
+<map id="include/kernel/kernel.h" name="include/kernel/kernel.h">
+<area shape="rect" id="node1" title=" " alt="" coords="115,5,285,32"/>
+<area shape="rect" id="node2" href="$wait_8h.html" title=" " alt="" coords="121,80,279,107"/>
+<area shape="rect" id="node3" href="$fs_8h.html" title=" " alt="" coords="201,155,314,181"/>
+<area shape="rect" id="node4" href="$reg__file_8h.html" title=" " alt="" coords="5,229,155,256"/>
+<area shape="rect" id="node5" href="$pipe_8h.html" title=" " alt="" coords="179,229,336,256"/>
+<area shape="rect" id="node6" href="$kernel_2poll_8h.html" title=" " alt="" coords="361,229,514,256"/>
+</map>

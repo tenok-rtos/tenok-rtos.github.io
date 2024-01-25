@@ -87,7 +87,7 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">int</span> tid;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">int</span> priority;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">char</span> *status;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">bool</span> privileged;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">bool</span> kernel_thread;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">size_t</span> stack_usage;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">size_t</span> stack_size;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">char</span> name[THREAD_NAME_MAX];</div>
@@ -114,7 +114,7 @@ $(function() {
 <div class="ttc" id="astructthread__stat_html"><div class="ttname"><a href="structthread__stat.html">thread_stat</a></div><div class="ttdef"><b>Definition:</b> tenok.h:14</div></div>
 <div class="ttc" id="atenok_8h_html_a046bd8c3363efcadb9f1fb760da51570"><div class="ttname"><a href="tenok_8h.html#a046bd8c3363efcadb9f1fb760da51570">thread_info</a></div><div class="ttdeci">void * thread_info(struct thread_stat *info, void *next)</div><div class="ttdoc">Get the thread information iteratively.</div><div class="ttdef"><b>Definition:</b> task.c:8</div></div>
 <div class="ttc" id="atenok_8h_html_a1e3b16194b1e16ab6088df1c62087b27"><div class="ttname"><a href="tenok_8h.html#a1e3b16194b1e16ab6088df1c62087b27">delay_ticks</a></div><div class="ttdeci">int delay_ticks(uint32_t ticks)</div><div class="ttdoc">To cause the calling thread to sleep for the given ticks.</div><div class="ttdef"><b>Definition:</b> sched.c:35</div></div>
-<div class="ttc" id="atenok_8h_html_a406ed4d86e3f2e062e6d7b0930c69de1"><div class="ttname"><a href="tenok_8h.html#a406ed4d86e3f2e062e6d7b0930c69de1">sched_start</a></div><div class="ttdeci">void sched_start(void)</div><div class="ttdoc">Start the operating system.</div><div class="ttdef"><b>Definition:</b> kernel.c:2810</div></div>
+<div class="ttc" id="atenok_8h_html_a406ed4d86e3f2e062e6d7b0930c69de1"><div class="ttname"><a href="tenok_8h.html#a406ed4d86e3f2e062e6d7b0930c69de1">sched_start</a></div><div class="ttdeci">void sched_start(void)</div><div class="ttdoc">Start the operating system.</div><div class="ttdef"><b>Definition:</b> kernel.c:3298</div></div>
 <div class="ttc" id="atenok_8h_html_a69a976c8dccc1ece2499fa4f09167aa4"><div class="ttname"><a href="tenok_8h.html#a69a976c8dccc1ece2499fa4f09167aa4">minfo</a></div><div class="ttdeci">int minfo(int name)</div><div class="ttdoc">Get memory information of the system.</div><div class="ttdef"><b>Definition:</b> mm.c:205</div></div>
 <div class="ttc" id="atenok_8h_html_aca911c95e943236848408987b2fbce64"><div class="ttname"><a href="tenok_8h.html#aca911c95e943236848408987b2fbce64">setprogname</a></div><div class="ttdeci">void setprogname(const char *name)</div><div class="ttdoc">Set the name of the running thread.</div><div class="ttdef"><b>Definition:</b> task.c:13</div></div>
 <div class="ttc" id="atypes_8h_html"><div class="ttname"><a href="types_8h.html">types.h</a></div></div>

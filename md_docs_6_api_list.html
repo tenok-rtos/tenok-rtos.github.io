@@ -79,10 +79,10 @@ Utilities:</h2>
 Scheduler:</h2>
 <ul>
 <li><a class="el" href="tenok_8h.html#a406ed4d86e3f2e062e6d7b0930c69de1" title="Start the operating system.">sched_start()</a></li>
-<li><a class="el" href="sched_8h.html#a357cd4b34c13011749dfffb42b489f09" title="To cause the calling thread to relinquish the CPU.">sched_yield()</a></li>
-<li><a class="el" href="sched_8h.html#afaebd1698caeb9b9b9e614ad84edd609" title="Return the maximum priority of the thread can be set.">sched_get_priority_max()</a></li>
-<li><a class="el" href="sched_8h.html#af1f370fc36ea6b22ed42b5ee3cf82a81" title="Return the minimum priority of the thread can be set.">sched_get_priority_min()</a></li>
-<li><a class="el" href="sched_8h.html#a761d3ef9e8d86918e92b2b5c0d3e60e0" title="Write the round-robin time quantum of the scheduler into the timespec structure pointed to by tp.">sched_rr_get_interval()</a></li>
+<li><a class="el" href="tenok_2sched_8h.html#a357cd4b34c13011749dfffb42b489f09" title="To cause the calling thread to relinquish the CPU.">sched_yield()</a></li>
+<li><a class="el" href="tenok_2sched_8h.html#afaebd1698caeb9b9b9e614ad84edd609" title="Return the maximum priority of the thread can be set.">sched_get_priority_max()</a></li>
+<li><a class="el" href="tenok_2sched_8h.html#af1f370fc36ea6b22ed42b5ee3cf82a81" title="Return the minimum priority of the thread can be set.">sched_get_priority_min()</a></li>
+<li><a class="el" href="tenok_2sched_8h.html#a761d3ef9e8d86918e92b2b5c0d3e60e0" title="Write the round-robin time quantum of the scheduler into the timespec structure pointed to by tp.">sched_rr_get_interval()</a></li>
 <li><a class="el" href="unistd_8h.html#a69c97039c9ec10a30e5edbdf365e3bbd" title="To cause the calling thread to sleep either until the number of real-time seconds specified in second...">sleep()</a></li>
 <li><a class="el" href="unistd_8h.html#ac0383719bafa9b5b2aa25fabc586bd1f" title="Suspend execution of the calling thread for a given time in microseconds.">usleep()</a></li>
 <li><a class="el" href="tenok_8h.html#a1e3b16194b1e16ab6088df1c62087b27" title="To cause the calling thread to sleep for the given ticks.">delay_ticks()</a></li>
@@ -239,23 +239,28 @@ Memory Allocation:</h2>
 <h1><a class="anchor" id="autotoc_md39"></a>
 Kernel-space API</h1>
 <h2><a class="anchor" id="autotoc_md40"></a>
+Scheduler</h2>
+<ul>
+<li><a class="el" href="kernel_2sched_8h.html#ac48128e72b303ea22d8ec641a9516b15" title="Relinquish CPU and select next thread to run.">schedule()</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md41"></a>
 Kernel Thread</h2>
 <ul>
 <li><a class="el" href="kthread_8h.html#adb7e97b3b54312e27cc59a32d5a0c664" title="Create new kernel thread.">kthread_create()</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md41"></a>
+<h2><a class="anchor" id="autotoc_md42"></a>
 Logging:</h2>
 <ul>
 <li><a class="el" href="printk_8h.html#a25b30e8bbadd54650c56895999dd808f" title="Display a kernel message.">printk()</a></li>
 <li><a class="el" href="printk_8h.html#a86383ef9ece23acf421dbeb167680c92" title="Display a message, then halt the system.">panic()</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md42"></a>
+<h2><a class="anchor" id="autotoc_md43"></a>
 Interrupt:</h2>
 <ul>
-<li><a class="el" href="interrupt_8h.html#ae6fd493c423e6f2cd1ef55ecbecf4f32" title="Disable all interrupts.">preempt_disable()</a></li>
-<li><a class="el" href="interrupt_8h.html#a63f517f5c268f48aad30e493a14a2aad" title="Enable all interrupts.">preempt_enable()</a></li>
+<li><a class="el" href="preempt_8h.html#ae6fd493c423e6f2cd1ef55ecbecf4f32" title="Disable all interrupts.">preempt_disable()</a></li>
+<li><a class="el" href="preempt_8h.html#a63f517f5c268f48aad30e493a14a2aad" title="Enable all interrupts.">preempt_enable()</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md43"></a>
+<h2><a class="anchor" id="autotoc_md44"></a>
 Mutex:</h2>
 <ul>
 <li><a class="el" href="mutex_8h.html#a3029ce425032b167692de6c265676a0b" title="Initialize the mutex.">mutex_init()</a></li>
@@ -263,7 +268,7 @@ Mutex:</h2>
 <li><a class="el" href="mutex_8h.html#a78a574e9c2b09bb00d53bbfe262c892c" title="Lock the mutex.">mutex_lock()</a></li>
 <li><a class="el" href="mutex_8h.html#aa46844346d7946f83a90ca5fbb22f37c" title="Unlock the mutex.">mutex_unlock()</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md44"></a>
+<h2><a class="anchor" id="autotoc_md45"></a>
 Semaphore:</h2>
 <ul>
 <li><a class="el" href="kernel_2semaphore_8h.html#a4cef46903ef1eff72f75e10889a46e0e" title="Initialize the semaphore.">sema_init()</a></li>
@@ -271,21 +276,24 @@ Semaphore:</h2>
 <li><a class="el" href="kernel_2semaphore_8h.html#a2da384dbf85c2376e660e7a3579675b7" title="Decrease the number of the semaphore.">down()</a></li>
 <li><a class="el" href="kernel_2semaphore_8h.html#ac64b9df30fded70ff19c6192f1ee13d1" title="The same as down(), except that if the decrement cannot be immediately performed, then call returns a...">down_trylock()</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md45"></a>
+<h2><a class="anchor" id="autotoc_md46"></a>
 Tasklet (SoftIRQ):</h2>
 <ul>
 <li><a class="el" href="softirq_8h.html#a16d0a8e8577f5baa2a847be0c46cf91c" title="Initialize the tasklet.">tasklet_init()</a></li>
 <li><a class="el" href="softirq_8h.html#aa6e4edec81b5c0ac7bc437d1ca4ba854" title="Schedule the tasklet.">tasklet_schedule()</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md46"></a>
+<h2><a class="anchor" id="autotoc_md47"></a>
 Wait Queue:</h2>
 <ul>
+<li><a class="el" href="wait_8h.html#a8b26febb18e5b984b5ae94b9412b065e" title="Declare and initialize a wait queue.">DECLARE_WAIT_QUEUE_HEAD()</a></li>
+<li><a class="el" href="wait_8h.html#a759d8a479756ceb875be2debcb80359a" title="Initialize the wait queue.">init_waitqueue_head()</a></li>
+<li><a class="el" href="wait_8h.html#a8bf010a70d3424e372091b847b5b6d4a" title="Wait until the condition became true.">wait_event()</a></li>
 <li><a class="el" href="wait_8h.html#a76df04ee5969b9a7e309877fc1106c9b" title="Suspend current thread and place it into a wait list with a new state.">prepare_to_wait()</a></li>
-<li><a class="el" href="wait_8h.html#af18d974c73b0dbf90f33447b431ed321" title="Move the thread from a wait list into a ready list and set it to be ready.">finish_wait()</a></li>
+<li><a class="el" href="wait_8h.html#ad24b4c724e662b9fc3159ebd937cf913" title="Move the thread from a wait list into a ready list and set it to be ready.">finish_wait()</a></li>
 <li><a class="el" href="wait_8h.html#adaf1c7df7b40eccebaa180cb9b5e3df5" title="Wake up the highest priority thread from the wait list.">wake_up()</a></li>
 <li><a class="el" href="wait_8h.html#ab1bc46e7c480408ccfd0d806a3620d6b" title="Wake up all threads from the wait list.">wake_up_all()</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md47"></a>
+<h2><a class="anchor" id="autotoc_md48"></a>
 kfifo:</h2>
 <ul>
 <li><a class="el" href="kfifo_8h.html#abb892d3303e62e441691c9f617b452f9" title="Initialize a FIFO using preallocated buffer.">kfifo_init()</a></li>
@@ -311,7 +319,7 @@ kfifo:</h2>
 <li><a class="el" href="kfifo_8h.html#a02074d9c3600a094129fd5f634bcc5a7" title="Return if the FIFO is empty or not.">kfifo_is_empty()</a></li>
 <li><a class="el" href="kfifo_8h.html#aeee96875272817efd55eb3d34a23131e" title="Return if the FIFO is full or not.">kfifo_is_full()</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md48"></a>
+<h2><a class="anchor" id="autotoc_md49"></a>
 Memory Allocation:</h2>
 <ul>
 <li><a class="el" href="mm_8h.html#a5f52d7c56b7d67dc2f96b2e93dfdc7be" title="Allocate a memory space for using in the kernel.">kmalloc()</a></li>
@@ -325,9 +333,9 @@ Memory Allocation:</h2>
 <li><a class="el" href="slab_8h.html#a417f38563ea3fa2ebc4a98e152f062ba" title="Free the allocated slab memory.">kmem_cache_free()</a></li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md50"></a>
+<h1><a class="anchor" id="autotoc_md51"></a>
 Common API</h1>
-<h2><a class="anchor" id="autotoc_md51"></a>
+<h2><a class="anchor" id="autotoc_md52"></a>
 List:</h2>
 <ul>
 <li><a class="el" href="list_8h.html#a42f0e72af970a790b60a740af8c9ecd0" title="Declare and initialize a new list head.">LIST_HEAD()</a></li>

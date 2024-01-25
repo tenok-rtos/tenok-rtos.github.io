@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['wake_5fup_646',['wake_up',['../wait_8h.html#adaf1c7df7b40eccebaa180cb9b5e3df5',1,'kernel.c']]],
-  ['wake_5fup_5fall_647',['wake_up_all',['../wait_8h.html#ab1bc46e7c480408ccfd0d806a3620d6b',1,'kernel.c']]],
-  ['write_648',['write',['../unistd_8h.html#abb39b21888372e95ad3e5c59b166f5c8',1,'file.c']]]
+  ['vdprintf_646',['vdprintf',['../stdio_8h.html#a0d0a950c2b4e6fba795cb7d8f2e8b8b8',1,'printf.c']]],
+  ['vfprintf_647',['vfprintf',['../stdio_8h.html#ad80f05917df38df3a5e1817498d67c26',1,'printf.c']]],
+  ['vprintf_648',['vprintf',['../stdio_8h.html#aa715ef816dc040c8b367fde4ba84d6f3',1,'printf.c']]],
+  ['vsnprintf_649',['vsnprintf',['../stdio_8h.html#a2cadafbeb2d6e0d5781f6e5106d41fc2',1,'stdio.h']]],
+  ['vsprintf_650',['vsprintf',['../stdio_8h.html#aab3db67c98c32122fcb3d076d4207bbc',1,'stdio.h']]]
 ];

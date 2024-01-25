@@ -7,7 +7,7 @@ var searchData=
   ['file_68',['file',['../structfile.html',1,'']]],
   ['file_5foperations_69',['file_operations',['../structfile__operations.html',1,'']]],
   ['fileno_70',['fileno',['../stdio_8h.html#af86fa14728c9bad5418a6d29cad9f9ff',1,'stdio.h']]],
-  ['finish_5fwait_71',['finish_wait',['../wait_8h.html#af18d974c73b0dbf90f33447b431ed321',1,'kernel.c']]],
+  ['finish_5fwait_71',['finish_wait',['../wait_8h.html#ad24b4c724e662b9fc3159ebd937cf913',1,'kernel.c']]],
   ['fopen_72',['fopen',['../stdio_8h.html#a3f9b52a165c4c6a3b099ec5a2615adad',1,'stdio.h']]],
   ['fprintf_73',['fprintf',['../stdio_8h.html#ad9291335f34e874c8431285d705bc3aa',1,'printf.c']]],
   ['fread_74',['fread',['../stdio_8h.html#a084251eb18ccd5c936faa2c39c86ec63',1,'stdio.h']]],
