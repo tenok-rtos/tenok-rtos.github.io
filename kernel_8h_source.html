@@ -79,7 +79,7 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="tenok_2signal_8h.html">signal.h</a>&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="limits_8h.html">sys/limits.h</a>&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="sys_2limits_8h.html">sys/limits.h</a>&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="resource_8h.html">sys/resource.h</a>&gt;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="task_8h.html">task.h</a>&gt;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
@@ -88,7 +88,7 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="fs_8h.html">fs/fs.h</a>&gt;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="kfifo_8h.html">kernel/kfifo.h</a>&gt;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="kernel_2time_8h.html">kernel/time.h</a>&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="wait_8h.html">kernel/wait.h</a>&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="kernel_2wait_8h.html">kernel/wait.h</a>&gt;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;kconfig.h&quot;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
@@ -132,85 +132,91 @@ $(function() {
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">/* For recording message queue descriptors belongs to the task */</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    uint32_t bitmap_mqds[BITMAP_SIZE(MQUEUE_MAX)];</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> threads_list; <span class="comment">/* List of all threads of the task */</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> list;         <span class="comment">/* Linked to the global task list */</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;};</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="structthread__info.html">   68</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structthread__info.html">thread_info</a> {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">/* Task */</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">struct </span><a class="code" href="structtask__struct.html">task_struct</a> *task; <span class="comment">/* Task of the thread belongs to */</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">/* Stack */</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> *stack_top; <span class="comment">/* Stack pointer to the top of the thread stack */</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> stack_top_preserved; <span class="comment">/* Preserve for staging new handler */</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> *stack;              <span class="comment">/* Base address of the thread stack */</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">size_t</span> stack_size;                 <span class="comment">/* Stack size of the thread in bytes */</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">/* Syscall */</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> *syscall_args[4]; <span class="comment">/* Pointer to the syscall arguments */</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> *syscall_stack_top;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">bool</span> syscall_mode;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">bool</span> syscall_is_timeout; <span class="comment">/* Indicate if the syscall waiting time is up */</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">struct </span><a class="code" href="structtimespec.html">timespec</a> syscall_timeout; <span class="comment">/* For setting timeout of the syscall */</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">/* Thread */</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> *retval;               <span class="comment">/* For passing retval after the thread end */</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">void</span> **retval_join;         <span class="comment">/* To getting retval from a thread to join */</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">size_t</span> file_request_size;   <span class="comment">/* Size of the thread requesting to a file */</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    uint32_t sleep_ticks;       <span class="comment">/* Remained ticks to sleep */</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    uint32_t preempt_cnt;       <span class="comment">/* For preserving threads&#39;s preemption level */</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    uint16_t tid;               <span class="comment">/* Thread ID */</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    uint16_t timer_cnt;         <span class="comment">/* The number of timers that the thread has */</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    uint8_t privilege;          <span class="comment">/* Current execution privilege level */</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    uint8_t status;             <span class="comment">/* Thread status */</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    uint8_t priority;           <span class="comment">/* Thread priority */</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    uint8_t original_priority;  <span class="comment">/* Original priority before inheritance */</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">bool</span> kernel_thread;         <span class="comment">/* Kernel thread or user thread */</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">bool</span> priority_inherited;    <span class="comment">/* True if current priority is inherited */</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">bool</span> detached;              <span class="comment">/* Thread is detached or not */</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">bool</span> joinable;              <span class="comment">/* Thread is joinable or not */</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">char</span> name[THREAD_NAME_MAX]; <span class="comment">/* Thread name */</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">struct </span><a class="code" href="structthread__once.html">thread_once</a> *once_control; <span class="comment">/* For handling pthread_once_control */</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">/* Signals */</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keyword">struct </span><a class="code" href="structsigaction.html">sigaction</a> *sig_table[SIGNAL_CNT];</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keyword">struct </span><a class="code" href="structkfifo.html">kfifo</a> signal_queue; <span class="comment">/* The queue for pending signals */</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    sigset_t sig_wait_set;     <span class="comment">/* The set of the signals to wait */</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    uint32_t signal_cnt;       <span class="comment">/* The number of pending signals in the queue */</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">int</span> *ret_sig;              <span class="comment">/* For storing retval of the sigwait */</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">bool</span> wait_for_signal;      <span class="comment">/* Indicates the thread is waiting for signal */</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">/* Lists */</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> timers_list;     <span class="comment">/* List of timers belongs to the thread */</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> poll_files_list; <span class="comment">/* List of all files polling for */</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> task_list;       <span class="comment">/* Linked to the task thread list */</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> thread_list;     <span class="comment">/* Linked to the global thread list */</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> timeout_list;    <span class="comment">/* Linked to the global timeout list */</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> join_list; <span class="comment">/* Linked to another thread waiting for join */</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> list;      <span class="comment">/* Linked to a scheduling list */</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;};</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">/* Permission bits withheld from a file the task creates */</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    mode_t <a class="code" href="stat_8h.html#a8788159ad927954699f80970a1d04462">umask</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> threads_list; <span class="comment">/* List of all threads of the task */</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> list;         <span class="comment">/* Linked to the global task list */</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;};</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="structthread__info.html">   71</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structthread__info.html">thread_info</a> {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">/* Task */</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">struct </span><a class="code" href="structtask__struct.html">task_struct</a> *task; <span class="comment">/* Task of the thread belongs to */</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">/* Stack */</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> *stack_top; <span class="comment">/* Stack pointer to the top of the thread stack */</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> stack_top_preserved; <span class="comment">/* Preserve for staging new handler */</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> *stack;              <span class="comment">/* Base address of the thread stack */</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">size_t</span> stack_size;                 <span class="comment">/* Stack size of the thread in bytes */</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">/* Syscall */</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> *syscall_args[4]; <span class="comment">/* Pointer to the syscall arguments */</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> *syscall_stack_top;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">bool</span> syscall_mode;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">bool</span> syscall_is_timeout; <span class="comment">/* Indicate if the syscall waiting time is up */</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">struct </span><a class="code" href="structtimespec.html">timespec</a> syscall_timeout; <span class="comment">/* For setting timeout of the syscall */</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">/* Thread */</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">void</span> *retval;               <span class="comment">/* For passing retval after the thread end */</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> **retval_join;         <span class="comment">/* To getting retval from a thread to join */</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">size_t</span> file_request_size;   <span class="comment">/* Size of the thread requesting to a file */</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    uint32_t sleep_ticks;       <span class="comment">/* Remained ticks to sleep */</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    uint32_t preempt_cnt;       <span class="comment">/* For preserving threads&#39;s preemption level */</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    uint16_t tid;               <span class="comment">/* Thread ID */</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    uint16_t timer_cnt;         <span class="comment">/* The number of timers that the thread has */</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    uint8_t privilege;          <span class="comment">/* Current execution privilege level */</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    uint8_t status;             <span class="comment">/* Thread status */</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    uint8_t priority;           <span class="comment">/* Thread priority */</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    uint8_t original_priority;  <span class="comment">/* Original priority before inheritance */</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">bool</span> kernel_thread;         <span class="comment">/* Kernel thread or user thread */</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">bool</span> priority_inherited;    <span class="comment">/* True if current priority is inherited */</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">bool</span> detached;              <span class="comment">/* Thread is detached or not */</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">bool</span> joinable;              <span class="comment">/* Thread is joinable or not */</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">char</span> name[THREAD_NAME_MAX]; <span class="comment">/* Thread name */</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keyword">struct </span><a class="code" href="structthread__once.html">thread_once</a> *once_control; <span class="comment">/* For handling pthread_once_control */</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">/* Signals */</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keyword">struct </span><a class="code" href="structsigaction.html">sigaction</a> *sig_table[SIGNAL_CNT];</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">struct </span><a class="code" href="structkfifo.html">kfifo</a> signal_queue; <span class="comment">/* The queue for pending signals */</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    sigset_t sig_wait_set;     <span class="comment">/* The set of the signals to wait */</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    uint32_t signal_cnt;       <span class="comment">/* The number of pending signals in the queue */</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">int</span> *ret_sig;              <span class="comment">/* For storing retval of the sigwait */</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="structsiginfo__t.html">siginfo_t</a> *ret_siginfo;    <span class="comment">/* For storing siginfo of wait */</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">bool</span> wait_for_signal;      <span class="comment">/* Indicates the thread is waiting for signal */</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">/* Lists */</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> timers_list;     <span class="comment">/* List of timers belongs to the thread */</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> poll_files_list; <span class="comment">/* List of all files polling for */</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> task_list;       <span class="comment">/* Linked to the task thread list */</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> thread_list;     <span class="comment">/* Linked to the global thread list */</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> timeout_list;    <span class="comment">/* Linked to the global timeout list */</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> join_list; <span class="comment">/* Linked to another thread waiting for join */</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> list;      <span class="comment">/* Linked to a scheduling list */</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;};</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="afs_8h_html"><div class="ttname"><a href="fs_8h.html">fs.h</a></div></div>
 <div class="ttc" id="akernel_2time_8h_html"><div class="ttname"><a href="kernel_2time_8h.html">time.h</a></div></div>
+<div class="ttc" id="akernel_2wait_8h_html"><div class="ttname"><a href="kernel_2wait_8h.html">wait.h</a></div></div>
 <div class="ttc" id="akfifo_8h_html"><div class="ttname"><a href="kfifo_8h.html">kfifo.h</a></div></div>
-<div class="ttc" id="alimits_8h_html"><div class="ttname"><a href="limits_8h.html">limits.h</a></div></div>
 <div class="ttc" id="alist_8h_html"><div class="ttname"><a href="list_8h.html">list.h</a></div></div>
 <div class="ttc" id="apthread_8h_html"><div class="ttname"><a href="pthread_8h.html">pthread.h</a></div></div>
 <div class="ttc" id="aresource_8h_html"><div class="ttname"><a href="resource_8h.html">resource.h</a></div></div>
+<div class="ttc" id="astat_8h_html_a8788159ad927954699f80970a1d04462"><div class="ttname"><a href="stat_8h.html#a8788159ad927954699f80970a1d04462">umask</a></div><div class="ttdeci">mode_t umask(mode_t mask)</div><div class="ttdoc">Set the permission bits withheld from the files the task creates.</div><div class="ttdef"><b>Definition:</b> file.c:310</div></div>
 <div class="ttc" id="astructkfifo_html"><div class="ttname"><a href="structkfifo.html">kfifo</a></div><div class="ttdef"><b>Definition:</b> kfifo.h:11</div></div>
 <div class="ttc" id="astructlist__head_html"><div class="ttname"><a href="structlist__head.html">list_head</a></div><div class="ttdef"><b>Definition:</b> list.h:111</div></div>
-<div class="ttc" id="astructsigaction_html"><div class="ttname"><a href="structsigaction.html">sigaction</a></div><div class="ttdef"><b>Definition:</b> signal.h:35</div></div>
+<div class="ttc" id="astructsigaction_html"><div class="ttname"><a href="structsigaction.html">sigaction</a></div><div class="ttdef"><b>Definition:</b> signal.h:76</div></div>
+<div class="ttc" id="astructsiginfo__t_html"><div class="ttname"><a href="structsiginfo__t.html">siginfo_t</a></div><div class="ttdef"><b>Definition:</b> signal.h:70</div></div>
 <div class="ttc" id="astructstaged__handler__info_html"><div class="ttname"><a href="structstaged__handler__info.html">staged_handler_info</a></div><div class="ttdef"><b>Definition:</b> kernel.h:36</div></div>
 <div class="ttc" id="astructsyscall__info_html"><div class="ttname"><a href="structsyscall__info.html">syscall_info</a></div><div class="ttdef"><b>Definition:</b> kernel.h:31</div></div>
 <div class="ttc" id="astructtask__struct_html"><div class="ttname"><a href="structtask__struct.html">task_struct</a></div><div class="ttdef"><b>Definition:</b> kernel.h:54</div></div>
-<div class="ttc" id="astructthread__info_html"><div class="ttname"><a href="structthread__info.html">thread_info</a></div><div class="ttdef"><b>Definition:</b> kernel.h:68</div></div>
+<div class="ttc" id="astructthread__info_html"><div class="ttname"><a href="structthread__info.html">thread_info</a></div><div class="ttdef"><b>Definition:</b> kernel.h:71</div></div>
 <div class="ttc" id="astructthread__once_html"><div class="ttname"><a href="structthread__once.html">thread_once</a></div><div class="ttdef"><b>Definition:</b> thread.h:22</div></div>
-<div class="ttc" id="astructtimespec_html"><div class="ttname"><a href="structtimespec.html">timespec</a></div><div class="ttdef"><b>Definition:</b> time.h:14</div></div>
+<div class="ttc" id="astructtimespec_html"><div class="ttname"><a href="structtimespec.html">timespec</a></div><div class="ttdef"><b>Definition:</b> time.h:16</div></div>
+<div class="ttc" id="asys_2limits_8h_html"><div class="ttname"><a href="sys_2limits_8h.html">limits.h</a></div></div>
 <div class="ttc" id="atask_8h_html"><div class="ttname"><a href="task_8h.html">task.h</a></div></div>
 <div class="ttc" id="atenok_2signal_8h_html"><div class="ttname"><a href="tenok_2signal_8h.html">signal.h</a></div></div>
 <div class="ttc" id="autil_8h_html"><div class="ttname"><a href="util_8h.html">util.h</a></div></div>
-<div class="ttc" id="await_8h_html"><div class="ttname"><a href="wait_8h.html">wait.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

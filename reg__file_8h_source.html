@@ -78,7 +78,7 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="fs_8h.html">fs/fs.h</a>&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="structreg__file.html">    9</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structreg__file.html">reg_file</a> {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordtype">int</span> pos;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    off_t pos;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">struct </span><a class="code" href="structfile.html">file</a> <a class="code" href="structfile.html">file</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;};</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
@@ -90,11 +90,14 @@ $(function() {
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">char</span> *buf,</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                       <span class="keywordtype">size_t</span> size,</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                       off_t offset);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">void</span> reg_file_rewind(<span class="keyword">struct</span> <a class="code" href="structfile.html">file</a> *filp);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">void</span> reg_file_seek_end(<span class="keyword">struct</span> <a class="code" href="structfile.html">file</a> *filp);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">void</span> reg_file_truncate(<span class="keyword">struct</span> <a class="code" href="structfile.html">file</a> *filp);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="afs_8h_html"><div class="ttname"><a href="fs_8h.html">fs.h</a></div></div>
-<div class="ttc" id="astructfile_html"><div class="ttname"><a href="structfile.html">file</a></div><div class="ttdef"><b>Definition:</b> fs.h:120</div></div>
-<div class="ttc" id="astructinode_html"><div class="ttname"><a href="structinode.html">inode</a></div><div class="ttdef"><b>Definition:</b> fs.h:82</div></div>
+<div class="ttc" id="astructfile_html"><div class="ttname"><a href="structfile.html">file</a></div><div class="ttdef"><b>Definition:</b> fs.h:136</div></div>
+<div class="ttc" id="astructinode_html"><div class="ttname"><a href="structinode.html">inode</a></div><div class="ttdef"><b>Definition:</b> fs.h:97</div></div>
 <div class="ttc" id="astructreg__file_html"><div class="ttname"><a href="structreg__file.html">reg_file</a></div><div class="ttdef"><b>Definition:</b> reg_file.h:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

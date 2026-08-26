@@ -1,11 +1,13 @@
 var searchData=
 [
-  ['task_5fcreate_636',['task_create',['../task_8h.html#abdd89d67d6038f5716d49bde2eed927e',1,'task.c']]],
-  ['tasklet_5finit_637',['tasklet_init',['../softirq_8h.html#a16d0a8e8577f5baa2a847be0c46cf91c',1,'softirq.c']]],
-  ['tasklet_5fschedule_638',['tasklet_schedule',['../softirq_8h.html#aa6e4edec81b5c0ac7bc437d1ca4ba854',1,'softirq.c']]],
-  ['thread_5finfo_639',['thread_info',['../tenok_8h.html#a046bd8c3363efcadb9f1fb760da51570',1,'task.c']]],
-  ['timer_5fcreate_640',['timer_create',['../tenok_2time_8h.html#a6b9bbabed8d04297407e2ac5c3c2f45c',1,'time.c']]],
-  ['timer_5fdelete_641',['timer_delete',['../tenok_2time_8h.html#ad114bb350d7d5d12cff3fd19bf533303',1,'time.c']]],
-  ['timer_5fgettime_642',['timer_gettime',['../tenok_2time_8h.html#aaa37b1ad77721f776718e61e81777a9d',1,'time.c']]],
-  ['timer_5fsettime_643',['timer_settime',['../tenok_2time_8h.html#a07458ae54d92e247bd7157bb716159b2',1,'time.c']]]
+  ['raise_833',['raise',['../tenok_2signal_8h.html#a08ba0dd26a850108a1746412faba2b21',1,'signal.c']]],
+  ['read_834',['read',['../unistd_8h.html#af32a16ad2dd9e48482f8f790db7dbbd2',1,'file.c']]],
+  ['readdir_835',['readdir',['../dirent_8h.html#a58257faf8b13b3f14558613c632b2373',1,'file.c']]],
+  ['readlink_836',['readlink',['../unistd_8h.html#ad57ce189a001775443632a7841fe65c4',1,'wrapper.c']]],
+  ['realloc_837',['realloc',['../stdlib_8h.html#a1a6b5e8d2f1c37e5b43e4345586075be',1,'mm.c']]],
+  ['remove_838',['remove',['../stdio_8h.html#a02b13b56a188401119ea4da43c184913',1,'file.c']]],
+  ['rename_839',['rename',['../stdio_8h.html#a4d4709508ed7604103d77c3fdc5ea4a2',1,'file.c']]],
+  ['rewind_840',['rewind',['../stdio_8h.html#aa0cd401f198d33d9d01a9e8aa4026819',1,'stdio.h']]],
+  ['rmdir_841',['rmdir',['../unistd_8h.html#a570282ae7ba596263ec812b368d99b34',1,'file.c']]],
+  ['rom_5fdev_5finit_842',['rom_dev_init',['../rom__dev_8h.html#aade3815e5bad072fe215166d878a998e',1,'rom_dev.c']]]
 ];

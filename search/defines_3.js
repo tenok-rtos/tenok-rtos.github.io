@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hook_5fuser_5ftask_687',['HOOK_USER_TASK',['../task_8h.html#a3cb286c107d30bad2c5040b5cfc22eb1',1,'task.h']]]
+  ['getchar_961',['getchar',['../stdio_8h.html#a3e29caa20f7cffe18f410f01278905a8',1,'stdio.h']]]
 ];

@@ -69,6 +69,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">time.h File Reference</div>  </div>
@@ -93,13 +94,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="kernel_2time_8h__dep__incl.png" border="0" usemap="#ainclude_2kernel_2time_8hdep" alt=""/></div>
 <map name="ainclude_2kernel_2time_8hdep" id="ainclude_2kernel_2time_8hdep">
-<area shape="rect" title=" " alt="" coords="121,6,279,33"/>
-<area shape="rect" href="kernel_8h.html" title=" " alt="" coords="115,81,285,108"/>
-<area shape="rect" href="wait_8h.html" title=" " alt="" coords="121,156,279,182"/>
-<area shape="rect" href="fs_8h.html" title=" " alt="" coords="201,230,314,257"/>
-<area shape="rect" href="reg__file_8h.html" title=" " alt="" coords="5,305,155,332"/>
-<area shape="rect" href="pipe_8h.html" title=" " alt="" coords="179,305,336,332"/>
-<area shape="rect" href="kernel_2poll_8h.html" title=" " alt="" coords="361,305,514,332"/>
+<area shape="rect" title=" " alt="" coords="191,6,349,33"/>
+<area shape="rect" href="fs_8h.html" title=" " alt="" coords="305,81,419,108"/>
+<area shape="rect" href="kernel_8h.html" title=" " alt="" coords="5,156,175,182"/>
+<area shape="rect" href="reg__file_8h.html" title=" " alt="" coords="199,156,349,182"/>
+<area shape="rect" href="pipe_8h.html" title=" " alt="" coords="373,156,530,182"/>
+<area shape="rect" href="kernel_2poll_8h.html" title=" " alt="" coords="555,156,708,182"/>
+<area shape="rect" href="kernel_2wait_8h.html" title=" " alt="" coords="11,230,169,257"/>
 </map>
 </div>
 </div>
@@ -110,16 +111,22 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtimer.html">timer</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a676b56a0511d8a4ad4da3f77c9367f42"><td class="memItemLeft" align="right" valign="top"><a id="a676b56a0511d8a4ad4da3f77c9367f42"></a>
+typedef int64_t&#160;</td><td class="memItemRight" valign="bottom"><b>ktime_t</b></td></tr>
+<tr class="separator:a676b56a0511d8a4ad4da3f77c9367f42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a6194e4db1e0ef3665cb1fff279e1daa6"><td class="memItemLeft" align="right" valign="top"><a id="a6194e4db1e0ef3665cb1fff279e1daa6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>timer_up_count</b> (struct <a class="el" href="structtimespec.html">timespec</a> *time)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>timer_up_count</b> (struct <a class="el" href="structtimespec.html">timespec</a> *<a class="el" href="tenok_2time_8h.html#a99ef1cb2c789827dd5db3886dccf9067">time</a>)</td></tr>
 <tr class="separator:a6194e4db1e0ef3665cb1fff279e1daa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb90191f7bd33396b5004911cf77566d"><td class="memItemLeft" align="right" valign="top"><a id="adb90191f7bd33396b5004911cf77566d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>timer_down_count</b> (struct <a class="el" href="structtimespec.html">timespec</a> *time)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>timer_down_count</b> (struct <a class="el" href="structtimespec.html">timespec</a> *<a class="el" href="tenok_2time_8h.html#a99ef1cb2c789827dd5db3886dccf9067">time</a>)</td></tr>
 <tr class="separator:adb90191f7bd33396b5004911cf77566d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a030a7ddbb8382ee0555ddf63e6782421"><td class="memItemLeft" align="right" valign="top"><a id="a030a7ddbb8382ee0555ddf63e6782421"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>time_add</b> (struct <a class="el" href="structtimespec.html">timespec</a> *time, time_t sec, long nsec)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>time_add</b> (struct <a class="el" href="structtimespec.html">timespec</a> *<a class="el" href="tenok_2time_8h.html#a99ef1cb2c789827dd5db3886dccf9067">time</a>, time_t sec, long nsec)</td></tr>
 <tr class="separator:a030a7ddbb8382ee0555ddf63e6782421"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e246ed060a8fcfdc8ba5ca6f160f1ba"><td class="memItemLeft" align="right" valign="top"><a id="a0e246ed060a8fcfdc8ba5ca6f160f1ba"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>get_sys_time</b> (struct <a class="el" href="structtimespec.html">timespec</a> *tp)</td></tr>
@@ -127,9 +134,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>get_sys_time</b> (str
 <tr class="memitem:addd079d4c082338f5fdde535db68084c"><td class="memItemLeft" align="right" valign="top"><a id="addd079d4c082338f5fdde535db68084c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>set_sys_time</b> (const struct <a class="el" href="structtimespec.html">timespec</a> *tp)</td></tr>
 <tr class="separator:addd079d4c082338f5fdde535db68084c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54b056df63818ce0b539436ea91c37e8"><td class="memItemLeft" align="right" valign="top"><a id="a54b056df63818ce0b539436ea91c37e8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>get_realtime</b> (struct <a class="el" href="structtimespec.html">timespec</a> *tp)</td></tr>
+<tr class="separator:a54b056df63818ce0b539436ea91c37e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a083a88492817082c9714515cad2aa922"><td class="memItemLeft" align="right" valign="top"><a id="a083a88492817082c9714515cad2aa922"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set_realtime</b> (const struct <a class="el" href="structtimespec.html">timespec</a> *tp)</td></tr>
+<tr class="separator:a083a88492817082c9714515cad2aa922"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d38e80c874f36f8ef0d6484f29135cd"><td class="memItemLeft" align="right" valign="top"><a id="a2d38e80c874f36f8ef0d6484f29135cd"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>system_timer_update</b> (void)</td></tr>
 <tr class="separator:a2d38e80c874f36f8ef0d6484f29135cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa07468a720b815b0f781972c4188912"><td class="memItemLeft" align="right" valign="top"><a id="afa07468a720b815b0f781972c4188912"></a>
+ktime_t&#160;</td><td class="memItemRight" valign="bottom"><b>ktime_get</b> (void)</td></tr>
+<tr class="separator:afa07468a720b815b0f781972c4188912"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

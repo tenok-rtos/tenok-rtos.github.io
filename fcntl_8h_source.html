@@ -75,17 +75,45 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef __FCNTL_H__</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define __FCNTL_H__</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define O_RDONLY 0</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define O_WRONLY 1</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define O_RDWR 2</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define O_CREAT 0x0200</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define O_EXCL 0x0800</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define O_NONBLOCK 00004000</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keywordtype">int</span> <a class="code" href="fcntl_8h.html#adcb60598073f6f9cbb0091ef6768fa5c">open</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *pathname, <span class="keywordtype">int</span> flags);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="afcntl_8h_html_adcb60598073f6f9cbb0091ef6768fa5c"><div class="ttname"><a href="fcntl_8h.html#adcb60598073f6f9cbb0091ef6768fa5c">open</a></div><div class="ttdeci">int open(const char *pathname, int flags)</div><div class="ttdoc">Open the file specified by the pathname.</div><div class="ttdef"><b>Definition:</b> file.c:15</div></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define O_ACCMODE 0x0003</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define O_RDONLY 0</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define O_WRONLY 1</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define O_RDWR 2</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define O_APPEND 0x0008</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define O_CREAT 0x0200</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define O_TRUNC 0x0400</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define O_EXCL 0x0800</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define O_NONBLOCK 0x4000</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/* Tenok has no controlling terminal for a file to become */</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define O_NOCTTY 0x8000</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/* An off_t of Tenok already reaches as far as a file can */</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define O_LARGEFILE 0</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">/* Refuses what is not a directory, Tenok refuses one either way */</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define O_DIRECTORY 0x200000</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define O_CLOEXEC 0x400000</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/* Commands of fcntl(), with the numbers Linux gives them */</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#define F_DUPFD 0</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define F_GETFD 1</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define F_SETFD 2</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define F_GETFL 3</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define F_SETFL 4</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define F_DUPFD_CLOEXEC 1030</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">/* Tenok has no exec() for this to act on, it is stored and read back */</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define FD_CLOEXEC 1</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/* Tenok resolves every path from the directory the task is in */</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#define AT_FDCWD (-100)</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#define AT_SYMLINK_NOFOLLOW 0x100</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">int</span> <a class="code" href="fcntl_8h.html#a079d60801c18155ac2ec1707b56867fb">open</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *pathname, <span class="keywordtype">int</span> flags, ...);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keywordtype">int</span> <a class="code" href="fcntl_8h.html#ad39ebe4c4767eaa9a680777400cfaafe">fcntl</a>(<span class="keywordtype">int</span> fd, <span class="keywordtype">int</span> cmd, ...);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="afcntl_8h_html_a079d60801c18155ac2ec1707b56867fb"><div class="ttname"><a href="fcntl_8h.html#a079d60801c18155ac2ec1707b56867fb">open</a></div><div class="ttdeci">int open(const char *pathname, int flags,...)</div><div class="ttdoc">Open the file specified by the pathname.</div><div class="ttdef"><b>Definition:</b> file.c:36</div></div>
+<div class="ttc" id="afcntl_8h_html_ad39ebe4c4767eaa9a680777400cfaafe"><div class="ttname"><a href="fcntl_8h.html#ad39ebe4c4767eaa9a680777400cfaafe">fcntl</a></div><div class="ttdeci">int fcntl(int fd, int cmd,...)</div><div class="ttdoc">Act on an open file descriptor.</div><div class="ttdef"><b>Definition:</b> file.c:78</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

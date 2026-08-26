@@ -79,6 +79,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:a4dc4d45e07d2abc899bcaf04b2846a87"><td class="memItemLeft" align="right" valign="top"><a id="a4dc4d45e07d2abc899bcaf04b2846a87"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>O_ACCMODE</b>&#160;&#160;&#160;0x0003</td></tr>
+<tr class="separator:a4dc4d45e07d2abc899bcaf04b2846a87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a68c9ffaac7dbcd652225dd7c06a54b"><td class="memItemLeft" align="right" valign="top"><a id="a7a68c9ffaac7dbcd652225dd7c06a54b"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>O_RDONLY</b>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:a7a68c9ffaac7dbcd652225dd7c06a54b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -88,25 +91,123 @@ Macros</h2></td></tr>
 <tr class="memitem:abb0586253488ee61072b73557eeb873b"><td class="memItemLeft" align="right" valign="top"><a id="abb0586253488ee61072b73557eeb873b"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>O_RDWR</b>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:abb0586253488ee61072b73557eeb873b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae036f789407d21f07b211552d67b3214"><td class="memItemLeft" align="right" valign="top"><a id="ae036f789407d21f07b211552d67b3214"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>O_APPEND</b>&#160;&#160;&#160;0x0008</td></tr>
+<tr class="separator:ae036f789407d21f07b211552d67b3214"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cf6b1de1fffedaa1d26b189e9a8d2cc"><td class="memItemLeft" align="right" valign="top"><a id="a1cf6b1de1fffedaa1d26b189e9a8d2cc"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>O_CREAT</b>&#160;&#160;&#160;0x0200</td></tr>
 <tr class="separator:a1cf6b1de1fffedaa1d26b189e9a8d2cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1d67e453fb3031f40f8cd3403773813"><td class="memItemLeft" align="right" valign="top"><a id="ad1d67e453fb3031f40f8cd3403773813"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>O_TRUNC</b>&#160;&#160;&#160;0x0400</td></tr>
+<tr class="separator:ad1d67e453fb3031f40f8cd3403773813"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f5acfe79fafe14b6694447bd0e9f10b"><td class="memItemLeft" align="right" valign="top"><a id="a9f5acfe79fafe14b6694447bd0e9f10b"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>O_EXCL</b>&#160;&#160;&#160;0x0800</td></tr>
 <tr class="separator:a9f5acfe79fafe14b6694447bd0e9f10b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39d33ce33804efd4d52606d59071c6d8"><td class="memItemLeft" align="right" valign="top"><a id="a39d33ce33804efd4d52606d59071c6d8"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>O_NONBLOCK</b>&#160;&#160;&#160;00004000</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>O_NONBLOCK</b>&#160;&#160;&#160;0x4000</td></tr>
 <tr class="separator:a39d33ce33804efd4d52606d59071c6d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e375ab32c7ef4581b026be28e4cc116"><td class="memItemLeft" align="right" valign="top"><a id="a2e375ab32c7ef4581b026be28e4cc116"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>O_NOCTTY</b>&#160;&#160;&#160;0x8000</td></tr>
+<tr class="separator:a2e375ab32c7ef4581b026be28e4cc116"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1126309aa58e7c99553c7f6be1bc7348"><td class="memItemLeft" align="right" valign="top"><a id="a1126309aa58e7c99553c7f6be1bc7348"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>O_LARGEFILE</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a1126309aa58e7c99553c7f6be1bc7348"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6afd3dd2f570069804b40e6aa24fc966"><td class="memItemLeft" align="right" valign="top"><a id="a6afd3dd2f570069804b40e6aa24fc966"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>O_DIRECTORY</b>&#160;&#160;&#160;0x200000</td></tr>
+<tr class="separator:a6afd3dd2f570069804b40e6aa24fc966"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6d8fbe4e494b4dbe051612572d3f757"><td class="memItemLeft" align="right" valign="top"><a id="ad6d8fbe4e494b4dbe051612572d3f757"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>O_CLOEXEC</b>&#160;&#160;&#160;0x400000</td></tr>
+<tr class="separator:ad6d8fbe4e494b4dbe051612572d3f757"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab93a8621587aba90181efd7d3aeea67e"><td class="memItemLeft" align="right" valign="top"><a id="ab93a8621587aba90181efd7d3aeea67e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>F_DUPFD</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:ab93a8621587aba90181efd7d3aeea67e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc11141031604fb22b8e3a201155cbb3"><td class="memItemLeft" align="right" valign="top"><a id="abc11141031604fb22b8e3a201155cbb3"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>F_GETFD</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:abc11141031604fb22b8e3a201155cbb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad27227e8d87b844648f07d66da38bb3f"><td class="memItemLeft" align="right" valign="top"><a id="ad27227e8d87b844648f07d66da38bb3f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>F_SETFD</b>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:ad27227e8d87b844648f07d66da38bb3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a025fad21a889c79f02ec53abe3526c32"><td class="memItemLeft" align="right" valign="top"><a id="a025fad21a889c79f02ec53abe3526c32"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>F_GETFL</b>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a025fad21a889c79f02ec53abe3526c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2939853c650561d3495ed40f68f6249"><td class="memItemLeft" align="right" valign="top"><a id="af2939853c650561d3495ed40f68f6249"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>F_SETFL</b>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:af2939853c650561d3495ed40f68f6249"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af532232f0b65dc6296aedd2b60de7285"><td class="memItemLeft" align="right" valign="top"><a id="af532232f0b65dc6296aedd2b60de7285"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>F_DUPFD_CLOEXEC</b>&#160;&#160;&#160;1030</td></tr>
+<tr class="separator:af532232f0b65dc6296aedd2b60de7285"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e7a00c884ea124bb9f687b16cb5db9b"><td class="memItemLeft" align="right" valign="top"><a id="a7e7a00c884ea124bb9f687b16cb5db9b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>FD_CLOEXEC</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a7e7a00c884ea124bb9f687b16cb5db9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a301749b9aa4b9416c329bb8b19345216"><td class="memItemLeft" align="right" valign="top"><a id="a301749b9aa4b9416c329bb8b19345216"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT_FDCWD</b>&#160;&#160;&#160;(-100)</td></tr>
+<tr class="separator:a301749b9aa4b9416c329bb8b19345216"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad623014f05ffb83df42ba96900fcd62e"><td class="memItemLeft" align="right" valign="top"><a id="ad623014f05ffb83df42ba96900fcd62e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT_SYMLINK_NOFOLLOW</b>&#160;&#160;&#160;0x100</td></tr>
+<tr class="separator:ad623014f05ffb83df42ba96900fcd62e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:adcb60598073f6f9cbb0091ef6768fa5c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fcntl_8h.html#adcb60598073f6f9cbb0091ef6768fa5c">open</a> (const char *pathname, int flags)</td></tr>
-<tr class="memdesc:adcb60598073f6f9cbb0091ef6768fa5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the file specified by the pathname.  <a href="fcntl_8h.html#adcb60598073f6f9cbb0091ef6768fa5c">More...</a><br /></td></tr>
-<tr class="separator:adcb60598073f6f9cbb0091ef6768fa5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a079d60801c18155ac2ec1707b56867fb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fcntl_8h.html#a079d60801c18155ac2ec1707b56867fb">open</a> (const char *pathname, int flags,...)</td></tr>
+<tr class="memdesc:a079d60801c18155ac2ec1707b56867fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the file specified by the pathname.  <a href="fcntl_8h.html#a079d60801c18155ac2ec1707b56867fb">More...</a><br /></td></tr>
+<tr class="separator:a079d60801c18155ac2ec1707b56867fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad39ebe4c4767eaa9a680777400cfaafe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fcntl_8h.html#ad39ebe4c4767eaa9a680777400cfaafe">fcntl</a> (int fd, int cmd,...)</td></tr>
+<tr class="memdesc:ad39ebe4c4767eaa9a680777400cfaafe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Act on an open file descriptor.  <a href="fcntl_8h.html#ad39ebe4c4767eaa9a680777400cfaafe">More...</a><br /></td></tr>
+<tr class="separator:ad39ebe4c4767eaa9a680777400cfaafe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="adcb60598073f6f9cbb0091ef6768fa5c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adcb60598073f6f9cbb0091ef6768fa5c">&#9670;&nbsp;</a></span>open()</h2>
+<a id="ad39ebe4c4767eaa9a680777400cfaafe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad39ebe4c4767eaa9a680777400cfaafe">&#9670;&nbsp;</a></span>fcntl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int fcntl </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Act on an open file descriptor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fd</td><td>The file descriptor to provide. </td></tr>
+    <tr><td class="paramname">cmd</td><td>F_DUPFD, F_GETFD, F_SETFD, F_GETFL or F_SETFL. </td></tr>
+    <tr><td class="paramname">arg</td><td>The lowest descriptor to duplicate onto, or the flags to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>The answer of the command on success and -1 on error, with the reason left in errno. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a079d60801c18155ac2ec1707b56867fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a079d60801c18155ac2ec1707b56867fb">&#9670;&nbsp;</a></span>open()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -121,7 +222,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>flags</em>&#160;</td>
+          <td class="paramname"><em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -136,12 +243,13 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">pathname</td><td>The pathname of the file. </td></tr>
     <tr><td class="paramname">flags</td><td>Flags for opening the file. </td></tr>
+    <tr><td class="paramname">mode</td><td>The permission bits of the file, when O_CREAT is given and the file has to be created. Ignored otherwise. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">int</td><td>The function returns file descriptor number of the file on success and nonzero error number on error. </td></tr>
+    <tr><td class="paramname">int</td><td>The file descriptor of the file on success and -1 on error, with the reason left in errno. </td></tr>
   </table>
   </dd>
 </dl>

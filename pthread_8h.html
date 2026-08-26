@@ -79,18 +79,22 @@ $(function() {
 <div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="tenok_2sys_2sched_8h_source.html">sys/sched.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="tenok_2time_8h_source.html">time.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="list_8h_source.html">common/list.h</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for pthread.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="pthread_8h__incl.png" border="0" usemap="#ainclude_2tenok_2pthread_8h" alt=""/></div>
 <map name="ainclude_2tenok_2pthread_8h" id="ainclude_2tenok_2pthread_8h">
-<area shape="rect" title=" " alt="" coords="115,5,291,32"/>
+<area shape="rect" title=" " alt="" coords="124,5,300,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,88,107"/>
-<area shape="rect" title=" " alt="" coords="113,80,183,107"/>
-<area shape="rect" href="tenok_2sys_2sched_8h.html" title=" " alt="" coords="208,80,307,107"/>
-<area shape="rect" href="list_8h.html" title=" " alt="" coords="331,80,445,107"/>
-<area shape="rect" title=" " alt="" coords="351,155,425,181"/>
+<area shape="rect" title=" " alt="" coords="147,304,218,331"/>
+<area shape="rect" href="tenok_2sys_2sched_8h.html" title=" " alt="" coords="163,80,261,107"/>
+<area shape="rect" href="tenok_2time_8h.html" title=" " alt="" coords="285,80,349,107"/>
+<area shape="rect" href="list_8h.html" title=" " alt="" coords="373,80,488,107"/>
+<area shape="rect" href="tenok_2signal_8h.html" title=" " alt="" coords="226,155,299,181"/>
+<area shape="rect" href="types_8h.html" title=" " alt="" coords="220,229,316,256"/>
+<area shape="rect" title=" " alt="" coords="387,155,461,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -98,15 +102,16 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="pthread_8h__dep__incl.png" border="0" usemap="#ainclude_2tenok_2pthread_8hdep" alt=""/></div>
 <map name="ainclude_2tenok_2pthread_8hdep" id="ainclude_2tenok_2pthread_8hdep">
-<area shape="rect" title=" " alt="" coords="228,5,404,32"/>
-<area shape="rect" href="kernel_8h.html" title=" " alt="" coords="109,80,278,107"/>
-<area shape="rect" href="stdio_8h.html" title=" " alt="" coords="357,155,515,181"/>
-<area shape="rect" href="reent_8h.html" title=" " alt="" coords="353,80,540,107"/>
-<area shape="rect" href="wait_8h.html" title=" " alt="" coords="115,155,272,181"/>
+<area shape="rect" title=" " alt="" coords="255,5,431,32"/>
+<area shape="rect" href="kernel_8h.html" title=" " alt="" coords="135,80,305,107"/>
+<area shape="rect" href="stdio_8h.html" title=" " alt="" coords="385,155,543,181"/>
+<area shape="rect" href="reent_8h.html" title=" " alt="" coords="380,80,567,107"/>
+<area shape="rect" href="kernel_2wait_8h.html" title=" " alt="" coords="141,155,299,181"/>
 <area shape="rect" href="fs_8h.html" title=" " alt="" coords="199,229,313,256"/>
 <area shape="rect" href="reg__file_8h.html" title=" " alt="" coords="5,304,155,331"/>
 <area shape="rect" href="pipe_8h.html" title=" " alt="" coords="357,304,515,331"/>
 <area shape="rect" href="kernel_2poll_8h.html" title=" " alt="" coords="179,304,333,331"/>
+<area shape="rect" href="mntent_8h.html" title=" " alt="" coords="473,229,647,256"/>
 </map>
 </div>
 </div>
@@ -264,6 +269,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a27da386211db1a7e9a3b2a0db4d22144"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pthread_8h.html#a27da386211db1a7e9a3b2a0db4d22144">pthread_mutex_trylock</a> (<a class="el" href="unionpthread__mutex__t.html">pthread_mutex_t</a> *<a class="el" href="structmutex.html">mutex</a>)</td></tr>
 <tr class="memdesc:a27da386211db1a7e9a3b2a0db4d22144"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock the mutex. If the mutex object referenced by mutex is currently locked (by any thread, including the current thread), the call shall return immediately.  <a href="pthread_8h.html#a27da386211db1a7e9a3b2a0db4d22144">More...</a><br /></td></tr>
 <tr class="separator:a27da386211db1a7e9a3b2a0db4d22144"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f197c3d769dee7a09d911241a7b6766"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pthread_8h.html#a5f197c3d769dee7a09d911241a7b6766">pthread_mutex_timedlock</a> (<a class="el" href="unionpthread__mutex__t.html">pthread_mutex_t</a> *<a class="el" href="structmutex.html">mutex</a>, const struct <a class="el" href="structtimespec.html">timespec</a> *abstime)</td></tr>
+<tr class="memdesc:a5f197c3d769dee7a09d911241a7b6766"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock the mutex with absolute timeout.  <a href="pthread_8h.html#a5f197c3d769dee7a09d911241a7b6766">More...</a><br /></td></tr>
+<tr class="separator:a5f197c3d769dee7a09d911241a7b6766"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34083fe1cd54d5d67599b4cca593ffa4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pthread_8h.html#a34083fe1cd54d5d67599b4cca593ffa4">pthread_condattr_init</a> (pthread_condattr_t *attr)</td></tr>
 <tr class="memdesc:a34083fe1cd54d5d67599b4cca593ffa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the attribute object of conditional variable with default values.  <a href="pthread_8h.html#a34083fe1cd54d5d67599b4cca593ffa4">More...</a><br /></td></tr>
 <tr class="separator:a34083fe1cd54d5d67599b4cca593ffa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -285,6 +293,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a907ae104b6dfd8fc12e23e84952aa7ca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pthread_8h.html#a907ae104b6dfd8fc12e23e84952aa7ca">pthread_cond_wait</a> (<a class="el" href="unionpthread__cond__t.html">pthread_cond_t</a> *<a class="el" href="structcond.html">cond</a>, <a class="el" href="unionpthread__mutex__t.html">pthread_mutex_t</a> *<a class="el" href="structmutex.html">mutex</a>)</td></tr>
 <tr class="memdesc:a907ae104b6dfd8fc12e23e84952aa7ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atomically unlock the mutex and wait for the condition variable to be signaled.  <a href="pthread_8h.html#a907ae104b6dfd8fc12e23e84952aa7ca">More...</a><br /></td></tr>
 <tr class="separator:a907ae104b6dfd8fc12e23e84952aa7ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab03e3ab6546f661d2b2f83bc12559e40"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pthread_8h.html#ab03e3ab6546f661d2b2f83bc12559e40">pthread_cond_timedwait</a> (<a class="el" href="unionpthread__cond__t.html">pthread_cond_t</a> *<a class="el" href="structcond.html">cond</a>, <a class="el" href="unionpthread__mutex__t.html">pthread_mutex_t</a> *<a class="el" href="structmutex.html">mutex</a>, const struct <a class="el" href="structtimespec.html">timespec</a> *abstime)</td></tr>
+<tr class="memdesc:ab03e3ab6546f661d2b2f83bc12559e40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait on condition variable with absolute timeout.  <a href="pthread_8h.html#ab03e3ab6546f661d2b2f83bc12559e40">More...</a><br /></td></tr>
+<tr class="separator:ab03e3ab6546f661d2b2f83bc12559e40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a196103ac97710dad7a93fd6c188cc999"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pthread_8h.html#a196103ac97710dad7a93fd6c188cc999">pthread_once</a> (<a class="el" href="unionpthread__once__t.html">pthread_once_t</a> *once_control, void(*init_routine)(void))</td></tr>
 <tr class="memdesc:a196103ac97710dad7a93fd6c188cc999"><td class="mdescLeft">&#160;</td><td class="mdescRight">To ensure a piece of initialization code is executed at most once.  <a href="pthread_8h.html#a196103ac97710dad7a93fd6c188cc999">More...</a><br /></td></tr>
 <tr class="separator:a196103ac97710dad7a93fd6c188cc999"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -973,6 +984,56 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ab03e3ab6546f661d2b2f83bc12559e40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab03e3ab6546f661d2b2f83bc12559e40">&#9670;&nbsp;</a></span>pthread_cond_timedwait()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pthread_cond_timedwait </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="unionpthread__cond__t.html">pthread_cond_t</a> *&#160;</td>
+          <td class="paramname"><em>cond</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="unionpthread__mutex__t.html">pthread_mutex_t</a> *&#160;</td>
+          <td class="paramname"><em>mutex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="structtimespec.html">timespec</a> *&#160;</td>
+          <td class="paramname"><em>abstime</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wait on condition variable with absolute timeout. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cond</td><td>The condition variable to wait on. </td></tr>
+    <tr><td class="paramname">mutex</td><td>The mutex to unlock while waiting. </td></tr>
+    <tr><td class="paramname">abstime</td><td>Absolute timeout. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>0 on success and nonzero error number on error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a907ae104b6dfd8fc12e23e84952aa7ca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a907ae104b6dfd8fc12e23e84952aa7ca">&#9670;&nbsp;</a></span>pthread_cond_wait()</h2>
 
@@ -1474,6 +1535,49 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mutex</td><td>The mutex to lock. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>0 on success and nonzero error number on error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5f197c3d769dee7a09d911241a7b6766"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f197c3d769dee7a09d911241a7b6766">&#9670;&nbsp;</a></span>pthread_mutex_timedlock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pthread_mutex_timedlock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="unionpthread__mutex__t.html">pthread_mutex_t</a> *&#160;</td>
+          <td class="paramname"><em>mutex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="structtimespec.html">timespec</a> *&#160;</td>
+          <td class="paramname"><em>abstime</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lock the mutex with absolute timeout. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mutex</td><td>The mutex to lock. </td></tr>
+    <tr><td class="paramname">abstime</td><td>Absolute timeout. </td></tr>
   </table>
   </dd>
 </dl>

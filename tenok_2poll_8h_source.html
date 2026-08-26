@@ -75,25 +75,34 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef __POLL_H__</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define __POLL_H__</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define POLLIN 1</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define POLLOUT 4</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define POLLNVAL 32</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">typedef</span> uint32_t nfds_t;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structpollfd.html">   15</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structpollfd.html">pollfd</a> {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">int</span> fd;        <span class="comment">/* File descriptor number */</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">short</span> events;  <span class="comment">/* Requested events */</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">short</span> revents; <span class="comment">/* Returned events */</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keywordtype">int</span> <a class="code" href="tenok_2poll_8h.html#aa97ba0bfbedf1784e648dd753a92449d">poll</a>(<span class="keyword">struct</span> <a class="code" href="structpollfd.html">pollfd</a> *fds, nfds_t nfds, <span class="keywordtype">int</span> timeout);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="astructpollfd_html"><div class="ttname"><a href="structpollfd.html">pollfd</a></div><div class="ttdef"><b>Definition:</b> poll.h:15</div></div>
-<div class="ttc" id="atenok_2poll_8h_html_aa97ba0bfbedf1784e648dd753a92449d"><div class="ttname"><a href="tenok_2poll_8h.html#aa97ba0bfbedf1784e648dd753a92449d">poll</a></div><div class="ttdeci">int poll(struct pollfd *fds, nfds_t nfds, int timeout)</div><div class="ttdoc">Wait for one of a set of file descriptors to become ready to perform I/O.</div><div class="ttdef"><b>Definition:</b> file.c:115</div></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="tenok_2signal_8h.html">signal.h</a>&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define POLLIN 1</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define POLLOUT 4</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define POLLNVAL 32</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">typedef</span> uint32_t nfds_t;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structpollfd.html">   16</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structpollfd.html">pollfd</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">int</span> fd;        <span class="comment">/* File descriptor number */</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">short</span> events;  <span class="comment">/* Requested events */</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">short</span> revents; <span class="comment">/* Returned events */</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">int</span> <a class="code" href="tenok_2poll_8h.html#aa97ba0bfbedf1784e648dd753a92449d">poll</a>(<span class="keyword">struct</span> <a class="code" href="structpollfd.html">pollfd</a> *fds, nfds_t nfds, <span class="keywordtype">int</span> timeout);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordtype">int</span> <a class="code" href="tenok_2poll_8h.html#adb7bbcd498026039a59b028712b88abf">ppoll</a>(<span class="keyword">struct</span> <a class="code" href="structpollfd.html">pollfd</a> *fds,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;          nfds_t nfds,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;          <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structtimespec.html">timespec</a> *timeout_ts,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;          <span class="keyword">const</span> sigset_t *sigmask);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="astructpollfd_html"><div class="ttname"><a href="structpollfd.html">pollfd</a></div><div class="ttdef"><b>Definition:</b> poll.h:16</div></div>
+<div class="ttc" id="astructtimespec_html"><div class="ttname"><a href="structtimespec.html">timespec</a></div><div class="ttdef"><b>Definition:</b> time.h:16</div></div>
+<div class="ttc" id="atenok_2poll_8h_html_aa97ba0bfbedf1784e648dd753a92449d"><div class="ttname"><a href="tenok_2poll_8h.html#aa97ba0bfbedf1784e648dd753a92449d">poll</a></div><div class="ttdeci">int poll(struct pollfd *fds, nfds_t nfds, int timeout)</div><div class="ttdoc">Wait for one of a set of file descriptors to become ready to perform I/O.</div><div class="ttdef"><b>Definition:</b> file.c:423</div></div>
+<div class="ttc" id="atenok_2poll_8h_html_adb7bbcd498026039a59b028712b88abf"><div class="ttname"><a href="tenok_2poll_8h.html#adb7bbcd498026039a59b028712b88abf">ppoll</a></div><div class="ttdeci">int ppoll(struct pollfd *fds, nfds_t nfds, const struct timespec *timeout_ts, const sigset_t *sigmask)</div><div class="ttdoc">Wait for one of the descriptors to become ready, with the timeout given as a timespec....</div><div class="ttdef"><b>Definition:</b> file.c:428</div></div>
+<div class="ttc" id="atenok_2signal_8h_html"><div class="ttname"><a href="tenok_2signal_8h.html">signal.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

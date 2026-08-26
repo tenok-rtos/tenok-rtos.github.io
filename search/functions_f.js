@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['raise_607',['raise',['../tenok_2signal_8h.html#a08ba0dd26a850108a1746412faba2b21',1,'signal.c']]],
-  ['read_608',['read',['../unistd_8h.html#af32a16ad2dd9e48482f8f790db7dbbd2',1,'file.c']]],
-  ['readdir_609',['readdir',['../dirent_8h.html#ad8750d4bb13edc8ccf5315621d818bd2',1,'file.c']]],
-  ['rom_5fdev_5finit_610',['rom_dev_init',['../rom__dev_8h.html#aade3815e5bad072fe215166d878a998e',1,'rom_dev.h']]]
+  ['open_775',['open',['../fcntl_8h.html#a079d60801c18155ac2ec1707b56867fb',1,'file.c']]],
+  ['opendir_776',['opendir',['../dirent_8h.html#a1632d8c06c14f295c6d9407b7fec67af',1,'file.c']]],
+  ['os_5fenv_5finit_777',['os_env_init',['../port_8h.html#acbd088eb71dc40c61f1c49bcf7e373b3',1,'port.h']]]
 ];

@@ -67,7 +67,7 @@ $(function() {
 <div class="title">Real-time Visualization with rtplot and debug-link </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2><a class="anchor" id="autotoc_md23"></a>
+<div class="textblock"><h2><a class="anchor" id="autotoc_md24"></a>
 1. Build rtplot example</h2>
 <p>Download the example files using:</p>
 <div class="fragment"><div class="line">./scripts/download-examples.sh</div>
@@ -79,7 +79,7 @@ $(function() {
 </div><!-- fragment --><p>Install rtplot tool to the system:</p>
 <div class="fragment"><div class="line">cd tools/rtplot/</div>
 <div class="line">make install</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md24"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md25"></a>
 2. Run rtplot example with QEMU</h2>
 <p>First, execute the following command to launch the Tenok with QEMU:</p>
 <div class="fragment"><div class="line">make qemu</div>
@@ -88,9 +88,9 @@ $(function() {
 <div class="line">char device redirected to /dev/pts/Y (label serial2)</div>
 <div class="line">[    0.001000000] Tenok RTOS (built time: 11:14:41 Nov  8 2023)</div>
 <div class="line">[    0.001000000] Machine model: stm32f407</div>
-<div class="line">[    0.006000000] chardev serial0: console</div>
-<div class="line">[    0.008000000] chardev serial1: mavlink</div>
-<div class="line">[    0.008000000] chardev serial2: debug-link</div>
+<div class="line">[    0.006000000] chardev console: shell (alias: serial0) </div>
+<div class="line">[    0.008000000] chardev mavlink: mavlink (alias: serial1)</div>
+<div class="line">[    0.008000000] chardev dbglink: debug-link (alias: serial2)</div>
 <div class="line">[    0.008000000] blkdev rom: romfs storage</div>
 <div class="line">type `help&#39; for help</div>
 <div class="line">user@stm32f407:/$</div>
@@ -100,7 +100,7 @@ $(function() {
 <div class="line">make rtplot</div>
 </div><!-- fragment --><p>After the rtplot window shows up, select <code>/dev/pts/Y</code> port, <code>test</code> message then click the connect button. The user should expect to see some real-time data plotting on the screen.</p>
 <p><img src="rtplot.png" alt="" class="inline" title="rtplot"/></p>
-<h2><a class="anchor" id="autotoc_md25"></a>
+<h2><a class="anchor" id="autotoc_md26"></a>
 3. Define debug-link message</h2>
 <p>Tenok uses a metalanguage to define messages for debug visualization, this message prorocol is called the Debug-Link. All message files should named as <code>*.msg</code> and by default they should be placed in the <code>msg/</code> directory.</p>
 <p>To define a variable, the user can use the following syntax:</p>
@@ -108,9 +108,10 @@ $(function() {
 </div><!-- fragment --><p>For array, the syntax is:</p>
 <div class="fragment"><div class="line">type array[size] <span class="stringliteral">&quot;description&quot;</span></div>
 </div><!-- fragment --><p>For example, in <code>test.msg</code> (provided by the <code>./scripts/download-examples.sh</code>), the messages are defined as:</p>
-<div class="fragment"><div class="line">uint32_t time     <span class="stringliteral">&quot;boot time&quot;</span></div>
+<div class="fragment"><div class="line">uint32_t <a class="code" href="tenok_2time_8h.html#a99ef1cb2c789827dd5db3886dccf9067">time</a>     <span class="stringliteral">&quot;boot time&quot;</span></div>
 <div class="line"><span class="keywordtype">float</span>    accel[3] <span class="stringliteral">&quot;acceleration&quot;</span></div>
 <div class="line"><span class="keywordtype">float</span>    q[4]     <span class="stringliteral">&quot;quaternion&quot;</span></div>
+<div class="ttc" id="atenok_2time_8h_html_a99ef1cb2c789827dd5db3886dccf9067"><div class="ttname"><a href="tenok_2time_8h.html#a99ef1cb2c789827dd5db3886dccf9067">time</a></div><div class="ttdeci">time_t time(time_t *tloc)</div><div class="ttdoc">Return the time as the number of seconds since 1970-01-01 00:00:00 +0000 (UTC)</div><div class="ttdef"><b>Definition:</b> time.c:185</div></div>
 </div><!-- fragment --><p>The supported types are:</p>
 <ul>
 <li>bool</li>
@@ -136,7 +137,7 @@ $(function() {
 <div class="line">{</div>
 <div class="line">    <a class="code" href="tenok_8h.html#aca911c95e943236848408987b2fbce64">setprogname</a>(<span class="stringliteral">&quot;debug link&quot;</span>);</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordtype">int</span> debug_link_fd = <a class="code" href="fcntl_8h.html#adcb60598073f6f9cbb0091ef6768fa5c">open</a>(<span class="stringliteral">&quot;/dev/serial2&quot;</span>, O_RDWR);</div>
+<div class="line">    <span class="keywordtype">int</span> debug_link_fd = <a class="code" href="fcntl_8h.html#a079d60801c18155ac2ec1707b56867fb">open</a>(<span class="stringliteral">&quot;/dev/serial2&quot;</span>, O_RDWR);</div>
 <div class="line">...</div>
 <div class="line">    debug_link_msg_test_t msg = {</div>
 <div class="line">        .time = 0,</div>
@@ -155,11 +156,11 @@ $(function() {
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><a class="code" href="task_8h.html#a3cb286c107d30bad2c5040b5cfc22eb1">HOOK_USER_TASK</a>(debug_link_task, 3, 1024);</div>
-<div class="ttc" id="afcntl_8h_html_adcb60598073f6f9cbb0091ef6768fa5c"><div class="ttname"><a href="fcntl_8h.html#adcb60598073f6f9cbb0091ef6768fa5c">open</a></div><div class="ttdeci">int open(const char *pathname, int flags)</div><div class="ttdoc">Open the file specified by the pathname.</div><div class="ttdef"><b>Definition:</b> file.c:15</div></div>
+<div class="ttc" id="afcntl_8h_html_a079d60801c18155ac2ec1707b56867fb"><div class="ttname"><a href="fcntl_8h.html#a079d60801c18155ac2ec1707b56867fb">open</a></div><div class="ttdeci">int open(const char *pathname, int flags,...)</div><div class="ttdoc">Open the file specified by the pathname.</div><div class="ttdef"><b>Definition:</b> file.c:36</div></div>
 <div class="ttc" id="atask_8h_html_a3cb286c107d30bad2c5040b5cfc22eb1"><div class="ttname"><a href="task_8h.html#a3cb286c107d30bad2c5040b5cfc22eb1">HOOK_USER_TASK</a></div><div class="ttdeci">#define HOOK_USER_TASK(_task_func, _priority, _stacksize)</div><div class="ttdoc">Register a user task to be launched at the start of the system.</div><div class="ttdef"><b>Definition:</b> task.h:25</div></div>
-<div class="ttc" id="atenok_8h_html_aca911c95e943236848408987b2fbce64"><div class="ttname"><a href="tenok_8h.html#aca911c95e943236848408987b2fbce64">setprogname</a></div><div class="ttdeci">void setprogname(const char *name)</div><div class="ttdoc">Set the name of the running thread.</div><div class="ttdef"><b>Definition:</b> task.c:13</div></div>
-<div class="ttc" id="aunistd_8h_html_abb39b21888372e95ad3e5c59b166f5c8"><div class="ttname"><a href="unistd_8h.html#abb39b21888372e95ad3e5c59b166f5c8">write</a></div><div class="ttdeci">ssize_t write(int fd, const void *buf, size_t count)</div><div class="ttdoc">Write up to count bytes from the buffer starting at buf to the file referred to by the file descripto...</div><div class="ttdef"><b>Definition:</b> file.c:55</div></div>
-<div class="ttc" id="aunistd_8h_html_ac0383719bafa9b5b2aa25fabc586bd1f"><div class="ttname"><a href="unistd_8h.html#ac0383719bafa9b5b2aa25fabc586bd1f">usleep</a></div><div class="ttdeci">int usleep(useconds_t usec)</div><div class="ttdoc">Suspend execution of the calling thread for a given time in microseconds.</div><div class="ttdef"><b>Definition:</b> sched.c:46</div></div>
+<div class="ttc" id="atenok_8h_html_aca911c95e943236848408987b2fbce64"><div class="ttname"><a href="tenok_8h.html#aca911c95e943236848408987b2fbce64">setprogname</a></div><div class="ttdeci">void setprogname(const char *name)</div><div class="ttdoc">Set the name of the running thread.</div><div class="ttdef"><b>Definition:</b> task.c:15</div></div>
+<div class="ttc" id="aunistd_8h_html_abb39b21888372e95ad3e5c59b166f5c8"><div class="ttname"><a href="unistd_8h.html#abb39b21888372e95ad3e5c59b166f5c8">write</a></div><div class="ttdeci">ssize_t write(int fd, const void *buf, size_t count)</div><div class="ttdoc">Write up to count bytes from the buffer starting at buf to the file referred to by the file descripto...</div><div class="ttdef"><b>Definition:</b> file.c:132</div></div>
+<div class="ttc" id="aunistd_8h_html_ac0383719bafa9b5b2aa25fabc586bd1f"><div class="ttname"><a href="unistd_8h.html#ac0383719bafa9b5b2aa25fabc586bd1f">usleep</a></div><div class="ttdeci">int usleep(useconds_t usec)</div><div class="ttdoc">Suspend execution of the calling thread for a given time in microseconds.</div><div class="ttdef"><b>Definition:</b> sched.c:64</div></div>
 </div><!-- fragment --><p>The full example code can be found in <code>user/task/debug/debug_task.c</code>. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

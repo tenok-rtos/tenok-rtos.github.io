@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Tenok: Main Page</title>
+<title>Tenok: Tenok Documentation</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,57 +64,60 @@ $(function() {
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Tenok Documentation</div>  </div>
+<div class="title">Tenok Documentation </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_main_page"></a> The <a href="https://github.com/shengwen-tw/tenok">Tenok project</a> is a real-time operating system (RTOS) designed for robotic applications and the Internet of Things (IoT). The name originated from the language of an indigenous tribe called Amis in Taiwan, where "tenok" means "kernel" in their language. It resembles various designs from Linux and maintains a small code footprint for ARM Cortex-M processors. In contrast to NuttX, Tenok does not implement a set of low-level hardware drivers as a part of the system. Instead, it adopts an approach similar to FreeRTOS by treating the RTOS as a third-party library. Users user can choose their preferred library for the hardware abstraction layer (HAL).</p>
+<div class="textblock"><p><a class="anchor" id="md_main_page"></a></p>
+<p>The <a href="https://github.com/shengwen-tw/tenok">Tenok project</a> is a real-time operating system (RTOS) designed for robotic applications and the Internet of Things (IoT). The name originated from the language of an indigenous tribe called Amis in Taiwan, where "tenok" means "kernel" in their language. It resembles various designs from Linux and maintains a small code footprint for ARM Cortex-M processors. In contrast to NuttX, Tenok does not implement a set of low-level hardware drivers as a part of the system. Instead, it adopts an approach similar to FreeRTOS by treating the RTOS as a third-party library. Users can choose their preferred library for the hardware abstraction layer (HAL).</p>
 <p>Tenok also integrates the MAVLink communication protocol and provides several utilities for robotics, including a debug visualization tool and a facility tool for supporting software-in-the-loop simulation with the Gazebo simulator.</p>
-<h2><a class="anchor" id="autotoc_md0"></a>
-Key Features</h2>
+<h1><a class="anchor" id="autotoc_md0"></a>
+Key Features</h1>
 <ul>
 <li>POSIX compliant RTOS</li>
 <li>Linux-like designs: Wait queue, kthread, tasklet, kfifo, printk, and more</li>
 <li>Task and Thread (Task resembles UNIX process as a group of threads)</li>
 <li>Synchronization: Mutex (supports priority inheritance), Semaphore, and Spinlock</li>
-<li>Inter-Process Communication (IPC): FIFO (Named pipe), Message Queue, and Signals</li>
-<li>Kernel-space memory allocation: Buddy allocator and Slab allocator</li>
+<li>Inter-Process Communication (IPC): Pipe, FIFO (Named pipe), Message Queue, and Signals</li>
+<li>Kernel-space memory allocation: Buddy system and Slab allocator</li>
 <li>User-space memory allocation: Dynamic allocation (First-Fit Free List) and Memory pool</li>
 <li>Software timer and clock</li>
 <li>Built-in Shell with command completion and history saving</li>
+<li>BusyBox built into the firmware: the <code>ash</code> shell and thirty four applets beside it, called rather than started</li>
 <li>Root and ROM file systems</li>
 <li>Real-time plotting and customizable debug messaging with a metalanguage</li>
 <li>Integrated with MAVLink communication protocol</li>
 <li>Software-in-the-loop (SIL) simulation with the Gazebo simulator</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md1"></a>
-Tools</h2>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Tools</h1>
 <ul>
 <li><b>mkromfs</b>: Import files to the firmware binary with <code>Tenok</code>'s romfs format</li>
 <li><b>msggen</b>: Convert user-defined metalanguage messages into C codes and YAML files</li>
 <li><b>rtplot</b>: For on-board data real-time plotting, where the message definitions are loaded from the auto-generated YAML files</li>
 <li><b>gazebo_bridge</b>: Message forwarding between <code>Tenok</code> (serial) and Gazebo simulator (TCP/IP)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md2"></a>
-Getting Started</h2>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Getting Started</h1>
 <ul>
 <li><a href="https://tenok-rtos.github.io/md_docs_1_environment_setup.html">Developement Tools Setup</a></li>
 <li><a href="https://tenok-rtos.github.io/md_docs_2_build_and_run.html">Build and Run the Tenok</a></li>
 <li><a href="https://tenok-rtos.github.io/md_docs_3_shell.html">Interact with Tenok Shell</a></li>
 <li><a href="https://tenok-rtos.github.io/md_docs_4_gazebo.html">Run Tenok with Gazebo Simulator</a></li>
 <li><a href="https://tenok-rtos.github.io/md_docs_5_debug_link.html">Real-time Visualization with rtplot and debug-link</a></li>
+<li><a href="https://tenok-rtos.github.io/md_docs_8_busybox.html">BusyBox on Tenok</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md3"></a>
-Resources</h2>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Resources</h1>
 <ul>
 <li><a href="https://tenok-rtos.github.io/md_docs_6_api_list.html">Tenok API List</a></li>
 <li><a href="https://tenok-rtos.github.io/md_docs_7_platforms.html">Supported Platforms</a></li>
 <li><a href="https://tenok-rtos.github.io/index.html">Doxygen Page</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md4"></a>
-License</h2>
+<h1><a class="anchor" id="autotoc_md4"></a>
+License</h1>
 <p><code>Tenok</code> is released under the BSD 2-Clause License. For detailed information please read the <a href="https://github.com/shengwen-tw/neo-rtenv/blob/master/LICENSE">LICENSE</a>.</p>
-<h2><a class="anchor" id="autotoc_md5"></a>
-Related Projects</h2>
+<h1><a class="anchor" id="autotoc_md5"></a>
+Related Projects</h1>
 <p><code>Tenok</code> is heavily influenced by the following projects during its development:</p>
 <ol type="1">
 <li><a href="https://github.com/embedded2014/rtenv">rtenv</a> / <a href="https://github.com/embedded2014/rtenv-plus">rtenv+</a></li>

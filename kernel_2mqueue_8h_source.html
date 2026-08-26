@@ -105,20 +105,20 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">struct </span><a class="code" href="structmqueue.html">mqueue</a> *__mq_allocate(<span class="keyword">struct</span> <a class="code" href="structmq__attr.html">mq_attr</a> *attr);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">void</span> __mq_free(<span class="keyword">struct</span> <a class="code" href="structmqueue.html">mqueue</a> *mq);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">size_t</span> __mq_len(<span class="keyword">struct</span> <a class="code" href="structmqueue.html">mqueue</a> *mq);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;ssize_t __mq_receive(<span class="keyword">struct</span> <a class="code" href="structmqueue.html">mqueue</a> *mq,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                     <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structmq__attr.html">mq_attr</a> *attr,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                     <span class="keywordtype">char</span> *msg_ptr,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                     <span class="keywordtype">size_t</span> msg_len,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *priority);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;ssize_t __mq_send(<span class="keyword">struct</span> <a class="code" href="structmqueue.html">mqueue</a> *mq,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                  <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structmq__attr.html">mq_attr</a> *attr,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                  <span class="keyword">const</span> <span class="keywordtype">char</span> *msg_ptr,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                  <span class="keywordtype">size_t</span> msg_len,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> priority);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;ssize_t mq_do_receive(<span class="keyword">struct</span> <a class="code" href="structmqueue.html">mqueue</a> *mq,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                      <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structmq__attr.html">mq_attr</a> *attr,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                      <span class="keywordtype">char</span> *msg_ptr,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                      <span class="keywordtype">size_t</span> msg_len,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *priority);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;ssize_t mq_do_send(<span class="keyword">struct</span> <a class="code" href="structmqueue.html">mqueue</a> *mq,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                   <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structmq__attr.html">mq_attr</a> *attr,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                   <span class="keyword">const</span> <span class="keywordtype">char</span> *msg_ptr,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                   <span class="keywordtype">size_t</span> msg_len,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> priority);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="astructlist__head_html"><div class="ttname"><a href="structlist__head.html">list_head</a></div><div class="ttdef"><b>Definition:</b> list.h:111</div></div>
-<div class="ttc" id="astructmq__attr_html"><div class="ttname"><a href="structmq__attr.html">mq_attr</a></div><div class="ttdef"><b>Definition:</b> mqueue.h:13</div></div>
+<div class="ttc" id="astructmq__attr_html"><div class="ttname"><a href="structmq__attr.html">mq_attr</a></div><div class="ttdef"><b>Definition:</b> mqueue.h:14</div></div>
 <div class="ttc" id="astructmq__desc_html"><div class="ttname"><a href="structmq__desc.html">mq_desc</a></div><div class="ttdef"><b>Definition:</b> mqueue.h:29</div></div>
 <div class="ttc" id="astructmqueue__data_html"><div class="ttname"><a href="structmqueue__data.html">mqueue_data</a></div><div class="ttdef"><b>Definition:</b> mqueue.h:11</div></div>
 <div class="ttc" id="astructmqueue_html"><div class="ttname"><a href="structmqueue.html">mqueue</a></div><div class="ttdef"><b>Definition:</b> mqueue.h:17</div></div>

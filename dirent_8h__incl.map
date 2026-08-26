@@ -1,7 +1,10 @@
 <map id="include/tenok/dirent.h" name="include/tenok/dirent.h">
-<area shape="rect" id="node1" title=" " alt="" coords="67,5,231,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,80,76,107"/>
-<area shape="rect" id="node3" href="$limits_8h.html" title=" " alt="" coords="100,80,197,107"/>
-<area shape="rect" id="node5" title=" " alt="" coords="151,229,232,256"/>
-<area shape="rect" id="node4" href="$syslimits_8h.html" title=" " alt="" coords="84,155,203,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="49,5,213,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="67,304,138,331"/>
+<area shape="rect" id="node3" href="$sys_2limits_8h.html" title=" " alt="" coords="34,80,131,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="54,229,135,256"/>
+<area shape="rect" id="node6" href="$stat_8h.html" title=" " alt="" coords="212,80,297,107"/>
+<area shape="rect" id="node4" href="$syslimits_8h.html" title=" " alt="" coords="18,155,137,181"/>
+<area shape="rect" id="node7" href="$types_8h.html" title=" " alt="" coords="177,229,273,256"/>
+<area shape="rect" id="node8" href="$tenok_2sys_2time_8h.html" title=" " alt="" coords="263,155,327,181"/>
 </map>

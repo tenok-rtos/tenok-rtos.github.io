@@ -76,49 +76,66 @@ $(function() {
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define __MQUEUE_H__</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="types_8h.html">sys/types.h</a>&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="list_8h.html">common/list.h</a>&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">typedef</span> uint32_t mqd_t;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="structmq__attr.html">   13</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structmq__attr.html">mq_attr</a> {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">int</span> mq_flags;   <span class="comment">/* Flags: 0 or O_NONBLOCK */</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">int</span> mq_maxmsg;  <span class="comment">/* Max number of the messages in the queue */</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">int</span> mq_msgsize; <span class="comment">/* Byte size of the message */</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">int</span> mq_curmsgs; <span class="comment">/* Number of the messages currently in the queue */</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;};</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">int</span> <a class="code" href="tenok_2mqueue_8h.html#a8fafe8b1183830322f8ff875f4e6cb4c">mq_getattr</a>(mqd_t mqdes, <span class="keyword">struct</span> <a class="code" href="structmq__attr.html">mq_attr</a> *attr);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordtype">int</span> <a class="code" href="tenok_2mqueue_8h.html#ae6191194d2451804656942f7c8da6c71">mq_setattr</a>(mqd_t mqdes,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;               <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structmq__attr.html">mq_attr</a> *newattr,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;               <span class="keyword">struct</span> <a class="code" href="structmq__attr.html">mq_attr</a> *oldattr);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;mqd_t <a class="code" href="tenok_2mqueue_8h.html#a3397c2dadbe0a5113ff67cd284990a94">mq_open</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *name, <span class="keywordtype">int</span> oflag, <span class="keyword">struct</span> <a class="code" href="structmq__attr.html">mq_attr</a> *attr);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordtype">int</span> <a class="code" href="tenok_2mqueue_8h.html#a3fbd3906296be63451c64d69be2bc371">mq_close</a>(mqd_t mqdes);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keywordtype">int</span> mq_unlink(<span class="keyword">const</span> <span class="keywordtype">char</span> *name);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;ssize_t <a class="code" href="tenok_2mqueue_8h.html#ab89c825740fe27d3821ccbe32bd68dfa">mq_receive</a>(mqd_t mqdes,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                   <span class="keywordtype">char</span> *msg_ptr,</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                   <span class="keywordtype">size_t</span> msg_len,</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *msg_prio);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keywordtype">int</span> <a class="code" href="tenok_2mqueue_8h.html#af13b6f0b3b15e14624b0c50050d062a4">mq_send</a>(mqd_t mqdes,</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">char</span> *msg_ptr,</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordtype">size_t</span> msg_len,</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> msg_prio);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="tenok_2time_8h.html">time.h</a>&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="list_8h.html">common/list.h</a>&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">typedef</span> uint32_t mqd_t;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="structmq__attr.html">   14</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structmq__attr.html">mq_attr</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">int</span> mq_flags;   <span class="comment">/* Flags: 0 or O_NONBLOCK */</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">int</span> mq_maxmsg;  <span class="comment">/* Max number of the messages in the queue */</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">int</span> mq_msgsize; <span class="comment">/* Byte size of the message */</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">int</span> mq_curmsgs; <span class="comment">/* Number of the messages currently in the queue */</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">int</span> <a class="code" href="tenok_2mqueue_8h.html#a8fafe8b1183830322f8ff875f4e6cb4c">mq_getattr</a>(mqd_t mqdes, <span class="keyword">struct</span> <a class="code" href="structmq__attr.html">mq_attr</a> *attr);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">int</span> <a class="code" href="tenok_2mqueue_8h.html#ae6191194d2451804656942f7c8da6c71">mq_setattr</a>(mqd_t mqdes,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;               <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structmq__attr.html">mq_attr</a> *newattr,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;               <span class="keyword">struct</span> <a class="code" href="structmq__attr.html">mq_attr</a> *oldattr);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;mqd_t <a class="code" href="tenok_2mqueue_8h.html#a3397c2dadbe0a5113ff67cd284990a94">mq_open</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *name, <span class="keywordtype">int</span> oflag, <span class="keyword">struct</span> <a class="code" href="structmq__attr.html">mq_attr</a> *attr);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">int</span> <a class="code" href="tenok_2mqueue_8h.html#a3fbd3906296be63451c64d69be2bc371">mq_close</a>(mqd_t mqdes);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keywordtype">int</span> mq_unlink(<span class="keyword">const</span> <span class="keywordtype">char</span> *name);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;ssize_t <a class="code" href="tenok_2mqueue_8h.html#ab89c825740fe27d3821ccbe32bd68dfa">mq_receive</a>(mqd_t mqdes,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                   <span class="keywordtype">char</span> *msg_ptr,</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                   <span class="keywordtype">size_t</span> msg_len,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *msg_prio);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keywordtype">int</span> <a class="code" href="tenok_2mqueue_8h.html#af13b6f0b3b15e14624b0c50050d062a4">mq_send</a>(mqd_t mqdes,</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">char</span> *msg_ptr,</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordtype">size_t</span> msg_len,</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> msg_prio);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keywordtype">int</span> <a class="code" href="tenok_2mqueue_8h.html#ad1756c5a98e6601694eb5c840baca17f">mq_timedsend</a>(mqd_t mqdes,</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                 <span class="keyword">const</span> <span class="keywordtype">char</span> *msg_ptr,</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                 <span class="keywordtype">size_t</span> msg_len,</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                 <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> msg_prio,</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                 <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structtimespec.html">timespec</a> *abs_timeout);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;ssize_t <a class="code" href="tenok_2mqueue_8h.html#a3ddcc490a4e9c780e65b705a2c3efea2">mq_timedreceive</a>(mqd_t mqdes,</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                        <span class="keywordtype">char</span> *msg_ptr,</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                        <span class="keywordtype">size_t</span> msg_len,</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *msg_prio,</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                        <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structtimespec.html">timespec</a> *abs_timeout);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="alist_8h_html"><div class="ttname"><a href="list_8h.html">list.h</a></div></div>
-<div class="ttc" id="astructmq__attr_html"><div class="ttname"><a href="structmq__attr.html">mq_attr</a></div><div class="ttdef"><b>Definition:</b> mqueue.h:13</div></div>
-<div class="ttc" id="atenok_2mqueue_8h_html_a3397c2dadbe0a5113ff67cd284990a94"><div class="ttname"><a href="tenok_2mqueue_8h.html#a3397c2dadbe0a5113ff67cd284990a94">mq_open</a></div><div class="ttdeci">mqd_t mq_open(const char *name, int oflag, struct mq_attr *attr)</div><div class="ttdoc">Create a new message queue or open an existing queue.</div><div class="ttdef"><b>Definition:</b> mqueue.c:204</div></div>
-<div class="ttc" id="atenok_2mqueue_8h_html_a3fbd3906296be63451c64d69be2bc371"><div class="ttname"><a href="tenok_2mqueue_8h.html#a3fbd3906296be63451c64d69be2bc371">mq_close</a></div><div class="ttdeci">int mq_close(mqd_t mqdes)</div><div class="ttdoc">Close the message queue descriptor.</div><div class="ttdef"><b>Definition:</b> mqueue.c:209</div></div>
-<div class="ttc" id="atenok_2mqueue_8h_html_a8fafe8b1183830322f8ff875f4e6cb4c"><div class="ttname"><a href="tenok_2mqueue_8h.html#a8fafe8b1183830322f8ff875f4e6cb4c">mq_getattr</a></div><div class="ttdeci">int mq_getattr(mqd_t mqdes, struct mq_attr *attr)</div><div class="ttdoc">Retrieve atributes of the message queue referred to by the message queue descriptor mqdes.</div><div class="ttdef"><b>Definition:</b> mqueue.c:192</div></div>
-<div class="ttc" id="atenok_2mqueue_8h_html_ab89c825740fe27d3821ccbe32bd68dfa"><div class="ttname"><a href="tenok_2mqueue_8h.html#ab89c825740fe27d3821ccbe32bd68dfa">mq_receive</a></div><div class="ttdeci">ssize_t mq_receive(mqd_t mqdes, char *msg_ptr, size_t msg_len, unsigned int *msg_prio)</div><div class="ttdoc">Remove the oldest message with highest priority from the message queue referred to by the message que...</div><div class="ttdef"><b>Definition:</b> mqueue.c:219</div></div>
-<div class="ttc" id="atenok_2mqueue_8h_html_ae6191194d2451804656942f7c8da6c71"><div class="ttname"><a href="tenok_2mqueue_8h.html#ae6191194d2451804656942f7c8da6c71">mq_setattr</a></div><div class="ttdeci">int mq_setattr(mqd_t mqdes, const struct mq_attr *newattr, struct mq_attr *oldattr)</div><div class="ttdoc">Modify attributes of the message queue referred to by the message queue descriptor mqdes.</div><div class="ttdef"><b>Definition:</b> mqueue.c:197</div></div>
-<div class="ttc" id="atenok_2mqueue_8h_html_af13b6f0b3b15e14624b0c50050d062a4"><div class="ttname"><a href="tenok_2mqueue_8h.html#af13b6f0b3b15e14624b0c50050d062a4">mq_send</a></div><div class="ttdeci">int mq_send(mqd_t mqdes, const char *msg_ptr, size_t msg_len, unsigned int msg_prio)</div><div class="ttdoc">Add the message pointed to by msg_ptr to the message queue referred to by the message queue descripto...</div><div class="ttdef"><b>Definition:</b> mqueue.c:227</div></div>
+<div class="ttc" id="astructmq__attr_html"><div class="ttname"><a href="structmq__attr.html">mq_attr</a></div><div class="ttdef"><b>Definition:</b> mqueue.h:14</div></div>
+<div class="ttc" id="astructtimespec_html"><div class="ttname"><a href="structtimespec.html">timespec</a></div><div class="ttdef"><b>Definition:</b> time.h:16</div></div>
+<div class="ttc" id="atenok_2mqueue_8h_html_a3397c2dadbe0a5113ff67cd284990a94"><div class="ttname"><a href="tenok_2mqueue_8h.html#a3397c2dadbe0a5113ff67cd284990a94">mq_open</a></div><div class="ttdeci">mqd_t mq_open(const char *name, int oflag, struct mq_attr *attr)</div><div class="ttdoc">Create a new message queue or open an existing queue.</div><div class="ttdef"><b>Definition:</b> mqueue.c:222</div></div>
+<div class="ttc" id="atenok_2mqueue_8h_html_a3ddcc490a4e9c780e65b705a2c3efea2"><div class="ttname"><a href="tenok_2mqueue_8h.html#a3ddcc490a4e9c780e65b705a2c3efea2">mq_timedreceive</a></div><div class="ttdeci">ssize_t mq_timedreceive(mqd_t mqdes, char *msg_ptr, size_t msg_len, unsigned int *msg_prio, const struct timespec *abs_timeout)</div><div class="ttdoc">Receive message with absolute timeout.</div><div class="ttdef"><b>Definition:</b> mqueue.c:307</div></div>
+<div class="ttc" id="atenok_2mqueue_8h_html_a3fbd3906296be63451c64d69be2bc371"><div class="ttname"><a href="tenok_2mqueue_8h.html#a3fbd3906296be63451c64d69be2bc371">mq_close</a></div><div class="ttdeci">int mq_close(mqd_t mqdes)</div><div class="ttdoc">Close the message queue descriptor.</div><div class="ttdef"><b>Definition:</b> mqueue.c:232</div></div>
+<div class="ttc" id="atenok_2mqueue_8h_html_a8fafe8b1183830322f8ff875f4e6cb4c"><div class="ttname"><a href="tenok_2mqueue_8h.html#a8fafe8b1183830322f8ff875f4e6cb4c">mq_getattr</a></div><div class="ttdeci">int mq_getattr(mqd_t mqdes, struct mq_attr *attr)</div><div class="ttdoc">Retrieve atributes of the message queue referred to by the message queue descriptor mqdes.</div><div class="ttdef"><b>Definition:</b> mqueue.c:198</div></div>
+<div class="ttc" id="atenok_2mqueue_8h_html_ab89c825740fe27d3821ccbe32bd68dfa"><div class="ttname"><a href="tenok_2mqueue_8h.html#ab89c825740fe27d3821ccbe32bd68dfa">mq_receive</a></div><div class="ttdeci">ssize_t mq_receive(mqd_t mqdes, char *msg_ptr, size_t msg_len, unsigned int *msg_prio)</div><div class="ttdoc">Remove the oldest message with highest priority from the message queue referred to by the message que...</div><div class="ttdef"><b>Definition:</b> mqueue.c:255</div></div>
+<div class="ttc" id="atenok_2mqueue_8h_html_ad1756c5a98e6601694eb5c840baca17f"><div class="ttname"><a href="tenok_2mqueue_8h.html#ad1756c5a98e6601694eb5c840baca17f">mq_timedsend</a></div><div class="ttdeci">int mq_timedsend(mqd_t mqdes, const char *msg_ptr, size_t msg_len, unsigned int msg_prio, const struct timespec *abs_timeout)</div><div class="ttdoc">Add message with absolute timeout.</div><div class="ttdef"><b>Definition:</b> mqueue.c:288</div></div>
+<div class="ttc" id="atenok_2mqueue_8h_html_ae6191194d2451804656942f7c8da6c71"><div class="ttname"><a href="tenok_2mqueue_8h.html#ae6191194d2451804656942f7c8da6c71">mq_setattr</a></div><div class="ttdeci">int mq_setattr(mqd_t mqdes, const struct mq_attr *newattr, struct mq_attr *oldattr)</div><div class="ttdoc">Modify attributes of the message queue referred to by the message queue descriptor mqdes.</div><div class="ttdef"><b>Definition:</b> mqueue.c:210</div></div>
+<div class="ttc" id="atenok_2mqueue_8h_html_af13b6f0b3b15e14624b0c50050d062a4"><div class="ttname"><a href="tenok_2mqueue_8h.html#af13b6f0b3b15e14624b0c50050d062a4">mq_send</a></div><div class="ttdeci">int mq_send(mqd_t mqdes, const char *msg_ptr, size_t msg_len, unsigned int msg_prio)</div><div class="ttdoc">Add the message pointed to by msg_ptr to the message queue referred to by the message queue descripto...</div><div class="ttdef"><b>Definition:</b> mqueue.c:271</div></div>
+<div class="ttc" id="atenok_2time_8h_html"><div class="ttname"><a href="tenok_2time_8h.html">time.h</a></div></div>
 <div class="ttc" id="atypes_8h_html"><div class="ttname"><a href="types_8h.html">types.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

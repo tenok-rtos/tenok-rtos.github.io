@@ -76,6 +76,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="tenok_2signal_8h_source.html">signal.h</a>&gt;</code><br />
+<code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="types_8h_source.html">sys/types.h</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -83,10 +84,11 @@ Include dependency graph for time.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="tenok_2time_8h__incl.png" border="0" usemap="#ainclude_2tenok_2time_8h" alt=""/></div>
 <map name="ainclude_2tenok_2time_8h" id="ainclude_2tenok_2time_8h">
-<area shape="rect" title=" " alt="" coords="39,5,195,32"/>
+<area shape="rect" title=" " alt="" coords="64,5,220,32"/>
 <area shape="rect" href="tenok_2signal_8h.html" title=" " alt="" coords="5,80,79,107"/>
 <area shape="rect" href="types_8h.html" title=" " alt="" coords="34,155,130,181"/>
 <area shape="rect" title=" " alt="" coords="89,229,160,256"/>
+<area shape="rect" title=" " alt="" coords="205,80,279,107"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -94,8 +96,20 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="tenok_2time_8h__dep__incl.png" border="0" usemap="#ainclude_2tenok_2time_8hdep" alt=""/></div>
 <map name="ainclude_2tenok_2time_8hdep" id="ainclude_2tenok_2time_8hdep">
-<area shape="rect" title=" " alt="" coords="9,5,165,32"/>
-<area shape="rect" href="tenok_2sched_8h.html" title=" " alt="" coords="5,80,169,107"/>
+<area shape="rect" title=" " alt="" coords="362,5,518,32"/>
+<area shape="rect" href="tenok_2mqueue_8h.html" title=" " alt="" coords="52,80,231,107"/>
+<area shape="rect" href="pthread_8h.html" title=" " alt="" coords="255,80,431,107"/>
+<area shape="rect" href="tenok_2sched_8h.html" title=" " alt="" coords="455,80,619,107"/>
+<area shape="rect" href="tenok_2semaphore_8h.html" title=" " alt="" coords="643,80,842,107"/>
+<area shape="rect" href="kernel_8h.html" title=" " alt="" coords="135,155,305,181"/>
+<area shape="rect" href="stdio_8h.html" title=" " alt="" coords="385,229,543,256"/>
+<area shape="rect" href="reent_8h.html" title=" " alt="" coords="380,155,567,181"/>
+<area shape="rect" href="kernel_2wait_8h.html" title=" " alt="" coords="141,229,299,256"/>
+<area shape="rect" href="fs_8h.html" title=" " alt="" coords="199,304,313,331"/>
+<area shape="rect" href="reg__file_8h.html" title=" " alt="" coords="5,379,155,405"/>
+<area shape="rect" href="pipe_8h.html" title=" " alt="" coords="357,379,515,405"/>
+<area shape="rect" href="kernel_2poll_8h.html" title=" " alt="" coords="179,379,333,405"/>
+<area shape="rect" href="mntent_8h.html" title=" " alt="" coords="473,304,647,331"/>
 </map>
 </div>
 </div>
@@ -107,6 +121,8 @@ Data Structures</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitimerspec.html">itimerspec</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtm.html">tm</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
@@ -116,6 +132,9 @@ Macros</h2></td></tr>
 <tr class="memitem:a6fb83f5e91e704391ff796553d5e0f46"><td class="memItemLeft" align="right" valign="top"><a id="a6fb83f5e91e704391ff796553d5e0f46"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CLOCK_MONOTONIC</b>&#160;&#160;&#160;1</td></tr>
 <tr class="separator:a6fb83f5e91e704391ff796553d5e0f46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adde83d9ea51f12d4149f016eededde54"><td class="memItemLeft" align="right" valign="top"><a id="adde83d9ea51f12d4149f016eededde54"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TIMER_ABSTIME</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:adde83d9ea51f12d4149f016eededde54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -140,6 +159,42 @@ Functions</h2></td></tr>
 <tr class="memitem:aaa37b1ad77721f776718e61e81777a9d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tenok_2time_8h.html#aaa37b1ad77721f776718e61e81777a9d">timer_gettime</a> (timer_t timerid, struct <a class="el" href="structitimerspec.html">itimerspec</a> *curr_value)</td></tr>
 <tr class="memdesc:aaa37b1ad77721f776718e61e81777a9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the timer interval and the time until next expiration.  <a href="tenok_2time_8h.html#aaa37b1ad77721f776718e61e81777a9d">More...</a><br /></td></tr>
 <tr class="separator:aaa37b1ad77721f776718e61e81777a9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99ef1cb2c789827dd5db3886dccf9067"><td class="memItemLeft" align="right" valign="top">time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tenok_2time_8h.html#a99ef1cb2c789827dd5db3886dccf9067">time</a> (time_t *tloc)</td></tr>
+<tr class="memdesc:a99ef1cb2c789827dd5db3886dccf9067"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the time as the number of seconds since 1970-01-01 00:00:00 +0000 (UTC)  <a href="tenok_2time_8h.html#a99ef1cb2c789827dd5db3886dccf9067">More...</a><br /></td></tr>
+<tr class="separator:a99ef1cb2c789827dd5db3886dccf9067"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b63fa141b202a0b01cfef8421aa48d6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tenok_2time_8h.html#a1b63fa141b202a0b01cfef8421aa48d6">nanosleep</a> (const struct <a class="el" href="structtimespec.html">timespec</a> *req, struct <a class="el" href="structtimespec.html">timespec</a> *rem)</td></tr>
+<tr class="memdesc:a1b63fa141b202a0b01cfef8421aa48d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Suspend execution for a specified time.  <a href="tenok_2time_8h.html#a1b63fa141b202a0b01cfef8421aa48d6">More...</a><br /></td></tr>
+<tr class="separator:a1b63fa141b202a0b01cfef8421aa48d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fd63e18c44fce83247a595f4891df89"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tenok_2time_8h.html#a2fd63e18c44fce83247a595f4891df89">clock_nanosleep</a> (clockid_t clockid, int flags, const struct <a class="el" href="structtimespec.html">timespec</a> *req, struct <a class="el" href="structtimespec.html">timespec</a> *rem)</td></tr>
+<tr class="memdesc:a2fd63e18c44fce83247a595f4891df89"><td class="mdescLeft">&#160;</td><td class="mdescRight">High-resolution sleep with clock selection.  <a href="tenok_2time_8h.html#a2fd63e18c44fce83247a595f4891df89">More...</a><br /></td></tr>
+<tr class="separator:a2fd63e18c44fce83247a595f4891df89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab78e33846b47fd18f359045d6ca762d2"><td class="memItemLeft" align="right" valign="top"><a id="ab78e33846b47fd18f359045d6ca762d2"></a>
+struct <a class="el" href="structtm.html">tm</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>localtime</b> (const time_t *timep)</td></tr>
+<tr class="separator:ab78e33846b47fd18f359045d6ca762d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47c0c928ef136f13663444f1b1f01de7"><td class="memItemLeft" align="right" valign="top"><a id="a47c0c928ef136f13663444f1b1f01de7"></a>
+struct <a class="el" href="structtm.html">tm</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>localtime_r</b> (const time_t *timep, struct <a class="el" href="structtm.html">tm</a> *result)</td></tr>
+<tr class="separator:a47c0c928ef136f13663444f1b1f01de7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8c68cab16dbf9f2c5eadfaa49e34ac8"><td class="memItemLeft" align="right" valign="top"><a id="ab8c68cab16dbf9f2c5eadfaa49e34ac8"></a>
+struct <a class="el" href="structtm.html">tm</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>gmtime</b> (const time_t *timep)</td></tr>
+<tr class="separator:ab8c68cab16dbf9f2c5eadfaa49e34ac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ef8fd14c34a80c3fee2ef2694491514"><td class="memItemLeft" align="right" valign="top"><a id="a6ef8fd14c34a80c3fee2ef2694491514"></a>
+struct <a class="el" href="structtm.html">tm</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>gmtime_r</b> (const time_t *timep, struct <a class="el" href="structtm.html">tm</a> *result)</td></tr>
+<tr class="separator:a6ef8fd14c34a80c3fee2ef2694491514"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc0e3f373a3ea00b37714f1b621ae0b1"><td class="memItemLeft" align="right" valign="top"><a id="afc0e3f373a3ea00b37714f1b621ae0b1"></a>
+time_t&#160;</td><td class="memItemRight" valign="bottom"><b>mktime</b> (struct <a class="el" href="structtm.html">tm</a> *<a class="el" href="structtm.html">tm</a>)</td></tr>
+<tr class="separator:afc0e3f373a3ea00b37714f1b621ae0b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52073483a887a377065bc47b7f261316"><td class="memItemLeft" align="right" valign="top"><a id="a52073483a887a377065bc47b7f261316"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>strftime</b> (char *s, size_t max, const char *format, const struct <a class="el" href="structtm.html">tm</a> *<a class="el" href="structtm.html">tm</a>)</td></tr>
+<tr class="separator:a52073483a887a377065bc47b7f261316"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8454b83c5b4fb93a9dcdd72ab586de22"><td class="memItemLeft" align="right" valign="top"><a id="a8454b83c5b4fb93a9dcdd72ab586de22"></a>
+char *&#160;</td><td class="memItemRight" valign="bottom"><b>strptime</b> (const char *s, const char *format, struct <a class="el" href="structtm.html">tm</a> *<a class="el" href="structtm.html">tm</a>)</td></tr>
+<tr class="separator:a8454b83c5b4fb93a9dcdd72ab586de22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e58d33339fabd469b2f4790b0f2b843"><td class="memItemLeft" align="right" valign="top"><a id="a6e58d33339fabd469b2f4790b0f2b843"></a>
+char *&#160;</td><td class="memItemRight" valign="bottom"><b>ctime</b> (const time_t *timep)</td></tr>
+<tr class="separator:a6e58d33339fabd469b2f4790b0f2b843"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8f62b9b51457963eaf37f2cbe75fe21"><td class="memItemLeft" align="right" valign="top"><a id="ad8f62b9b51457963eaf37f2cbe75fe21"></a>
+char *&#160;</td><td class="memItemRight" valign="bottom"><b>ctime_r</b> (const time_t *timep, char *buf)</td></tr>
+<tr class="separator:ad8f62b9b51457963eaf37f2cbe75fe21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a7edb6ce725a63f165054e9a489a66413"></a>
@@ -228,6 +283,63 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a2fd63e18c44fce83247a595f4891df89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fd63e18c44fce83247a595f4891df89">&#9670;&nbsp;</a></span>clock_nanosleep()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int clock_nanosleep </td>
+          <td>(</td>
+          <td class="paramtype">clockid_t&#160;</td>
+          <td class="paramname"><em>clockid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="structtimespec.html">timespec</a> *&#160;</td>
+          <td class="paramname"><em>req</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structtimespec.html">timespec</a> *&#160;</td>
+          <td class="paramname"><em>rem</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>High-resolution sleep with clock selection. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">clockid</td><td>The clock ID to use. </td></tr>
+    <tr><td class="paramname">flags</td><td>TIMER_ABSTIME for absolute time, otherwise relative. </td></tr>
+    <tr><td class="paramname">req</td><td>Requested sleep time. </td></tr>
+    <tr><td class="paramname">rem</td><td>Remaining time if interrupted (optional). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>0 on success and nonzero error number on error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a269f8720a641c0e6ad454e8d0d84f201"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a269f8720a641c0e6ad454e8d0d84f201">&#9670;&nbsp;</a></span>clock_settime()</h2>
 
@@ -265,6 +377,81 @@ Functions</h2></td></tr>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">int</td><td>0 on success and nonzero error number on error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1b63fa141b202a0b01cfef8421aa48d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b63fa141b202a0b01cfef8421aa48d6">&#9670;&nbsp;</a></span>nanosleep()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nanosleep </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="structtimespec.html">timespec</a> *&#160;</td>
+          <td class="paramname"><em>req</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structtimespec.html">timespec</a> *&#160;</td>
+          <td class="paramname"><em>rem</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Suspend execution for a specified time. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">req</td><td>Requested sleep time. </td></tr>
+    <tr><td class="paramname">rem</td><td>Remaining time if interrupted (optional). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>0 on success and nonzero error number on error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a99ef1cb2c789827dd5db3886dccf9067"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99ef1cb2c789827dd5db3886dccf9067">&#9670;&nbsp;</a></span>time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">time_t time </td>
+          <td>(</td>
+          <td class="paramtype">time_t *&#160;</td>
+          <td class="paramname"><em>tloc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the time as the number of seconds since 1970-01-01 00:00:00 +0000 (UTC) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tloc</td><td>Same as return value if tloc is not NULL. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">time_t</td><td>The time in seconds. </td></tr>
   </table>
   </dd>
 </dl>

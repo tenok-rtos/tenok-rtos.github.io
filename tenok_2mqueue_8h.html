@@ -76,17 +76,20 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="types_8h_source.html">sys/types.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="tenok_2time_8h_source.html">time.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="list_8h_source.html">common/list.h</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for mqueue.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="tenok_2mqueue_8h__incl.png" border="0" usemap="#ainclude_2tenok_2mqueue_8h" alt=""/></div>
 <map name="ainclude_2tenok_2mqueue_8h" id="ainclude_2tenok_2mqueue_8h">
-<area shape="rect" title=" " alt="" coords="28,5,207,32"/>
-<area shape="rect" href="types_8h.html" title=" " alt="" coords="5,80,101,107"/>
-<area shape="rect" href="list_8h.html" title=" " alt="" coords="125,80,240,107"/>
-<area shape="rect" title=" " alt="" coords="18,155,89,181"/>
-<area shape="rect" title=" " alt="" coords="145,155,220,181"/>
+<area shape="rect" title=" " alt="" coords="16,5,195,32"/>
+<area shape="rect" href="types_8h.html" title=" " alt="" coords="5,229,101,256"/>
+<area shape="rect" href="tenok_2time_8h.html" title=" " alt="" coords="73,80,137,107"/>
+<area shape="rect" href="list_8h.html" title=" " alt="" coords="179,80,293,107"/>
+<area shape="rect" title=" " alt="" coords="61,304,131,331"/>
+<area shape="rect" href="tenok_2signal_8h.html" title=" " alt="" coords="59,155,133,181"/>
+<area shape="rect" title=" " alt="" coords="208,155,283,181"/>
 </map>
 </div>
 </div>
@@ -126,6 +129,12 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>mq_unlink</b> (const c
 <tr class="memitem:af13b6f0b3b15e14624b0c50050d062a4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tenok_2mqueue_8h.html#af13b6f0b3b15e14624b0c50050d062a4">mq_send</a> (mqd_t mqdes, const char *msg_ptr, size_t msg_len, unsigned int msg_prio)</td></tr>
 <tr class="memdesc:af13b6f0b3b15e14624b0c50050d062a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the message pointed to by msg_ptr to the message queue referred to by the message queue descriptor mqdes.  <a href="tenok_2mqueue_8h.html#af13b6f0b3b15e14624b0c50050d062a4">More...</a><br /></td></tr>
 <tr class="separator:af13b6f0b3b15e14624b0c50050d062a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1756c5a98e6601694eb5c840baca17f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tenok_2mqueue_8h.html#ad1756c5a98e6601694eb5c840baca17f">mq_timedsend</a> (mqd_t mqdes, const char *msg_ptr, size_t msg_len, unsigned int msg_prio, const struct <a class="el" href="structtimespec.html">timespec</a> *abs_timeout)</td></tr>
+<tr class="memdesc:ad1756c5a98e6601694eb5c840baca17f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add message with absolute timeout.  <a href="tenok_2mqueue_8h.html#ad1756c5a98e6601694eb5c840baca17f">More...</a><br /></td></tr>
+<tr class="separator:ad1756c5a98e6601694eb5c840baca17f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ddcc490a4e9c780e65b705a2c3efea2"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tenok_2mqueue_8h.html#a3ddcc490a4e9c780e65b705a2c3efea2">mq_timedreceive</a> (mqd_t mqdes, char *msg_ptr, size_t msg_len, unsigned int *msg_prio, const struct <a class="el" href="structtimespec.html">timespec</a> *abs_timeout)</td></tr>
+<tr class="memdesc:a3ddcc490a4e9c780e65b705a2c3efea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive message with absolute timeout.  <a href="tenok_2mqueue_8h.html#a3ddcc490a4e9c780e65b705a2c3efea2">More...</a><br /></td></tr>
+<tr class="separator:a3ddcc490a4e9c780e65b705a2c3efea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a3fbd3906296be63451c64d69be2bc371"></a>
@@ -405,6 +414,134 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>mq_unlink</b> (const c
   <table class="params">
     <tr><td class="paramname">mqdes</td><td>The message queue descriptor to provide. </td></tr>
     <tr><td class="paramname">attr</td><td>The memory space for retrieving message queue attributes. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>0 on success and nonzero error number on error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3ddcc490a4e9c780e65b705a2c3efea2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ddcc490a4e9c780e65b705a2c3efea2">&#9670;&nbsp;</a></span>mq_timedreceive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ssize_t mq_timedreceive </td>
+          <td>(</td>
+          <td class="paramtype">mqd_t&#160;</td>
+          <td class="paramname"><em>mqdes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>msg_ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>msg_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&#160;</td>
+          <td class="paramname"><em>msg_prio</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="structtimespec.html">timespec</a> *&#160;</td>
+          <td class="paramname"><em>abs_timeout</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Receive message with absolute timeout. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mqdes</td><td>The message queue descriptor to provide. </td></tr>
+    <tr><td class="paramname">msg_ptr</td><td>The buffer for storing the received message. </td></tr>
+    <tr><td class="paramname">msg_len</td><td>The length of the buffer pointed to by msg_ptr. </td></tr>
+    <tr><td class="paramname">msg_prio</td><td>The priority of the received message. </td></tr>
+    <tr><td class="paramname">abs_timeout</td><td>Absolute timeout. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">ssize_t</td><td>The size of the received message in bytes. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad1756c5a98e6601694eb5c840baca17f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1756c5a98e6601694eb5c840baca17f">&#9670;&nbsp;</a></span>mq_timedsend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mq_timedsend </td>
+          <td>(</td>
+          <td class="paramtype">mqd_t&#160;</td>
+          <td class="paramname"><em>mqdes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>msg_ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>msg_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>msg_prio</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="structtimespec.html">timespec</a> *&#160;</td>
+          <td class="paramname"><em>abs_timeout</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add message with absolute timeout. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mqdes</td><td>The message queue descriptor to provide. </td></tr>
+    <tr><td class="paramname">msg_ptr</td><td>The message to send. </td></tr>
+    <tr><td class="paramname">msg_len</td><td>The size of the message in bytes. </td></tr>
+    <tr><td class="paramname">msg_prio</td><td>The priority of the message to send. </td></tr>
+    <tr><td class="paramname">abs_timeout</td><td>Absolute timeout. </td></tr>
   </table>
   </dd>
 </dl>

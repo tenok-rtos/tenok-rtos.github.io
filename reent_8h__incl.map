@@ -1,9 +1,12 @@
 <map id="include/tenok/sys/reent.h" name="include/tenok/sys/reent.h">
-<area shape="rect" id="node1" title=" " alt="" coords="109,5,296,32"/>
-<area shape="rect" id="node2" href="$pthread_8h.html" title=" " alt="" coords="161,80,245,107"/>
+<area shape="rect" id="node1" title=" " alt="" coords="119,5,305,32"/>
+<area shape="rect" id="node2" href="$pthread_8h.html" title=" " alt="" coords="170,80,254,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,155,88,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="113,155,183,181"/>
-<area shape="rect" id="node5" href="$tenok_2sys_2sched_8h.html" title=" " alt="" coords="208,155,307,181"/>
-<area shape="rect" id="node6" href="$list_8h.html" title=" " alt="" coords="331,155,445,181"/>
-<area shape="rect" id="node7" title=" " alt="" coords="351,229,425,256"/>
+<area shape="rect" id="node4" title=" " alt="" coords="147,379,218,405"/>
+<area shape="rect" id="node5" href="$tenok_2sys_2sched_8h.html" title=" " alt="" coords="163,155,261,181"/>
+<area shape="rect" id="node6" href="$tenok_2time_8h.html" title=" " alt="" coords="285,155,349,181"/>
+<area shape="rect" id="node10" href="$list_8h.html" title=" " alt="" coords="373,155,488,181"/>
+<area shape="rect" id="node7" href="$tenok_2signal_8h.html" title=" " alt="" coords="226,229,299,256"/>
+<area shape="rect" id="node8" href="$types_8h.html" title=" " alt="" coords="220,304,316,331"/>
+<area shape="rect" id="node9" title=" " alt="" coords="387,229,461,256"/>
 </map>

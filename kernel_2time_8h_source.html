@@ -80,35 +80,42 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="list_8h.html">common/list.h</a>&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="structtimer.html">   12</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structtimer.html">timer</a> {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">int</span> id;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">int</span> flags;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">bool</span> enabled;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">struct </span><a class="code" href="structsigevent.html">sigevent</a> sev;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">struct </span><a class="code" href="structitimerspec.html">itimerspec</a> setting;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">struct </span><a class="code" href="structitimerspec.html">itimerspec</a> ret_time; <span class="comment">/* For returning current time */</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">struct </span><a class="code" href="structtimespec.html">timespec</a> counter;    <span class="comment">/* Internal countdown counter */</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">struct </span><a class="code" href="structthread__info.html">thread_info</a> *thread; <span class="comment">/* The thread that the timer belongs to */</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> g_list;    <span class="comment">/* Linked to the global timer list */</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> list;      <span class="comment">/* Linked to the thread timer list */</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">void</span> timer_up_count(<span class="keyword">struct</span> <a class="code" href="structtimespec.html">timespec</a> *time);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">void</span> timer_down_count(<span class="keyword">struct</span> <a class="code" href="structtimespec.html">timespec</a> *time);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span> time_add(<span class="keyword">struct</span> <a class="code" href="structtimespec.html">timespec</a> *time, time_t sec, <span class="keywordtype">long</span> nsec);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> get_sys_time(<span class="keyword">struct</span> <a class="code" href="structtimespec.html">timespec</a> *tp);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> set_sys_time(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structtimespec.html">timespec</a> *tp);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">void</span> system_timer_update(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">typedef</span> int64_t ktime_t;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="structtimer.html">   14</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structtimer.html">timer</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">int</span> id;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">int</span> flags;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">bool</span> enabled;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">struct </span><a class="code" href="structsigevent.html">sigevent</a> sev;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">struct </span><a class="code" href="structitimerspec.html">itimerspec</a> setting;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">struct </span><a class="code" href="structitimerspec.html">itimerspec</a> ret_time; <span class="comment">/* For returning current time */</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">struct </span><a class="code" href="structtimespec.html">timespec</a> counter;    <span class="comment">/* Internal countdown counter */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">struct </span><a class="code" href="structthread__info.html">thread_info</a> *thread; <span class="comment">/* The thread that the timer belongs to */</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> g_list;    <span class="comment">/* Linked to the global timer list */</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> list;      <span class="comment">/* Linked to the thread timer list */</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span> timer_up_count(<span class="keyword">struct</span> <a class="code" href="structtimespec.html">timespec</a> *<a class="code" href="tenok_2time_8h.html#a99ef1cb2c789827dd5db3886dccf9067">time</a>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> timer_down_count(<span class="keyword">struct</span> <a class="code" href="structtimespec.html">timespec</a> *<a class="code" href="tenok_2time_8h.html#a99ef1cb2c789827dd5db3886dccf9067">time</a>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> time_add(<span class="keyword">struct</span> <a class="code" href="structtimespec.html">timespec</a> *<a class="code" href="tenok_2time_8h.html#a99ef1cb2c789827dd5db3886dccf9067">time</a>, time_t sec, <span class="keywordtype">long</span> nsec);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">void</span> get_sys_time(<span class="keyword">struct</span> <a class="code" href="structtimespec.html">timespec</a> *tp);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keywordtype">void</span> set_sys_time(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structtimespec.html">timespec</a> *tp);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordtype">void</span> get_realtime(<span class="keyword">struct</span> <a class="code" href="structtimespec.html">timespec</a> *tp);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">void</span> set_realtime(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structtimespec.html">timespec</a> *tp);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">void</span> system_timer_update(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;ktime_t ktime_get(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="alist_8h_html"><div class="ttname"><a href="list_8h.html">list.h</a></div></div>
-<div class="ttc" id="astructitimerspec_html"><div class="ttname"><a href="structitimerspec.html">itimerspec</a></div><div class="ttdef"><b>Definition:</b> time.h:19</div></div>
+<div class="ttc" id="astructitimerspec_html"><div class="ttname"><a href="structitimerspec.html">itimerspec</a></div><div class="ttdef"><b>Definition:</b> time.h:21</div></div>
 <div class="ttc" id="astructlist__head_html"><div class="ttname"><a href="structlist__head.html">list_head</a></div><div class="ttdef"><b>Definition:</b> list.h:111</div></div>
-<div class="ttc" id="astructsigevent_html"><div class="ttname"><a href="structsigevent.html">sigevent</a></div><div class="ttdef"><b>Definition:</b> signal.h:47</div></div>
-<div class="ttc" id="astructthread__info_html"><div class="ttname"><a href="structthread__info.html">thread_info</a></div><div class="ttdef"><b>Definition:</b> kernel.h:68</div></div>
-<div class="ttc" id="astructtimer_html"><div class="ttname"><a href="structtimer.html">timer</a></div><div class="ttdef"><b>Definition:</b> time.h:12</div></div>
-<div class="ttc" id="astructtimespec_html"><div class="ttname"><a href="structtimespec.html">timespec</a></div><div class="ttdef"><b>Definition:</b> time.h:14</div></div>
+<div class="ttc" id="astructsigevent_html"><div class="ttname"><a href="structsigevent.html">sigevent</a></div><div class="ttdef"><b>Definition:</b> signal.h:88</div></div>
+<div class="ttc" id="astructthread__info_html"><div class="ttname"><a href="structthread__info.html">thread_info</a></div><div class="ttdef"><b>Definition:</b> kernel.h:71</div></div>
+<div class="ttc" id="astructtimer_html"><div class="ttname"><a href="structtimer.html">timer</a></div><div class="ttdef"><b>Definition:</b> time.h:14</div></div>
+<div class="ttc" id="astructtimespec_html"><div class="ttname"><a href="structtimespec.html">timespec</a></div><div class="ttdef"><b>Definition:</b> time.h:16</div></div>
 <div class="ttc" id="atenok_2time_8h_html"><div class="ttname"><a href="tenok_2time_8h.html">time.h</a></div></div>
+<div class="ttc" id="atenok_2time_8h_html_a99ef1cb2c789827dd5db3886dccf9067"><div class="ttname"><a href="tenok_2time_8h.html#a99ef1cb2c789827dd5db3886dccf9067">time</a></div><div class="ttdeci">time_t time(time_t *tloc)</div><div class="ttdoc">Return the time as the number of seconds since 1970-01-01 00:00:00 +0000 (UTC)</div><div class="ttdef"><b>Definition:</b> time.c:185</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

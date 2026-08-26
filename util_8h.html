@@ -90,7 +90,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <map name="ainclude_2common_2util_8hdep" id="ainclude_2common_2util_8hdep">
 <area shape="rect" title=" " alt="" coords="117,5,283,32"/>
 <area shape="rect" href="kernel_8h.html" title=" " alt="" coords="115,80,285,107"/>
-<area shape="rect" href="wait_8h.html" title=" " alt="" coords="121,155,279,181"/>
+<area shape="rect" href="kernel_2wait_8h.html" title=" " alt="" coords="121,155,279,181"/>
 <area shape="rect" href="fs_8h.html" title=" " alt="" coords="201,229,314,256"/>
 <area shape="rect" href="reg__file_8h.html" title=" " alt="" coords="5,304,155,331"/>
 <area shape="rect" href="pipe_8h.html" title=" " alt="" coords="179,304,336,331"/>
@@ -114,6 +114,9 @@ Macros</h2></td></tr>
 <tr class="memitem:a9ac102be1cec0ce473aa3819ff297a26"><td class="memItemLeft" align="right" valign="top"><a id="a9ac102be1cec0ce473aa3819ff297a26"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>ALIGN</b>(x,  a)&#160;&#160;&#160;ALIGN_MASK(x, (__typeof__(x)) ((a) -1))</td></tr>
 <tr class="separator:a9ac102be1cec0ce473aa3819ff297a26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb65d4847594b25424eb2a304e7741c1"><td class="memItemLeft" align="right" valign="top"><a id="afb65d4847594b25424eb2a304e7741c1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ALIGN_UP</b>(x,  a)&#160;&#160;&#160;ALIGN((x) + (__typeof__(x)) ((a) -1), a)</td></tr>
+<tr class="separator:afb65d4847594b25424eb2a304e7741c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

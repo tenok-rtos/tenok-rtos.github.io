@@ -76,13 +76,18 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="tenok_2time_8h_source.html">time.h</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for semaphore.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="tenok_2semaphore_8h__incl.png" border="0" usemap="#ainclude_2tenok_2semaphore_8h" alt=""/></div>
 <map name="ainclude_2tenok_2semaphore_8h" id="ainclude_2tenok_2semaphore_8h">
 <area shape="rect" title=" " alt="" coords="5,5,204,32"/>
-<area shape="rect" title=" " alt="" coords="69,80,140,107"/>
+<area shape="rect" title=" " alt="" coords="57,304,128,331"/>
+<area shape="rect" href="tenok_2time_8h.html" title=" " alt="" coords="135,80,199,107"/>
+<area shape="rect" href="tenok_2signal_8h.html" title=" " alt="" coords="131,155,204,181"/>
+<area shape="rect" href="types_8h.html" title=" " alt="" coords="130,229,226,256"/>
+<area shape="rect" title=" " alt="" coords="279,155,354,181"/>
 </map>
 </div>
 </div>
@@ -116,6 +121,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aad70020dca2241a2b78e272ca033271b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tenok_2semaphore_8h.html#aad70020dca2241a2b78e272ca033271b">sem_wait</a> (<a class="el" href="unionsem__t.html">sem_t</a> *sem)</td></tr>
 <tr class="memdesc:aad70020dca2241a2b78e272ca033271b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrement the value of the semaphore. If the semaphore currently has the value zero, then the function blocks until it becomes possible to perform the decrement.  <a href="tenok_2semaphore_8h.html#aad70020dca2241a2b78e272ca033271b">More...</a><br /></td></tr>
 <tr class="separator:aad70020dca2241a2b78e272ca033271b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fa286fcc7ddce4e32fa449f34a494c6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tenok_2semaphore_8h.html#a9fa286fcc7ddce4e32fa449f34a494c6">sem_timedwait</a> (<a class="el" href="unionsem__t.html">sem_t</a> *sem, const struct <a class="el" href="structtimespec.html">timespec</a> *abstime)</td></tr>
+<tr class="memdesc:a9fa286fcc7ddce4e32fa449f34a494c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrement the semaphore or timeout at abstime.  <a href="tenok_2semaphore_8h.html#a9fa286fcc7ddce4e32fa449f34a494c6">More...</a><br /></td></tr>
+<tr class="separator:a9fa286fcc7ddce4e32fa449f34a494c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9755d3b56c40d2aec3d55b00c8f7cae8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tenok_2semaphore_8h.html#a9755d3b56c40d2aec3d55b00c8f7cae8">sem_getvalue</a> (<a class="el" href="unionsem__t.html">sem_t</a> *sem, int *sval)</td></tr>
 <tr class="memdesc:a9755d3b56c40d2aec3d55b00c8f7cae8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of the semaphore.  <a href="tenok_2semaphore_8h.html#a9755d3b56c40d2aec3d55b00c8f7cae8">More...</a><br /></td></tr>
 <tr class="separator:a9755d3b56c40d2aec3d55b00c8f7cae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -266,6 +274,49 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">sem</td><td>Pointer to the semaphore. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>0 on success and nonzero error number on error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9fa286fcc7ddce4e32fa449f34a494c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fa286fcc7ddce4e32fa449f34a494c6">&#9670;&nbsp;</a></span>sem_timedwait()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sem_timedwait </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="unionsem__t.html">sem_t</a> *&#160;</td>
+          <td class="paramname"><em>sem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="structtimespec.html">timespec</a> *&#160;</td>
+          <td class="paramname"><em>abstime</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decrement the semaphore or timeout at abstime. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sem</td><td>Pointer to the semaphore. </td></tr>
+    <tr><td class="paramname">abstime</td><td>Absolute timeout. </td></tr>
   </table>
   </dd>
 </dl>

@@ -115,28 +115,65 @@ $(function() {
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> *next, *prev;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;};</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keywordtype">void</span> <a class="code" href="list_8h.html#af8fefe2d35c3f2ef3a3fc693d0080c48">INIT_LIST_HEAD</a>(<span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *list);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="keywordtype">int</span> <a class="code" href="list_8h.html#a4e4fb53df346702e31a3c03b23769cb2">list_empty</a>(<span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *head);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="keywordtype">int</span> <a class="code" href="list_8h.html#ac2f0fecd0fceee7e5a9cb5550639e87a">list_is_last</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *list, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *head);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="keywordtype">void</span> <a class="code" href="list_8h.html#a221a74d55162a5f9351c3ad989fa08f4">list_add</a>(<span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *<span class="keyword">new</span>, <span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *head);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="keywordtype">void</span> <a class="code" href="list_8h.html#ac32a18fe87fa883f9679ca4bc4b88693">list_del</a>(<span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *entry);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="keywordtype">void</span> <a class="code" href="list_8h.html#a90c598c7e340b11c3ae9f9cbb415a4d7">list_del_init</a>(<span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *entry);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> INIT_LIST_HEAD(<span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *list)</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;{</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    list-&gt;prev = list;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    list-&gt;next = list;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> list_empty(<span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *head)</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;{</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">return</span> head-&gt;next == head;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> list_is_last(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *list,</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                               <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *head)</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;{</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordflow">return</span> list-&gt;next == head;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;}</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> list_del(<span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *entry)</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;{</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    entry-&gt;next-&gt;prev = entry-&gt;prev;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    entry-&gt;prev-&gt;next = entry-&gt;next;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;}</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="keywordtype">void</span> <a class="code" href="list_8h.html#a7d1de96ef90e72bd5ba765e67cb83b74">list_move</a>(<span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *list, <span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *new_head);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="alist_8h_html_a221a74d55162a5f9351c3ad989fa08f4"><div class="ttname"><a href="list_8h.html#a221a74d55162a5f9351c3ad989fa08f4">list_add</a></div><div class="ttdeci">void list_add(struct list_head *new, struct list_head *head)</div><div class="ttdoc">Add new list member to the list.</div><div class="ttdef"><b>Definition:</b> list.c:31</div></div>
-<div class="ttc" id="alist_8h_html_a4e4fb53df346702e31a3c03b23769cb2"><div class="ttname"><a href="list_8h.html#a4e4fb53df346702e31a3c03b23769cb2">list_empty</a></div><div class="ttdeci">int list_empty(struct list_head *head)</div><div class="ttdoc">Check if the list is empty.</div><div class="ttdef"><b>Definition:</b> list.c:9</div></div>
-<div class="ttc" id="alist_8h_html_a7d1de96ef90e72bd5ba765e67cb83b74"><div class="ttname"><a href="list_8h.html#a7d1de96ef90e72bd5ba765e67cb83b74">list_move</a></div><div class="ttdeci">void list_move(struct list_head *list, struct list_head *new_head)</div><div class="ttdoc">Move a list member from original list to another.</div><div class="ttdef"><b>Definition:</b> list.c:39</div></div>
-<div class="ttc" id="alist_8h_html_a90c598c7e340b11c3ae9f9cbb415a4d7"><div class="ttname"><a href="list_8h.html#a90c598c7e340b11c3ae9f9cbb415a4d7">list_del_init</a></div><div class="ttdeci">void list_del_init(struct list_head *entry)</div><div class="ttdoc">Delete and force initialize a list member from its list.</div><div class="ttdef"><b>Definition:</b> list.c:25</div></div>
-<div class="ttc" id="alist_8h_html_ac2f0fecd0fceee7e5a9cb5550639e87a"><div class="ttname"><a href="list_8h.html#ac2f0fecd0fceee7e5a9cb5550639e87a">list_is_last</a></div><div class="ttdeci">int list_is_last(const struct list_head *list, const struct list_head *head)</div><div class="ttdoc">Check if the list object is the last of the list.</div><div class="ttdef"><b>Definition:</b> list.c:14</div></div>
-<div class="ttc" id="alist_8h_html_ac32a18fe87fa883f9679ca4bc4b88693"><div class="ttname"><a href="list_8h.html#ac32a18fe87fa883f9679ca4bc4b88693">list_del</a></div><div class="ttdeci">void list_del(struct list_head *entry)</div><div class="ttdoc">Delete a list item from its list.</div><div class="ttdef"><b>Definition:</b> list.c:19</div></div>
-<div class="ttc" id="alist_8h_html_af8fefe2d35c3f2ef3a3fc693d0080c48"><div class="ttname"><a href="list_8h.html#af8fefe2d35c3f2ef3a3fc693d0080c48">INIT_LIST_HEAD</a></div><div class="ttdeci">void INIT_LIST_HEAD(struct list_head *list)</div><div class="ttdoc">Initialize the list head.</div><div class="ttdef"><b>Definition:</b> list.c:3</div></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> list_del_init(<span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *entry)</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;{</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    list_del(entry);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    INIT_LIST_HEAD(entry);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;}</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> list_add(<span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *<span class="keyword">new</span>, <span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *head)</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;{</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keyword">new</span>-&gt;next = head-&gt;next;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keyword">new</span>-&gt;prev = head;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    head-&gt;next-&gt;prev = <span class="keyword">new</span>;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    head-&gt;next = <span class="keyword">new</span>;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;}</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> list_add_tail(<span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *<span class="keyword">new</span>, <span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *head)</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;{</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keyword">new</span>-&gt;prev = head-&gt;prev;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keyword">new</span>-&gt;next = head;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    head-&gt;prev-&gt;next = <span class="keyword">new</span>;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    head-&gt;prev = <span class="keyword">new</span>;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;}</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> list_move(<span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *list, <span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *new_head)</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;{</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    list_del(list);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    list_add(list, new_head);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;}</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> list_move_tail(<span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *list,</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                                  <span class="keyword">struct</span> <a class="code" href="structlist__head.html">list_head</a> *new_head)</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;{</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    list_del(list);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    list_add_tail(list, new_head);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;}</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="astructlist__head_html"><div class="ttname"><a href="structlist__head.html">list_head</a></div><div class="ttdef"><b>Definition:</b> list.h:111</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

@@ -69,12 +69,23 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">stdlib.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for stdlib.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="stdlib_8h__incl.png" border="0" usemap="#ainclude_2tenok_2stdlib_8h" alt=""/></div>
+<map name="ainclude_2tenok_2stdlib_8h" id="ainclude_2tenok_2stdlib_8h">
+<area shape="rect" title=" " alt="" coords="5,5,168,32"/>
+<area shape="rect" title=" " alt="" coords="49,80,124,107"/>
+</map>
+</div>
+</div>
 <p><a href="stdlib_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -85,6 +96,21 @@ Data Structures</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlldiv__t.html">lldiv_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a687984f47d8cce148d1b914d2b79612a"><td class="memItemLeft" align="right" valign="top"><a id="a687984f47d8cce148d1b914d2b79612a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXIT_SUCCESS</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a687984f47d8cce148d1b914d2b79612a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73efe787c131b385070f25d18b7c9aa4"><td class="memItemLeft" align="right" valign="top"><a id="a73efe787c131b385070f25d18b7c9aa4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXIT_FAILURE</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a73efe787c131b385070f25d18b7c9aa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a690f251553b39fd4f31894826141b61a"><td class="memItemLeft" align="right" valign="top"><a id="a690f251553b39fd4f31894826141b61a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>RAND_MAX</b>&#160;&#160;&#160;0x7fffffff</td></tr>
+<tr class="separator:a690f251553b39fd4f31894826141b61a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03a200320a749aaf2faa1d1719ffb4de"><td class="memItemLeft" align="right" valign="top"><a id="a03a200320a749aaf2faa1d1719ffb4de"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>alloca</b>(size)&#160;&#160;&#160;__builtin_alloca(size)</td></tr>
+<tr class="separator:a03a200320a749aaf2faa1d1719ffb4de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -100,18 +126,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a62b7798461bd461da64c5f9d35feddf7"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdlib_8h.html#a62b7798461bd461da64c5f9d35feddf7">calloc</a> (size_t nmemb, size_t size)</td></tr>
 <tr class="memdesc:a62b7798461bd461da64c5f9d35feddf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate and reset a memory space of an array.  <a href="stdlib_8h.html#a62b7798461bd461da64c5f9d35feddf7">More...</a><br /></td></tr>
 <tr class="separator:a62b7798461bd461da64c5f9d35feddf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fd0dc5608a0c265bdd82f58b6d8e19e"><td class="memItemLeft" align="right" valign="top"><a id="a5fd0dc5608a0c265bdd82f58b6d8e19e"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>itoa</b> (int value, char *buffer, int radix)</td></tr>
-<tr class="separator:a5fd0dc5608a0c265bdd82f58b6d8e19e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96f374316a0868c9289eea9f8726083f"><td class="memItemLeft" align="right" valign="top"><a id="a96f374316a0868c9289eea9f8726083f"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>utoa</b> (unsigned int value, char *buffer, int radix)</td></tr>
-<tr class="separator:a96f374316a0868c9289eea9f8726083f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a6b5e8d2f1c37e5b43e4345586075be"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdlib_8h.html#a1a6b5e8d2f1c37e5b43e4345586075be">realloc</a> (void *ptr, size_t size)</td></tr>
+<tr class="memdesc:a1a6b5e8d2f1c37e5b43e4345586075be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resize an allocated memory space, preserving its contents.  <a href="stdlib_8h.html#a1a6b5e8d2f1c37e5b43e4345586075be">More...</a><br /></td></tr>
+<tr class="separator:a1a6b5e8d2f1c37e5b43e4345586075be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6abe6c5eb77aeaf05ad81a7425547d9e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdlib_8h.html#a6abe6c5eb77aeaf05ad81a7425547d9e">mkstemp</a> (char *template)</td></tr>
+<tr class="memdesc:a6abe6c5eb77aeaf05ad81a7425547d9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a file no other name stands for and open it. The last six characters of the template must be XXXXXX and are replaced with the name the file was given.  <a href="stdlib_8h.html#a6abe6c5eb77aeaf05ad81a7425547d9e">More...</a><br /></td></tr>
+<tr class="separator:a6abe6c5eb77aeaf05ad81a7425547d9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f44882a6f8902efbe92a2ff6ea2a8fb"><td class="memItemLeft" align="right" valign="top"><a id="a4f44882a6f8902efbe92a2ff6ea2a8fb"></a>
 char *&#160;</td><td class="memItemRight" valign="bottom"><b>ltoa</b> (long value, char *buffer, int radix)</td></tr>
 <tr class="separator:a4f44882a6f8902efbe92a2ff6ea2a8fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af24d9fa15145cf7cb055d77f50830034"><td class="memItemLeft" align="right" valign="top"><a id="af24d9fa15145cf7cb055d77f50830034"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>ultoa</b> (unsigned long value, char *buffer, int radix)</td></tr>
-<tr class="separator:af24d9fa15145cf7cb055d77f50830034"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad228deceea1bac4d9f171f647c265059"><td class="memItemLeft" align="right" valign="top"><a id="ad228deceea1bac4d9f171f647c265059"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>atoi</b> (const char *nptr)</td></tr>
 <tr class="separator:ad228deceea1bac4d9f171f647c265059"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -331,6 +354,81 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>wctomb</b> (char *s, w
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">void</td><td>*: The pointer to the allocated memory. If the allocation failed, the function returns NULL. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6abe6c5eb77aeaf05ad81a7425547d9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6abe6c5eb77aeaf05ad81a7425547d9e">&#9670;&nbsp;</a></span>mkstemp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mkstemp </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>template</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a file no other name stands for and open it. The last six characters of the template must be XXXXXX and are replaced with the name the file was given. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">template</td><td>The name to make unique, ending in XXXXXX. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>The descriptor of the new file, and -1 on error with the reason left in errno. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1a6b5e8d2f1c37e5b43e4345586075be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a6b5e8d2f1c37e5b43e4345586075be">&#9670;&nbsp;</a></span>realloc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* realloc </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resize an allocated memory space, preserving its contents. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ptr</td><td>Pointer to the allocated memory, or NULL to allocate anew. </td></tr>
+    <tr><td class="paramname">size</td><td>The new number of bytes, or zero to free the memory. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">void</td><td>*: The pointer to the resized memory, which may differ from ptr. If the allocation failed, the function returns NULL and the memory pointed to by ptr is left untouched. </td></tr>
   </table>
   </dd>
 </dl>

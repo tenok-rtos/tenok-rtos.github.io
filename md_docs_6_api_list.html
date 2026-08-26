@@ -67,15 +67,15 @@ $(function() {
 <div class="title">Tenok API List </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md26"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md27"></a>
 User-space API</h1>
-<h2><a class="anchor" id="autotoc_md27"></a>
+<h2><a class="anchor" id="autotoc_md28"></a>
 Utilities:</h2>
 <ul>
 <li><a class="el" href="tenok_8h.html#a046bd8c3363efcadb9f1fb760da51570" title="Get the thread information iteratively.">thread_info()</a></li>
 <li><a class="el" href="tenok_8h.html#a69a976c8dccc1ece2499fa4f09167aa4" title="Get memory information of the system.">minfo()</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md28"></a>
+<h2><a class="anchor" id="autotoc_md29"></a>
 Scheduler:</h2>
 <ul>
 <li><a class="el" href="tenok_8h.html#a406ed4d86e3f2e062e6d7b0930c69de1" title="Start the operating system.">sched_start()</a></li>
@@ -87,16 +87,16 @@ Scheduler:</h2>
 <li><a class="el" href="unistd_8h.html#ac0383719bafa9b5b2aa25fabc586bd1f" title="Suspend execution of the calling thread for a given time in microseconds.">usleep()</a></li>
 <li><a class="el" href="tenok_8h.html#a1e3b16194b1e16ab6088df1c62087b27" title="To cause the calling thread to sleep for the given ticks.">delay_ticks()</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md29"></a>
+<h2><a class="anchor" id="autotoc_md30"></a>
 Task:</h2>
 <ul>
 <li><a class="el" href="task_8h.html#a3cb286c107d30bad2c5040b5cfc22eb1" title="Register a user task to be launched at the start of the system.">HOOK_USER_TASK()</a></li>
 <li><a class="el" href="task_8h.html#abdd89d67d6038f5716d49bde2eed927e" title="Create new task.">task_create()</a></li>
 <li><a class="el" href="tenok_8h.html#aca911c95e943236848408987b2fbce64" title="Set the name of the running thread.">setprogname()</a></li>
-<li><a class="el" href="unistd_8h.html#a939cb25a305fe68aad9b365077f1a8c7" title="Return the ID of the calling task.">getpid()</a></li>
+<li><a class="el" href="unistd_8h.html#ac61b207337ca21b3b309593fd1a0cb82" title="Return the ID of the calling task.">getpid()</a></li>
 <li><a class="el" href="stdlib_8h.html#a55e99c539cf7723ec15e856b7e0a8cee" title="To cause task termination.">exit()</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md30"></a>
+<h2><a class="anchor" id="autotoc_md31"></a>
 Thread:</h2>
 <ul>
 <li><a class="el" href="pthread_8h.html#a0b85ebb1e3aac081a4c0a5e85ae3cbe9" title="Initialize a thread attribute object with default values.">pthread_attr_init()</a></li>
@@ -124,7 +124,7 @@ Thread:</h2>
 <li><a class="el" href="pthread_8h.html#a196103ac97710dad7a93fd6c188cc999" title="To ensure a piece of initialization code is executed at most once.">pthread_once()</a></li>
 <li><a class="el" href="pthread_8h.html#a4c4f5f3b4f8f45d9d897847d53b11aaa" title="Return the thread ID of the calling thread.">pthread_self()</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md31"></a>
+<h2><a class="anchor" id="autotoc_md32"></a>
 Mutex and Conditional Variable:</h2>
 <ul>
 <li><a class="el" href="pthread_8h.html#a7454d249ed94ad5d5e57ba1529d7a7f2" title="Initialize the mutex with specified attributes.">pthread_mutex_init()</a></li>
@@ -144,7 +144,7 @@ Mutex and Conditional Variable:</h2>
 <li><a class="el" href="pthread_8h.html#a34083fe1cd54d5d67599b4cca593ffa4" title="Initialize the attribute object of conditional variable with default values.">pthread_condattr_init()</a></li>
 <li><a class="el" href="pthread_8h.html#a066f082e4a085641043714e3bc4d70d7" title="Destroy the attribute object of the conditional variable.">pthread_condattr_destroy()</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md32"></a>
+<h2><a class="anchor" id="autotoc_md33"></a>
 Semaphore:</h2>
 <ul>
 <li><a class="el" href="tenok_2semaphore_8h.html#a532509bd8a6499f8193253192fb83a3d" title="Initialize the semaphore.">sem_init()</a></li>
@@ -154,7 +154,7 @@ Semaphore:</h2>
 <li><a class="el" href="tenok_2semaphore_8h.html#aad70020dca2241a2b78e272ca033271b" title="Decrement the value of the semaphore. If the semaphore currently has the value zero,...">sem_wait()</a></li>
 <li><a class="el" href="tenok_2semaphore_8h.html#a4de7a9a334b01b6373b017aaefa07cf0" title="The same as sem_wait(), except that if the decrement cannot be immediately performed,...">sem_trywait()</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md33"></a>
+<h2><a class="anchor" id="autotoc_md34"></a>
 Message Queue:</h2>
 <ul>
 <li><a class="el" href="tenok_2mqueue_8h.html#a3397c2dadbe0a5113ff67cd284990a94" title="Create a new message queue or open an existing queue.">mq_open()</a></li>
@@ -164,32 +164,86 @@ Message Queue:</h2>
 <li><a class="el" href="tenok_2mqueue_8h.html#ae6191194d2451804656942f7c8da6c71" title="Modify attributes of the message queue referred to by the message queue descriptor mqdes.">mq_setattr()</a></li>
 <li><a class="el" href="tenok_2mqueue_8h.html#a8fafe8b1183830322f8ff875f4e6cb4c" title="Retrieve atributes of the message queue referred to by the message queue descriptor mqdes.">mq_getattr()</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md34"></a>
+<h2><a class="anchor" id="autotoc_md35"></a>
 File Control and I/O:</h2>
 <ul>
-<li><a class="el" href="fcntl_8h.html#adcb60598073f6f9cbb0091ef6768fa5c" title="Open the file specified by the pathname.">open()</a></li>
+<li><a class="el" href="fcntl_8h.html#a079d60801c18155ac2ec1707b56867fb" title="Open the file specified by the pathname.">open()</a></li>
 <li><a class="el" href="unistd_8h.html#aafbcde67669a1b96577e735ddebd8634" title="Close a file descriptor, so that it no longer refers to any file and may be reused.">close()</a></li>
 <li><a class="el" href="unistd_8h.html#af32a16ad2dd9e48482f8f790db7dbbd2" title="Attempt to read up to count bytes from file descriptor fd into the buffer starting at buf.">read()</a></li>
 <li><a class="el" href="unistd_8h.html#abb39b21888372e95ad3e5c59b166f5c8" title="Write up to count bytes from the buffer starting at buf to the file referred to by the file descripto...">write()</a></li>
-<li><a class="el" href="ioctl_8h.html#a91177f07a0156bef30f38d3d457425a5" title="Perform device-specific control.">ioctl()</a></li>
+<li><a class="el" href="unistd_8h.html#a3d8839f39526d15b100953d64cc08f10" title="Create a pipe, a stream that is written to through one descriptor and read from through the other.">pipe()</a></li>
+<li><a class="el" href="fcntl_8h.html#ad39ebe4c4767eaa9a680777400cfaafe" title="Act on an open file descriptor.">fcntl()</a></li>
+<li><a class="el" href="ioctl_8h.html#a1487536105f7a596481bf6bfa8de99f6" title="Perform device-specific control.">ioctl()</a></li>
 <li><a class="el" href="tenok_2poll_8h.html#aa97ba0bfbedf1784e648dd753a92449d" title="Wait for one of a set of file descriptors to become ready to perform I/O.">poll()</a></li>
 <li><a class="el" href="unistd_8h.html#a7c7b0aa1b2a9ff1e9c9524b038f4d213" title="Reposition the file offset of the open file description associated with the file descriptor fd.">lseek()</a></li>
 <li><a class="el" href="unistd_8h.html#a2599c985f9cce0d9d7b11732941bd9dc" title="Create a copy of the file descriptor oldfd, using the lowest-numbered unused file descriptor for the ...">dup()</a></li>
 <li><a class="el" href="unistd_8h.html#a0bbddf8ae4f3dea6e57532be36c04268" title="Perform the same task as dup(), but use the file descriptor number specified by newfd.">dup2()</a></li>
+<li><a class="el" href="unistd_8h.html#a49bb0c485f30ab14364721c9ce433bab" title="Tell whether a descriptor refers to a terminal.">isatty()</a></li>
+<li><a class="el" href="unistd_8h.html#aa918cf234c33e52741d038f62d41897d" title="Check whether the calling task can reach a file the way it asks.">access()</a></li>
 <li><a class="el" href="stat_8h.html#a097a953859f943469263ae6f11669470" title="Makes a FIFO special file with name pathname.">mkfifo()</a></li>
 <li><a class="el" href="stat_8h.html#ae92589973c691560ce2a6a97043872cf" title="Create a filesystem node (file, device special file, or named pipe) named pathname,...">mknod()</a></li>
 <li><a class="el" href="mount_8h.html#ae77fcaaa4a9edce0cafe9eef1d9d8629" title="Attach the filesystem specified by source to the location specified by the pathname in target.">mount()</a></li>
-<li><a class="el" href="dirent_8h.html#a31b8a6d68fa7c8a3250d457aecf58a78" title="Open a directory stream corresponding to the directory name, and returns a pointer to the directory s...">opendir()</a></li>
-<li><a class="el" href="dirent_8h.html#ad8750d4bb13edc8ccf5315621d818bd2" title="Return a pointer to a dirent structure representing the next directory entry in the directory stream ...">readdir()</a></li>
-<li><a class="el" href="stdio_8h.html#a76370407f9ab0402564c2bb9bc9664e0" title="Close the given file stream.">fclose()</a></li>
-<li><a class="el" href="stdio_8h.html#af86fa14728c9bad5418a6d29cad9f9ff" title="Examine the argument stream and returns the integer file descriptor used to implement this stream.">fileno()</a></li>
-<li><a class="el" href="stdio_8h.html#a3f9b52a165c4c6a3b099ec5a2615adad" title="Open the file whose name is the string pointed to by pathname and associate a stream with it.">fopen()</a></li>
-<li><a class="el" href="stdio_8h.html#a084251eb18ccd5c936faa2c39c86ec63" title="Read nmemb items of data, each size bytes long, from the stream pointed to by stream,...">fread()</a></li>
-<li><a class="el" href="stdio_8h.html#a5e25775bd8597f839a28125b616bd241" title="Set the file position indicator for the stream pointed to by stream.">fseek()</a></li>
-<li><a class="el" href="stat_8h.html#a27628bfab8ccdd0fdeed6778b25cd734" title="Return information about a file, in the buffer pointed to by statbuf.">fstat()</a></li>
-<li><a class="el" href="stdio_8h.html#a20d465b196f378c16fc31d4117170623" title="Write nmemb items of data, each size bytes long, to the stream pointed to by stream,...">fwrite()</a></li>
+<li>statfs()</li>
+<li><a class="el" href="dirent_8h.html#a1632d8c06c14f295c6d9407b7fec67af" title="Open a directory stream corresponding to the directory name, and return a pointer to the directory st...">opendir()</a></li>
+<li><a class="el" href="dirent_8h.html#a58257faf8b13b3f14558613c632b2373" title="Return the next entry of the directory stream. The entry belongs to the stream and is overwritten by ...">readdir()</a></li>
+<li><a class="el" href="dirent_8h.html#aaeac2b41e8c2c3a5f91c9bd511a8c0a6" title="Close a directory stream and release what it holds.">closedir()</a></li>
 <li><a class="el" href="unistd_8h.html#a3284211bd28346254245c9d4fd071d7f" title="Get current working directory.">getcwd()</a></li>
 <li><a class="el" href="unistd_8h.html#a03af571dfb595681bfa203c83385c07b" title="Change working directory.">chdir()</a></li>
+<li><a class="el" href="unistd_8h.html#a1458f6f34fdef22870172278889af435" title="Change the working directory to the one the descriptor names. Tenok keeps no way back from a descript...">fchdir()</a></li>
+<li><a class="el" href="unistd_8h.html#afb5a028bb4a392db1cb0815a0d909f8f" title="Make the given directory the root. The root of Tenok is the whole of what it mounted,...">chroot()</a></li>
+<li><a class="el" href="unistd_8h.html#a959654523479c5f997e812b3cf055879" title="Name the terminal the descriptor is open on. Tenok keeps no way back from a descriptor to the name it...">ttyname_r()</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md36"></a>
+Files and Directories:</h2>
+<ul>
+<li><a class="el" href="stat_8h.html#a495553b93f6e4b88e7d82195f189cb22" title="Return information about the file specified by the pathname, in the buffer pointed to by statbuf.">stat()</a></li>
+<li><a class="el" href="stat_8h.html#af52d2b78c938af5e279e57ffa2644ff8" title="Return information about the file specified by the pathname, the way stat() does. Tenok gives a file ...">lstat()</a></li>
+<li><a class="el" href="stat_8h.html#a27628bfab8ccdd0fdeed6778b25cd734" title="Return information about a file, in the buffer pointed to by statbuf.">fstat()</a></li>
+<li><a class="el" href="stat_8h.html#a1b893413bc424887bbe61f8d0952a0ee" title="Replace the permission bits of a file.">chmod()</a></li>
+<li><a class="el" href="stat_8h.html#a8788159ad927954699f80970a1d04462" title="Set the permission bits withheld from the files the task creates.">umask()</a></li>
+<li><a class="el" href="unistd_8h.html#a7c080ffcae5180218dda2df501e0cb15" title="Replace the owner of a file. Tenok has one user, so only a request that names it can be granted.">chown()</a></li>
+<li><a class="el" href="unistd_8h.html#a12bcf555f6b2cbfe62828deb198a2b4a" title="Replace the owner of a file without following a symbolic link. Tenok has no symbolic link,...">lchown()</a></li>
+<li><a class="el" href="stat_8h.html#a0c1269f9979230d588b4e72d5e7d1332" title="Replace the time the contents of a file were last written.">utime()</a></li>
+<li>utimes()</li>
+<li><a class="el" href="stat_8h.html#a47b7022461e3f65e812f461652ecc97f" title="Stamp the file a descriptor is open on with the times given. Tenok keeps no way back from a descripto...">futimens()</a></li>
+<li><a class="el" href="stat_8h.html#aee98bbe743c2d14dbaa67f01c3fb9ed5" title="Create a directory named pathname.">mkdir()</a></li>
+<li><a class="el" href="unistd_8h.html#a570282ae7ba596263ec812b368d99b34" title="Delete a directory, which must be empty.">rmdir()</a></li>
+<li><a class="el" href="unistd_8h.html#af3cee068f32a919cdd638e0578c1e5f8" title="Delete a name from the file system.">unlink()</a></li>
+<li><a class="el" href="stdio_8h.html#a02b13b56a188401119ea4da43c184913" title="Delete a file or an empty directory.">remove()</a></li>
+<li><a class="el" href="stdio_8h.html#a4d4709508ed7604103d77c3fdc5ea4a2" title="Change the name or the location of a file.">rename()</a></li>
+<li><a class="el" href="unistd_8h.html#aaea63e7a4923ab57f205b6cf023c3fb5" title="Give a file a second name. Tenok gives a file one name.">link()</a></li>
+<li><a class="el" href="unistd_8h.html#a85923fecf6e7f8cd74ed04597cd40f74" title="Make a name that stands for another. Tenok has no symbolic link.">symlink()</a></li>
+<li><a class="el" href="unistd_8h.html#ad57ce189a001775443632a7841fe65c4" title="Read what a symbolic link stands for. Nothing a path of Tenok names is one.">readlink()</a></li>
+<li><a class="el" href="stdlib_8h.html#a6abe6c5eb77aeaf05ad81a7425547d9e" title="Create a file no other name stands for and open it. The last six characters of the template must be X...">mkstemp()</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md37"></a>
+Streams:</h2>
+<ul>
+<li><a class="el" href="stdio_8h.html#a3f9b52a165c4c6a3b099ec5a2615adad" title="Open the file whose name is the string pointed to by pathname and associate a stream with it.">fopen()</a></li>
+<li><a class="el" href="stdio_8h.html#ab13b5edcd6e585f41214da079623b209" title="Put a stream on a descriptor that is already open.">fdopen()</a></li>
+<li><a class="el" href="stdio_8h.html#a1c4821b8a1a42eb0ced811a030aed4aa" title="Point a stream that is already open at another file, which is how a program replaces one of the stand...">freopen()</a></li>
+<li><a class="el" href="stdio_8h.html#a76370407f9ab0402564c2bb9bc9664e0" title="Close the given file stream.">fclose()</a></li>
+<li><a class="el" href="stdio_8h.html#a084251eb18ccd5c936faa2c39c86ec63" title="Read nmemb items of data, each size bytes long, from the stream pointed to by stream,...">fread()</a></li>
+<li><a class="el" href="stdio_8h.html#a20d465b196f378c16fc31d4117170623" title="Write nmemb items of data, each size bytes long, to the stream pointed to by stream,...">fwrite()</a></li>
+<li><a class="el" href="stdio_8h.html#a5e25775bd8597f839a28125b616bd241" title="Set the file position indicator for the stream pointed to by stream.">fseek()</a></li>
+<li><a class="el" href="stdio_8h.html#a819f057285a278044b6bc6e66dff2f2f" title="Reposition a stream, with the offset given as an off_t.">fseeko()</a></li>
+<li><a class="el" href="stdio_8h.html#a5a002ad43f113e8c634d284ee34d1d53" title="Obtain the current value of the file position indicator.">ftell()</a></li>
+<li><a class="el" href="stdio_8h.html#a7a044f39f604e1fc5a83268ca7a4ef45" title="Report where a stream is, as an off_t.">ftello()</a></li>
+<li><a class="el" href="stdio_8h.html#aa0cd401f198d33d9d01a9e8aa4026819" title="Set the file position indicator to the beginning of the file.">rewind()</a></li>
+<li><a class="el" href="stdio_8h.html#af86fa14728c9bad5418a6d29cad9f9ff" title="Examine the argument stream and returns the integer file descriptor used to implement this stream.">fileno()</a></li>
+<li><a class="el" href="stdio_8h.html#a9e71f513ad2496acb5361aedc065e3d8" title="Tell whether the end of the stream has been reached.">feof()</a></li>
+<li><a class="el" href="stdio_8h.html#a4a98383bb54291c2abede7aa28acf597" title="Tell whether the stream has failed.">ferror()</a></li>
+<li><a class="el" href="stdio_8h.html#ab5de865c3093158c70bf4bd88a9deea5" title="Clear the end of file and the error state of the stream.">clearerr()</a></li>
+<li><a class="el" href="stdio_8h.html#adb974f28765a31026ee6bf71d5175951" title="Hand over what the stream is holding. Tenok does not buffer, so there is never anything to hand over.">fflush()</a></li>
+<li><a class="el" href="stdio_8h.html#a36d24924e1acc69f9c3ce49a832615fe" title="Ask the stream to buffer what is written to it, the way setvbuf() does, without reporting whether it ...">setbuf()</a></li>
+<li><a class="el" href="stdio_8h.html#af691eb990d669a9edec8a9ec721ce3bc" title="Ask the stream to buffer what is written to it. Tenok reaches the device on the call that writes,...">setvbuf()</a></li>
+<li><a class="el" href="stdio_8h.html#ab11a990e4f8863a1e7736e3c1d430092" title="Read a character from the stream.">fgetc()</a></li>
+<li><a class="el" href="stdio_8h.html#a3e29caa20f7cffe18f410f01278905a8" title="Read a character from the standard input.">getchar()</a></li>
+<li><a class="el" href="stdio_8h.html#a2b3df0e66b41edab3c039191fe6cc4f9" title="Read a line from the stream, the newline included, and terminate it.">fgets()</a></li>
+<li><a class="el" href="stdio_8h.html#abe6299d5823dd023e610aaa619735a3f" title="Write a character to the stream.">fputc()</a></li>
+<li><a class="el" href="stdio_8h.html#af4de2514b7778805db3815e8dd6cf09a" title="Write a character to the standard output.">putchar()</a></li>
+<li><a class="el" href="stdio_8h.html#a68236e664c1f0da049b25fba1c1695f6" title="Write a string to the stream, without its terminating null byte.">fputs()</a></li>
+<li><a class="el" href="stdio_8h.html#ad41876f99f190c7488e64ef39c50a23f" title="Write a string and a newline to the standard output.">puts()</a></li>
 <li><a class="el" href="stdio_8h.html#a98631211a4a8aee62f572375d5b637be" title="Format and print data to the standard output.">printf()</a></li>
 <li><a class="el" href="stdio_8h.html#ad9291335f34e874c8431285d705bc3aa" title="Format and print data to a file.">fprintf()</a></li>
 <li><a class="el" href="stdio_8h.html#a5fe0fc8fe920b640d488856c5ca43cb5" title="Format and print data to a file.">dprintf()</a></li>
@@ -200,8 +254,61 @@ File Control and I/O:</h2>
 <li><a class="el" href="stdio_8h.html#a0d0a950c2b4e6fba795cb7d8f2e8b8b8" title="Format and print data to a file with argument list.">vdprintf()</a></li>
 <li><a class="el" href="stdio_8h.html#aab3db67c98c32122fcb3d076d4207bbc" title="Format and print data to a buffer with argument list.">vsprintf()</a></li>
 <li><a class="el" href="stdio_8h.html#a2cadafbeb2d6e0d5781f6e5106d41fc2" title="Format and print data to a buffer with limited size and argument list.">vsnprintf()</a></li>
+<li><a class="el" href="stdio_8h.html#aec1e54556dca3bd701d44395d34818dd" title="Read from the string what the format says is in it. Only the string half of scanf is here: the stream...">sscanf()</a></li>
+<li><a class="el" href="stdio_8h.html#ab1c4552aba80fe03c9b45fe27f4331ad" title="Read from the string what the format says is in it, taking the places to put it from a variable argum...">vsscanf()</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md35"></a>
+<h2><a class="anchor" id="autotoc_md38"></a>
+Process:</h2>
+<p>Tenok has neither <code><a class="el" href="unistd_8h.html#aa4e4714e6e8927c80b2553a40094b6d9" title="Create a child process, the way vfork() does not either.">fork()</a></code> nor <code>exec()</code>: a task comes from the image the system booted and is reached by calling it. The calls are named so that a program written for POSIX compiles, and each says so when it is made.</p>
+<ul>
+<li><a class="el" href="unistd_8h.html#ac61b207337ca21b3b309593fd1a0cb82" title="Return the ID of the calling task.">getpid()</a></li>
+<li><a class="el" href="unistd_8h.html#ac6d7f7ade00dcdc302b0da5664eee812" title="Return the ID of the task that started the calling one. Every task of Tenok is started by the one tha...">getppid()</a></li>
+<li><a class="el" href="unistd_8h.html#aa4e4714e6e8927c80b2553a40094b6d9" title="Create a child process, the way vfork() does not either.">fork()</a></li>
+<li><a class="el" href="unistd_8h.html#a00de8c0545c31325a425f53371a56235" title="Create a child process. Tenok runs every task from the image it booted and has no way to make another...">vfork()</a></li>
+<li><a class="el" href="unistd_8h.html#a34f1a971391de72a34ec56bb0133ce2d" title="Replace the running program with the one the pathname names. No file of Tenok is in a format the syst...">execve()</a></li>
+<li><a class="el" href="unistd_8h.html#a99c68bc1f0de7e428c2e24023e669658" title="Replace the running program with the one found by searching PATH for the file, the way execve() does.">execvp()</a></li>
+<li><a class="el" href="tenok_2sys_2wait_8h.html#a6655447bab00753d59759423bf28e22e" title="Wait for any child process to change state. Tenok has no child processes, so the wait always reports ...">wait()</a></li>
+<li><a class="el" href="tenok_2sys_2wait_8h.html#a710d1faf7fea3570d986f2ea40e1ed39" title="Wait for a child process to change state. Tenok has no child processes, so the wait always reports th...">waitpid()</a></li>
+<li><a class="el" href="unistd_8h.html#a3dc7e94fe9c483eea915fbc0334be0b2" title="Start a session. Tenok has the one console and no sessions to give it out to.">setsid()</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md39"></a>
+User and Group:</h2>
+<p>Tenok runs as the one user it has.</p>
+<ul>
+<li><a class="el" href="unistd_8h.html#a2f517436c22ef73337d3de4920908c6c" title="Report the user a task runs as, which on Tenok is always root.">getuid()</a></li>
+<li>geteuid()</li>
+<li><a class="el" href="unistd_8h.html#a58ca281cc6931c62e6a85e2edb5b4b49" title="Report the group a task runs as, which on Tenok is always root.">getgid()</a></li>
+<li>getegid()</li>
+<li><a class="el" href="unistd_8h.html#aacfa67f2aef6be4baceace6a00856d21" title="Report the supplementary groups of the task. Tenok has one group and root is in it,...">getgroups()</a></li>
+<li><a class="el" href="unistd_8h.html#aa426fc963bb0a4f469eef61d9f0c4a26" title="Become the user of the given identifier. Tenok runs as the one user it has, so only that one can be b...">setuid()</a></li>
+<li><a class="el" href="unistd_8h.html#a0210e5429242210d14011a69cc2caab6" title="Become the effective user of the given identifier, the way setuid() does.">seteuid()</a></li>
+<li><a class="el" href="unistd_8h.html#a3116233500c2c34795d437eaf34b69b5" title="Join the group of the given identifier. Tenok has the one group, so only that one can be joined.">setgid()</a></li>
+<li><a class="el" href="unistd_8h.html#ae9f6ddd60c97865e00e2348be6aa5ac8" title="Join the effective group of the given identifier, the way setgid() does.">setegid()</a></li>
+<li><a class="el" href="pwd_8h.html#ab778defdd0203751977756936c1d3105" title="Look a user up by its number.">getpwuid()</a></li>
+<li><a class="el" href="pwd_8h.html#a08249b8fcd2bf95afbddd22fdc86814c" title="Look a user up by its name.">getpwnam()</a></li>
+<li><a class="el" href="grp_8h.html#a8524c2fcdec1d8012103efc53d9ea3a9" title="Look a group up by its number.">getgrgid()</a></li>
+<li><a class="el" href="grp_8h.html#ac41b95afd2d94da07d8d13a6c0f30302" title="Look a group up by its name.">getgrnam()</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md40"></a>
+System:</h2>
+<ul>
+<li><a class="el" href="utsname_8h.html#a8aad464bbe437c5776c520d958dcff58" title="Return the name and the version of the system.">uname()</a></li>
+<li><a class="el" href="unistd_8h.html#a9ac8478abd0013aa5f514d9604722194" title="Report a value of the system that is decided when it is built.">sysconf()</a></li>
+<li><a class="el" href="resource_8h.html#a46cbb4e3ff9d597b722d9b482715031f" title="Read the limit of a resource. The limits of Tenok are properties of the build, so the two fields alwa...">getrlimit()</a></li>
+<li><a class="el" href="resource_8h.html#aaa8c7cb6d2789c3e4242268a80fb1fe3" title="Replace the limit of a resource. Every limit of Tenok is fixed at the build, so only a request that a...">setrlimit()</a></li>
+<li>gettimeofday()</li>
+<li>settimeofday()</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md41"></a>
+Network:</h2>
+<p>Tenok carries no network. The calls are named so that a program written for POSIX compiles, and each says so when it is made.</p>
+<ul>
+<li><a class="el" href="socket_8h.html#af4e0711877c45a41168ac677b0670ccd" title="Create an endpoint for communication.">socket()</a></li>
+<li><a class="el" href="socket_8h.html#a82199bcd81894331533a25f08e172480" title="Give the endpoint the address it answers on.">bind()</a></li>
+<li><a class="el" href="socket_8h.html#a5989c21d05cb17caba26cef496a7beea" title="Let the endpoint take the connections that arrive.">listen()</a></li>
+<li><a class="el" href="socket_8h.html#aa481d86e1f7cfb428547c552eee05511" title="Send a message to the address given.">sendto()</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md42"></a>
 Signals:</h2>
 <ul>
 <li><a class="el" href="tenok_2signal_8h.html#a48bea74f6d051a781511dffc7eb929ac" title="Set up a signal for the task to catch.">sigaction()</a></li>
@@ -215,7 +322,7 @@ Signals:</h2>
 <li><a class="el" href="tenok_2signal_8h.html#a47a6ff5872f457ee230458137f2b2409" title="To cause the calling task (or thread) to sleep until a signal is delivered that either terminate the ...">pause()</a></li>
 <li><a class="el" href="tenok_2signal_8h.html#a4539db972bcf3dd8c8b429af0dc3789d" title="Send a signal to a task.">kill()</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md36"></a>
+<h2><a class="anchor" id="autotoc_md43"></a>
 Timer and Clock:</h2>
 <ul>
 <li><a class="el" href="tenok_2time_8h.html#a6b9bbabed8d04297407e2ac5c3c2f45c" title="Create a new per-thread interval timer.">timer_create()</a></li>
@@ -225,50 +332,56 @@ Timer and Clock:</h2>
 <li><a class="el" href="tenok_2time_8h.html#a7edb6ce725a63f165054e9a489a66413" title="Get the resolution (precision) of the specified clock ID.">clock_getres()</a></li>
 <li><a class="el" href="tenok_2time_8h.html#ac686a89baec3a10f53c1565f4d451fce" title="Retrieve the time of the specified clock ID.">clock_gettime()</a></li>
 <li><a class="el" href="tenok_2time_8h.html#a269f8720a641c0e6ad454e8d0d84f201" title="Set the time of the specified clock ID.">clock_settime()</a></li>
+<li><a class="el" href="tenok_2time_8h.html#a99ef1cb2c789827dd5db3886dccf9067" title="Return the time as the number of seconds since 1970-01-01 00:00:00 +0000 (UTC)">time()</a></li>
+<li>strptime()</li>
+<li><a class="el" href="tenok_2time_8h.html#a1b63fa141b202a0b01cfef8421aa48d6" title="Suspend execution for a specified time.">nanosleep()</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md37"></a>
+<h2><a class="anchor" id="autotoc_md44"></a>
 Memory Allocation:</h2>
 <ul>
 <li><a class="el" href="mpool_8h.html#a60b9183e414b21960dd29d4f1811cbed" title="Initialize a memory poll object with a contiguous memory space.">mpool_init()</a></li>
 <li><a class="el" href="mpool_8h.html#a7dab7e09f61dcf1b6bd4d2dabacd9524" title="Allocate a memory space from the memory pool.">mpool_alloc()</a></li>
 <li><a class="el" href="stdlib_8h.html#a7ac38fce3243a7dcf448301ee9ffd392" title="Allocate a memory space.">malloc()</a></li>
 <li><a class="el" href="stdlib_8h.html#a62b7798461bd461da64c5f9d35feddf7" title="Allocate and reset a memory space of an array.">calloc()</a></li>
+<li><a class="el" href="stdlib_8h.html#a1a6b5e8d2f1c37e5b43e4345586075be" title="Resize an allocated memory space, preserving its contents.">realloc()</a></li>
 <li><a class="el" href="stdlib_8h.html#afbedc913aa4651b3c3b4b3aecd9b4711" title="Free a memory space.">free()</a></li>
+<li>alloca()</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md39"></a>
+<h1><a class="anchor" id="autotoc_md46"></a>
 Kernel-space API</h1>
-<h2><a class="anchor" id="autotoc_md40"></a>
+<h2><a class="anchor" id="autotoc_md47"></a>
 Scheduler</h2>
 <ul>
 <li><a class="el" href="kernel_2sched_8h.html#ac48128e72b303ea22d8ec641a9516b15" title="Relinquish CPU and select next thread to run.">schedule()</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md41"></a>
+<h2><a class="anchor" id="autotoc_md48"></a>
 Kernel Thread</h2>
 <ul>
 <li><a class="el" href="kthread_8h.html#adb7e97b3b54312e27cc59a32d5a0c664" title="Create new kernel thread.">kthread_create()</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md42"></a>
+<h2><a class="anchor" id="autotoc_md49"></a>
 Logging:</h2>
 <ul>
 <li><a class="el" href="printk_8h.html#a25b30e8bbadd54650c56895999dd808f" title="Display a kernel message.">printk()</a></li>
 <li><a class="el" href="printk_8h.html#a86383ef9ece23acf421dbeb167680c92" title="Display a message, then halt the system.">panic()</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md43"></a>
+<h2><a class="anchor" id="autotoc_md50"></a>
 Interrupt:</h2>
 <ul>
 <li><a class="el" href="preempt_8h.html#ae6fd493c423e6f2cd1ef55ecbecf4f32" title="Disable all interrupts.">preempt_disable()</a></li>
 <li><a class="el" href="preempt_8h.html#a63f517f5c268f48aad30e493a14a2aad" title="Enable all interrupts.">preempt_enable()</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md44"></a>
+<h2><a class="anchor" id="autotoc_md51"></a>
 Mutex:</h2>
 <ul>
 <li><a class="el" href="mutex_8h.html#a3029ce425032b167692de6c265676a0b" title="Initialize the mutex.">mutex_init()</a></li>
 <li><a class="el" href="mutex_8h.html#af6184e0422d24714e3485d139f776ef8" title="Check if the mutex is locked or not.">mutex_is_locked()</a></li>
+<li><a class="el" href="mutex_8h.html#a169e71f39f5b3791dd3df2f9caf0af84" title="Lock the mutex. If the mutex is currently locked then the function shall return immediately.">mutex_trylock()</a></li>
 <li><a class="el" href="mutex_8h.html#a78a574e9c2b09bb00d53bbfe262c892c" title="Lock the mutex.">mutex_lock()</a></li>
 <li><a class="el" href="mutex_8h.html#aa46844346d7946f83a90ca5fbb22f37c" title="Unlock the mutex.">mutex_unlock()</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md45"></a>
+<h2><a class="anchor" id="autotoc_md52"></a>
 Semaphore:</h2>
 <ul>
 <li><a class="el" href="kernel_2semaphore_8h.html#a4cef46903ef1eff72f75e10889a46e0e" title="Initialize the semaphore.">sema_init()</a></li>
@@ -276,24 +389,24 @@ Semaphore:</h2>
 <li><a class="el" href="kernel_2semaphore_8h.html#a2da384dbf85c2376e660e7a3579675b7" title="Decrease the number of the semaphore.">down()</a></li>
 <li><a class="el" href="kernel_2semaphore_8h.html#ac64b9df30fded70ff19c6192f1ee13d1" title="The same as down(), except that if the decrement cannot be immediately performed, then call returns a...">down_trylock()</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md46"></a>
+<h2><a class="anchor" id="autotoc_md53"></a>
 Tasklet (SoftIRQ):</h2>
 <ul>
 <li><a class="el" href="softirq_8h.html#a16d0a8e8577f5baa2a847be0c46cf91c" title="Initialize the tasklet.">tasklet_init()</a></li>
 <li><a class="el" href="softirq_8h.html#aa6e4edec81b5c0ac7bc437d1ca4ba854" title="Schedule the tasklet.">tasklet_schedule()</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md47"></a>
+<h2><a class="anchor" id="autotoc_md54"></a>
 Wait Queue:</h2>
 <ul>
-<li><a class="el" href="wait_8h.html#a8b26febb18e5b984b5ae94b9412b065e" title="Declare and initialize a wait queue.">DECLARE_WAIT_QUEUE_HEAD()</a></li>
-<li><a class="el" href="wait_8h.html#a759d8a479756ceb875be2debcb80359a" title="Initialize the wait queue.">init_waitqueue_head()</a></li>
-<li><a class="el" href="wait_8h.html#a8bf010a70d3424e372091b847b5b6d4a" title="Wait until the condition became true.">wait_event()</a></li>
-<li><a class="el" href="wait_8h.html#a76df04ee5969b9a7e309877fc1106c9b" title="Suspend current thread and place it into a wait list with a new state.">prepare_to_wait()</a></li>
-<li><a class="el" href="wait_8h.html#ad24b4c724e662b9fc3159ebd937cf913" title="Move the thread from a wait list into a ready list and set it to be ready.">finish_wait()</a></li>
-<li><a class="el" href="wait_8h.html#adaf1c7df7b40eccebaa180cb9b5e3df5" title="Wake up the highest priority thread from the wait list.">wake_up()</a></li>
-<li><a class="el" href="wait_8h.html#ab1bc46e7c480408ccfd0d806a3620d6b" title="Wake up all threads from the wait list.">wake_up_all()</a></li>
+<li><a class="el" href="kernel_2wait_8h.html#a8b26febb18e5b984b5ae94b9412b065e" title="Declare and initialize a wait queue.">DECLARE_WAIT_QUEUE_HEAD()</a></li>
+<li><a class="el" href="kernel_2wait_8h.html#a759d8a479756ceb875be2debcb80359a" title="Initialize the wait queue.">init_waitqueue_head()</a></li>
+<li><a class="el" href="kernel_2wait_8h.html#a8bf010a70d3424e372091b847b5b6d4a" title="Wait until the condition became true.">wait_event()</a></li>
+<li><a class="el" href="kernel_2wait_8h.html#a76df04ee5969b9a7e309877fc1106c9b" title="Suspend current thread and place it into a wait list with a new state.">prepare_to_wait()</a></li>
+<li><a class="el" href="kernel_2wait_8h.html#ad24b4c724e662b9fc3159ebd937cf913" title="Move the thread from a wait list into a ready list and set it to be ready.">finish_wait()</a></li>
+<li><a class="el" href="kernel_2wait_8h.html#adaf1c7df7b40eccebaa180cb9b5e3df5" title="Wake up the highest priority thread from the wait list.">wake_up()</a></li>
+<li><a class="el" href="kernel_2wait_8h.html#ab1bc46e7c480408ccfd0d806a3620d6b" title="Wake up all threads from the wait list.">wake_up_all()</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md48"></a>
+<h2><a class="anchor" id="autotoc_md55"></a>
 kfifo:</h2>
 <ul>
 <li><a class="el" href="kfifo_8h.html#abb892d3303e62e441691c9f617b452f9" title="Initialize a FIFO using preallocated buffer.">kfifo_init()</a></li>
@@ -319,7 +432,7 @@ kfifo:</h2>
 <li><a class="el" href="kfifo_8h.html#a02074d9c3600a094129fd5f634bcc5a7" title="Return if the FIFO is empty or not.">kfifo_is_empty()</a></li>
 <li><a class="el" href="kfifo_8h.html#aeee96875272817efd55eb3d34a23131e" title="Return if the FIFO is full or not.">kfifo_is_full()</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md49"></a>
+<h2><a class="anchor" id="autotoc_md56"></a>
 Memory Allocation:</h2>
 <ul>
 <li><a class="el" href="mm_8h.html#a5f52d7c56b7d67dc2f96b2e93dfdc7be" title="Allocate a memory space for using in the kernel.">kmalloc()</a></li>
@@ -333,20 +446,22 @@ Memory Allocation:</h2>
 <li><a class="el" href="slab_8h.html#a417f38563ea3fa2ebc4a98e152f062ba" title="Free the allocated slab memory.">kmem_cache_free()</a></li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md51"></a>
+<h1><a class="anchor" id="autotoc_md58"></a>
 Common API</h1>
-<h2><a class="anchor" id="autotoc_md52"></a>
+<h2><a class="anchor" id="autotoc_md59"></a>
 List:</h2>
 <ul>
 <li><a class="el" href="list_8h.html#a42f0e72af970a790b60a740af8c9ecd0" title="Declare and initialize a new list head.">LIST_HEAD()</a></li>
 <li><a class="el" href="list_8h.html#a4642d4b7df28478bb762fe43c85b5c63" title="Statically initialize the list head.">LIST_HEAD_INIT()</a></li>
-<li><a class="el" href="list_8h.html#af8fefe2d35c3f2ef3a3fc693d0080c48" title="Initialize the list head.">INIT_LIST_HEAD()</a></li>
-<li><a class="el" href="list_8h.html#a221a74d55162a5f9351c3ad989fa08f4" title="Add new list member to the list.">list_add()</a></li>
-<li><a class="el" href="list_8h.html#ac32a18fe87fa883f9679ca4bc4b88693" title="Delete a list item from its list.">list_del()</a></li>
-<li><a class="el" href="list_8h.html#a90c598c7e340b11c3ae9f9cbb415a4d7" title="Delete and force initialize a list member from its list.">list_del_init()</a></li>
-<li><a class="el" href="list_8h.html#a4e4fb53df346702e31a3c03b23769cb2" title="Check if the list is empty.">list_empty()</a></li>
-<li><a class="el" href="list_8h.html#ac2f0fecd0fceee7e5a9cb5550639e87a" title="Check if the list object is the last of the list.">list_is_last()</a></li>
-<li><a class="el" href="list_8h.html#a7d1de96ef90e72bd5ba765e67cb83b74" title="Move a list member from original list to another.">list_move()</a></li>
+<li>INIT_LIST_HEAD()</li>
+<li>list_add()</li>
+<li>list_add_tail()</li>
+<li>list_del()</li>
+<li>list_del_init()</li>
+<li>list_empty()</li>
+<li>list_is_last()</li>
+<li>list_move()</li>
+<li>list_move_tail()</li>
 <li><a class="el" href="list_8h.html#a26c976b7f654e70df318c1843e5094de" title="Get the object entry of a list.">list_entry()</a></li>
 <li><a class="el" href="list_8h.html#a29b80cf9d55392a4949d2071b7db4d5c" title="Get the first object entry.">list_first_entry()</a></li>
 <li><a class="el" href="list_8h.html#ad5a7bbc278609c0fee4536eeeaa1afab" title="Get the next object entry.">list_next_entry()</a></li>

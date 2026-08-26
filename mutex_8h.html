@@ -101,15 +101,24 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:afb7f85ff7187f8b74af0333e87a51e2e"><td class="memItemLeft" align="right" valign="top"><a id="afb7f85ff7187f8b74af0333e87a51e2e"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>__mutex_lock</b> (struct <a class="el" href="structmutex.html">mutex</a> *mtx)</td></tr>
-<tr class="separator:afb7f85ff7187f8b74af0333e87a51e2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a244c70f5357e80cefc085bed93a17771"><td class="memItemLeft" align="right" valign="top"><a id="a244c70f5357e80cefc085bed93a17771"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>__mutex_init</b> (struct <a class="el" href="structmutex.html">mutex</a> *mtx)</td></tr>
+<tr class="separator:a244c70f5357e80cefc085bed93a17771"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52847b7b1864e3c708b4744cbf4c2fac"><td class="memItemLeft" align="right" valign="top"><a id="a52847b7b1864e3c708b4744cbf4c2fac"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>thread_inherit_priority</b> (struct <a class="el" href="structmutex.html">mutex</a> *<a class="el" href="structmutex.html">mutex</a>)</td></tr>
+<tr class="separator:a52847b7b1864e3c708b4744cbf4c2fac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d344f0f82afeb7299db2039899a02b8"><td class="memItemLeft" align="right" valign="top"><a id="a4d344f0f82afeb7299db2039899a02b8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>thread_reset_inherited_priority</b> (struct <a class="el" href="structmutex.html">mutex</a> *<a class="el" href="structmutex.html">mutex</a>)</td></tr>
+<tr class="separator:a4d344f0f82afeb7299db2039899a02b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3029ce425032b167692de6c265676a0b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mutex_8h.html#a3029ce425032b167692de6c265676a0b">mutex_init</a> (struct <a class="el" href="structmutex.html">mutex</a> *mtx)</td></tr>
 <tr class="memdesc:a3029ce425032b167692de6c265676a0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the mutex.  <a href="mutex_8h.html#a3029ce425032b167692de6c265676a0b">More...</a><br /></td></tr>
 <tr class="separator:a3029ce425032b167692de6c265676a0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6184e0422d24714e3485d139f776ef8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mutex_8h.html#af6184e0422d24714e3485d139f776ef8">mutex_is_locked</a> (struct <a class="el" href="structmutex.html">mutex</a> *mtx)</td></tr>
 <tr class="memdesc:af6184e0422d24714e3485d139f776ef8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the mutex is locked or not.  <a href="mutex_8h.html#af6184e0422d24714e3485d139f776ef8">More...</a><br /></td></tr>
 <tr class="separator:af6184e0422d24714e3485d139f776ef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a169e71f39f5b3791dd3df2f9caf0af84"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mutex_8h.html#a169e71f39f5b3791dd3df2f9caf0af84">mutex_trylock</a> (struct <a class="el" href="structmutex.html">mutex</a> *mtx)</td></tr>
+<tr class="memdesc:a169e71f39f5b3791dd3df2f9caf0af84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock the mutex. If the mutex is currently locked then the function shall return immediately.  <a href="mutex_8h.html#a169e71f39f5b3791dd3df2f9caf0af84">More...</a><br /></td></tr>
+<tr class="separator:a169e71f39f5b3791dd3df2f9caf0af84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78a574e9c2b09bb00d53bbfe262c892c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mutex_8h.html#a78a574e9c2b09bb00d53bbfe262c892c">mutex_lock</a> (struct <a class="el" href="structmutex.html">mutex</a> *mtx)</td></tr>
 <tr class="memdesc:a78a574e9c2b09bb00d53bbfe262c892c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock the mutex.  <a href="mutex_8h.html#a78a574e9c2b09bb00d53bbfe262c892c">More...</a><br /></td></tr>
 <tr class="separator:a78a574e9c2b09bb00d53bbfe262c892c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -199,6 +208,38 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>__mutex_lock</b> (stru
 </div><div class="memdoc">
 
 <p>Lock the mutex. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mtx</td><td>Pointer to the mutex. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>0 on success and nonzero error number on error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a169e71f39f5b3791dd3df2f9caf0af84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a169e71f39f5b3791dd3df2f9caf0af84">&#9670;&nbsp;</a></span>mutex_trylock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mutex_trylock </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structmutex.html">mutex</a> *&#160;</td>
+          <td class="paramname"><em>mtx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lock the mutex. If the mutex is currently locked then the function shall return immediately. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mtx</td><td>Pointer to the mutex. </td></tr>

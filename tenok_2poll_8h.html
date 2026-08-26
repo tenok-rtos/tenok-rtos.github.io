@@ -76,14 +76,17 @@ $(function() {
 <div class="title">poll.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="tenok_2signal_8h_source.html">signal.h</a>&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for poll.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="tenok_2poll_8h__incl.png" border="0" usemap="#ainclude_2tenok_2poll_8h" alt=""/></div>
 <map name="ainclude_2tenok_2poll_8h" id="ainclude_2tenok_2poll_8h">
-<area shape="rect" title=" " alt="" coords="5,5,156,32"/>
-<area shape="rect" title=" " alt="" coords="45,80,116,107"/>
+<area shape="rect" title=" " alt="" coords="21,5,171,32"/>
+<area shape="rect" href="tenok_2signal_8h.html" title=" " alt="" coords="22,80,95,107"/>
+<area shape="rect" title=" " alt="" coords="61,229,131,256"/>
+<area shape="rect" href="types_8h.html" title=" " alt="" coords="5,155,101,181"/>
 </map>
 </div>
 </div>
@@ -117,6 +120,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aa97ba0bfbedf1784e648dd753a92449d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tenok_2poll_8h.html#aa97ba0bfbedf1784e648dd753a92449d">poll</a> (struct <a class="el" href="structpollfd.html">pollfd</a> *fds, nfds_t nfds, int timeout)</td></tr>
 <tr class="memdesc:aa97ba0bfbedf1784e648dd753a92449d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for one of a set of file descriptors to become ready to perform I/O.  <a href="tenok_2poll_8h.html#aa97ba0bfbedf1784e648dd753a92449d">More...</a><br /></td></tr>
 <tr class="separator:aa97ba0bfbedf1784e648dd753a92449d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb7bbcd498026039a59b028712b88abf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tenok_2poll_8h.html#adb7bbcd498026039a59b028712b88abf">ppoll</a> (struct <a class="el" href="structpollfd.html">pollfd</a> *fds, nfds_t nfds, const struct <a class="el" href="structtimespec.html">timespec</a> *timeout_ts, const sigset_t *sigmask)</td></tr>
+<tr class="memdesc:adb7bbcd498026039a59b028712b88abf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for one of the descriptors to become ready, with the timeout given as a timespec. Tenok blocks no signal, so the mask is accepted and has nothing to do.  <a href="tenok_2poll_8h.html#adb7bbcd498026039a59b028712b88abf">More...</a><br /></td></tr>
+<tr class="separator:adb7bbcd498026039a59b028712b88abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="aa97ba0bfbedf1784e648dd753a92449d"></a>
@@ -162,7 +168,64 @@ Functions</h2></td></tr>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">int</td><td>0 on success and nonzero error number on error. </td></tr>
+    <tr><td class="paramname">int</td><td>The number of the ready descriptors on success and -1 on error, with the reason left in errno. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adb7bbcd498026039a59b028712b88abf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb7bbcd498026039a59b028712b88abf">&#9670;&nbsp;</a></span>ppoll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ppoll </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structpollfd.html">pollfd</a> *&#160;</td>
+          <td class="paramname"><em>fds</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">nfds_t&#160;</td>
+          <td class="paramname"><em>nfds</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="structtimespec.html">timespec</a> *&#160;</td>
+          <td class="paramname"><em>timeout_ts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sigset_t *&#160;</td>
+          <td class="paramname"><em>sigmask</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wait for one of the descriptors to become ready, with the timeout given as a timespec. Tenok blocks no signal, so the mask is accepted and has nothing to do. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fds</td><td>The descriptors to wait on. </td></tr>
+    <tr><td class="paramname">nfds</td><td>How many of them there are. </td></tr>
+    <tr><td class="paramname">timeout_ts</td><td>How long to wait, or a null pointer to wait forever. </td></tr>
+    <tr><td class="paramname">sigmask</td><td>The signals to block while waiting. Not used. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>The number of the ready descriptors on success and -1 on error, with the reason left in errno. </td></tr>
   </table>
   </dd>
 </dl>

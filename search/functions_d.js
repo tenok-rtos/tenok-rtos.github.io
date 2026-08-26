@@ -1,6 +1,25 @@
 var searchData=
 [
-  ['open_555',['open',['../fcntl_8h.html#adcb60598073f6f9cbb0091ef6768fa5c',1,'file.c']]],
-  ['opendir_556',['opendir',['../dirent_8h.html#a31b8a6d68fa7c8a3250d457aecf58a78',1,'file.c']]],
-  ['os_5fenv_5finit_557',['os_env_init',['../port_8h.html#acbd088eb71dc40c61f1c49bcf7e373b3',1,'port.h']]]
+  ['malloc_752',['malloc',['../stdlib_8h.html#a7ac38fce3243a7dcf448301ee9ffd392',1,'mm.c']]],
+  ['minfo_753',['minfo',['../tenok_8h.html#a69a976c8dccc1ece2499fa4f09167aa4',1,'mm.c']]],
+  ['mkdir_754',['mkdir',['../stat_8h.html#aee98bbe743c2d14dbaa67f01c3fb9ed5',1,'file.c']]],
+  ['mkfifo_755',['mkfifo',['../stat_8h.html#a097a953859f943469263ae6f11669470',1,'file.c']]],
+  ['mknod_756',['mknod',['../stat_8h.html#ae92589973c691560ce2a6a97043872cf',1,'file.c']]],
+  ['mkstemp_757',['mkstemp',['../stdlib_8h.html#a6abe6c5eb77aeaf05ad81a7425547d9e',1,'wrapper.c']]],
+  ['mount_758',['mount',['../mount_8h.html#ae77fcaaa4a9edce0cafe9eef1d9d8629',1,'file.c']]],
+  ['mpool_5falloc_759',['mpool_alloc',['../mpool_8h.html#a7dab7e09f61dcf1b6bd4d2dabacd9524',1,'mpool.h']]],
+  ['mpool_5finit_760',['mpool_init',['../mpool_8h.html#a60b9183e414b21960dd29d4f1811cbed',1,'mpool.c']]],
+  ['mq_5fclose_761',['mq_close',['../tenok_2mqueue_8h.html#a3fbd3906296be63451c64d69be2bc371',1,'mqueue.c']]],
+  ['mq_5fgetattr_762',['mq_getattr',['../tenok_2mqueue_8h.html#a8fafe8b1183830322f8ff875f4e6cb4c',1,'mqueue.c']]],
+  ['mq_5fopen_763',['mq_open',['../tenok_2mqueue_8h.html#a3397c2dadbe0a5113ff67cd284990a94',1,'mqueue.c']]],
+  ['mq_5freceive_764',['mq_receive',['../tenok_2mqueue_8h.html#ab89c825740fe27d3821ccbe32bd68dfa',1,'mqueue.c']]],
+  ['mq_5fsend_765',['mq_send',['../tenok_2mqueue_8h.html#af13b6f0b3b15e14624b0c50050d062a4',1,'mqueue.c']]],
+  ['mq_5fsetattr_766',['mq_setattr',['../tenok_2mqueue_8h.html#ae6191194d2451804656942f7c8da6c71',1,'mqueue.c']]],
+  ['mq_5ftimedreceive_767',['mq_timedreceive',['../tenok_2mqueue_8h.html#a3ddcc490a4e9c780e65b705a2c3efea2',1,'mqueue.c']]],
+  ['mq_5ftimedsend_768',['mq_timedsend',['../tenok_2mqueue_8h.html#ad1756c5a98e6601694eb5c840baca17f',1,'mqueue.c']]],
+  ['mutex_5finit_769',['mutex_init',['../mutex_8h.html#a3029ce425032b167692de6c265676a0b',1,'mutex.c']]],
+  ['mutex_5fis_5flocked_770',['mutex_is_locked',['../mutex_8h.html#af6184e0422d24714e3485d139f776ef8',1,'mutex.c']]],
+  ['mutex_5flock_771',['mutex_lock',['../mutex_8h.html#a78a574e9c2b09bb00d53bbfe262c892c',1,'mutex.c']]],
+  ['mutex_5ftrylock_772',['mutex_trylock',['../mutex_8h.html#a169e71f39f5b3791dd3df2f9caf0af84',1,'mutex.c']]],
+  ['mutex_5funlock_773',['mutex_unlock',['../mutex_8h.html#aa46844346d7946f83a90ca5fbb22f37c',1,'mutex.c']]]
 ];

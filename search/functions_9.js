@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['jump_5fto_5fkernel_500',['jump_to_kernel',['../port_8h.html#afe2c65b0a5297707a8aeb28413818833',1,'port.h']]],
-  ['jump_5fto_5fthread_501',['jump_to_thread',['../port_8h.html#a4da3fd84fb20cc813307c9b191b03ef6',1,'port.h']]]
+  ['ioctl_714',['ioctl',['../ioctl_8h.html#a1487536105f7a596481bf6bfa8de99f6',1,'file.c']]],
+  ['isatty_715',['isatty',['../unistd_8h.html#a49bb0c485f30ab14364721c9ce433bab',1,'file.c']]]
 ];

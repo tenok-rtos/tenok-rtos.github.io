@@ -69,8 +69,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
-<a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
 <div class="title">list.h File Reference</div>  </div>
 </div><!--header-->
@@ -90,22 +89,23 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="list_8h__dep__incl.png" border="0" usemap="#ainclude_2common_2list_8hdep" alt=""/></div>
 <map name="ainclude_2common_2list_8hdep" id="ainclude_2common_2list_8hdep">
-<area shape="rect" title=" " alt="" coords="773,5,939,32"/>
-<area shape="rect" href="fs_8h.html" title=" " alt="" coords="891,80,1005,107"/>
-<area shape="rect" href="kernel_8h.html" title=" " alt="" coords="357,155,526,181"/>
-<area shape="rect" href="wait_8h.html" title=" " alt="" coords="964,229,1121,256"/>
-<area shape="rect" href="mutex_8h.html" title=" " alt="" coords="469,80,640,107"/>
-<area shape="rect" href="kernel_2semaphore_8h.html" title=" " alt="" coords="664,80,867,107"/>
-<area shape="rect" href="thread_8h.html" title=" " alt="" coords="1229,155,1400,181"/>
-<area shape="rect" href="kernel_2time_8h.html" title=" " alt="" coords="211,80,370,107"/>
-<area shape="rect" href="slab_8h.html" title=" " alt="" coords="1081,80,1223,107"/>
-<area shape="rect" href="tenok_2mqueue_8h.html" title=" " alt="" coords="1248,80,1427,107"/>
-<area shape="rect" href="pthread_8h.html" title=" " alt="" coords="11,80,187,107"/>
-<area shape="rect" href="reg__file_8h.html" title=" " alt="" coords="561,155,711,181"/>
-<area shape="rect" href="pipe_8h.html" title=" " alt="" coords="499,304,656,331"/>
-<area shape="rect" href="kernel_2poll_8h.html" title=" " alt="" coords="735,155,889,181"/>
-<area shape="rect" href="stdio_8h.html" title=" " alt="" coords="150,229,309,256"/>
-<area shape="rect" href="reent_8h.html" title=" " alt="" coords="5,155,192,181"/>
+<area shape="rect" title=" " alt="" coords="714,5,881,32"/>
+<area shape="rect" href="fs_8h.html" title=" " alt="" coords="533,155,646,181"/>
+<area shape="rect" href="kernel_8h.html" title=" " alt="" coords="705,229,874,256"/>
+<area shape="rect" href="kernel_2wait_8h.html" title=" " alt="" coords="535,304,692,331"/>
+<area shape="rect" href="mutex_8h.html" title=" " alt="" coords="972,80,1143,107"/>
+<area shape="rect" href="kernel_2semaphore_8h.html" title=" " alt="" coords="1167,80,1369,107"/>
+<area shape="rect" href="thread_8h.html" title=" " alt="" coords="5,155,176,181"/>
+<area shape="rect" href="kernel_2time_8h.html" title=" " alt="" coords="514,80,673,107"/>
+<area shape="rect" href="slab_8h.html" title=" " alt="" coords="1394,80,1537,107"/>
+<area shape="rect" href="tenok_2mqueue_8h.html" title=" " alt="" coords="1561,80,1740,107"/>
+<area shape="rect" href="pthread_8h.html" title=" " alt="" coords="772,80,948,107"/>
+<area shape="rect" href="reg__file_8h.html" title=" " alt="" coords="429,229,579,256"/>
+<area shape="rect" href="pipe_8h.html" title=" " alt="" coords="716,304,873,331"/>
+<area shape="rect" href="kernel_2poll_8h.html" title=" " alt="" coords="251,229,405,256"/>
+<area shape="rect" href="stdio_8h.html" title=" " alt="" coords="902,229,1061,256"/>
+<area shape="rect" href="reent_8h.html" title=" " alt="" coords="891,155,1077,181"/>
+<area shape="rect" href="mntent_8h.html" title=" " alt="" coords="897,304,1071,331"/>
 </map>
 </div>
 </div>
@@ -151,30 +151,6 @@ Macros</h2></td></tr>
 <tr class="memitem:a42f0e72af970a790b60a740af8c9ecd0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8h.html#a42f0e72af970a790b60a740af8c9ecd0">LIST_HEAD</a>(name)&#160;&#160;&#160;struct <a class="el" href="structlist__head.html">list_head</a> name = <a class="el" href="list_8h.html#a4642d4b7df28478bb762fe43c85b5c63">LIST_HEAD_INIT</a>(name)</td></tr>
 <tr class="memdesc:a42f0e72af970a790b60a740af8c9ecd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declare and initialize a new list head.  <a href="list_8h.html#a42f0e72af970a790b60a740af8c9ecd0">More...</a><br /></td></tr>
 <tr class="separator:a42f0e72af970a790b60a740af8c9ecd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:af8fefe2d35c3f2ef3a3fc693d0080c48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8h.html#af8fefe2d35c3f2ef3a3fc693d0080c48">INIT_LIST_HEAD</a> (struct <a class="el" href="structlist__head.html">list_head</a> *list)</td></tr>
-<tr class="memdesc:af8fefe2d35c3f2ef3a3fc693d0080c48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the list head.  <a href="list_8h.html#af8fefe2d35c3f2ef3a3fc693d0080c48">More...</a><br /></td></tr>
-<tr class="separator:af8fefe2d35c3f2ef3a3fc693d0080c48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e4fb53df346702e31a3c03b23769cb2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8h.html#a4e4fb53df346702e31a3c03b23769cb2">list_empty</a> (struct <a class="el" href="structlist__head.html">list_head</a> *head)</td></tr>
-<tr class="memdesc:a4e4fb53df346702e31a3c03b23769cb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the list is empty.  <a href="list_8h.html#a4e4fb53df346702e31a3c03b23769cb2">More...</a><br /></td></tr>
-<tr class="separator:a4e4fb53df346702e31a3c03b23769cb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2f0fecd0fceee7e5a9cb5550639e87a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8h.html#ac2f0fecd0fceee7e5a9cb5550639e87a">list_is_last</a> (const struct <a class="el" href="structlist__head.html">list_head</a> *list, const struct <a class="el" href="structlist__head.html">list_head</a> *head)</td></tr>
-<tr class="memdesc:ac2f0fecd0fceee7e5a9cb5550639e87a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the list object is the last of the list.  <a href="list_8h.html#ac2f0fecd0fceee7e5a9cb5550639e87a">More...</a><br /></td></tr>
-<tr class="separator:ac2f0fecd0fceee7e5a9cb5550639e87a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a221a74d55162a5f9351c3ad989fa08f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8h.html#a221a74d55162a5f9351c3ad989fa08f4">list_add</a> (struct <a class="el" href="structlist__head.html">list_head</a> *new, struct <a class="el" href="structlist__head.html">list_head</a> *head)</td></tr>
-<tr class="memdesc:a221a74d55162a5f9351c3ad989fa08f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add new list member to the list.  <a href="list_8h.html#a221a74d55162a5f9351c3ad989fa08f4">More...</a><br /></td></tr>
-<tr class="separator:a221a74d55162a5f9351c3ad989fa08f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac32a18fe87fa883f9679ca4bc4b88693"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8h.html#ac32a18fe87fa883f9679ca4bc4b88693">list_del</a> (struct <a class="el" href="structlist__head.html">list_head</a> *entry)</td></tr>
-<tr class="memdesc:ac32a18fe87fa883f9679ca4bc4b88693"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete a list item from its list.  <a href="list_8h.html#ac32a18fe87fa883f9679ca4bc4b88693">More...</a><br /></td></tr>
-<tr class="separator:ac32a18fe87fa883f9679ca4bc4b88693"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90c598c7e340b11c3ae9f9cbb415a4d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8h.html#a90c598c7e340b11c3ae9f9cbb415a4d7">list_del_init</a> (struct <a class="el" href="structlist__head.html">list_head</a> *entry)</td></tr>
-<tr class="memdesc:a90c598c7e340b11c3ae9f9cbb415a4d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete and force initialize a list member from its list.  <a href="list_8h.html#a90c598c7e340b11c3ae9f9cbb415a4d7">More...</a><br /></td></tr>
-<tr class="separator:a90c598c7e340b11c3ae9f9cbb415a4d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d1de96ef90e72bd5ba765e67cb83b74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8h.html#a7d1de96ef90e72bd5ba765e67cb83b74">list_move</a> (struct <a class="el" href="structlist__head.html">list_head</a> *list, struct <a class="el" href="structlist__head.html">list_head</a> *new_head)</td></tr>
-<tr class="memdesc:a7d1de96ef90e72bd5ba765e67cb83b74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move a list member from original list to another.  <a href="list_8h.html#a7d1de96ef90e72bd5ba765e67cb83b74">More...</a><br /></td></tr>
-<tr class="separator:a7d1de96ef90e72bd5ba765e67cb83b74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="af8c317a42292b61c93aae91e59118a46"></a>
@@ -671,264 +647,6 @@ Functions</h2></td></tr>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">&amp;obj</td><td>Returning object. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="af8fefe2d35c3f2ef3a3fc693d0080c48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8fefe2d35c3f2ef3a3fc693d0080c48">&#9670;&nbsp;</a></span>INIT_LIST_HEAD()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void INIT_LIST_HEAD </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structlist__head.html">list_head</a> *&#160;</td>
-          <td class="paramname"><em>list</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Initialize the list head. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">list</td><td>List head to initialize. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">None</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a221a74d55162a5f9351c3ad989fa08f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a221a74d55162a5f9351c3ad989fa08f4">&#9670;&nbsp;</a></span>list_add()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void list_add </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structlist__head.html">list_head</a> *&#160;</td>
-          <td class="paramname"><em>new</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">struct <a class="el" href="structlist__head.html">list_head</a> *&#160;</td>
-          <td class="paramname"><em>head</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Add new list member to the list. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">new</td><td>New list member. </td></tr>
-    <tr><td class="paramname">head</td><td>Head of the list. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">None</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ac32a18fe87fa883f9679ca4bc4b88693"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac32a18fe87fa883f9679ca4bc4b88693">&#9670;&nbsp;</a></span>list_del()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void list_del </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structlist__head.html">list_head</a> *&#160;</td>
-          <td class="paramname"><em>entry</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Delete a list item from its list. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">entry</td><td>The list member to delete. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">None</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a90c598c7e340b11c3ae9f9cbb415a4d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90c598c7e340b11c3ae9f9cbb415a4d7">&#9670;&nbsp;</a></span>list_del_init()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void list_del_init </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structlist__head.html">list_head</a> *&#160;</td>
-          <td class="paramname"><em>entry</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Delete and force initialize a list member from its list. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">entry</td><td>The list member to delete. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">None</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a4e4fb53df346702e31a3c03b23769cb2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e4fb53df346702e31a3c03b23769cb2">&#9670;&nbsp;</a></span>list_empty()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int list_empty </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structlist__head.html">list_head</a> *&#160;</td>
-          <td class="paramname"><em>head</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Check if the list is empty. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">head</td><td>Head of the list. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">int</td><td>0 as false; otherwise true. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ac2f0fecd0fceee7e5a9cb5550639e87a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2f0fecd0fceee7e5a9cb5550639e87a">&#9670;&nbsp;</a></span>list_is_last()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int list_is_last </td>
-          <td>(</td>
-          <td class="paramtype">const struct <a class="el" href="structlist__head.html">list_head</a> *&#160;</td>
-          <td class="paramname"><em>list</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const struct <a class="el" href="structlist__head.html">list_head</a> *&#160;</td>
-          <td class="paramname"><em>head</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Check if the list object is the last of the list. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">list</td><td>List member to check. </td></tr>
-    <tr><td class="paramname">head</td><td>Head of the list. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">int</td><td>0 as false, otherwise true. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a7d1de96ef90e72bd5ba765e67cb83b74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d1de96ef90e72bd5ba765e67cb83b74">&#9670;&nbsp;</a></span>list_move()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void list_move </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structlist__head.html">list_head</a> *&#160;</td>
-          <td class="paramname"><em>list</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">struct <a class="el" href="structlist__head.html">list_head</a> *&#160;</td>
-          <td class="paramname"><em>new_head</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Move a list member from original list to another. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">list</td><td>The list member to move. </td></tr>
-    <tr><td class="paramname">new_head</td><td>Head of the new list. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">None</td><td></td></tr>
   </table>
   </dd>
 </dl>

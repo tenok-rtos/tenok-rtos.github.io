@@ -1,4 +1,8 @@
 <map id="include/tenok/semaphore.h" name="include/tenok/semaphore.h">
 <area shape="rect" id="node1" title=" " alt="" coords="5,5,204,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="69,80,140,107"/>
+<area shape="rect" id="node2" title=" " alt="" coords="57,304,128,331"/>
+<area shape="rect" id="node3" href="$tenok_2time_8h.html" title=" " alt="" coords="135,80,199,107"/>
+<area shape="rect" id="node4" href="$tenok_2signal_8h.html" title=" " alt="" coords="131,155,204,181"/>
+<area shape="rect" id="node5" href="$types_8h.html" title=" " alt="" coords="130,229,226,256"/>
+<area shape="rect" id="node6" title=" " alt="" coords="279,155,354,181"/>
 </map>

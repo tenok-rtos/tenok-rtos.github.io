@@ -79,184 +79,254 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="types_8h.html">sys/types.h</a>&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="list_8h.html">common/list.h</a>&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="wait_8h.html">kernel/wait.h</a>&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="stat_8h.html">sys/stat.h</a>&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="types_8h.html">sys/types.h</a>&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="tenok_2time_8h.html">time.h</a>&gt;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;kconfig.h&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define RDEV_ROOTFS 0</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="list_8h.html">common/list.h</a>&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="kernel_2time_8h.html">kernel/time.h</a>&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="kernel_2wait_8h.html">kernel/wait.h</a>&gt;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define FILE_RESERVED_NUM (THREAD_MAX + 3)</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define THREAD_PIPE_FD(thread_id) (thread_id + 3)</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/* +---------------------------+</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * |     File table layout     |</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * +-----------+---------------+</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * |     0     |     stdin     |</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> * +-----------+---------------+</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> * |     1     |     stdout    |</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> * +-----------+---------------+</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> * |     2     |     stderr    |</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> * +-----------+---------------+</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> * |     3     | Thread pipe 1 |</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> * +-----------+---------------+</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> * |    ...    |      ...      |</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> * +-----------+---------------+</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> * |   N + 2   | Thread pipe N |</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> * +-----------+---------------+</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> * |   N + 3   |     File 1    |</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> * +-----------+---------------+</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> * |    ...    |      ...      |</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;kconfig.h&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define RDEV_ROOTFS 0</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/* Mode of a new file, the one a Linux system gives under a umask of 022 */</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#define FS_DEFAULT_FILE_MODE 0644</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define FS_DEFAULT_DIR_MODE 0755</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">/* Withheld from the mode a task asks for, which is what turns the 0666 of</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> * an ordinary creation into the 0644 of an ordinary file</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#define FS_DEFAULT_UMASK 022</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">/* Every thread has a pipe the file system daemon answers it through. It is</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> * reached by the thread that owns it and by the daemon, never by a program,</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> * so it carries no descriptor number</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structfile.html">file</a> *thread_pipe[THREAD_MAX];</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">/* +---------------------------+</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> * |     File table layout     |</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> * +-----------+---------------+</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> * | N + M + 3 |     File M    |</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> * |     0     |     stdin     |</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> * +-----------+---------------+</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> * N = THREAD_MAX</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> * M = OPEN_MAX</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">typedef</span> void (*drv_init_func_t)(void);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">enum</span> {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    FS_CREATE_FILE = 1,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    FS_OPEN_FILE = 2,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    FS_OPEN_DIR = 3,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    FS_MOUNT = 4,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    FS_GET_CWD = 5,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    FS_CHANGE_DIR = 6,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;} FS_SERVER_CMDS;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> * |     1     |     stdout    |</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> * +-----------+---------------+</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> * |     2     |     stderr    |</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> * +-----------+---------------+</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"> * |     3     |     File 1    |</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"> * +-----------+---------------+</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"> * |    ...    |      ...      |</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"> * +-----------+---------------+</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"> * |   M + 2   |     File M    |</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"> * +-----------+---------------+</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"> * M = OPEN_MAX</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">typedef</span> void (*drv_init_func_t)(void);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="structsuper__block.html">   60</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structsuper__block.html">super_block</a> {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">bool</span> s_rd_only;       <span class="comment">/* Read-only flag */</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    uint32_t s_blk_cnt;   <span class="comment">/* number of the used blocks */</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    uint32_t s_inode_cnt; <span class="comment">/* number of the used inodes */</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    uint64_t s_sb_addr;   <span class="comment">/* Start address of the super block */</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    uint64_t s_ino_addr;  <span class="comment">/* Start address of the inode table */</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    uint64_t s_blk_addr;  <span class="comment">/* Start address of the blocks region */</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">/* Block header will be placed at the top of every blocks of regular files */</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="structblock__header.html">   70</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structblock__header.html">block_header</a> {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">/* Virtual address of the next block */</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    uint32_t b_next;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    uint32_t reserved;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="structmount.html">   76</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structmount.html">mount</a> {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">struct </span><a class="code" href="structfile.html">file</a> *dev_file;        <span class="comment">/* Driver file of the mounted device */</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">struct </span><a class="code" href="structsuper__block.html">super_block</a> super_blk; <span class="comment">/* Super block of the mounted device */</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;};</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">/* index node */</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="structinode.html">   82</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structinode.html">inode</a> {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">/* File type: S_IFIFO, S_IFCHR, etc. */</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    uint8_t i_mode;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">/* The device on which the file is mounted */</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    uint8_t i_rdev;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">/* The mounted file is loaded into the rootfs or not */</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">bool</span> i_sync;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">/* inode number */</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    uint32_t i_ino;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">/* inode number of the parent directory */</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    uint32_t i_parent;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">/* File descriptor number */</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    uint32_t i_fd;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">/* File size (bytes) */</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    uint32_t i_size;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">/* block_numbers = file_size / (block_size - block_header_size) */</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    uint32_t i_blocks;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">/* Virtual address for accessing the storage */</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    uint32_t i_data;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    uint32_t reserved1;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">/* List head of the dentry table */</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> i_dentry;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    uint32_t reserved2[2];</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;};</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">/* Directory entry */</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="structdentry.html">  108</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structdentry.html">dentry</a> {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">/* File name */</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">char</span> d_name[NAME_MAX];</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">/* The inode of the file */</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    uint32_t d_inode;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="comment">/* The inode of the parent directory */</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    uint32_t d_parent;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">/* List head of the dentry */</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> d_list;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    uint32_t reserved[2];</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;};</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="structfile.html">  120</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structfile.html">file</a> {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keyword">struct </span><a class="code" href="structinode.html">inode</a> *f_inode;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keyword">struct </span><a class="code" href="structfile__operations.html">file_operations</a> *f_op;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    uint32_t f_events;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordtype">int</span> f_flags;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> list;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;};</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="structfile__operations.html">  128</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structfile__operations.html">file_operations</a> {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    off_t (*lseek)(<span class="keyword">struct </span><a class="code" href="structfile.html">file</a> *filp, off_t offset, <span class="keywordtype">int</span> whence);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    ssize_t (*<a class="code" href="unistd_8h.html#af32a16ad2dd9e48482f8f790db7dbbd2">read</a>)(<span class="keyword">struct </span><a class="code" href="structfile.html">file</a> *filp, <span class="keywordtype">char</span> *buf, <span class="keywordtype">size_t</span> size, off_t offset);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    ssize_t (*<a class="code" href="unistd_8h.html#abb39b21888372e95ad3e5c59b166f5c8">write</a>)(<span class="keyword">struct </span><a class="code" href="structfile.html">file</a> *filp,</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                     <span class="keyword">const</span> <span class="keywordtype">char</span> *buf,</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                     <span class="keywordtype">size_t</span> size,</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                     off_t offset);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    int (*<a class="code" href="ioctl_8h.html#a91177f07a0156bef30f38d3d457425a5">ioctl</a>)(<span class="keyword">struct </span><a class="code" href="structfile.html">file</a> *, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> cmd, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> arg);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    int (*<a class="code" href="fcntl_8h.html#adcb60598073f6f9cbb0091ef6768fa5c">open</a>)(<span class="keyword">struct </span><a class="code" href="structinode.html">inode</a> *<a class="code" href="structinode.html">inode</a>, <span class="keyword">struct </span><a class="code" href="structfile.html">file</a> *<a class="code" href="structfile.html">file</a>);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;};</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="structfdtable.html">  139</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structfdtable.html">fdtable</a> {</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordtype">int</span> flags;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keyword">struct </span><a class="code" href="structfile.html">file</a> *<a class="code" href="structfile.html">file</a>;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;};</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="keywordtype">void</span> rootfs_init(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="keywordtype">void</span> link_stdin_dev(<span class="keywordtype">char</span> *path);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="keywordtype">void</span> link_stdout_dev(<span class="keywordtype">char</span> *path);</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="keywordtype">void</span> link_stderr_dev(<span class="keywordtype">char</span> *path);</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="keywordtype">int</span> register_chrdev(<span class="keywordtype">char</span> *name, <span class="keyword">struct</span> <a class="code" href="structfile__operations.html">file_operations</a> *fops);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="keywordtype">int</span> register_blkdev(<span class="keywordtype">char</span> *name, <span class="keyword">struct</span> <a class="code" href="structfile__operations.html">file_operations</a> *fops);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="keywordtype">int</span> fs_read_dir(<a class="code" href="structdirstream.html">DIR</a> *dirp, <span class="keyword">struct</span> <a class="code" href="structdirent.html">dirent</a> *<a class="code" href="structdirent.html">dirent</a>);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;uint32_t fs_get_block_addr(<span class="keyword">struct</span> <a class="code" href="structinode.html">inode</a> *<a class="code" href="structinode.html">inode</a>, <span class="keywordtype">int</span> blk_index);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;uint32_t fs_file_append_block(<span class="keyword">struct</span> <a class="code" href="structinode.html">inode</a> *<a class="code" href="structinode.html">inode</a>);</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="keywordtype">void</span> request_create_file(<span class="keywordtype">int</span> thread_id, <span class="keyword">const</span> <span class="keywordtype">char</span> *path, uint8_t file_type);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="keywordtype">void</span> request_open_file(<span class="keywordtype">int</span> thread_id, <span class="keyword">const</span> <span class="keywordtype">char</span> *path);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="keywordtype">void</span> request_open_directory(<span class="keywordtype">int</span> reply_fd, <span class="keyword">const</span> <span class="keywordtype">char</span> *path);</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="keywordtype">void</span> request_mount(<span class="keywordtype">int</span> thread_id, <span class="keyword">const</span> <span class="keywordtype">char</span> *source, <span class="keyword">const</span> <span class="keywordtype">char</span> *target);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="keywordtype">void</span> request_getcwd(<span class="keywordtype">int</span> thread_id, <span class="keywordtype">char</span> *buf, <span class="keywordtype">size_t</span> len);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="keywordtype">void</span> request_chdir(<span class="keywordtype">int</span> thread_id, <span class="keyword">const</span> <span class="keywordtype">char</span> *path);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="keywordtype">void</span> filesysd(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="keywordtype">void</span> fs_print_inode_bitmap(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="keywordtype">void</span> fs_print_block_bitmap(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    FS_CREATE_FILE = 1,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    FS_OPEN_FILE = 2,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    FS_OPEN_DIR = 3,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    FS_MOUNT = 4,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    FS_GET_CWD = 5,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    FS_CHANGE_DIR = 6,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    FS_MAKE_DIR = 7,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    FS_REMOVE = 8,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    FS_STAT = 9,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    FS_RENAME = 10,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    FS_CHANGE_MODE = 11,</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    FS_CHANGE_TIME = 12,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;} FS_SERVER_CMDS;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="structsuper__block.html">   75</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structsuper__block.html">super_block</a> {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">bool</span> s_rd_only;       <span class="comment">/* Read-only flag */</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    uint32_t s_blk_cnt;   <span class="comment">/* number of the used blocks */</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    uint32_t s_inode_cnt; <span class="comment">/* number of the used inodes */</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    uint64_t s_sb_addr;   <span class="comment">/* Start address of the super block */</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    uint64_t s_ino_addr;  <span class="comment">/* Start address of the inode table */</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    uint64_t s_blk_addr;  <span class="comment">/* Start address of the blocks region */</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;};</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">/* Block header will be placed at the top of every blocks of regular files */</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="structblock__header.html">   85</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structblock__header.html">block_header</a> {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">/* Virtual address of the next block */</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    uint32_t b_next;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    uint32_t reserved;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;};</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="structmount.html">   91</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structmount.html">mount</a> {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">struct </span><a class="code" href="structfile.html">file</a> *dev_file;        <span class="comment">/* Driver file of the mounted device */</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">struct </span><a class="code" href="structsuper__block.html">super_block</a> super_blk; <span class="comment">/* Super block of the mounted device */</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;};</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">/* index node */</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="structinode.html">   97</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structinode.html">inode</a> {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment">/* File type and permission bits: S_IFREG | 0644, and so on */</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    uint16_t i_mode;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">/* The device on which the file is mounted */</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    uint8_t i_rdev;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">/* The mounted file is loaded into the rootfs or not */</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">bool</span> i_sync;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">/* inode number */</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    uint32_t i_ino;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">/* inode number of the parent directory */</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    uint32_t i_parent;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">/* File descriptor number */</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    uint32_t i_fd;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">/* File size (bytes) */</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    uint32_t i_size;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">/* block_numbers = file_size / (block_size - block_header_size) */</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    uint32_t i_blocks;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">/* Virtual address for accessing the storage */</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    uint32_t i_data;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">/* List head of the dentry table */</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> i_dentry;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">/* Seconds since the epoch, last written. Thirty two of them reach 2106 */</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    uint32_t i_mtime;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    uint32_t reserved[2];</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;};</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">/* Directory entry */</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="structdentry.html">  124</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structdentry.html">dentry</a> {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">/* File name */</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">char</span> d_name[NAME_MAX];</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="comment">/* The inode of the file */</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    uint32_t d_inode;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="comment">/* The inode of the parent directory */</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    uint32_t d_parent;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="comment">/* List head of the dentry */</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> d_list;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    uint32_t reserved[2];</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;};</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="structfile.html">  136</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structfile.html">file</a> {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keyword">struct </span><a class="code" href="structinode.html">inode</a> *f_inode;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keyword">struct </span><a class="code" href="structfile__operations.html">file_operations</a> *f_op;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    uint32_t f_events;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordtype">int</span> f_flags;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="comment">/* Where the next read or write starts. A regular file keeps its own</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment">     * position in struct reg_file and ignores this one; it is what gives a</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment">     * device file, /dev/rom for instance, a position of its own.</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    off_t f_pos;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> list;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;};</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="structfile__operations.html">  149</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structfile__operations.html">file_operations</a> {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    off_t (*lseek)(<span class="keyword">struct </span><a class="code" href="structfile.html">file</a> *filp, off_t offset, <span class="keywordtype">int</span> whence);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    ssize_t (*<a class="code" href="unistd_8h.html#af32a16ad2dd9e48482f8f790db7dbbd2">read</a>)(<span class="keyword">struct </span><a class="code" href="structfile.html">file</a> *filp, <span class="keywordtype">char</span> *buf, <span class="keywordtype">size_t</span> size, off_t offset);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    ssize_t (*<a class="code" href="unistd_8h.html#abb39b21888372e95ad3e5c59b166f5c8">write</a>)(<span class="keyword">struct </span><a class="code" href="structfile.html">file</a> *filp,</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                     <span class="keyword">const</span> <span class="keywordtype">char</span> *buf,</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                     <span class="keywordtype">size_t</span> size,</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                     off_t offset);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    int (*<a class="code" href="ioctl_8h.html#a1487536105f7a596481bf6bfa8de99f6">ioctl</a>)(<span class="keyword">struct </span><a class="code" href="structfile.html">file</a> *, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> cmd, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> arg);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    int (*<a class="code" href="fcntl_8h.html#a079d60801c18155ac2ec1707b56867fb">open</a>)(<span class="keyword">struct </span><a class="code" href="structinode.html">inode</a> *<a class="code" href="structinode.html">inode</a>, <span class="keyword">struct </span><a class="code" href="structfile.html">file</a> *<a class="code" href="structfile.html">file</a>);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;};</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="structfdtable.html">  160</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structfdtable.html">fdtable</a> {</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="comment">/* The flags the file was opened with */</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordtype">int</span> flags;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="comment">/* The flags of the descriptor itself, which is FD_CLOEXEC and nothing</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment">     * else. They are kept apart from the ones above because FD_CLOEXEC and</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment">     * O_WRONLY are both one, and a descriptor would otherwise report the</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment">     * access mode as the close on exec bit and lose it when the bit is set.</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordtype">int</span> fd_flags;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keyword">struct </span><a class="code" href="structfile.html">file</a> *<a class="code" href="structfile.html">file</a>;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;};</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="keywordtype">void</span> rootfs_init(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="keywordtype">void</span> link_stdin_dev(<span class="keywordtype">char</span> *path);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="keywordtype">void</span> link_stdout_dev(<span class="keywordtype">char</span> *path);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="keywordtype">void</span> link_stderr_dev(<span class="keywordtype">char</span> *path);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="keywordtype">int</span> register_chrdev(<span class="keywordtype">char</span> *name, <span class="keyword">struct</span> <a class="code" href="structfile__operations.html">file_operations</a> *fops);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="keywordtype">int</span> register_blkdev(<span class="keywordtype">char</span> *name, <span class="keyword">struct</span> <a class="code" href="structfile__operations.html">file_operations</a> *fops);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="keywordtype">bool</span> file_is_opened(<span class="keyword">struct</span> <a class="code" href="structfile.html">file</a> *filp);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="keywordtype">int</span> fs_read_dir(<a class="code" href="structdirstream.html">DIR</a> *dirp, <span class="keyword">struct</span> <a class="code" href="structdirent.html">dirent</a> *<a class="code" href="structdirent.html">dirent</a>);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;uint32_t fs_get_block_addr(<span class="keyword">struct</span> <a class="code" href="structinode.html">inode</a> *<a class="code" href="structinode.html">inode</a>, <span class="keywordtype">int</span> blk_index);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;uint32_t fs_file_append_block(<span class="keyword">struct</span> <a class="code" href="structinode.html">inode</a> *<a class="code" href="structinode.html">inode</a>);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="comment">/* What an inode stamps itself with. The clock reads zero until it is set */</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> uint32_t fs_now(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;{</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keyword">struct </span><a class="code" href="structtimespec.html">timespec</a> tp;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    get_sys_time(&amp;tp);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordflow">return</span> (uint32_t) tp.tv_sec;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment">/* Fill in a stat buffer from an inode. Tenok tracks no ownership and no link</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment"> * count, so those fields read back as zero</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> fs_fill_stat(<span class="keyword">struct</span> <a class="code" href="structstat.html">stat</a> *statbuf, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structinode.html">inode</a> *<a class="code" href="structinode.html">inode</a>)</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;{</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    memset(statbuf, 0, <span class="keyword">sizeof</span>(*statbuf));</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    statbuf-&gt;st_dev = <a class="code" href="structinode.html">inode</a>-&gt;i_rdev;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    statbuf-&gt;st_ino = <a class="code" href="structinode.html">inode</a>-&gt;i_ino;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    statbuf-&gt;st_mode = <a class="code" href="structinode.html">inode</a>-&gt;i_mode;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    statbuf-&gt;st_nlink = 1;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    statbuf-&gt;st_rdev = <a class="code" href="structinode.html">inode</a>-&gt;i_rdev;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    statbuf-&gt;st_size = <a class="code" href="structinode.html">inode</a>-&gt;i_size;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    statbuf-&gt;st_blksize = FS_BLK_SIZE;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    statbuf-&gt;st_blocks = <a class="code" href="structinode.html">inode</a>-&gt;i_blocks;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    statbuf-&gt;st_mtim.tv_sec = <a class="code" href="structinode.html">inode</a>-&gt;i_mtime;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;}</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="keywordtype">void</span> request_create_file(<span class="keywordtype">int</span> thread_id, <span class="keyword">const</span> <span class="keywordtype">char</span> *path, mode_t mode);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="keywordtype">void</span> request_mkdir(<span class="keywordtype">int</span> thread_id, <span class="keyword">const</span> <span class="keywordtype">char</span> *path, mode_t mode);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="keywordtype">void</span> request_chmod(<span class="keywordtype">int</span> thread_id, <span class="keyword">const</span> <span class="keywordtype">char</span> *path, mode_t mode);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="keywordtype">void</span> request_utime(<span class="keywordtype">int</span> thread_id, <span class="keyword">const</span> <span class="keywordtype">char</span> *path, uint32_t mtime);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="keywordtype">void</span> request_remove(<span class="keywordtype">int</span> thread_id, <span class="keyword">const</span> <span class="keywordtype">char</span> *path, <span class="keywordtype">bool</span> rm_dir);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="keywordtype">void</span> request_stat(<span class="keywordtype">int</span> thread_id, <span class="keyword">const</span> <span class="keywordtype">char</span> *path, <span class="keyword">struct</span> <a class="code" href="structstat.html">stat</a> *statbuf);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="keywordtype">void</span> request_rename(<span class="keywordtype">int</span> thread_id, <span class="keyword">const</span> <span class="keywordtype">char</span> *oldpath, <span class="keyword">const</span> <span class="keywordtype">char</span> *newpath);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="keywordtype">void</span> request_open_file(<span class="keywordtype">int</span> thread_id, <span class="keyword">const</span> <span class="keywordtype">char</span> *path);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="keywordtype">void</span> request_open_directory(<span class="keywordtype">int</span> reply_fd, <span class="keyword">const</span> <span class="keywordtype">char</span> *path);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="keywordtype">void</span> request_mount(<span class="keywordtype">int</span> thread_id, <span class="keyword">const</span> <span class="keywordtype">char</span> *source, <span class="keyword">const</span> <span class="keywordtype">char</span> *target);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="keywordtype">void</span> request_getcwd(<span class="keywordtype">int</span> thread_id, <span class="keywordtype">char</span> *buf, <span class="keywordtype">size_t</span> len);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="keywordtype">void</span> request_chdir(<span class="keywordtype">int</span> thread_id, <span class="keyword">const</span> <span class="keywordtype">char</span> *path);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="keywordtype">void</span> filesysd(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="keywordtype">void</span> <a class="code" href="fs_8h.html#ac631d919599bc9f992d2827f18fa53c6">fs_print_inode_bitmap</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="keywordtype">void</span> fs_print_block_bitmap(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="adirent_8h_html"><div class="ttname"><a href="dirent_8h.html">dirent.h</a></div></div>
-<div class="ttc" id="afcntl_8h_html_adcb60598073f6f9cbb0091ef6768fa5c"><div class="ttname"><a href="fcntl_8h.html#adcb60598073f6f9cbb0091ef6768fa5c">open</a></div><div class="ttdeci">int open(const char *pathname, int flags)</div><div class="ttdoc">Open the file specified by the pathname.</div><div class="ttdef"><b>Definition:</b> file.c:15</div></div>
-<div class="ttc" id="aioctl_8h_html_a91177f07a0156bef30f38d3d457425a5"><div class="ttname"><a href="ioctl_8h.html#a91177f07a0156bef30f38d3d457425a5">ioctl</a></div><div class="ttdeci">int ioctl(int fd, unsigned int request, unsigned long arg)</div><div class="ttdoc">Perform device-specific control.</div><div class="ttdef"><b>Definition:</b> file.c:60</div></div>
+<div class="ttc" id="afcntl_8h_html_a079d60801c18155ac2ec1707b56867fb"><div class="ttname"><a href="fcntl_8h.html#a079d60801c18155ac2ec1707b56867fb">open</a></div><div class="ttdeci">int open(const char *pathname, int flags,...)</div><div class="ttdoc">Open the file specified by the pathname.</div><div class="ttdef"><b>Definition:</b> file.c:36</div></div>
+<div class="ttc" id="afs_8h_html_ac631d919599bc9f992d2827f18fa53c6"><div class="ttname"><a href="fs_8h.html#ac631d919599bc9f992d2827f18fa53c6">fs_print_inode_bitmap</a></div><div class="ttdeci">void fs_print_inode_bitmap(void)</div><div class="ttdef"><b>Definition:</b> fs.c:1772</div></div>
+<div class="ttc" id="aioctl_8h_html_a1487536105f7a596481bf6bfa8de99f6"><div class="ttname"><a href="ioctl_8h.html#a1487536105f7a596481bf6bfa8de99f6">ioctl</a></div><div class="ttdeci">int ioctl(int fd, unsigned long request,...)</div><div class="ttdoc">Perform device-specific control.</div><div class="ttdef"><b>Definition:</b> file.c:147</div></div>
+<div class="ttc" id="akernel_2time_8h_html"><div class="ttname"><a href="kernel_2time_8h.html">time.h</a></div></div>
+<div class="ttc" id="akernel_2wait_8h_html"><div class="ttname"><a href="kernel_2wait_8h.html">wait.h</a></div></div>
 <div class="ttc" id="alist_8h_html"><div class="ttname"><a href="list_8h.html">list.h</a></div></div>
-<div class="ttc" id="astructblock__header_html"><div class="ttname"><a href="structblock__header.html">block_header</a></div><div class="ttdef"><b>Definition:</b> fs.h:70</div></div>
-<div class="ttc" id="astructdentry_html"><div class="ttname"><a href="structdentry.html">dentry</a></div><div class="ttdef"><b>Definition:</b> fs.h:108</div></div>
-<div class="ttc" id="astructdirent_html"><div class="ttname"><a href="structdirent.html">dirent</a></div><div class="ttdef"><b>Definition:</b> dirent.h:19</div></div>
-<div class="ttc" id="astructdirstream_html"><div class="ttname"><a href="structdirstream.html">dirstream</a></div><div class="ttdef"><b>Definition:</b> dirent.h:13</div></div>
-<div class="ttc" id="astructfdtable_html"><div class="ttname"><a href="structfdtable.html">fdtable</a></div><div class="ttdef"><b>Definition:</b> fs.h:139</div></div>
-<div class="ttc" id="astructfile__operations_html"><div class="ttname"><a href="structfile__operations.html">file_operations</a></div><div class="ttdef"><b>Definition:</b> fs.h:128</div></div>
-<div class="ttc" id="astructfile_html"><div class="ttname"><a href="structfile.html">file</a></div><div class="ttdef"><b>Definition:</b> fs.h:120</div></div>
-<div class="ttc" id="astructinode_html"><div class="ttname"><a href="structinode.html">inode</a></div><div class="ttdef"><b>Definition:</b> fs.h:82</div></div>
+<div class="ttc" id="astat_8h_html"><div class="ttname"><a href="stat_8h.html">stat.h</a></div></div>
+<div class="ttc" id="astructblock__header_html"><div class="ttname"><a href="structblock__header.html">block_header</a></div><div class="ttdef"><b>Definition:</b> fs.h:85</div></div>
+<div class="ttc" id="astructdentry_html"><div class="ttname"><a href="structdentry.html">dentry</a></div><div class="ttdef"><b>Definition:</b> fs.h:124</div></div>
+<div class="ttc" id="astructdirent_html"><div class="ttname"><a href="structdirent.html">dirent</a></div><div class="ttdef"><b>Definition:</b> dirent.h:29</div></div>
+<div class="ttc" id="astructdirstream_html"><div class="ttname"><a href="structdirstream.html">dirstream</a></div><div class="ttdef"><b>Definition:</b> dirent.h:36</div></div>
+<div class="ttc" id="astructfdtable_html"><div class="ttname"><a href="structfdtable.html">fdtable</a></div><div class="ttdef"><b>Definition:</b> fs.h:160</div></div>
+<div class="ttc" id="astructfile__operations_html"><div class="ttname"><a href="structfile__operations.html">file_operations</a></div><div class="ttdef"><b>Definition:</b> fs.h:149</div></div>
+<div class="ttc" id="astructfile_html"><div class="ttname"><a href="structfile.html">file</a></div><div class="ttdef"><b>Definition:</b> fs.h:136</div></div>
+<div class="ttc" id="astructinode_html"><div class="ttname"><a href="structinode.html">inode</a></div><div class="ttdef"><b>Definition:</b> fs.h:97</div></div>
 <div class="ttc" id="astructlist__head_html"><div class="ttname"><a href="structlist__head.html">list_head</a></div><div class="ttdef"><b>Definition:</b> list.h:111</div></div>
-<div class="ttc" id="astructmount_html"><div class="ttname"><a href="structmount.html">mount</a></div><div class="ttdef"><b>Definition:</b> fs.h:76</div></div>
-<div class="ttc" id="astructsuper__block_html"><div class="ttname"><a href="structsuper__block.html">super_block</a></div><div class="ttdef"><b>Definition:</b> fs.h:60</div></div>
+<div class="ttc" id="astructmount_html"><div class="ttname"><a href="structmount.html">mount</a></div><div class="ttdef"><b>Definition:</b> fs.h:91</div></div>
+<div class="ttc" id="astructstat_html"><div class="ttname"><a href="structstat.html">stat</a></div><div class="ttdef"><b>Definition:</b> stat.h:46</div></div>
+<div class="ttc" id="astructsuper__block_html"><div class="ttname"><a href="structsuper__block.html">super_block</a></div><div class="ttdef"><b>Definition:</b> fs.h:75</div></div>
+<div class="ttc" id="astructtimespec_html"><div class="ttname"><a href="structtimespec.html">timespec</a></div><div class="ttdef"><b>Definition:</b> time.h:16</div></div>
+<div class="ttc" id="atenok_2time_8h_html"><div class="ttname"><a href="tenok_2time_8h.html">time.h</a></div></div>
 <div class="ttc" id="atypes_8h_html"><div class="ttname"><a href="types_8h.html">types.h</a></div></div>
-<div class="ttc" id="aunistd_8h_html_abb39b21888372e95ad3e5c59b166f5c8"><div class="ttname"><a href="unistd_8h.html#abb39b21888372e95ad3e5c59b166f5c8">write</a></div><div class="ttdeci">ssize_t write(int fd, const void *buf, size_t count)</div><div class="ttdoc">Write up to count bytes from the buffer starting at buf to the file referred to by the file descripto...</div><div class="ttdef"><b>Definition:</b> file.c:55</div></div>
-<div class="ttc" id="aunistd_8h_html_af32a16ad2dd9e48482f8f790db7dbbd2"><div class="ttname"><a href="unistd_8h.html#af32a16ad2dd9e48482f8f790db7dbbd2">read</a></div><div class="ttdeci">ssize_t read(int fd, void *buf, size_t count)</div><div class="ttdoc">Attempt to read up to count bytes from file descriptor fd into the buffer starting at buf.</div><div class="ttdef"><b>Definition:</b> file.c:45</div></div>
-<div class="ttc" id="await_8h_html"><div class="ttname"><a href="wait_8h.html">wait.h</a></div></div>
+<div class="ttc" id="aunistd_8h_html_abb39b21888372e95ad3e5c59b166f5c8"><div class="ttname"><a href="unistd_8h.html#abb39b21888372e95ad3e5c59b166f5c8">write</a></div><div class="ttdeci">ssize_t write(int fd, const void *buf, size_t count)</div><div class="ttdoc">Write up to count bytes from the buffer starting at buf to the file referred to by the file descripto...</div><div class="ttdef"><b>Definition:</b> file.c:132</div></div>
+<div class="ttc" id="aunistd_8h_html_af32a16ad2dd9e48482f8f790db7dbbd2"><div class="ttname"><a href="unistd_8h.html#af32a16ad2dd9e48482f8f790db7dbbd2">read</a></div><div class="ttdeci">ssize_t read(int fd, void *buf, size_t count)</div><div class="ttdoc">Attempt to read up to count bytes from file descriptor fd into the buffer starting at buf.</div><div class="ttdef"><b>Definition:</b> file.c:117</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

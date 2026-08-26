@@ -87,7 +87,7 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">    (sizeof(kmalloc_slab_info) / sizeof(struct kmalloc_slab_info))</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structkmalloc__header.html">   18</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structkmalloc__header.html">kmalloc_header</a> {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">size_t</span> size;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">size_t</span> alloc_size;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structkmalloc__slab__info.html">   22</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structkmalloc__slab__info.html">kmalloc_slab_info</a> {</div>
@@ -104,10 +104,11 @@ $(function() {
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">void</span> heap_init(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">void</span> *__malloc(<span class="keywordtype">size_t</span> size);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keywordtype">void</span> __free(<span class="keywordtype">void</span> *ptr);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="amm_8h_html_a069f85a5001d71bc44d8be6532a4e432"><div class="ttname"><a href="mm_8h.html#a069f85a5001d71bc44d8be6532a4e432">kfree</a></div><div class="ttdeci">void kfree(void *ptr)</div><div class="ttdoc">Free the memory space pointed to by ptr.</div><div class="ttdef"><b>Definition:</b> kernel.c:226</div></div>
-<div class="ttc" id="amm_8h_html_a5f52d7c56b7d67dc2f96b2e93dfdc7be"><div class="ttname"><a href="mm_8h.html#a5f52d7c56b7d67dc2f96b2e93dfdc7be">kmalloc</a></div><div class="ttdeci">void * kmalloc(size_t size)</div><div class="ttdoc">Allocate a memory space for using in the kernel.</div><div class="ttdef"><b>Definition:</b> kernel.c:180</div></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordtype">void</span> *__realloc(<span class="keywordtype">void</span> *ptr, <span class="keywordtype">size_t</span> size);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="amm_8h_html_a069f85a5001d71bc44d8be6532a4e432"><div class="ttname"><a href="mm_8h.html#a069f85a5001d71bc44d8be6532a4e432">kfree</a></div><div class="ttdeci">void kfree(void *ptr)</div><div class="ttdoc">Free the memory space pointed to by ptr.</div><div class="ttdef"><b>Definition:</b> kernel.c:233</div></div>
+<div class="ttc" id="amm_8h_html_a5f52d7c56b7d67dc2f96b2e93dfdc7be"><div class="ttname"><a href="mm_8h.html#a5f52d7c56b7d67dc2f96b2e93dfdc7be">kmalloc</a></div><div class="ttdeci">void * kmalloc(size_t size)</div><div class="ttdoc">Allocate a memory space for using in the kernel.</div><div class="ttdef"><b>Definition:</b> kernel.c:187</div></div>
 <div class="ttc" id="astructkmalloc__header_html"><div class="ttname"><a href="structkmalloc__header.html">kmalloc_header</a></div><div class="ttdef"><b>Definition:</b> mm.h:18</div></div>
 <div class="ttc" id="astructkmalloc__slab__info_html"><div class="ttname"><a href="structkmalloc__slab__info.html">kmalloc_slab_info</a></div><div class="ttdef"><b>Definition:</b> mm.h:22</div></div>
 </div><!-- fragment --></div><!-- contents -->

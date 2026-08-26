@@ -81,16 +81,19 @@ $(function() {
 </ul>
 <h2><a class="anchor" id="autotoc_md22"></a>
 2. Add new shell command</h2>
-<p>Suppose you want to add a new command called <code>XXX</code>. First, create a source file called <code>tenok/shell/XXX.c</code>:</p>
+<p>Suppose you want to add a new command called <code>XXX</code>. First, create a source file called <code>tenok/user/shell/XXX.c</code>:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;shell.h&quot;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> shell_cmd_XXX(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div>
+<div class="line"><span class="keywordtype">int</span> XXX(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div>
 <div class="line">{</div>
 <div class="line">    shell_puts(<span class="stringliteral">&quot;hello world!\n\r&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line">HOOK_SHELL_CMD(XXX);</div>
-</div><!-- fragment --><p>Next, append the new source file to the <code>tenok/shell/shell.mk</code>:</p>
+<div class="line">HOOK_SHELL_CMD(<span class="stringliteral">&quot;XXX&quot;</span>, XXX);</div>
+</div><!-- fragment --><p>The macro is given the name the user types and the function that answers it, so one file can register more than one command.</p>
+<p>Next, append the new source file to the <code>tenok/user/shell/shell.mk</code>:</p>
 <div class="fragment"><div class="line">...</div>
 <div class="line">SRC += $(PROJ_ROOT)/user/shell/XXX.c</div>
 </div><!-- fragment --><p>Now, recompile the source code:</p>
@@ -99,7 +102,15 @@ $(function() {
 </div><!-- fragment --><p>Finally, you should able to run your new shell command in the system:</p>
 <div class="fragment"><div class="line">USER@stm32f407:/$ XXX</div>
 <div class="line">hello world!</div>
-</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md23"></a>
+3. The BusyBox shell</h2>
+<p><code>BusyBox</code> is built into the firmware alongside the shell of Tenok. <code>busybox</code> runs an applet by name and <code>busybox sh</code> starts <code>ash</code>:</p>
+<div class="fragment"><div class="line">USER@stm32f407:/$ busybox sh</div>
+<div class="line">/ $ echo hello</div>
+<div class="line">hello</div>
+<div class="line">/ $ exit</div>
+</div><!-- fragment --><p>See <a href="https://tenok-rtos.github.io/md_docs_8_busybox.html">BusyBox on Tenok</a> for what is there and what a second process would be needed for. </p>
+</div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

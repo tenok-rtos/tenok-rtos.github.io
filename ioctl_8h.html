@@ -78,13 +78,13 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a91177f07a0156bef30f38d3d457425a5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ioctl_8h.html#a91177f07a0156bef30f38d3d457425a5">ioctl</a> (int fd, unsigned int request, unsigned long arg)</td></tr>
-<tr class="memdesc:a91177f07a0156bef30f38d3d457425a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform device-specific control.  <a href="ioctl_8h.html#a91177f07a0156bef30f38d3d457425a5">More...</a><br /></td></tr>
-<tr class="separator:a91177f07a0156bef30f38d3d457425a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1487536105f7a596481bf6bfa8de99f6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ioctl_8h.html#a1487536105f7a596481bf6bfa8de99f6">ioctl</a> (int fd, unsigned long request,...)</td></tr>
+<tr class="memdesc:a1487536105f7a596481bf6bfa8de99f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform device-specific control.  <a href="ioctl_8h.html#a1487536105f7a596481bf6bfa8de99f6">More...</a><br /></td></tr>
+<tr class="separator:a1487536105f7a596481bf6bfa8de99f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a91177f07a0156bef30f38d3d457425a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a91177f07a0156bef30f38d3d457425a5">&#9670;&nbsp;</a></span>ioctl()</h2>
+<a id="a1487536105f7a596481bf6bfa8de99f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1487536105f7a596481bf6bfa8de99f6">&#9670;&nbsp;</a></span>ioctl()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -98,14 +98,14 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramtype">unsigned long&#160;</td>
           <td class="paramname"><em>request</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned long&#160;</td>
-          <td class="paramname"><em>arg</em>&#160;</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -120,13 +120,13 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">fd</td><td>The file descriptor number of the file. </td></tr>
     <tr><td class="paramname">request</td><td>The request command to perform. </td></tr>
-    <tr><td class="paramname">arg</td><td>The argument to pass with the request. </td></tr>
+    <tr><td class="paramname">arg</td><td>The argument the request takes, which a request that takes none does not mind being handed. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">int</td><td>0 on success and nonzero error number on error. </td></tr>
+    <tr><td class="paramname">int</td><td>0 on success and -1 on error, with the reason left in errno. </td></tr>
   </table>
   </dd>
 </dl>

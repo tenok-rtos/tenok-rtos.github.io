@@ -1,10 +1,12 @@
 <map id="mutex" name="mutex">
-<area shape="rect" id="node1" title=" " alt="" coords="41,367,105,393"/>
-<area shape="rect" id="node2" href="$structlist__head.html" title=" " alt="" coords="403,7,485,33"/>
-<area shape="rect" id="node3" href="$structthread__info.html" title=" " alt="" coords="281,277,377,304"/>
-<area shape="rect" id="node6" href="$structtask__struct.html" title=" " alt="" coords="399,367,494,393"/>
-<area shape="rect" id="node7" href="$structthread__once.html" title=" " alt="" coords="46,135,149,162"/>
-<area shape="rect" id="node4" href="$structkfifo.html" title=" " alt="" coords="183,135,233,162"/>
-<area shape="rect" id="node5" href="$structtimespec.html" title=" " alt="" coords="288,135,371,162"/>
-<area shape="rect" id="node8" href="$structsigaction.html" title=" " alt="" coords="422,135,503,162"/>
+<area shape="rect" id="node1" title=" " alt="" coords="705,367,769,393"/>
+<area shape="rect" id="node2" href="$structlist__head.html" title=" " alt="" coords="473,7,555,33"/>
+<area shape="rect" id="node3" href="$structthread__info.html" title=" " alt="" coords="359,277,455,304"/>
+<area shape="rect" id="node6" href="$structtask__struct.html" title=" " alt="" coords="243,367,337,393"/>
+<area shape="rect" id="node7" href="$structthread__once.html" title=" " alt="" coords="319,135,421,162"/>
+<area shape="rect" id="node4" href="$structkfifo.html" title=" " alt="" coords="446,135,497,162"/>
+<area shape="rect" id="node5" href="$structtimespec.html" title=" " alt="" coords="673,135,755,162"/>
+<area shape="rect" id="node8" href="$structsigaction.html" title=" " alt="" coords="213,135,295,162"/>
+<area shape="rect" id="node9" href="$structsiginfo__t.html" title=" " alt="" coords="5,135,84,162"/>
+<area shape="rect" id="node10" href="$unionsigval.html" title=" " alt="" coords="14,7,75,33"/>
 </map>

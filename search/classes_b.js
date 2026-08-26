@@ -1,15 +1,14 @@
 var searchData=
 [
-  ['sched_5fparam_391',['sched_param',['../structsched__param.html',1,'']]],
-  ['sem_5ft_392',['sem_t',['../unionsem__t.html',1,'']]],
-  ['semaphore_393',['semaphore',['../structsemaphore.html',1,'']]],
-  ['sigaction_394',['sigaction',['../structsigaction.html',1,'']]],
-  ['sigevent_395',['sigevent',['../structsigevent.html',1,'']]],
-  ['siginfo_5ft_396',['siginfo_t',['../structsiginfo__t.html',1,'']]],
-  ['sigval_397',['sigval',['../unionsigval.html',1,'']]],
-  ['slab_398',['slab',['../structslab.html',1,'']]],
-  ['staged_5fhandler_5finfo_399',['staged_handler_info',['../structstaged__handler__info.html',1,'']]],
-  ['stat_400',['stat',['../structstat.html',1,'']]],
-  ['super_5fblock_401',['super_block',['../structsuper__block.html',1,'']]],
-  ['syscall_5finfo_402',['syscall_info',['../structsyscall__info.html',1,'']]]
+  ['malloc_5finfo_519',['malloc_info',['../structmalloc__info.html',1,'']]],
+  ['mntent_520',['mntent',['../structmntent.html',1,'']]],
+  ['mount_521',['mount',['../structmount.html',1,'']]],
+  ['mpool_522',['mpool',['../structmpool.html',1,'']]],
+  ['mq_5fattr_523',['mq_attr',['../structmq__attr.html',1,'']]],
+  ['mq_5fdesc_524',['mq_desc',['../structmq__desc.html',1,'']]],
+  ['mqueue_525',['mqueue',['../structmqueue.html',1,'']]],
+  ['mqueue_5fdata_526',['mqueue_data',['../structmqueue__data.html',1,'']]],
+  ['msghdr_527',['msghdr',['../structmsghdr.html',1,'']]],
+  ['mutex_528',['mutex',['../structmutex.html',1,'']]],
+  ['mutex_5fattr_529',['mutex_attr',['../structmutex__attr.html',1,'']]]
 ];

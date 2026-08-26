@@ -1,11 +1,13 @@
 <map id="include/tenok/sys/syslimits.h" name="include/tenok/sys/syslimits.h">
-<area shape="rect" id="node1" title=" " alt="" coords="153,5,364,32"/>
-<area shape="rect" id="node2" href="$limits_8h.html" title=" " alt="" coords="164,80,353,107"/>
-<area shape="rect" id="node3" href="$kernel_8h.html" title=" " alt="" coords="113,155,282,181"/>
-<area shape="rect" id="node9" href="$dirent_8h.html" title=" " alt="" coords="295,229,459,256"/>
-<area shape="rect" id="node4" href="$wait_8h.html" title=" " alt="" coords="63,229,220,256"/>
-<area shape="rect" id="node5" href="$fs_8h.html" title=" " alt="" coords="201,304,314,331"/>
-<area shape="rect" id="node6" href="$reg__file_8h.html" title=" " alt="" coords="5,379,155,405"/>
-<area shape="rect" id="node7" href="$pipe_8h.html" title=" " alt="" coords="179,379,336,405"/>
-<area shape="rect" id="node8" href="$kernel_2poll_8h.html" title=" " alt="" coords="361,379,514,405"/>
+<area shape="rect" id="node1" title=" " alt="" coords="81,5,292,32"/>
+<area shape="rect" id="node2" href="$limits_8h.html" title=" " alt="" coords="5,80,168,107"/>
+<area shape="rect" id="node3" href="$sys_2limits_8h.html" title=" " alt="" coords="192,80,381,107"/>
+<area shape="rect" id="node4" href="$kernel_8h.html" title=" " alt="" coords="107,155,277,181"/>
+<area shape="rect" id="node10" href="$dirent_8h.html" title=" " alt="" coords="301,155,465,181"/>
+<area shape="rect" id="node5" href="$kernel_2wait_8h.html" title=" " alt="" coords="113,229,271,256"/>
+<area shape="rect" id="node6" href="$fs_8h.html" title=" " alt="" coords="251,304,365,331"/>
+<area shape="rect" id="node7" href="$reg__file_8h.html" title=" " alt="" coords="56,379,205,405"/>
+<area shape="rect" id="node8" href="$pipe_8h.html" title=" " alt="" coords="229,379,387,405"/>
+<area shape="rect" id="node9" href="$kernel_2poll_8h.html" title=" " alt="" coords="411,379,565,405"/>
+<area shape="rect" id="node11" href="$vfs_8h.html" title=" " alt="" coords="397,229,518,256"/>
 </map>

@@ -87,16 +87,18 @@ Include dependency graph for stdio.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="stdio_8h__incl.png" border="0" usemap="#ainclude_2tenok_2stdio_8h" alt=""/></div>
 <map name="ainclude_2tenok_2stdio_8h" id="ainclude_2tenok_2stdio_8h">
-<area shape="rect" title=" " alt="" coords="199,5,358,32"/>
-<area shape="rect" href="pthread_8h.html" title=" " alt="" coords="221,155,305,181"/>
-<area shape="rect" title=" " alt="" coords="18,229,89,256"/>
-<area shape="rect" title=" " alt="" coords="295,304,369,331"/>
-<area shape="rect" title=" " alt="" coords="296,80,371,107"/>
-<area shape="rect" href="reent_8h.html" title=" " alt="" coords="177,80,271,107"/>
-<area shape="rect" href="types_8h.html" title=" " alt="" coords="5,155,101,181"/>
-<area shape="rect" title=" " alt="" coords="375,229,457,256"/>
-<area shape="rect" href="tenok_2sys_2sched_8h.html" title=" " alt="" coords="252,229,351,256"/>
-<area shape="rect" href="list_8h.html" title=" " alt="" coords="113,229,228,256"/>
+<area shape="rect" title=" " alt="" coords="353,5,511,32"/>
+<area shape="rect" href="pthread_8h.html" title=" " alt="" coords="262,155,346,181"/>
+<area shape="rect" title=" " alt="" coords="199,453,270,480"/>
+<area shape="rect" href="types_8h.html" title=" " alt="" coords="503,379,599,405"/>
+<area shape="rect" title=" " alt="" coords="321,304,396,331"/>
+<area shape="rect" title=" " alt="" coords="671,80,745,107"/>
+<area shape="rect" href="reent_8h.html" title=" " alt="" coords="342,80,437,107"/>
+<area shape="rect" title=" " alt="" coords="93,229,176,256"/>
+<area shape="rect" href="tenok_2sys_2sched_8h.html" title=" " alt="" coords="200,229,299,256"/>
+<area shape="rect" href="tenok_2time_8h.html" title=" " alt="" coords="512,229,576,256"/>
+<area shape="rect" href="list_8h.html" title=" " alt="" coords="323,229,437,256"/>
+<area shape="rect" href="tenok_2signal_8h.html" title=" " alt="" coords="471,304,545,331"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -104,8 +106,9 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="stdio_8h__dep__incl.png" border="0" usemap="#ainclude_2tenok_2stdio_8hdep" alt=""/></div>
 <map name="ainclude_2tenok_2stdio_8hdep" id="ainclude_2tenok_2stdio_8hdep">
-<area shape="rect" title=" " alt="" coords="5,5,164,32"/>
-<area shape="rect" href="pipe_8h.html" title=" " alt="" coords="6,80,163,107"/>
+<area shape="rect" title=" " alt="" coords="99,5,258,32"/>
+<area shape="rect" href="pipe_8h.html" title=" " alt="" coords="5,80,163,107"/>
+<area shape="rect" href="mntent_8h.html" title=" " alt="" coords="187,80,360,107"/>
 </map>
 </div>
 </div>
@@ -127,6 +130,9 @@ Macros</h2></td></tr>
 <tr class="memitem:ad2a2e6c114780c3071efd24f16c7f7d8"><td class="memItemLeft" align="right" valign="top"><a id="ad2a2e6c114780c3071efd24f16c7f7d8"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>SEEK_END</b>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:ad2a2e6c114780c3071efd24f16c7f7d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59adc4c82490d23754cd39c2fb99b0da"><td class="memItemLeft" align="right" valign="top"><a id="a59adc4c82490d23754cd39c2fb99b0da"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EOF</b>&#160;&#160;&#160;(-1)</td></tr>
+<tr class="separator:a59adc4c82490d23754cd39c2fb99b0da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a029f6d343db87fe8c80cf3e5bea2b5c1"><td class="memItemLeft" align="right" valign="top"><a id="a029f6d343db87fe8c80cf3e5bea2b5c1"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>fopen</b>&#160;&#160;&#160;_fopen</td></tr>
 <tr class="separator:a029f6d343db87fe8c80cf3e5bea2b5c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,18 +148,156 @@ Macros</h2></td></tr>
 <tr class="memitem:a8a777150133445feb2cd8a3f846216d9"><td class="memItemLeft" align="right" valign="top"><a id="a8a777150133445feb2cd8a3f846216d9"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>fseek</b>&#160;&#160;&#160;_fseek</td></tr>
 <tr class="separator:a8a777150133445feb2cd8a3f846216d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afea8baccc13623417424635d63c81a17"><td class="memItemLeft" align="right" valign="top"><a id="afea8baccc13623417424635d63c81a17"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ftell</b>&#160;&#160;&#160;_ftell</td></tr>
+<tr class="separator:afea8baccc13623417424635d63c81a17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8023d22f507143c33337057ea982b5f4"><td class="memItemLeft" align="right" valign="top"><a id="a8023d22f507143c33337057ea982b5f4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>rewind</b>&#160;&#160;&#160;_rewind</td></tr>
+<tr class="separator:a8023d22f507143c33337057ea982b5f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c12e4b6615ac6838a99d5b6fa619683"><td class="memItemLeft" align="right" valign="top"><a id="a2c12e4b6615ac6838a99d5b6fa619683"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>fileno</b>&#160;&#160;&#160;_fileno</td></tr>
 <tr class="separator:a2c12e4b6615ac6838a99d5b6fa619683"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61b11c702e7ef419ed6d836380241ba5"><td class="memItemLeft" align="right" valign="top"><a id="a61b11c702e7ef419ed6d836380241ba5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>freopen</b>&#160;&#160;&#160;_freopen</td></tr>
+<tr class="separator:a61b11c702e7ef419ed6d836380241ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a227875b8399b0589b1124555d3ae4007"><td class="memItemLeft" align="right" valign="top"><a id="a227875b8399b0589b1124555d3ae4007"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>fseeko</b>&#160;&#160;&#160;_fseeko</td></tr>
+<tr class="separator:a227875b8399b0589b1124555d3ae4007"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af05e2f178910c2e2804e573c883db868"><td class="memItemLeft" align="right" valign="top"><a id="af05e2f178910c2e2804e573c883db868"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ftello</b>&#160;&#160;&#160;_ftello</td></tr>
+<tr class="separator:af05e2f178910c2e2804e573c883db868"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4760567d49d1aebc24f0de6d0c2b4504"><td class="memItemLeft" align="right" valign="top"><a id="a4760567d49d1aebc24f0de6d0c2b4504"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>fputs</b>&#160;&#160;&#160;_fputs</td></tr>
+<tr class="separator:a4760567d49d1aebc24f0de6d0c2b4504"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2c758e16b323e6bfe250d26cd26e5e9"><td class="memItemLeft" align="right" valign="top"><a id="af2c758e16b323e6bfe250d26cd26e5e9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>fputc</b>&#160;&#160;&#160;_fputc</td></tr>
+<tr class="separator:af2c758e16b323e6bfe250d26cd26e5e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68f384a35b845709b4aec7f5f4303df1"><td class="memItemLeft" align="right" valign="top"><a id="a68f384a35b845709b4aec7f5f4303df1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>putchar</b>&#160;&#160;&#160;_putchar</td></tr>
+<tr class="separator:a68f384a35b845709b4aec7f5f4303df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80022cbe72a24b85437c2326543509be"><td class="memItemLeft" align="right" valign="top"><a id="a80022cbe72a24b85437c2326543509be"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>puts</b>&#160;&#160;&#160;_puts</td></tr>
+<tr class="separator:a80022cbe72a24b85437c2326543509be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac38485ce41182cbd7ee7d554a2e1d40d"><td class="memItemLeft" align="right" valign="top"><a id="ac38485ce41182cbd7ee7d554a2e1d40d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>fgetc</b>&#160;&#160;&#160;_fgetc</td></tr>
+<tr class="separator:ac38485ce41182cbd7ee7d554a2e1d40d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e29caa20f7cffe18f410f01278905a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#a3e29caa20f7cffe18f410f01278905a8">getchar</a>(void)&#160;&#160;&#160;_getchar</td></tr>
+<tr class="memdesc:a3e29caa20f7cffe18f410f01278905a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a character from the standard input.  <a href="stdio_8h.html#a3e29caa20f7cffe18f410f01278905a8">More...</a><br /></td></tr>
+<tr class="separator:a3e29caa20f7cffe18f410f01278905a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4127e6fa9f54483c38accbde8937b77"><td class="memItemLeft" align="right" valign="top"><a id="aa4127e6fa9f54483c38accbde8937b77"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>fgets</b>&#160;&#160;&#160;_fgets</td></tr>
+<tr class="separator:aa4127e6fa9f54483c38accbde8937b77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf2f2459784350a382dc0b3e23ea5d0c"><td class="memItemLeft" align="right" valign="top"><a id="abf2f2459784350a382dc0b3e23ea5d0c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>feof</b>&#160;&#160;&#160;_feof</td></tr>
+<tr class="separator:abf2f2459784350a382dc0b3e23ea5d0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acce53a9a417da84eb9ae59b21c6c15c1"><td class="memItemLeft" align="right" valign="top"><a id="acce53a9a417da84eb9ae59b21c6c15c1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ferror</b>&#160;&#160;&#160;_ferror</td></tr>
+<tr class="separator:acce53a9a417da84eb9ae59b21c6c15c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad563440a85b309ed9d55e22d33443474"><td class="memItemLeft" align="right" valign="top"><a id="ad563440a85b309ed9d55e22d33443474"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>clearerr</b>&#160;&#160;&#160;_clearerr</td></tr>
+<tr class="separator:ad563440a85b309ed9d55e22d33443474"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a579d02171e2a45e0db99ff2c269a46eb"><td class="memItemLeft" align="right" valign="top"><a id="a579d02171e2a45e0db99ff2c269a46eb"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>fflush</b>&#160;&#160;&#160;_fflush</td></tr>
+<tr class="separator:a579d02171e2a45e0db99ff2c269a46eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb5fdafdcbe799a3225d12ec352c22a4"><td class="memItemLeft" align="right" valign="top"><a id="afb5fdafdcbe799a3225d12ec352c22a4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>setvbuf</b>&#160;&#160;&#160;_setvbuf</td></tr>
+<tr class="separator:afb5fdafdcbe799a3225d12ec352c22a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4a02a00f47536a2ad95b3010f90f460"><td class="memItemLeft" align="right" valign="top"><a id="af4a02a00f47536a2ad95b3010f90f460"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>setbuf</b>&#160;&#160;&#160;_setbuf</td></tr>
+<tr class="separator:af4a02a00f47536a2ad95b3010f90f460"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b8e699e4dfd158acee3d6526fe671c2"><td class="memItemLeft" align="right" valign="top"><a id="a0b8e699e4dfd158acee3d6526fe671c2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>putc</b>(c,  stream)&#160;&#160;&#160;<a class="el" href="stdio_8h.html#abe6299d5823dd023e610aaa619735a3f">fputc</a>(c, stream)</td></tr>
+<tr class="separator:a0b8e699e4dfd158acee3d6526fe671c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39ae32b25ab00f0ae78b934422a0bff2"><td class="memItemLeft" align="right" valign="top"><a id="a39ae32b25ab00f0ae78b934422a0bff2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>getc</b>(stream)&#160;&#160;&#160;<a class="el" href="stdio_8h.html#ab11a990e4f8863a1e7736e3c1d430092">fgetc</a>(stream)</td></tr>
+<tr class="separator:a39ae32b25ab00f0ae78b934422a0bff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a392c76f55ba7478e0b236f431f04061f"><td class="memItemLeft" align="right" valign="top"><a id="a392c76f55ba7478e0b236f431f04061f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>getc_unlocked</b>(stream)&#160;&#160;&#160;_fgetc(stream)</td></tr>
+<tr class="separator:a392c76f55ba7478e0b236f431f04061f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2687dfa29148edbd3a5858675e59292"><td class="memItemLeft" align="right" valign="top"><a id="aa2687dfa29148edbd3a5858675e59292"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>getchar_unlocked</b>()&#160;&#160;&#160;_getchar()</td></tr>
+<tr class="separator:aa2687dfa29148edbd3a5858675e59292"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04f5ad7859b2e548a81497092e37d6e9"><td class="memItemLeft" align="right" valign="top"><a id="a04f5ad7859b2e548a81497092e37d6e9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>putc_unlocked</b>(c,  stream)&#160;&#160;&#160;_fputc(c, stream)</td></tr>
+<tr class="separator:a04f5ad7859b2e548a81497092e37d6e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a1d799fe083fc006e0ef4ecf09c2962"><td class="memItemLeft" align="right" valign="top"><a id="a5a1d799fe083fc006e0ef4ecf09c2962"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>putchar_unlocked</b>(c)&#160;&#160;&#160;_putchar(c)</td></tr>
+<tr class="separator:a5a1d799fe083fc006e0ef4ecf09c2962"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab23d276e828980771e8fe8d9d8656eda"><td class="memItemLeft" align="right" valign="top"><a id="ab23d276e828980771e8fe8d9d8656eda"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>fputc_unlocked</b>(c,  stream)&#160;&#160;&#160;_fputc(c, stream)</td></tr>
+<tr class="separator:ab23d276e828980771e8fe8d9d8656eda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f91635a43682358e12d450ae9d5b1d1"><td class="memItemLeft" align="right" valign="top"><a id="a5f91635a43682358e12d450ae9d5b1d1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>fgetc_unlocked</b>(stream)&#160;&#160;&#160;_fgetc(stream)</td></tr>
+<tr class="separator:a5f91635a43682358e12d450ae9d5b1d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb62b3a80ff5b2a178788a7eff792835"><td class="memItemLeft" align="right" valign="top"><a id="abb62b3a80ff5b2a178788a7eff792835"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>fgets_unlocked</b>(s,  size,  stream)&#160;&#160;&#160;_fgets(s, size, stream)</td></tr>
+<tr class="separator:abb62b3a80ff5b2a178788a7eff792835"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44f0715950fa8606ec741fd349197e40"><td class="memItemLeft" align="right" valign="top"><a id="a44f0715950fa8606ec741fd349197e40"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>fputs_unlocked</b>(s,  stream)&#160;&#160;&#160;_fputs(s, stream)</td></tr>
+<tr class="separator:a44f0715950fa8606ec741fd349197e40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeed874c85be2ec1640809872449558b"><td class="memItemLeft" align="right" valign="top"><a id="aeeed874c85be2ec1640809872449558b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>fread_unlocked</b>(p,  size,  n,  stream)&#160;&#160;&#160;_fread(p, size, n, stream)</td></tr>
+<tr class="separator:aeeed874c85be2ec1640809872449558b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ec3a33bd2d626d1837315062c45d73f"><td class="memItemLeft" align="right" valign="top"><a id="a1ec3a33bd2d626d1837315062c45d73f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>fwrite_unlocked</b>(p,  size,  n,  stream)&#160;&#160;&#160;_fwrite(p, size, n, stream)</td></tr>
+<tr class="separator:a1ec3a33bd2d626d1837315062c45d73f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c345ea065e9494b7a459b2bd4b2a656"><td class="memItemLeft" align="right" valign="top"><a id="a5c345ea065e9494b7a459b2bd4b2a656"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>feof_unlocked</b>(stream)&#160;&#160;&#160;_feof(stream)</td></tr>
+<tr class="separator:a5c345ea065e9494b7a459b2bd4b2a656"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75adb5327fa00fc1fa8bc75d48a469d8"><td class="memItemLeft" align="right" valign="top"><a id="a75adb5327fa00fc1fa8bc75d48a469d8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ferror_unlocked</b>(stream)&#160;&#160;&#160;_ferror(stream)</td></tr>
+<tr class="separator:a75adb5327fa00fc1fa8bc75d48a469d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a710d6d5971067f085374eccffd154e6f"><td class="memItemLeft" align="right" valign="top"><a id="a710d6d5971067f085374eccffd154e6f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>clearerr_unlocked</b>(stream)&#160;&#160;&#160;_clearerr(stream)</td></tr>
+<tr class="separator:a710d6d5971067f085374eccffd154e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5679991ae4613cbdd4c3eafc4f2f81b3"><td class="memItemLeft" align="right" valign="top"><a id="a5679991ae4613cbdd4c3eafc4f2f81b3"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>fflush_unlocked</b>(stream)&#160;&#160;&#160;_fflush(stream)</td></tr>
+<tr class="separator:a5679991ae4613cbdd4c3eafc4f2f81b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcbab2b32085e7e401d6b91b52ef5800"><td class="memItemLeft" align="right" valign="top"><a id="afcbab2b32085e7e401d6b91b52ef5800"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>fileno_unlocked</b>(stream)&#160;&#160;&#160;_fileno(stream)</td></tr>
+<tr class="separator:afcbab2b32085e7e401d6b91b52ef5800"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3df895f17ced7d1edcf4e2e856c22c2"><td class="memItemLeft" align="right" valign="top"><a id="ab3df895f17ced7d1edcf4e2e856c22c2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>flockfile</b>(stream)&#160;&#160;&#160;((void) (stream))</td></tr>
+<tr class="separator:ab3df895f17ced7d1edcf4e2e856c22c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd97e5e4b0bfc578cff5a832ead6eb89"><td class="memItemLeft" align="right" valign="top"><a id="abd97e5e4b0bfc578cff5a832ead6eb89"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>funlockfile</b>(stream)&#160;&#160;&#160;((void) (stream))</td></tr>
+<tr class="separator:abd97e5e4b0bfc578cff5a832ead6eb89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d3b5150553feb4e8ecc927de21663b0"><td class="memItemLeft" align="right" valign="top"><a id="a9d3b5150553feb4e8ecc927de21663b0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ftrylockfile</b>(stream)&#160;&#160;&#160;(0)</td></tr>
+<tr class="separator:a9d3b5150553feb4e8ecc927de21663b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a205af22573b47da14b2056032d6538c0"><td class="memItemLeft" align="right" valign="top"><a id="a205af22573b47da14b2056032d6538c0"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>__SIZEOF_FILE</b>&#160;&#160;&#160;sizeof(<a class="el" href="struct____FILE.html">__FILE</a>)</td></tr>
 <tr class="separator:a205af22573b47da14b2056032d6538c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7475971eb93ce0184379e71fe7626e9"><td class="memItemLeft" align="right" valign="top"><a id="af7475971eb93ce0184379e71fe7626e9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>_IOFBF</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:af7475971eb93ce0184379e71fe7626e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca9e52813bd224e4519e0b1289abbce9"><td class="memItemLeft" align="right" valign="top"><a id="aca9e52813bd224e4519e0b1289abbce9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>_IOLBF</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:aca9e52813bd224e4519e0b1289abbce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8661edb6b53e3104bef089bef02d0508"><td class="memItemLeft" align="right" valign="top"><a id="a8661edb6b53e3104bef089bef02d0508"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>_IONBF</b>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a8661edb6b53e3104bef089bef02d0508"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72a591cf0a96cf23c63df5c78712dabe"><td class="memItemLeft" align="right" valign="top"><a id="a72a591cf0a96cf23c63df5c78712dabe"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BUFSIZ</b>&#160;&#160;&#160;1024</td></tr>
+<tr class="separator:a72a591cf0a96cf23c63df5c78712dabe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a3f9b52a165c4c6a3b099ec5a2615adad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="unionFILE.html">FILE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#a3f9b52a165c4c6a3b099ec5a2615adad">fopen</a> (const char *pathname, const char *mode)</td></tr>
 <tr class="memdesc:a3f9b52a165c4c6a3b099ec5a2615adad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the file whose name is the string pointed to by pathname and associate a stream with it.  <a href="stdio_8h.html#a3f9b52a165c4c6a3b099ec5a2615adad">More...</a><br /></td></tr>
 <tr class="separator:a3f9b52a165c4c6a3b099ec5a2615adad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab13b5edcd6e585f41214da079623b209"><td class="memItemLeft" align="right" valign="top"><a class="el" href="unionFILE.html">FILE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#ab13b5edcd6e585f41214da079623b209">fdopen</a> (int fd, const char *mode)</td></tr>
+<tr class="memdesc:ab13b5edcd6e585f41214da079623b209"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put a stream on a descriptor that is already open.  <a href="stdio_8h.html#ab13b5edcd6e585f41214da079623b209">More...</a><br /></td></tr>
+<tr class="separator:ab13b5edcd6e585f41214da079623b209"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c4821b8a1a42eb0ced811a030aed4aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="unionFILE.html">FILE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#a1c4821b8a1a42eb0ced811a030aed4aa">freopen</a> (const char *pathname, const char *mode, <a class="el" href="unionFILE.html">FILE</a> *stream)</td></tr>
+<tr class="memdesc:a1c4821b8a1a42eb0ced811a030aed4aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Point a stream that is already open at another file, which is how a program replaces one of the standard streams.  <a href="stdio_8h.html#a1c4821b8a1a42eb0ced811a030aed4aa">More...</a><br /></td></tr>
+<tr class="separator:a1c4821b8a1a42eb0ced811a030aed4aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a819f057285a278044b6bc6e66dff2f2f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#a819f057285a278044b6bc6e66dff2f2f">fseeko</a> (<a class="el" href="unionFILE.html">FILE</a> *stream, off_t offset, int whence)</td></tr>
+<tr class="memdesc:a819f057285a278044b6bc6e66dff2f2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reposition a stream, with the offset given as an off_t.  <a href="stdio_8h.html#a819f057285a278044b6bc6e66dff2f2f">More...</a><br /></td></tr>
+<tr class="separator:a819f057285a278044b6bc6e66dff2f2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a044f39f604e1fc5a83268ca7a4ef45"><td class="memItemLeft" align="right" valign="top">off_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#a7a044f39f604e1fc5a83268ca7a4ef45">ftello</a> (<a class="el" href="unionFILE.html">FILE</a> *stream)</td></tr>
+<tr class="memdesc:a7a044f39f604e1fc5a83268ca7a4ef45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Report where a stream is, as an off_t.  <a href="stdio_8h.html#a7a044f39f604e1fc5a83268ca7a4ef45">More...</a><br /></td></tr>
+<tr class="separator:a7a044f39f604e1fc5a83268ca7a4ef45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76370407f9ab0402564c2bb9bc9664e0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#a76370407f9ab0402564c2bb9bc9664e0">fclose</a> (<a class="el" href="unionFILE.html">FILE</a> *stream)</td></tr>
 <tr class="memdesc:a76370407f9ab0402564c2bb9bc9664e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the given file stream.  <a href="stdio_8h.html#a76370407f9ab0402564c2bb9bc9664e0">More...</a><br /></td></tr>
 <tr class="separator:a76370407f9ab0402564c2bb9bc9664e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -166,9 +310,21 @@ Functions</h2></td></tr>
 <tr class="memitem:a5e25775bd8597f839a28125b616bd241"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#a5e25775bd8597f839a28125b616bd241">fseek</a> (<a class="el" href="unionFILE.html">FILE</a> *stream, long offset, int whence)</td></tr>
 <tr class="memdesc:a5e25775bd8597f839a28125b616bd241"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the file position indicator for the stream pointed to by stream.  <a href="stdio_8h.html#a5e25775bd8597f839a28125b616bd241">More...</a><br /></td></tr>
 <tr class="separator:a5e25775bd8597f839a28125b616bd241"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a002ad43f113e8c634d284ee34d1d53"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#a5a002ad43f113e8c634d284ee34d1d53">ftell</a> (<a class="el" href="unionFILE.html">FILE</a> *stream)</td></tr>
+<tr class="memdesc:a5a002ad43f113e8c634d284ee34d1d53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain the current value of the file position indicator.  <a href="stdio_8h.html#a5a002ad43f113e8c634d284ee34d1d53">More...</a><br /></td></tr>
+<tr class="separator:a5a002ad43f113e8c634d284ee34d1d53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0cd401f198d33d9d01a9e8aa4026819"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#aa0cd401f198d33d9d01a9e8aa4026819">rewind</a> (<a class="el" href="unionFILE.html">FILE</a> *stream)</td></tr>
+<tr class="memdesc:aa0cd401f198d33d9d01a9e8aa4026819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the file position indicator to the beginning of the file.  <a href="stdio_8h.html#aa0cd401f198d33d9d01a9e8aa4026819">More...</a><br /></td></tr>
+<tr class="separator:aa0cd401f198d33d9d01a9e8aa4026819"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af86fa14728c9bad5418a6d29cad9f9ff"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#af86fa14728c9bad5418a6d29cad9f9ff">fileno</a> (<a class="el" href="unionFILE.html">FILE</a> *stream)</td></tr>
 <tr class="memdesc:af86fa14728c9bad5418a6d29cad9f9ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Examine the argument stream and returns the integer file descriptor used to implement this stream.  <a href="stdio_8h.html#af86fa14728c9bad5418a6d29cad9f9ff">More...</a><br /></td></tr>
 <tr class="separator:af86fa14728c9bad5418a6d29cad9f9ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d4709508ed7604103d77c3fdc5ea4a2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#a4d4709508ed7604103d77c3fdc5ea4a2">rename</a> (const char *oldpath, const char *newpath)</td></tr>
+<tr class="memdesc:a4d4709508ed7604103d77c3fdc5ea4a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the name or the location of a file.  <a href="stdio_8h.html#a4d4709508ed7604103d77c3fdc5ea4a2">More...</a><br /></td></tr>
+<tr class="separator:a4d4709508ed7604103d77c3fdc5ea4a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02b13b56a188401119ea4da43c184913"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#a02b13b56a188401119ea4da43c184913">remove</a> (const char *pathname)</td></tr>
+<tr class="memdesc:a02b13b56a188401119ea4da43c184913"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete a file or an empty directory.  <a href="stdio_8h.html#a02b13b56a188401119ea4da43c184913">More...</a><br /></td></tr>
+<tr class="separator:a02b13b56a188401119ea4da43c184913"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98631211a4a8aee62f572375d5b637be"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#a98631211a4a8aee62f572375d5b637be">printf</a> (const char *format,...)</td></tr>
 <tr class="memdesc:a98631211a4a8aee62f572375d5b637be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Format and print data to the standard output.  <a href="stdio_8h.html#a98631211a4a8aee62f572375d5b637be">More...</a><br /></td></tr>
 <tr class="separator:a98631211a4a8aee62f572375d5b637be"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -199,6 +355,48 @@ Functions</h2></td></tr>
 <tr class="memitem:a2cadafbeb2d6e0d5781f6e5106d41fc2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#a2cadafbeb2d6e0d5781f6e5106d41fc2">vsnprintf</a> (char *str, size_t size, const char *format, va_list ap)</td></tr>
 <tr class="memdesc:a2cadafbeb2d6e0d5781f6e5106d41fc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Format and print data to a buffer with limited size and argument list.  <a href="stdio_8h.html#a2cadafbeb2d6e0d5781f6e5106d41fc2">More...</a><br /></td></tr>
 <tr class="separator:a2cadafbeb2d6e0d5781f6e5106d41fc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec1e54556dca3bd701d44395d34818dd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#aec1e54556dca3bd701d44395d34818dd">sscanf</a> (const char *str, const char *format,...)</td></tr>
+<tr class="memdesc:aec1e54556dca3bd701d44395d34818dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read from the string what the format says is in it. Only the string half of scanf is here: the stream half would have to read a <a class="el" href="unionFILE.html">FILE</a> of Tenok, which the one the C library brings is not.  <a href="stdio_8h.html#aec1e54556dca3bd701d44395d34818dd">More...</a><br /></td></tr>
+<tr class="separator:aec1e54556dca3bd701d44395d34818dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1c4552aba80fe03c9b45fe27f4331ad"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#ab1c4552aba80fe03c9b45fe27f4331ad">vsscanf</a> (const char *str, const char *format, va_list ap)</td></tr>
+<tr class="memdesc:ab1c4552aba80fe03c9b45fe27f4331ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read from the string what the format says is in it, taking the places to put it from a variable argument list.  <a href="stdio_8h.html#ab1c4552aba80fe03c9b45fe27f4331ad">More...</a><br /></td></tr>
+<tr class="separator:ab1c4552aba80fe03c9b45fe27f4331ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68236e664c1f0da049b25fba1c1695f6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#a68236e664c1f0da049b25fba1c1695f6">fputs</a> (const char *s, <a class="el" href="unionFILE.html">FILE</a> *stream)</td></tr>
+<tr class="memdesc:a68236e664c1f0da049b25fba1c1695f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a string to the stream, without its terminating null byte.  <a href="stdio_8h.html#a68236e664c1f0da049b25fba1c1695f6">More...</a><br /></td></tr>
+<tr class="separator:a68236e664c1f0da049b25fba1c1695f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe6299d5823dd023e610aaa619735a3f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#abe6299d5823dd023e610aaa619735a3f">fputc</a> (int c, <a class="el" href="unionFILE.html">FILE</a> *stream)</td></tr>
+<tr class="memdesc:abe6299d5823dd023e610aaa619735a3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a character to the stream.  <a href="stdio_8h.html#abe6299d5823dd023e610aaa619735a3f">More...</a><br /></td></tr>
+<tr class="separator:abe6299d5823dd023e610aaa619735a3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4de2514b7778805db3815e8dd6cf09a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#af4de2514b7778805db3815e8dd6cf09a">putchar</a> (int c)</td></tr>
+<tr class="memdesc:af4de2514b7778805db3815e8dd6cf09a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a character to the standard output.  <a href="stdio_8h.html#af4de2514b7778805db3815e8dd6cf09a">More...</a><br /></td></tr>
+<tr class="separator:af4de2514b7778805db3815e8dd6cf09a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad41876f99f190c7488e64ef39c50a23f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#ad41876f99f190c7488e64ef39c50a23f">puts</a> (const char *s)</td></tr>
+<tr class="memdesc:ad41876f99f190c7488e64ef39c50a23f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a string and a newline to the standard output.  <a href="stdio_8h.html#ad41876f99f190c7488e64ef39c50a23f">More...</a><br /></td></tr>
+<tr class="separator:ad41876f99f190c7488e64ef39c50a23f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab11a990e4f8863a1e7736e3c1d430092"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#ab11a990e4f8863a1e7736e3c1d430092">fgetc</a> (<a class="el" href="unionFILE.html">FILE</a> *stream)</td></tr>
+<tr class="memdesc:ab11a990e4f8863a1e7736e3c1d430092"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a character from the stream.  <a href="stdio_8h.html#ab11a990e4f8863a1e7736e3c1d430092">More...</a><br /></td></tr>
+<tr class="separator:ab11a990e4f8863a1e7736e3c1d430092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b3df0e66b41edab3c039191fe6cc4f9"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#a2b3df0e66b41edab3c039191fe6cc4f9">fgets</a> (char *s, int size, <a class="el" href="unionFILE.html">FILE</a> *stream)</td></tr>
+<tr class="memdesc:a2b3df0e66b41edab3c039191fe6cc4f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a line from the stream, the newline included, and terminate it.  <a href="stdio_8h.html#a2b3df0e66b41edab3c039191fe6cc4f9">More...</a><br /></td></tr>
+<tr class="separator:a2b3df0e66b41edab3c039191fe6cc4f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e71f513ad2496acb5361aedc065e3d8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#a9e71f513ad2496acb5361aedc065e3d8">feof</a> (<a class="el" href="unionFILE.html">FILE</a> *stream)</td></tr>
+<tr class="memdesc:a9e71f513ad2496acb5361aedc065e3d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tell whether the end of the stream has been reached.  <a href="stdio_8h.html#a9e71f513ad2496acb5361aedc065e3d8">More...</a><br /></td></tr>
+<tr class="separator:a9e71f513ad2496acb5361aedc065e3d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a98383bb54291c2abede7aa28acf597"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#a4a98383bb54291c2abede7aa28acf597">ferror</a> (<a class="el" href="unionFILE.html">FILE</a> *stream)</td></tr>
+<tr class="memdesc:a4a98383bb54291c2abede7aa28acf597"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tell whether the stream has failed.  <a href="stdio_8h.html#a4a98383bb54291c2abede7aa28acf597">More...</a><br /></td></tr>
+<tr class="separator:a4a98383bb54291c2abede7aa28acf597"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5de865c3093158c70bf4bd88a9deea5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#ab5de865c3093158c70bf4bd88a9deea5">clearerr</a> (<a class="el" href="unionFILE.html">FILE</a> *stream)</td></tr>
+<tr class="memdesc:ab5de865c3093158c70bf4bd88a9deea5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the end of file and the error state of the stream.  <a href="stdio_8h.html#ab5de865c3093158c70bf4bd88a9deea5">More...</a><br /></td></tr>
+<tr class="separator:ab5de865c3093158c70bf4bd88a9deea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb974f28765a31026ee6bf71d5175951"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#adb974f28765a31026ee6bf71d5175951">fflush</a> (<a class="el" href="unionFILE.html">FILE</a> *stream)</td></tr>
+<tr class="memdesc:adb974f28765a31026ee6bf71d5175951"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hand over what the stream is holding. Tenok does not buffer, so there is never anything to hand over.  <a href="stdio_8h.html#adb974f28765a31026ee6bf71d5175951">More...</a><br /></td></tr>
+<tr class="separator:adb974f28765a31026ee6bf71d5175951"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af691eb990d669a9edec8a9ec721ce3bc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#af691eb990d669a9edec8a9ec721ce3bc">setvbuf</a> (<a class="el" href="unionFILE.html">FILE</a> *stream, char *buf, int mode, size_t size)</td></tr>
+<tr class="memdesc:af691eb990d669a9edec8a9ec721ce3bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ask the stream to buffer what is written to it. Tenok reaches the device on the call that writes, so the only buffering it can be given is the one it already has.  <a href="stdio_8h.html#af691eb990d669a9edec8a9ec721ce3bc">More...</a><br /></td></tr>
+<tr class="separator:af691eb990d669a9edec8a9ec721ce3bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36d24924e1acc69f9c3ce49a832615fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio_8h.html#a36d24924e1acc69f9c3ce49a832615fe">setbuf</a> (<a class="el" href="unionFILE.html">FILE</a> *stream, char *buf)</td></tr>
+<tr class="memdesc:a36d24924e1acc69f9c3ce49a832615fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ask the stream to buffer what is written to it, the way <a class="el" href="stdio_8h.html#af691eb990d669a9edec8a9ec721ce3bc" title="Ask the stream to buffer what is written to it. Tenok reaches the device on the call that writes,...">setvbuf()</a> does, without reporting whether it could be done.  <a href="stdio_8h.html#a36d24924e1acc69f9c3ce49a832615fe">More...</a><br /></td></tr>
+<tr class="separator:a36d24924e1acc69f9c3ce49a832615fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -212,7 +410,60 @@ Variables</h2></td></tr>
 <a class="el" href="unionFILE.html">FILE</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>stderr</b></td></tr>
 <tr class="separator:ac9e47c346a25e2e7edd2c9b4ca5d0262"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a3e29caa20f7cffe18f410f01278905a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e29caa20f7cffe18f410f01278905a8">&#9670;&nbsp;</a></span>getchar</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getchar</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">void</td><td>)</td>
+          <td>&#160;&#160;&#160;_getchar</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read a character from the standard input. </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>The character read, and EOF at the end of the file or on error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ab5de865c3093158c70bf4bd88a9deea5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5de865c3093158c70bf4bd88a9deea5">&#9670;&nbsp;</a></span>clearerr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void clearerr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="unionFILE.html">FILE</a> *&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clear the end of file and the error state of the stream. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>The file stream to provide. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a5fe0fc8fe920b640d488856c5ca43cb5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5fe0fc8fe920b640d488856c5ca43cb5">&#9670;&nbsp;</a></span>dprintf()</h2>
 
@@ -289,6 +540,227 @@ Variables</h2></td></tr>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">int</td><td>0 on success and nonzero error number on error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab13b5edcd6e585f41214da079623b209"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab13b5edcd6e585f41214da079623b209">&#9670;&nbsp;</a></span>fdopen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="unionFILE.html">FILE</a>* fdopen </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>mode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Put a stream on a descriptor that is already open. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fd</td><td>The file descriptor to provide. </td></tr>
+    <tr><td class="paramname">mode</td><td>Not used, the descriptor carries how it was opened. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="unionFILE.html">FILE</a></td><td>*: The stream on success and a null pointer on error, with the reason left in errno. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9e71f513ad2496acb5361aedc065e3d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e71f513ad2496acb5361aedc065e3d8">&#9670;&nbsp;</a></span>feof()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int feof </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="unionFILE.html">FILE</a> *&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tell whether the end of the stream has been reached. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>The file stream to provide. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>Nonzero once the end of the file was reached. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4a98383bb54291c2abede7aa28acf597"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a98383bb54291c2abede7aa28acf597">&#9670;&nbsp;</a></span>ferror()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ferror </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="unionFILE.html">FILE</a> *&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tell whether the stream has failed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>The file stream to provide. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>Nonzero once a call on the stream has failed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adb974f28765a31026ee6bf71d5175951"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb974f28765a31026ee6bf71d5175951">&#9670;&nbsp;</a></span>fflush()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int fflush </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="unionFILE.html">FILE</a> *&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Hand over what the stream is holding. Tenok does not buffer, so there is never anything to hand over. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>The file stream to provide. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>0 on success and EOF on error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab11a990e4f8863a1e7736e3c1d430092"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab11a990e4f8863a1e7736e3c1d430092">&#9670;&nbsp;</a></span>fgetc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int fgetc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="unionFILE.html">FILE</a> *&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read a character from the stream. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>The file stream to provide. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>The character read, and EOF at the end of the file or on error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2b3df0e66b41edab3c039191fe6cc4f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b3df0e66b41edab3c039191fe6cc4f9">&#9670;&nbsp;</a></span>fgets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* fgets </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="unionFILE.html">FILE</a> *&#160;</td>
+          <td class="paramname"><em>stream</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read a line from the stream, the newline included, and terminate it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>The buffer to read into. </td></tr>
+    <tr><td class="paramname">size</td><td>The size of the buffer, the null byte included. </td></tr>
+    <tr><td class="paramname">stream</td><td>The file stream to provide. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">char</td><td>*: The buffer on success and a null pointer at the end of the file or on error. </td></tr>
   </table>
   </dd>
 </dl>
@@ -420,6 +892,92 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="abe6299d5823dd023e610aaa619735a3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe6299d5823dd023e610aaa619735a3f">&#9670;&nbsp;</a></span>fputc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int fputc </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="unionFILE.html">FILE</a> *&#160;</td>
+          <td class="paramname"><em>stream</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write a character to the stream. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>The character to write. </td></tr>
+    <tr><td class="paramname">stream</td><td>The file stream to provide. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>The character written on success and EOF on error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a68236e664c1f0da049b25fba1c1695f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68236e664c1f0da049b25fba1c1695f6">&#9670;&nbsp;</a></span>fputs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int fputs </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="unionFILE.html">FILE</a> *&#160;</td>
+          <td class="paramname"><em>stream</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write a string to the stream, without its terminating null byte. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>The string to write. </td></tr>
+    <tr><td class="paramname">stream</td><td>The file stream to provide. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>A nonnegative number on success and EOF on error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a084251eb18ccd5c936faa2c39c86ec63"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a084251eb18ccd5c936faa2c39c86ec63">&#9670;&nbsp;</a></span>fread()</h2>
 
@@ -470,7 +1028,57 @@ Variables</h2></td></tr>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">int</td><td>The read number on success and nonzero error number on error. </td></tr>
+    <tr><td class="paramname">size_t</td><td>The number of the items that were read, which is smaller than nmemb if the end of the file is reached or an error occurs. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1c4821b8a1a42eb0ced811a030aed4aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c4821b8a1a42eb0ced811a030aed4aa">&#9670;&nbsp;</a></span>freopen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="unionFILE.html">FILE</a>* freopen </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>pathname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="unionFILE.html">FILE</a> *&#160;</td>
+          <td class="paramname"><em>stream</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Point a stream that is already open at another file, which is how a program replaces one of the standard streams. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pathname</td><td>The pathname of the file to open. </td></tr>
+    <tr><td class="paramname">mode</td><td>The mode to open it with. </td></tr>
+    <tr><td class="paramname">stream</td><td>The stream to point at it. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="unionFILE.html">FILE</a></td><td>*: The stream on success and a null pointer on error, with the reason left in errno. </td></tr>
   </table>
   </dd>
 </dl>
@@ -520,7 +1128,121 @@ Variables</h2></td></tr>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">int</td><td>The new file position on success and nonzero error number on error. </td></tr>
+    <tr><td class="paramname">int</td><td>0 on success and -1 on error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a819f057285a278044b6bc6e66dff2f2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a819f057285a278044b6bc6e66dff2f2f">&#9670;&nbsp;</a></span>fseeko()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int fseeko </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="unionFILE.html">FILE</a> *&#160;</td>
+          <td class="paramname"><em>stream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">off_t&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>whence</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reposition a stream, with the offset given as an off_t. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>The file stream to provide. </td></tr>
+    <tr><td class="paramname">offset</td><td>The new offset from the position whence names. </td></tr>
+    <tr><td class="paramname">whence</td><td>SEEK_SET, SEEK_CUR or SEEK_END. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>0 on success and -1 on error, with the reason left in errno. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5a002ad43f113e8c634d284ee34d1d53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a002ad43f113e8c634d284ee34d1d53">&#9670;&nbsp;</a></span>ftell()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long ftell </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="unionFILE.html">FILE</a> *&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtain the current value of the file position indicator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>The file stream to provide. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">long</td><td>The current file position on success and -1 on error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7a044f39f604e1fc5a83268ca7a4ef45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a044f39f604e1fc5a83268ca7a4ef45">&#9670;&nbsp;</a></span>ftello()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">off_t ftello </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="unionFILE.html">FILE</a> *&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Report where a stream is, as an off_t. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>The file stream to provide. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">off_t</td><td>The position on success and -1 on error, with the reason left in errno. </td></tr>
   </table>
   </dd>
 </dl>
@@ -577,7 +1299,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">int</td><td>The write number on success and nonzero error number on error. </td></tr>
+    <tr><td class="paramname">size_t</td><td>The number of the items that were written, which is smaller than nmemb if an error occurs. </td></tr>
   </table>
   </dd>
 </dl>
@@ -621,6 +1343,271 @@ Variables</h2></td></tr>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">Upon</td><td>successful return, the function returns the number of characters printed; otherwie a negative value is returned. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af4de2514b7778805db3815e8dd6cf09a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4de2514b7778805db3815e8dd6cf09a">&#9670;&nbsp;</a></span>putchar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int putchar </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write a character to the standard output. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>The character to write. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>The character written on success and EOF on error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad41876f99f190c7488e64ef39c50a23f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad41876f99f190c7488e64ef39c50a23f">&#9670;&nbsp;</a></span>puts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int puts </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write a string and a newline to the standard output. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>The string to write. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>A nonnegative number on success and EOF on error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a02b13b56a188401119ea4da43c184913"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02b13b56a188401119ea4da43c184913">&#9670;&nbsp;</a></span>remove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int remove </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>pathname</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Delete a file or an empty directory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pathname</td><td>The pathname of the file to remove. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>0 on success and nonzero error number on error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4d4709508ed7604103d77c3fdc5ea4a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d4709508ed7604103d77c3fdc5ea4a2">&#9670;&nbsp;</a></span>rename()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rename </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>oldpath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>newpath</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Change the name or the location of a file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">oldpath</td><td>The pathname of the file to rename. </td></tr>
+    <tr><td class="paramname">newpath</td><td>The new pathname of the file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>0 on success and nonzero error number on error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa0cd401f198d33d9d01a9e8aa4026819"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0cd401f198d33d9d01a9e8aa4026819">&#9670;&nbsp;</a></span>rewind()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rewind </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="unionFILE.html">FILE</a> *&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the file position indicator to the beginning of the file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>The file stream to provide. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a36d24924e1acc69f9c3ce49a832615fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36d24924e1acc69f9c3ce49a832615fe">&#9670;&nbsp;</a></span>setbuf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setbuf </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="unionFILE.html">FILE</a> *&#160;</td>
+          <td class="paramname"><em>stream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ask the stream to buffer what is written to it, the way <a class="el" href="stdio_8h.html#af691eb990d669a9edec8a9ec721ce3bc" title="Ask the stream to buffer what is written to it. Tenok reaches the device on the call that writes,...">setvbuf()</a> does, without reporting whether it could be done. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>The file stream to provide. </td></tr>
+    <tr><td class="paramname">buf</td><td>The buffer to use, or NULL to ask for no buffering. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af691eb990d669a9edec8a9ec721ce3bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af691eb990d669a9edec8a9ec721ce3bc">&#9670;&nbsp;</a></span>setvbuf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int setvbuf </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="unionFILE.html">FILE</a> *&#160;</td>
+          <td class="paramname"><em>stream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ask the stream to buffer what is written to it. Tenok reaches the device on the call that writes, so the only buffering it can be given is the one it already has. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>The file stream to provide. </td></tr>
+    <tr><td class="paramname">buf</td><td>The buffer to use, which Tenok does not take. </td></tr>
+    <tr><td class="paramname">mode</td><td>One of _IOFBF, _IOLBF and _IONBF. </td></tr>
+    <tr><td class="paramname">size</td><td>The size of the buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>0 when _IONBF was asked for and nonzero otherwise, with errno set to EINVAL. </td></tr>
   </table>
   </dd>
 </dl>
@@ -728,6 +1715,55 @@ Variables</h2></td></tr>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">Upon</td><td>successful return, the function returns the number of characters printed; otherwie a negative value is returned. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aec1e54556dca3bd701d44395d34818dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec1e54556dca3bd701d44395d34818dd">&#9670;&nbsp;</a></span>sscanf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sscanf </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read from the string what the format says is in it. Only the string half of scanf is here: the stream half would have to read a <a class="el" href="unionFILE.html">FILE</a> of Tenok, which the one the C library brings is not. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to read from. </td></tr>
+    <tr><td class="paramname">format</td><td>What to look for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>The number of items read, and EOF if the string ran out first. </td></tr>
   </table>
   </dd>
 </dl>
@@ -979,6 +2015,56 @@ Variables</h2></td></tr>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">Upon</td><td>successful return, the function returns the number of characters printed; otherwie a negative value is returned. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab1c4552aba80fe03c9b45fe27f4331ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1c4552aba80fe03c9b45fe27f4331ad">&#9670;&nbsp;</a></span>vsscanf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int vsscanf </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">va_list&#160;</td>
+          <td class="paramname"><em>ap</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read from the string what the format says is in it, taking the places to put it from a variable argument list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to read from. </td></tr>
+    <tr><td class="paramname">format</td><td>What to look for. </td></tr>
+    <tr><td class="paramname">ap</td><td>The places to put what was read. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>The number of items read, and EOF if the string ran out first. </td></tr>
   </table>
   </dd>
 </dl>

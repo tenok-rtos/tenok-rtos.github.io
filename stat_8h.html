@@ -76,14 +76,32 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="types_8h_source.html">sys/types.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="tenok_2sys_2time_8h_source.html">time.h</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for stat.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="stat_8h__incl.png" border="0" usemap="#ainclude_2tenok_2sys_2stat_8h" alt=""/></div>
 <map name="ainclude_2tenok_2sys_2stat_8h" id="ainclude_2tenok_2sys_2stat_8h">
 <area shape="rect" title=" " alt="" coords="5,5,183,32"/>
-<area shape="rect" href="types_8h.html" title=" " alt="" coords="46,80,142,107"/>
-<area shape="rect" title=" " alt="" coords="59,155,129,181"/>
+<area shape="rect" href="types_8h.html" title=" " alt="" coords="46,155,142,181"/>
+<area shape="rect" href="tenok_2sys_2time_8h.html" title=" " alt="" coords="97,80,161,107"/>
+<area shape="rect" title=" " alt="" coords="59,229,129,256"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="stat_8h__dep__incl.png" border="0" usemap="#ainclude_2tenok_2sys_2stat_8hdep" alt=""/></div>
+<map name="ainclude_2tenok_2sys_2stat_8hdep" id="ainclude_2tenok_2sys_2stat_8hdep">
+<area shape="rect" title=" " alt="" coords="434,5,611,32"/>
+<area shape="rect" href="fs_8h.html" title=" " alt="" coords="395,155,509,181"/>
+<area shape="rect" href="vfs_8h.html" title=" " alt="" coords="557,155,678,181"/>
+<area shape="rect" href="dirent_8h.html" title=" " alt="" coords="441,80,605,107"/>
+<area shape="rect" href="reg__file_8h.html" title=" " alt="" coords="5,229,155,256"/>
+<area shape="rect" href="kernel_8h.html" title=" " alt="" coords="179,229,349,256"/>
+<area shape="rect" href="pipe_8h.html" title=" " alt="" coords="373,229,531,256"/>
+<area shape="rect" href="kernel_2poll_8h.html" title=" " alt="" coords="555,229,709,256"/>
+<area shape="rect" href="kernel_2wait_8h.html" title=" " alt="" coords="185,304,343,331"/>
 </map>
 </div>
 </div>
@@ -96,21 +114,114 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:ab5bee51e9ee68b83ab11d4b340f7200b"><td class="memItemLeft" align="right" valign="top"><a id="ab5bee51e9ee68b83ab11d4b340f7200b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_IFMT</b>&#160;&#160;&#160;0170000   /* Mask for the <a class="el" href="structfile.html">file</a> type */</td></tr>
+<tr class="separator:ab5bee51e9ee68b83ab11d4b340f7200b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4966f25d9f03a7a06bc47ac729fd86cf"><td class="memItemLeft" align="right" valign="top"><a id="a4966f25d9f03a7a06bc47ac729fd86cf"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_IFIFO</b>&#160;&#160;&#160;0 /* FIFO */</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_IFIFO</b>&#160;&#160;&#160;0010000  /* FIFO */</td></tr>
 <tr class="separator:a4966f25d9f03a7a06bc47ac729fd86cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef3a1d1ba22c83e30b5c834dd343b2a8"><td class="memItemLeft" align="right" valign="top"><a id="aef3a1d1ba22c83e30b5c834dd343b2a8"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_IFCHR</b>&#160;&#160;&#160;1 /* Character device */</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_IFCHR</b>&#160;&#160;&#160;0020000  /* Character device */</td></tr>
 <tr class="separator:aef3a1d1ba22c83e30b5c834dd343b2a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11fb0652b963a735f3377eb1c9239f2d"><td class="memItemLeft" align="right" valign="top"><a id="a11fb0652b963a735f3377eb1c9239f2d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_IFDIR</b>&#160;&#160;&#160;0040000  /* Directory */</td></tr>
+<tr class="separator:a11fb0652b963a735f3377eb1c9239f2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c5b74a1cb1a1ae83572500b94e1938f"><td class="memItemLeft" align="right" valign="top"><a id="a5c5b74a1cb1a1ae83572500b94e1938f"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_IFBLK</b>&#160;&#160;&#160;2 /* Block device */</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_IFBLK</b>&#160;&#160;&#160;0060000  /* Block device */</td></tr>
 <tr class="separator:a5c5b74a1cb1a1ae83572500b94e1938f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1aaa48b192a5dd3b6d7ee91fc98cd17d"><td class="memItemLeft" align="right" valign="top"><a id="a1aaa48b192a5dd3b6d7ee91fc98cd17d"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_IFREG</b>&#160;&#160;&#160;3 /* Regular <a class="el" href="structfile.html">file</a> */</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_IFREG</b>&#160;&#160;&#160;0100000  /* Regular <a class="el" href="structfile.html">file</a> */</td></tr>
 <tr class="separator:a1aaa48b192a5dd3b6d7ee91fc98cd17d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11fb0652b963a735f3377eb1c9239f2d"><td class="memItemLeft" align="right" valign="top"><a id="a11fb0652b963a735f3377eb1c9239f2d"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_IFDIR</b>&#160;&#160;&#160;4 /* Directory */</td></tr>
-<tr class="separator:a11fb0652b963a735f3377eb1c9239f2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afef163ce62372757e84bd9fc88c07aad"><td class="memItemLeft" align="right" valign="top"><a id="afef163ce62372757e84bd9fc88c07aad"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_IFLNK</b>&#160;&#160;&#160;0120000  /* Symbolic <a class="el" href="unistd_8h.html#aaea63e7a4923ab57f205b6cf023c3fb5">link</a> */</td></tr>
+<tr class="separator:afef163ce62372757e84bd9fc88c07aad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28e80cd43106882904be148b2a397d42"><td class="memItemLeft" align="right" valign="top"><a id="a28e80cd43106882904be148b2a397d42"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_IFSOCK</b>&#160;&#160;&#160;0140000 /* Socket */</td></tr>
+<tr class="separator:a28e80cd43106882904be148b2a397d42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a777b706bbe9e7920c091aaa2b547b093"><td class="memItemLeft" align="right" valign="top"><a id="a777b706bbe9e7920c091aaa2b547b093"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_ISFIFO</b>(m)&#160;&#160;&#160;(((m) &amp;S_IFMT) == S_IFIFO)</td></tr>
+<tr class="separator:a777b706bbe9e7920c091aaa2b547b093"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a767b5d0691f435f8a9b7f5e0fa97a645"><td class="memItemLeft" align="right" valign="top"><a id="a767b5d0691f435f8a9b7f5e0fa97a645"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_ISCHR</b>(m)&#160;&#160;&#160;(((m) &amp;S_IFMT) == S_IFCHR)</td></tr>
+<tr class="separator:a767b5d0691f435f8a9b7f5e0fa97a645"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70b64ed67c0ab484b4ba09487da34e91"><td class="memItemLeft" align="right" valign="top"><a id="a70b64ed67c0ab484b4ba09487da34e91"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_ISDIR</b>(m)&#160;&#160;&#160;(((m) &amp;S_IFMT) == S_IFDIR)</td></tr>
+<tr class="separator:a70b64ed67c0ab484b4ba09487da34e91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a722eba7370eb3b0aafb3272182e08520"><td class="memItemLeft" align="right" valign="top"><a id="a722eba7370eb3b0aafb3272182e08520"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_ISBLK</b>(m)&#160;&#160;&#160;(((m) &amp;S_IFMT) == S_IFBLK)</td></tr>
+<tr class="separator:a722eba7370eb3b0aafb3272182e08520"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf68371159fa46b5cc47d0f3ac9ab723"><td class="memItemLeft" align="right" valign="top"><a id="abf68371159fa46b5cc47d0f3ac9ab723"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_ISREG</b>(m)&#160;&#160;&#160;(((m) &amp;S_IFMT) == S_IFREG)</td></tr>
+<tr class="separator:abf68371159fa46b5cc47d0f3ac9ab723"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a835359614ec43fbd96f53993cde84ef2"><td class="memItemLeft" align="right" valign="top"><a id="a835359614ec43fbd96f53993cde84ef2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_ISLNK</b>(m)&#160;&#160;&#160;(((m) &amp;S_IFMT) == S_IFLNK)</td></tr>
+<tr class="separator:a835359614ec43fbd96f53993cde84ef2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a765304585be8c05f7fa72495e6d5881f"><td class="memItemLeft" align="right" valign="top"><a id="a765304585be8c05f7fa72495e6d5881f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_ISSOCK</b>(m)&#160;&#160;&#160;(((m) &amp;S_IFMT) == S_IFSOCK)</td></tr>
+<tr class="separator:a765304585be8c05f7fa72495e6d5881f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30384a8cd2feb1615efd5eadc243684b"><td class="memItemLeft" align="right" valign="top"><a id="a30384a8cd2feb1615efd5eadc243684b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_ISUID</b>&#160;&#160;&#160;0004000</td></tr>
+<tr class="separator:a30384a8cd2feb1615efd5eadc243684b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c9e4cc0a8acc43c99ae6c3d972ae2d8"><td class="memItemLeft" align="right" valign="top"><a id="a9c9e4cc0a8acc43c99ae6c3d972ae2d8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_ISGID</b>&#160;&#160;&#160;0002000</td></tr>
+<tr class="separator:a9c9e4cc0a8acc43c99ae6c3d972ae2d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97b5e445a72c99b37dc5b8d620fbd14e"><td class="memItemLeft" align="right" valign="top"><a id="a97b5e445a72c99b37dc5b8d620fbd14e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_ISVTX</b>&#160;&#160;&#160;0001000</td></tr>
+<tr class="separator:a97b5e445a72c99b37dc5b8d620fbd14e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe3da42e762f6362c93454682fad5eb5"><td class="memItemLeft" align="right" valign="top"><a id="afe3da42e762f6362c93454682fad5eb5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_IRWXU</b>&#160;&#160;&#160;0000700</td></tr>
+<tr class="separator:afe3da42e762f6362c93454682fad5eb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84c7dbf5cf2fdfb690f76348b60a8cb7"><td class="memItemLeft" align="right" valign="top"><a id="a84c7dbf5cf2fdfb690f76348b60a8cb7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_IRUSR</b>&#160;&#160;&#160;0000400</td></tr>
+<tr class="separator:a84c7dbf5cf2fdfb690f76348b60a8cb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad70001754261c15a1bdc8e876c6d09d7"><td class="memItemLeft" align="right" valign="top"><a id="ad70001754261c15a1bdc8e876c6d09d7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_IWUSR</b>&#160;&#160;&#160;0000200</td></tr>
+<tr class="separator:ad70001754261c15a1bdc8e876c6d09d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af10a35e3950795d6ee4e07157d000131"><td class="memItemLeft" align="right" valign="top"><a id="af10a35e3950795d6ee4e07157d000131"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_IXUSR</b>&#160;&#160;&#160;0000100</td></tr>
+<tr class="separator:af10a35e3950795d6ee4e07157d000131"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a230c642d2bb81f15f85c122b1883de5c"><td class="memItemLeft" align="right" valign="top"><a id="a230c642d2bb81f15f85c122b1883de5c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_IRWXG</b>&#160;&#160;&#160;0000070</td></tr>
+<tr class="separator:a230c642d2bb81f15f85c122b1883de5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f5f280b929768113739fb34d6f7be8a"><td class="memItemLeft" align="right" valign="top"><a id="a4f5f280b929768113739fb34d6f7be8a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_IRGRP</b>&#160;&#160;&#160;0000040</td></tr>
+<tr class="separator:a4f5f280b929768113739fb34d6f7be8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6774871a90d9442f00abe18b87fee6e"><td class="memItemLeft" align="right" valign="top"><a id="ae6774871a90d9442f00abe18b87fee6e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_IWGRP</b>&#160;&#160;&#160;0000020</td></tr>
+<tr class="separator:ae6774871a90d9442f00abe18b87fee6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a042e69ac0e7dd56e5cfcd9e97d010323"><td class="memItemLeft" align="right" valign="top"><a id="a042e69ac0e7dd56e5cfcd9e97d010323"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_IXGRP</b>&#160;&#160;&#160;0000010</td></tr>
+<tr class="separator:a042e69ac0e7dd56e5cfcd9e97d010323"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b93e0da7fe32bbd4926626bffad96b1"><td class="memItemLeft" align="right" valign="top"><a id="a5b93e0da7fe32bbd4926626bffad96b1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_IRWXO</b>&#160;&#160;&#160;0000007</td></tr>
+<tr class="separator:a5b93e0da7fe32bbd4926626bffad96b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a071147a0cb995036967c80f64b1f74b9"><td class="memItemLeft" align="right" valign="top"><a id="a071147a0cb995036967c80f64b1f74b9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_IROTH</b>&#160;&#160;&#160;0000004</td></tr>
+<tr class="separator:a071147a0cb995036967c80f64b1f74b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5303f49f26293acdb9533756c78322fb"><td class="memItemLeft" align="right" valign="top"><a id="a5303f49f26293acdb9533756c78322fb"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_IWOTH</b>&#160;&#160;&#160;0000002</td></tr>
+<tr class="separator:a5303f49f26293acdb9533756c78322fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40223db1b95a04f5b28cceb3c34cfebd"><td class="memItemLeft" align="right" valign="top"><a id="a40223db1b95a04f5b28cceb3c34cfebd"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_IXOTH</b>&#160;&#160;&#160;0000001</td></tr>
+<tr class="separator:a40223db1b95a04f5b28cceb3c34cfebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ce306737c3153a7e2e99272c0a92ec5"><td class="memItemLeft" align="right" valign="top"><a id="a4ce306737c3153a7e2e99272c0a92ec5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>st_atime</b>&#160;&#160;&#160;st_atim.tv_sec</td></tr>
+<tr class="separator:a4ce306737c3153a7e2e99272c0a92ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecd62777ab7c6c1d6d23e4967632c5ef"><td class="memItemLeft" align="right" valign="top"><a id="aecd62777ab7c6c1d6d23e4967632c5ef"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>st_mtime</b>&#160;&#160;&#160;st_mtim.tv_sec</td></tr>
+<tr class="separator:aecd62777ab7c6c1d6d23e4967632c5ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dd9b364b84aee095dc6208ff18de4f5"><td class="memItemLeft" align="right" valign="top"><a id="a2dd9b364b84aee095dc6208ff18de4f5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>st_ctime</b>&#160;&#160;&#160;st_ctim.tv_sec</td></tr>
+<tr class="separator:a2dd9b364b84aee095dc6208ff18de4f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15bbc844d24a54143c87e1a1152c5f13"><td class="memItemLeft" align="right" valign="top"><a id="a15bbc844d24a54143c87e1a1152c5f13"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>UTIME_TO_NOW</b>&#160;&#160;&#160;((uint32_t) -1)</td></tr>
+<tr class="separator:a15bbc844d24a54143c87e1a1152c5f13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac45074dcbfac1fd9306b62037d0dea32"><td class="memItemLeft" align="right" valign="top"><a id="ac45074dcbfac1fd9306b62037d0dea32"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>UTIME_NOW</b>&#160;&#160;&#160;((1l &lt;&lt; 30) - 1l)</td></tr>
+<tr class="separator:ac45074dcbfac1fd9306b62037d0dea32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcb5b84adc43059f20f98953954ab72c"><td class="memItemLeft" align="right" valign="top"><a id="abcb5b84adc43059f20f98953954ab72c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>UTIME_OMIT</b>&#160;&#160;&#160;((1l &lt;&lt; 30) - 2l)</td></tr>
+<tr class="separator:abcb5b84adc43059f20f98953954ab72c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -123,8 +234,72 @@ Functions</h2></td></tr>
 <tr class="memitem:a097a953859f943469263ae6f11669470"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stat_8h.html#a097a953859f943469263ae6f11669470">mkfifo</a> (const char *pathname, mode_t mode)</td></tr>
 <tr class="memdesc:a097a953859f943469263ae6f11669470"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a FIFO special file with name pathname.  <a href="stat_8h.html#a097a953859f943469263ae6f11669470">More...</a><br /></td></tr>
 <tr class="separator:a097a953859f943469263ae6f11669470"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee98bbe743c2d14dbaa67f01c3fb9ed5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stat_8h.html#aee98bbe743c2d14dbaa67f01c3fb9ed5">mkdir</a> (const char *pathname, mode_t mode)</td></tr>
+<tr class="memdesc:aee98bbe743c2d14dbaa67f01c3fb9ed5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a directory named pathname.  <a href="stat_8h.html#aee98bbe743c2d14dbaa67f01c3fb9ed5">More...</a><br /></td></tr>
+<tr class="separator:aee98bbe743c2d14dbaa67f01c3fb9ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8788159ad927954699f80970a1d04462"><td class="memItemLeft" align="right" valign="top">mode_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stat_8h.html#a8788159ad927954699f80970a1d04462">umask</a> (mode_t mask)</td></tr>
+<tr class="memdesc:a8788159ad927954699f80970a1d04462"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the permission bits withheld from the files the task creates.  <a href="stat_8h.html#a8788159ad927954699f80970a1d04462">More...</a><br /></td></tr>
+<tr class="separator:a8788159ad927954699f80970a1d04462"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c1269f9979230d588b4e72d5e7d1332"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stat_8h.html#a0c1269f9979230d588b4e72d5e7d1332">utime</a> (const char *pathname, uint32_t mtime)</td></tr>
+<tr class="memdesc:a0c1269f9979230d588b4e72d5e7d1332"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace the time the contents of a file were last written.  <a href="stat_8h.html#a0c1269f9979230d588b4e72d5e7d1332">More...</a><br /></td></tr>
+<tr class="separator:a0c1269f9979230d588b4e72d5e7d1332"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b893413bc424887bbe61f8d0952a0ee"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stat_8h.html#a1b893413bc424887bbe61f8d0952a0ee">chmod</a> (const char *pathname, mode_t mode)</td></tr>
+<tr class="memdesc:a1b893413bc424887bbe61f8d0952a0ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace the permission bits of a file.  <a href="stat_8h.html#a1b893413bc424887bbe61f8d0952a0ee">More...</a><br /></td></tr>
+<tr class="separator:a1b893413bc424887bbe61f8d0952a0ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a495553b93f6e4b88e7d82195f189cb22"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stat_8h.html#a495553b93f6e4b88e7d82195f189cb22">stat</a> (const char *pathname, struct <a class="el" href="structstat.html">stat</a> *statbuf)</td></tr>
+<tr class="memdesc:a495553b93f6e4b88e7d82195f189cb22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return information about the file specified by the pathname, in the buffer pointed to by statbuf.  <a href="stat_8h.html#a495553b93f6e4b88e7d82195f189cb22">More...</a><br /></td></tr>
+<tr class="separator:a495553b93f6e4b88e7d82195f189cb22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af52d2b78c938af5e279e57ffa2644ff8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stat_8h.html#af52d2b78c938af5e279e57ffa2644ff8">lstat</a> (const char *pathname, struct <a class="el" href="structstat.html">stat</a> *statbuf)</td></tr>
+<tr class="memdesc:af52d2b78c938af5e279e57ffa2644ff8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return information about the file specified by the pathname, the way <a class="el" href="stat_8h.html#a495553b93f6e4b88e7d82195f189cb22" title="Return information about the file specified by the pathname, in the buffer pointed to by statbuf.">stat()</a> does. Tenok gives a file one name, so there is no link for the call to stop at and the two report the same thing.  <a href="stat_8h.html#af52d2b78c938af5e279e57ffa2644ff8">More...</a><br /></td></tr>
+<tr class="separator:af52d2b78c938af5e279e57ffa2644ff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47b7022461e3f65e812f461652ecc97f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stat_8h.html#a47b7022461e3f65e812f461652ecc97f">futimens</a> (int fd, const struct <a class="el" href="structtimespec.html">timespec</a> times[2])</td></tr>
+<tr class="memdesc:a47b7022461e3f65e812f461652ecc97f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stamp the file a descriptor is open on with the times given. Tenok keeps no way back from a descriptor to the file it was opened on, which is what the call would need.  <a href="stat_8h.html#a47b7022461e3f65e812f461652ecc97f">More...</a><br /></td></tr>
+<tr class="separator:a47b7022461e3f65e812f461652ecc97f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a1b893413bc424887bbe61f8d0952a0ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b893413bc424887bbe61f8d0952a0ee">&#9670;&nbsp;</a></span>chmod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int chmod </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>pathname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mode_t&#160;</td>
+          <td class="paramname"><em>mode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Replace the permission bits of a file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pathname</td><td>The pathname of the file. </td></tr>
+    <tr><td class="paramname">mode</td><td>The permission bits to give the file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>0 on success and -1 on error, with the reason in errno. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a27628bfab8ccdd0fdeed6778b25cd734"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a27628bfab8ccdd0fdeed6778b25cd734">&#9670;&nbsp;</a></span>fstat()</h2>
 
@@ -167,6 +342,135 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a47b7022461e3f65e812f461652ecc97f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47b7022461e3f65e812f461652ecc97f">&#9670;&nbsp;</a></span>futimens()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int futimens </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="structtimespec.html">timespec</a>&#160;</td>
+          <td class="paramname"><em>times</em>[2]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stamp the file a descriptor is open on with the times given. Tenok keeps no way back from a descriptor to the file it was opened on, which is what the call would need. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fd</td><td>The descriptor. </td></tr>
+    <tr><td class="paramname">times</td><td>The times to stamp it with. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>-1 with errno set to ENOSYS. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af52d2b78c938af5e279e57ffa2644ff8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af52d2b78c938af5e279e57ffa2644ff8">&#9670;&nbsp;</a></span>lstat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int lstat </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>pathname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structstat.html">stat</a> *&#160;</td>
+          <td class="paramname"><em>statbuf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return information about the file specified by the pathname, the way <a class="el" href="stat_8h.html#a495553b93f6e4b88e7d82195f189cb22" title="Return information about the file specified by the pathname, in the buffer pointed to by statbuf.">stat()</a> does. Tenok gives a file one name, so there is no link for the call to stop at and the two report the same thing. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pathname</td><td>The pathname of the file. </td></tr>
+    <tr><td class="paramname">statbuf</td><td>The buffer for returning the file information. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>0 on success and nonzero error number on error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aee98bbe743c2d14dbaa67f01c3fb9ed5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee98bbe743c2d14dbaa67f01c3fb9ed5">&#9670;&nbsp;</a></span>mkdir()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mkdir </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>pathname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mode_t&#160;</td>
+          <td class="paramname"><em>mode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a directory named pathname. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pathname</td><td>The pathname of the directory to create. </td></tr>
+    <tr><td class="paramname">mode</td><td>The permission bits of the new directory. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>0 on success and nonzero error number on error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a097a953859f943469263ae6f11669470"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a097a953859f943469263ae6f11669470">&#9670;&nbsp;</a></span>mkfifo()</h2>
 
@@ -197,7 +501,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pathname</td><td>The path name to create the new fifo file. </td></tr>
-    <tr><td class="paramname">mode</td><td>Not used. </td></tr>
+    <tr><td class="paramname">mode</td><td>The permission bits of the new file. </td></tr>
   </table>
   </dd>
 </dl>
@@ -246,14 +550,132 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pathname</td><td>The pathname to create the new file. </td></tr>
-    <tr><td class="paramname">mode</td><td>Not used. </td></tr>
-    <tr><td class="paramname">dev</td><td>The file type to provide (S_IFIFO, S_IFCHR, ...). </td></tr>
+    <tr><td class="paramname">mode</td><td>The file type and the permission bits of the new file. </td></tr>
+    <tr><td class="paramname">dev</td><td>The device number, when the file is a device. Not used. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">int</td><td>0 on success and nonzero error number on error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a495553b93f6e4b88e7d82195f189cb22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a495553b93f6e4b88e7d82195f189cb22">&#9670;&nbsp;</a></span>stat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structstat.html">stat</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>pathname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structstat.html">stat</a> *&#160;</td>
+          <td class="paramname"><em>statbuf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return information about the file specified by the pathname, in the buffer pointed to by statbuf. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pathname</td><td>The pathname of the file. </td></tr>
+    <tr><td class="paramname">statbuf</td><td>The buffer for returning the file information. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>0 on success and nonzero error number on error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8788159ad927954699f80970a1d04462"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8788159ad927954699f80970a1d04462">&#9670;&nbsp;</a></span>umask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mode_t umask </td>
+          <td>(</td>
+          <td class="paramtype">mode_t&#160;</td>
+          <td class="paramname"><em>mask</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the permission bits withheld from the files the task creates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mask</td><td>The bits to withhold from now on. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">mode_t</td><td>The mask that was in effect before the call. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0c1269f9979230d588b4e72d5e7d1332"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c1269f9979230d588b4e72d5e7d1332">&#9670;&nbsp;</a></span>utime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int utime </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>pathname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>mtime</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Replace the time the contents of a file were last written. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pathname</td><td>The pathname of the file. </td></tr>
+    <tr><td class="paramname">mtime</td><td>Seconds since the epoch, or UTIME_TO_NOW for the present. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>0 on success and -1 on error, with the reason left in errno. </td></tr>
   </table>
   </dd>
 </dl>

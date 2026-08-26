@@ -1,8 +1,20 @@
 var searchData=
 [
-  ['get_5fproc_5fmode_81',['get_proc_mode',['../port_8h.html#a1317b81e79bd5830dcc6a6ff6f5502da',1,'port.h']]],
-  ['get_5fsyscall_5fargs_82',['get_syscall_args',['../port_8h.html#a08c203bf7a107819b846ef8fc56fbd49',1,'port.h']]],
-  ['get_5fsyscall_5fnum_83',['get_syscall_num',['../port_8h.html#a4de5d69829b84bcdd18e2deaf753493f',1,'port.h']]],
-  ['getcwd_84',['getcwd',['../unistd_8h.html#a3284211bd28346254245c9d4fd071d7f',1,'file.c']]],
-  ['getpid_85',['getpid',['../unistd_8h.html#a939cb25a305fe68aad9b365077f1a8c7',1,'unistd.h']]]
+  ['get_5fproc_5fmode_128',['get_proc_mode',['../port_8h.html#a1317b81e79bd5830dcc6a6ff6f5502da',1,'v7m_port.c']]],
+  ['get_5fsyscall_5fargs_129',['get_syscall_args',['../port_8h.html#a08c203bf7a107819b846ef8fc56fbd49',1,'v7m_port.c']]],
+  ['get_5fsyscall_5fnum_130',['get_syscall_num',['../port_8h.html#a4de5d69829b84bcdd18e2deaf753493f',1,'v7m_port.c']]],
+  ['getchar_131',['getchar',['../stdio_8h.html#a3e29caa20f7cffe18f410f01278905a8',1,'stdio.h']]],
+  ['getcwd_132',['getcwd',['../unistd_8h.html#a3284211bd28346254245c9d4fd071d7f',1,'file.c']]],
+  ['getgid_133',['getgid',['../unistd_8h.html#a58ca281cc6931c62e6a85e2edb5b4b49',1,'pwd.c']]],
+  ['getgrgid_134',['getgrgid',['../grp_8h.html#a8524c2fcdec1d8012103efc53d9ea3a9',1,'pwd.c']]],
+  ['getgrnam_135',['getgrnam',['../grp_8h.html#ac41b95afd2d94da07d8d13a6c0f30302',1,'pwd.c']]],
+  ['getgroups_136',['getgroups',['../unistd_8h.html#aacfa67f2aef6be4baceace6a00856d21',1,'pwd.c']]],
+  ['getpid_137',['getpid',['../unistd_8h.html#ac61b207337ca21b3b309593fd1a0cb82',1,'task.c']]],
+  ['getppid_138',['getppid',['../unistd_8h.html#ac6d7f7ade00dcdc302b0da5664eee812',1,'task.c']]],
+  ['getpwnam_139',['getpwnam',['../pwd_8h.html#a08249b8fcd2bf95afbddd22fdc86814c',1,'pwd.c']]],
+  ['getpwuid_140',['getpwuid',['../pwd_8h.html#ab778defdd0203751977756936c1d3105',1,'pwd.c']]],
+  ['getrlimit_141',['getrlimit',['../resource_8h.html#a46cbb4e3ff9d597b722d9b482715031f',1,'resource.c']]],
+  ['getuid_142',['getuid',['../unistd_8h.html#a2f517436c22ef73337d3de4920908c6c',1,'pwd.c']]],
+  ['group_143',['group',['../structgroup.html',1,'']]],
+  ['grp_2eh_144',['grp.h',['../grp_8h.html',1,'']]]
 ];

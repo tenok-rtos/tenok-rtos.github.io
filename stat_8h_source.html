@@ -76,33 +76,106 @@ $(function() {
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define __STAT_H__</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="types_8h.html">sys/types.h</a>&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define S_IFIFO 0 </span><span class="comment">/* FIFO */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define S_IFCHR 1 </span><span class="comment">/* Character device */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define S_IFBLK 2 </span><span class="comment">/* Block device */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define S_IFREG 3 </span><span class="comment">/* Regular file */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define S_IFDIR 4 </span><span class="comment">/* Directory */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">/* Return type of the fstat() syscall */</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structstat.html">   16</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structstat.html">stat</a> {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    uint8_t st_mode;    <span class="comment">/* File type */</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    uint32_t st_ino;    <span class="comment">/* inode number */</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    uint32_t st_rdev;   <span class="comment">/* Device number */</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    uint32_t st_size;   <span class="comment">/* Total size in bytes */</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    uint32_t st_blocks; <span class="comment">/* Number of the blocks used by the file */</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">int</span> <a class="code" href="stat_8h.html#a27628bfab8ccdd0fdeed6778b25cd734">fstat</a>(<span class="keywordtype">int</span> fd, <span class="keyword">struct</span> <a class="code" href="structstat.html">stat</a> *statbuf);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keywordtype">int</span> <a class="code" href="stat_8h.html#ae92589973c691560ce2a6a97043872cf">mknod</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *pathname, mode_t mode, dev_t dev);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">int</span> <a class="code" href="stat_8h.html#a097a953859f943469263ae6f11669470">mkfifo</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *pathname, mode_t mode);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="astat_8h_html_a097a953859f943469263ae6f11669470"><div class="ttname"><a href="stat_8h.html#a097a953859f943469263ae6f11669470">mkfifo</a></div><div class="ttdeci">int mkfifo(const char *pathname, mode_t mode)</div><div class="ttdoc">Makes a FIFO special file with name pathname.</div><div class="ttdef"><b>Definition:</b> file.c:110</div></div>
-<div class="ttc" id="astat_8h_html_a27628bfab8ccdd0fdeed6778b25cd734"><div class="ttname"><a href="stat_8h.html#a27628bfab8ccdd0fdeed6778b25cd734">fstat</a></div><div class="ttdeci">int fstat(int fd, struct stat *statbuf)</div><div class="ttdoc">Return information about a file, in the buffer pointed to by statbuf.</div><div class="ttdef"><b>Definition:</b> file.c:80</div></div>
-<div class="ttc" id="astat_8h_html_ae92589973c691560ce2a6a97043872cf"><div class="ttname"><a href="stat_8h.html#ae92589973c691560ce2a6a97043872cf">mknod</a></div><div class="ttdeci">int mknod(const char *pathname, mode_t mode, dev_t dev)</div><div class="ttdoc">Create a filesystem node (file, device special file, or named pipe) named pathname,...</div><div class="ttdef"><b>Definition:</b> file.c:105</div></div>
-<div class="ttc" id="astructstat_html"><div class="ttname"><a href="structstat.html">stat</a></div><div class="ttdef"><b>Definition:</b> stat.h:16</div></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="tenok_2time_8h.html">time.h</a>&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/* File types, with the values POSIX gives them */</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define S_IFMT 0170000   </span><span class="comment">/* Mask for the file type */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define S_IFIFO 0010000  </span><span class="comment">/* FIFO */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define S_IFCHR 0020000  </span><span class="comment">/* Character device */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define S_IFDIR 0040000  </span><span class="comment">/* Directory */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define S_IFBLK 0060000  </span><span class="comment">/* Block device */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define S_IFREG 0100000  </span><span class="comment">/* Regular file */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define S_IFLNK 0120000  </span><span class="comment">/* Symbolic link */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define S_IFSOCK 0140000 </span><span class="comment">/* Socket */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define S_ISFIFO(m) (((m) &amp;S_IFMT) == S_IFIFO)</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define S_ISCHR(m) (((m) &amp;S_IFMT) == S_IFCHR)</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define S_ISDIR(m) (((m) &amp;S_IFMT) == S_IFDIR)</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define S_ISBLK(m) (((m) &amp;S_IFMT) == S_IFBLK)</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#define S_ISREG(m) (((m) &amp;S_IFMT) == S_IFREG)</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#define S_ISLNK(m) (((m) &amp;S_IFMT) == S_IFLNK)</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define S_ISSOCK(m) (((m) &amp;S_IFMT) == S_IFSOCK)</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">/* Permission bits. Tenok stores them and checks none of them */</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define S_ISUID 0004000</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define S_ISGID 0002000</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#define S_ISVTX 0001000</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define S_IRWXU 0000700</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define S_IRUSR 0000400</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#define S_IWUSR 0000200</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define S_IXUSR 0000100</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#define S_IRWXG 0000070</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#define S_IRGRP 0000040</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#define S_IWGRP 0000020</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#define S_IXGRP 0000010</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define S_IRWXO 0000007</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define S_IROTH 0000004</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#define S_IWOTH 0000002</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#define S_IXOTH 0000001</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">/* Return type of the stat() and fstat() syscalls */</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="structstat.html">   46</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structstat.html">stat</a> {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    dev_t st_dev;            <span class="comment">/* Device the file lives on */</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    ino_t st_ino;            <span class="comment">/* inode number */</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    mode_t st_mode;          <span class="comment">/* File type and permission bits */</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    nlink_t st_nlink;        <span class="comment">/* Number of hard links */</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    uid_t st_uid;            <span class="comment">/* Owner of the file */</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    gid_t st_gid;            <span class="comment">/* Group of the file */</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    dev_t st_rdev;           <span class="comment">/* Device number, when the file is a device */</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    off_t st_size;           <span class="comment">/* Total size in bytes */</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    blksize_t st_blksize;    <span class="comment">/* Block size of the file system */</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    blkcnt_t st_blocks;      <span class="comment">/* Number of the blocks used by the file */</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">struct </span><a class="code" href="structtimespec.html">timespec</a> st_atim; <span class="comment">/* Time of the last access */</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">struct </span><a class="code" href="structtimespec.html">timespec</a> st_mtim; <span class="comment">/* Time of the last modification */</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">struct </span><a class="code" href="structtimespec.html">timespec</a> st_ctim; <span class="comment">/* Time of the last status change */</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">/* Tenok keeps the modification time, the other two read back as zero */</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#define st_atime st_atim.tv_sec</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#define st_mtime st_mtim.tv_sec</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#define st_ctime st_ctim.tv_sec</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordtype">int</span> <a class="code" href="stat_8h.html#a27628bfab8ccdd0fdeed6778b25cd734">fstat</a>(<span class="keywordtype">int</span> fd, <span class="keyword">struct</span> <a class="code" href="structstat.html">stat</a> *statbuf);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keywordtype">int</span> <a class="code" href="stat_8h.html#ae92589973c691560ce2a6a97043872cf">mknod</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *pathname, mode_t mode, dev_t dev);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keywordtype">int</span> <a class="code" href="stat_8h.html#a097a953859f943469263ae6f11669470">mkfifo</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *pathname, mode_t mode);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keywordtype">int</span> <a class="code" href="stat_8h.html#aee98bbe743c2d14dbaa67f01c3fb9ed5">mkdir</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *pathname, mode_t mode);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;mode_t <a class="code" href="stat_8h.html#a8788159ad927954699f80970a1d04462">umask</a>(mode_t mask);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">/* Given to utime() in place of a time, asking for the present one */</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#define UTIME_TO_NOW ((uint32_t) -1)</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">/* What utimensat() of POSIX is given in place of a time */</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#define UTIME_NOW ((1l &lt;&lt; 30) - 1l)</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">#define UTIME_OMIT ((1l &lt;&lt; 30) - 2l)</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keywordtype">int</span> <a class="code" href="stat_8h.html#a0c1269f9979230d588b4e72d5e7d1332">utime</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *pathname, uint32_t mtime);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="keywordtype">int</span> <a class="code" href="stat_8h.html#a1b893413bc424887bbe61f8d0952a0ee">chmod</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *pathname, mode_t mode);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="keywordtype">int</span> <a class="code" href="stat_8h.html#a495553b93f6e4b88e7d82195f189cb22">stat</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *pathname, <span class="keyword">struct</span> <a class="code" href="structstat.html">stat</a> *statbuf);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="keywordtype">int</span> <a class="code" href="stat_8h.html#af52d2b78c938af5e279e57ffa2644ff8">lstat</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *pathname, <span class="keyword">struct</span> <a class="code" href="structstat.html">stat</a> *statbuf);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="keywordtype">int</span> <a class="code" href="stat_8h.html#a47b7022461e3f65e812f461652ecc97f">futimens</a>(<span class="keywordtype">int</span> fd, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structtimespec.html">timespec</a> times[2]);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="astat_8h_html_a097a953859f943469263ae6f11669470"><div class="ttname"><a href="stat_8h.html#a097a953859f943469263ae6f11669470">mkfifo</a></div><div class="ttdeci">int mkfifo(const char *pathname, mode_t mode)</div><div class="ttdoc">Makes a FIFO special file with name pathname.</div><div class="ttdef"><b>Definition:</b> file.c:294</div></div>
+<div class="ttc" id="astat_8h_html_a0c1269f9979230d588b4e72d5e7d1332"><div class="ttname"><a href="stat_8h.html#a0c1269f9979230d588b4e72d5e7d1332">utime</a></div><div class="ttdeci">int utime(const char *pathname, uint32_t mtime)</div><div class="ttdoc">Replace the time the contents of a file were last written.</div><div class="ttdef"><b>Definition:</b> file.c:321</div></div>
+<div class="ttc" id="astat_8h_html_a1b893413bc424887bbe61f8d0952a0ee"><div class="ttname"><a href="stat_8h.html#a1b893413bc424887bbe61f8d0952a0ee">chmod</a></div><div class="ttdeci">int chmod(const char *pathname, mode_t mode)</div><div class="ttdoc">Replace the permission bits of a file.</div><div class="ttdef"><b>Definition:</b> file.c:331</div></div>
+<div class="ttc" id="astat_8h_html_a27628bfab8ccdd0fdeed6778b25cd734"><div class="ttname"><a href="stat_8h.html#a27628bfab8ccdd0fdeed6778b25cd734">fstat</a></div><div class="ttdeci">int fstat(int fd, struct stat *statbuf)</div><div class="ttdoc">Return information about a file, in the buffer pointed to by statbuf.</div><div class="ttdef"><b>Definition:</b> file.c:178</div></div>
+<div class="ttc" id="astat_8h_html_a47b7022461e3f65e812f461652ecc97f"><div class="ttname"><a href="stat_8h.html#a47b7022461e3f65e812f461652ecc97f">futimens</a></div><div class="ttdeci">int futimens(int fd, const struct timespec times[2])</div><div class="ttdoc">Stamp the file a descriptor is open on with the times given. Tenok keeps no way back from a descripto...</div><div class="ttdef"><b>Definition:</b> wrapper.c:457</div></div>
+<div class="ttc" id="astat_8h_html_a495553b93f6e4b88e7d82195f189cb22"><div class="ttname"><a href="stat_8h.html#a495553b93f6e4b88e7d82195f189cb22">stat</a></div><div class="ttdeci">int stat(const char *pathname, struct stat *statbuf)</div><div class="ttdoc">Return information about the file specified by the pathname, in the buffer pointed to by statbuf.</div><div class="ttdef"><b>Definition:</b> file.c:366</div></div>
+<div class="ttc" id="astat_8h_html_a8788159ad927954699f80970a1d04462"><div class="ttname"><a href="stat_8h.html#a8788159ad927954699f80970a1d04462">umask</a></div><div class="ttdeci">mode_t umask(mode_t mask)</div><div class="ttdoc">Set the permission bits withheld from the files the task creates.</div><div class="ttdef"><b>Definition:</b> file.c:310</div></div>
+<div class="ttc" id="astat_8h_html_ae92589973c691560ce2a6a97043872cf"><div class="ttname"><a href="stat_8h.html#ae92589973c691560ce2a6a97043872cf">mknod</a></div><div class="ttdeci">int mknod(const char *pathname, mode_t mode, dev_t dev)</div><div class="ttdoc">Create a filesystem node (file, device special file, or named pipe) named pathname,...</div><div class="ttdef"><b>Definition:</b> file.c:284</div></div>
+<div class="ttc" id="astat_8h_html_aee98bbe743c2d14dbaa67f01c3fb9ed5"><div class="ttname"><a href="stat_8h.html#aee98bbe743c2d14dbaa67f01c3fb9ed5">mkdir</a></div><div class="ttdeci">int mkdir(const char *pathname, mode_t mode)</div><div class="ttdoc">Create a directory named pathname.</div><div class="ttdef"><b>Definition:</b> file.c:304</div></div>
+<div class="ttc" id="astat_8h_html_af52d2b78c938af5e279e57ffa2644ff8"><div class="ttname"><a href="stat_8h.html#af52d2b78c938af5e279e57ffa2644ff8">lstat</a></div><div class="ttdeci">int lstat(const char *pathname, struct stat *statbuf)</div><div class="ttdoc">Return information about the file specified by the pathname, the way stat() does. Tenok gives a file ...</div><div class="ttdef"><b>Definition:</b> file.c:377</div></div>
+<div class="ttc" id="astructstat_html"><div class="ttname"><a href="structstat.html">stat</a></div><div class="ttdef"><b>Definition:</b> stat.h:46</div></div>
+<div class="ttc" id="astructtimespec_html"><div class="ttname"><a href="structtimespec.html">timespec</a></div><div class="ttdef"><b>Definition:</b> time.h:16</div></div>
+<div class="ttc" id="atenok_2time_8h_html"><div class="ttname"><a href="tenok_2time_8h.html">time.h</a></div></div>
 <div class="ttc" id="atypes_8h_html"><div class="ttname"><a href="types_8h.html">types.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

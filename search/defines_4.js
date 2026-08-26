@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['init_5fwaitqueue_5fhead_688',['init_waitqueue_head',['../wait_8h.html#a759d8a479756ceb875be2debcb80359a',1,'wait.h']]]
+  ['hook_5fuser_5ftask_962',['HOOK_USER_TASK',['../task_8h.html#a3cb286c107d30bad2c5040b5cfc22eb1',1,'task.h']]]
 ];

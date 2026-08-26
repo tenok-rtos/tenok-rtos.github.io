@@ -79,9 +79,12 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="struct____FILE.html">    9</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordtype">int</span> fd;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;} <a class="code" href="struct____FILE.html">__FILE</a>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="comment">/* Set by the end of the file and by a failure, until clearerr() */</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">int</span> eof;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">int</span> err;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;} <a class="code" href="struct____FILE.html">__FILE</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="apthread_8h_html"><div class="ttname"><a href="pthread_8h.html">pthread.h</a></div></div>
 <div class="ttc" id="astruct____FILE_html"><div class="ttname"><a href="struct____FILE.html">__FILE</a></div><div class="ttdef"><b>Definition:</b> reent.h:9</div></div>
 </div><!-- fragment --></div><!-- contents -->

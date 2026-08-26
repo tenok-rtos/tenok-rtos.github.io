@@ -1,0 +1,11 @@
+<map id="include/tenok/sys/stat.h" name="include/tenok/sys/stat.h">
+<area shape="rect" id="node1" title=" " alt="" coords="434,5,611,32"/>
+<area shape="rect" id="node2" href="$fs_8h.html" title=" " alt="" coords="395,155,509,181"/>
+<area shape="rect" id="node8" href="$vfs_8h.html" title=" " alt="" coords="557,155,678,181"/>
+<area shape="rect" id="node9" href="$dirent_8h.html" title=" " alt="" coords="441,80,605,107"/>
+<area shape="rect" id="node3" href="$reg__file_8h.html" title=" " alt="" coords="5,229,155,256"/>
+<area shape="rect" id="node4" href="$kernel_8h.html" title=" " alt="" coords="179,229,349,256"/>
+<area shape="rect" id="node6" href="$pipe_8h.html" title=" " alt="" coords="373,229,531,256"/>
+<area shape="rect" id="node7" href="$kernel_2poll_8h.html" title=" " alt="" coords="555,229,709,256"/>
+<area shape="rect" id="node5" href="$kernel_2wait_8h.html" title=" " alt="" coords="185,304,343,331"/>
+</map>

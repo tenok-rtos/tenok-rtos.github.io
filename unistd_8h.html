@@ -116,6 +116,33 @@ Macros</h2></td></tr>
 <tr class="memitem:ae2fe1725bb5e9823d089c46b9ed5266e"><td class="memItemLeft" align="right" valign="top"><a id="ae2fe1725bb5e9823d089c46b9ed5266e"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>STDERR_FILENO</b>&#160;&#160;&#160;2 /* Standard error <a class="el" href="structfile.html">file</a> descriptor */</td></tr>
 <tr class="separator:ae2fe1725bb5e9823d089c46b9ed5266e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaef4066d8270ad0bb85db8a2a6a2ceb4"><td class="memItemLeft" align="right" valign="top"><a id="aaef4066d8270ad0bb85db8a2a6a2ceb4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>_SC_ARG_MAX</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:aaef4066d8270ad0bb85db8a2a6a2ceb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a129b8a9d335ba00162af6827e7345c44"><td class="memItemLeft" align="right" valign="top"><a id="a129b8a9d335ba00162af6827e7345c44"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>_SC_CLK_TCK</b>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a129b8a9d335ba00162af6827e7345c44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62158756e8d115896b3a9e18e5de62e3"><td class="memItemLeft" align="right" valign="top"><a id="a62158756e8d115896b3a9e18e5de62e3"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>_SC_OPEN_MAX</b>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:a62158756e8d115896b3a9e18e5de62e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8524bbbaf09850389a58789b72caf52"><td class="memItemLeft" align="right" valign="top"><a id="af8524bbbaf09850389a58789b72caf52"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>_SC_PAGESIZE</b>&#160;&#160;&#160;8</td></tr>
+<tr class="separator:af8524bbbaf09850389a58789b72caf52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ac8478abd0013aa5f514d9604722194"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#a9ac8478abd0013aa5f514d9604722194">sysconf</a>&#160;&#160;&#160;_sysconf</td></tr>
+<tr class="memdesc:a9ac8478abd0013aa5f514d9604722194"><td class="mdescLeft">&#160;</td><td class="mdescRight">Report a value of the system that is decided when it is built.  <a href="unistd_8h.html#a9ac8478abd0013aa5f514d9604722194">More...</a><br /></td></tr>
+<tr class="separator:a9ac8478abd0013aa5f514d9604722194"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af837744613408b57dc3654fbc3bcf900"><td class="memItemLeft" align="right" valign="top"><a id="af837744613408b57dc3654fbc3bcf900"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>F_OK</b>&#160;&#160;&#160;0 /* The <a class="el" href="structfile.html">file</a> exists */</td></tr>
+<tr class="separator:af837744613408b57dc3654fbc3bcf900"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e995ef7690698b62bf016b14fbc45ca"><td class="memItemLeft" align="right" valign="top"><a id="a5e995ef7690698b62bf016b14fbc45ca"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>X_OK</b>&#160;&#160;&#160;1 /* The <a class="el" href="structfile.html">file</a> can be executed */</td></tr>
+<tr class="separator:a5e995ef7690698b62bf016b14fbc45ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5acf4043c0903cda7436b108e29e8e6"><td class="memItemLeft" align="right" valign="top"><a id="ae5acf4043c0903cda7436b108e29e8e6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>W_OK</b>&#160;&#160;&#160;2 /* The <a class="el" href="structfile.html">file</a> can be written */</td></tr>
+<tr class="separator:ae5acf4043c0903cda7436b108e29e8e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24a7a0ceb1e8f5f44cb1038bb829030d"><td class="memItemLeft" align="right" valign="top"><a id="a24a7a0ceb1e8f5f44cb1038bb829030d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>R_OK</b>&#160;&#160;&#160;4 /* The <a class="el" href="structfile.html">file</a> can be <a class="el" href="unistd_8h.html#af32a16ad2dd9e48482f8f790db7dbbd2">read</a> */</td></tr>
+<tr class="separator:a24a7a0ceb1e8f5f44cb1038bb829030d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -134,6 +161,24 @@ Functions</h2></td></tr>
 <tr class="memitem:a0bbddf8ae4f3dea6e57532be36c04268"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#a0bbddf8ae4f3dea6e57532be36c04268">dup2</a> (int oldfd, int newfd)</td></tr>
 <tr class="memdesc:a0bbddf8ae4f3dea6e57532be36c04268"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform the same task as <a class="el" href="unistd_8h.html#a2599c985f9cce0d9d7b11732941bd9dc" title="Create a copy of the file descriptor oldfd, using the lowest-numbered unused file descriptor for the ...">dup()</a>, but use the file descriptor number specified by newfd.  <a href="unistd_8h.html#a0bbddf8ae4f3dea6e57532be36c04268">More...</a><br /></td></tr>
 <tr class="separator:a0bbddf8ae4f3dea6e57532be36c04268"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d8839f39526d15b100953d64cc08f10"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#a3d8839f39526d15b100953d64cc08f10">pipe</a> (int pipefd[2])</td></tr>
+<tr class="memdesc:a3d8839f39526d15b100953d64cc08f10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a pipe, a stream that is written to through one descriptor and read from through the other.  <a href="unistd_8h.html#a3d8839f39526d15b100953d64cc08f10">More...</a><br /></td></tr>
+<tr class="separator:a3d8839f39526d15b100953d64cc08f10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00de8c0545c31325a425f53371a56235"><td class="memItemLeft" align="right" valign="top">pid_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#a00de8c0545c31325a425f53371a56235">vfork</a> (void)</td></tr>
+<tr class="memdesc:a00de8c0545c31325a425f53371a56235"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a child process. Tenok runs every task from the image it booted and has no way to make another, so the call always fails.  <a href="unistd_8h.html#a00de8c0545c31325a425f53371a56235">More...</a><br /></td></tr>
+<tr class="separator:a00de8c0545c31325a425f53371a56235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4e4714e6e8927c80b2553a40094b6d9"><td class="memItemLeft" align="right" valign="top">pid_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#aa4e4714e6e8927c80b2553a40094b6d9">fork</a> (void)</td></tr>
+<tr class="memdesc:aa4e4714e6e8927c80b2553a40094b6d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a child process, the way <a class="el" href="unistd_8h.html#a00de8c0545c31325a425f53371a56235" title="Create a child process. Tenok runs every task from the image it booted and has no way to make another...">vfork()</a> does not either.  <a href="unistd_8h.html#aa4e4714e6e8927c80b2553a40094b6d9">More...</a><br /></td></tr>
+<tr class="separator:aa4e4714e6e8927c80b2553a40094b6d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dc7e94fe9c483eea915fbc0334be0b2"><td class="memItemLeft" align="right" valign="top">pid_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#a3dc7e94fe9c483eea915fbc0334be0b2">setsid</a> (void)</td></tr>
+<tr class="memdesc:a3dc7e94fe9c483eea915fbc0334be0b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start a session. Tenok has the one console and no sessions to give it out to.  <a href="unistd_8h.html#a3dc7e94fe9c483eea915fbc0334be0b2">More...</a><br /></td></tr>
+<tr class="separator:a3dc7e94fe9c483eea915fbc0334be0b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34f1a971391de72a34ec56bb0133ce2d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#a34f1a971391de72a34ec56bb0133ce2d">execve</a> (const char *pathname, char *const argv[], char *const envp[])</td></tr>
+<tr class="memdesc:a34f1a971391de72a34ec56bb0133ce2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace the running program with the one the pathname names. No file of Tenok is in a format the system can execute, so the call always fails.  <a href="unistd_8h.html#a34f1a971391de72a34ec56bb0133ce2d">More...</a><br /></td></tr>
+<tr class="separator:a34f1a971391de72a34ec56bb0133ce2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99c68bc1f0de7e428c2e24023e669658"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#a99c68bc1f0de7e428c2e24023e669658">execvp</a> (const char *<a class="el" href="structfile.html">file</a>, char *const argv[])</td></tr>
+<tr class="memdesc:a99c68bc1f0de7e428c2e24023e669658"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace the running program with the one found by searching PATH for the file, the way <a class="el" href="unistd_8h.html#a34f1a971391de72a34ec56bb0133ce2d" title="Replace the running program with the one the pathname names. No file of Tenok is in a format the syst...">execve()</a> does.  <a href="unistd_8h.html#a99c68bc1f0de7e428c2e24023e669658">More...</a><br /></td></tr>
+<tr class="separator:a99c68bc1f0de7e428c2e24023e669658"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af32a16ad2dd9e48482f8f790db7dbbd2"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#af32a16ad2dd9e48482f8f790db7dbbd2">read</a> (int fd, void *buf, size_t count)</td></tr>
 <tr class="memdesc:af32a16ad2dd9e48482f8f790db7dbbd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to read up to count bytes from file descriptor fd into the buffer starting at buf.  <a href="unistd_8h.html#af32a16ad2dd9e48482f8f790db7dbbd2">More...</a><br /></td></tr>
 <tr class="separator:af32a16ad2dd9e48482f8f790db7dbbd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,17 +188,158 @@ Functions</h2></td></tr>
 <tr class="memitem:a7c7b0aa1b2a9ff1e9c9524b038f4d213"><td class="memItemLeft" align="right" valign="top">off_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#a7c7b0aa1b2a9ff1e9c9524b038f4d213">lseek</a> (int fd, long offset, int whence)</td></tr>
 <tr class="memdesc:a7c7b0aa1b2a9ff1e9c9524b038f4d213"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reposition the file offset of the open file description associated with the file descriptor fd.  <a href="unistd_8h.html#a7c7b0aa1b2a9ff1e9c9524b038f4d213">More...</a><br /></td></tr>
 <tr class="separator:a7c7b0aa1b2a9ff1e9c9524b038f4d213"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a939cb25a305fe68aad9b365077f1a8c7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#a939cb25a305fe68aad9b365077f1a8c7">getpid</a> (void)</td></tr>
-<tr class="memdesc:a939cb25a305fe68aad9b365077f1a8c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the ID of the calling task.  <a href="unistd_8h.html#a939cb25a305fe68aad9b365077f1a8c7">More...</a><br /></td></tr>
-<tr class="separator:a939cb25a305fe68aad9b365077f1a8c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac61b207337ca21b3b309593fd1a0cb82"><td class="memItemLeft" align="right" valign="top">pid_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#ac61b207337ca21b3b309593fd1a0cb82">getpid</a> (void)</td></tr>
+<tr class="memdesc:ac61b207337ca21b3b309593fd1a0cb82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the ID of the calling task.  <a href="unistd_8h.html#ac61b207337ca21b3b309593fd1a0cb82">More...</a><br /></td></tr>
+<tr class="separator:ac61b207337ca21b3b309593fd1a0cb82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6d7f7ade00dcdc302b0da5664eee812"><td class="memItemLeft" align="right" valign="top">pid_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#ac6d7f7ade00dcdc302b0da5664eee812">getppid</a> (void)</td></tr>
+<tr class="memdesc:ac6d7f7ade00dcdc302b0da5664eee812"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the ID of the task that started the calling one. Every task of Tenok is started by the one that brings the system up.  <a href="unistd_8h.html#ac6d7f7ade00dcdc302b0da5664eee812">More...</a><br /></td></tr>
+<tr class="separator:ac6d7f7ade00dcdc302b0da5664eee812"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3284211bd28346254245c9d4fd071d7f"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#a3284211bd28346254245c9d4fd071d7f">getcwd</a> (char *buf, size_t size)</td></tr>
 <tr class="memdesc:a3284211bd28346254245c9d4fd071d7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current working directory.  <a href="unistd_8h.html#a3284211bd28346254245c9d4fd071d7f">More...</a><br /></td></tr>
 <tr class="separator:a3284211bd28346254245c9d4fd071d7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03af571dfb595681bfa203c83385c07b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#a03af571dfb595681bfa203c83385c07b">chdir</a> (const char *path)</td></tr>
 <tr class="memdesc:a03af571dfb595681bfa203c83385c07b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change working directory.  <a href="unistd_8h.html#a03af571dfb595681bfa203c83385c07b">More...</a><br /></td></tr>
 <tr class="separator:a03af571dfb595681bfa203c83385c07b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3cee068f32a919cdd638e0578c1e5f8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#af3cee068f32a919cdd638e0578c1e5f8">unlink</a> (const char *pathname)</td></tr>
+<tr class="memdesc:af3cee068f32a919cdd638e0578c1e5f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete a name from the file system.  <a href="unistd_8h.html#af3cee068f32a919cdd638e0578c1e5f8">More...</a><br /></td></tr>
+<tr class="separator:af3cee068f32a919cdd638e0578c1e5f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a570282ae7ba596263ec812b368d99b34"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#a570282ae7ba596263ec812b368d99b34">rmdir</a> (const char *pathname)</td></tr>
+<tr class="memdesc:a570282ae7ba596263ec812b368d99b34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete a directory, which must be empty.  <a href="unistd_8h.html#a570282ae7ba596263ec812b368d99b34">More...</a><br /></td></tr>
+<tr class="separator:a570282ae7ba596263ec812b368d99b34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67d58c6aa6eaeb9560972d86c1e001b7"><td class="memItemLeft" align="right" valign="top"><a id="a67d58c6aa6eaeb9560972d86c1e001b7"></a>
+long&#160;</td><td class="memItemRight" valign="bottom"><b>sysconf</b> (int name)</td></tr>
+<tr class="separator:a67d58c6aa6eaeb9560972d86c1e001b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49bb0c485f30ab14364721c9ce433bab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#a49bb0c485f30ab14364721c9ce433bab">isatty</a> (int fd)</td></tr>
+<tr class="memdesc:a49bb0c485f30ab14364721c9ce433bab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tell whether a descriptor refers to a terminal.  <a href="unistd_8h.html#a49bb0c485f30ab14364721c9ce433bab">More...</a><br /></td></tr>
+<tr class="separator:a49bb0c485f30ab14364721c9ce433bab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa918cf234c33e52741d038f62d41897d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#aa918cf234c33e52741d038f62d41897d">access</a> (const char *pathname, int mode)</td></tr>
+<tr class="memdesc:aa918cf234c33e52741d038f62d41897d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the calling task can reach a file the way it asks.  <a href="unistd_8h.html#aa918cf234c33e52741d038f62d41897d">More...</a><br /></td></tr>
+<tr class="separator:aa918cf234c33e52741d038f62d41897d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f517436c22ef73337d3de4920908c6c"><td class="memItemLeft" align="right" valign="top">uid_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#a2f517436c22ef73337d3de4920908c6c">getuid</a> (void)</td></tr>
+<tr class="memdesc:a2f517436c22ef73337d3de4920908c6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Report the user a task runs as, which on Tenok is always root.  <a href="unistd_8h.html#a2f517436c22ef73337d3de4920908c6c">More...</a><br /></td></tr>
+<tr class="separator:a2f517436c22ef73337d3de4920908c6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa426fc963bb0a4f469eef61d9f0c4a26"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#aa426fc963bb0a4f469eef61d9f0c4a26">setuid</a> (uid_t uid)</td></tr>
+<tr class="memdesc:aa426fc963bb0a4f469eef61d9f0c4a26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Become the user of the given identifier. Tenok runs as the one user it has, so only that one can be become.  <a href="unistd_8h.html#aa426fc963bb0a4f469eef61d9f0c4a26">More...</a><br /></td></tr>
+<tr class="separator:aa426fc963bb0a4f469eef61d9f0c4a26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0210e5429242210d14011a69cc2caab6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#a0210e5429242210d14011a69cc2caab6">seteuid</a> (uid_t uid)</td></tr>
+<tr class="memdesc:a0210e5429242210d14011a69cc2caab6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Become the effective user of the given identifier, the way <a class="el" href="unistd_8h.html#aa426fc963bb0a4f469eef61d9f0c4a26" title="Become the user of the given identifier. Tenok runs as the one user it has, so only that one can be b...">setuid()</a> does.  <a href="unistd_8h.html#a0210e5429242210d14011a69cc2caab6">More...</a><br /></td></tr>
+<tr class="separator:a0210e5429242210d14011a69cc2caab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b9a6dcf4e1d237f5607256dad93e26a"><td class="memItemLeft" align="right" valign="top"><a id="a8b9a6dcf4e1d237f5607256dad93e26a"></a>
+uid_t&#160;</td><td class="memItemRight" valign="bottom"><b>geteuid</b> (void)</td></tr>
+<tr class="separator:a8b9a6dcf4e1d237f5607256dad93e26a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58ca281cc6931c62e6a85e2edb5b4b49"><td class="memItemLeft" align="right" valign="top">gid_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#a58ca281cc6931c62e6a85e2edb5b4b49">getgid</a> (void)</td></tr>
+<tr class="memdesc:a58ca281cc6931c62e6a85e2edb5b4b49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Report the group a task runs as, which on Tenok is always root.  <a href="unistd_8h.html#a58ca281cc6931c62e6a85e2edb5b4b49">More...</a><br /></td></tr>
+<tr class="separator:a58ca281cc6931c62e6a85e2edb5b4b49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3116233500c2c34795d437eaf34b69b5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#a3116233500c2c34795d437eaf34b69b5">setgid</a> (gid_t gid)</td></tr>
+<tr class="memdesc:a3116233500c2c34795d437eaf34b69b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Join the group of the given identifier. Tenok has the one group, so only that one can be joined.  <a href="unistd_8h.html#a3116233500c2c34795d437eaf34b69b5">More...</a><br /></td></tr>
+<tr class="separator:a3116233500c2c34795d437eaf34b69b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9f6ddd60c97865e00e2348be6aa5ac8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#ae9f6ddd60c97865e00e2348be6aa5ac8">setegid</a> (gid_t gid)</td></tr>
+<tr class="memdesc:ae9f6ddd60c97865e00e2348be6aa5ac8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Join the effective group of the given identifier, the way <a class="el" href="unistd_8h.html#a3116233500c2c34795d437eaf34b69b5" title="Join the group of the given identifier. Tenok has the one group, so only that one can be joined.">setgid()</a> does.  <a href="unistd_8h.html#ae9f6ddd60c97865e00e2348be6aa5ac8">More...</a><br /></td></tr>
+<tr class="separator:ae9f6ddd60c97865e00e2348be6aa5ac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e7c694d68b4e62c1f275612d30b6d9d"><td class="memItemLeft" align="right" valign="top"><a id="a3e7c694d68b4e62c1f275612d30b6d9d"></a>
+gid_t&#160;</td><td class="memItemRight" valign="bottom"><b>getegid</b> (void)</td></tr>
+<tr class="separator:a3e7c694d68b4e62c1f275612d30b6d9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacfa67f2aef6be4baceace6a00856d21"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#aacfa67f2aef6be4baceace6a00856d21">getgroups</a> (int size, gid_t list[])</td></tr>
+<tr class="memdesc:aacfa67f2aef6be4baceace6a00856d21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Report the supplementary groups of the task. Tenok has one group and root is in it, so there is never a supplementary one.  <a href="unistd_8h.html#aacfa67f2aef6be4baceace6a00856d21">More...</a><br /></td></tr>
+<tr class="separator:aacfa67f2aef6be4baceace6a00856d21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaea63e7a4923ab57f205b6cf023c3fb5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#aaea63e7a4923ab57f205b6cf023c3fb5">link</a> (const char *oldpath, const char *newpath)</td></tr>
+<tr class="memdesc:aaea63e7a4923ab57f205b6cf023c3fb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Give a file a second name. Tenok gives a file one name.  <a href="unistd_8h.html#aaea63e7a4923ab57f205b6cf023c3fb5">More...</a><br /></td></tr>
+<tr class="separator:aaea63e7a4923ab57f205b6cf023c3fb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85923fecf6e7f8cd74ed04597cd40f74"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#a85923fecf6e7f8cd74ed04597cd40f74">symlink</a> (const char *target, const char *linkpath)</td></tr>
+<tr class="memdesc:a85923fecf6e7f8cd74ed04597cd40f74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a name that stands for another. Tenok has no symbolic link.  <a href="unistd_8h.html#a85923fecf6e7f8cd74ed04597cd40f74">More...</a><br /></td></tr>
+<tr class="separator:a85923fecf6e7f8cd74ed04597cd40f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad57ce189a001775443632a7841fe65c4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#ad57ce189a001775443632a7841fe65c4">readlink</a> (const char *pathname, char *buf, size_t bufsiz)</td></tr>
+<tr class="memdesc:ad57ce189a001775443632a7841fe65c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read what a symbolic link stands for. Nothing a path of Tenok names is one.  <a href="unistd_8h.html#ad57ce189a001775443632a7841fe65c4">More...</a><br /></td></tr>
+<tr class="separator:ad57ce189a001775443632a7841fe65c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1458f6f34fdef22870172278889af435"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#a1458f6f34fdef22870172278889af435">fchdir</a> (int fd)</td></tr>
+<tr class="memdesc:a1458f6f34fdef22870172278889af435"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the working directory to the one the descriptor names. Tenok keeps no way back from a descriptor to the name it was opened by.  <a href="unistd_8h.html#a1458f6f34fdef22870172278889af435">More...</a><br /></td></tr>
+<tr class="separator:a1458f6f34fdef22870172278889af435"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a959654523479c5f997e812b3cf055879"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#a959654523479c5f997e812b3cf055879">ttyname_r</a> (int fd, char *buf, size_t buflen)</td></tr>
+<tr class="memdesc:a959654523479c5f997e812b3cf055879"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name the terminal the descriptor is open on. Tenok keeps no way back from a descriptor to the name it was opened by.  <a href="unistd_8h.html#a959654523479c5f997e812b3cf055879">More...</a><br /></td></tr>
+<tr class="separator:a959654523479c5f997e812b3cf055879"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb5a028bb4a392db1cb0815a0d909f8f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#afb5a028bb4a392db1cb0815a0d909f8f">chroot</a> (const char *path)</td></tr>
+<tr class="memdesc:afb5a028bb4a392db1cb0815a0d909f8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make the given directory the root. The root of Tenok is the whole of what it mounted, with nothing outside to be shut away from.  <a href="unistd_8h.html#afb5a028bb4a392db1cb0815a0d909f8f">More...</a><br /></td></tr>
+<tr class="separator:afb5a028bb4a392db1cb0815a0d909f8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c080ffcae5180218dda2df501e0cb15"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#a7c080ffcae5180218dda2df501e0cb15">chown</a> (const char *pathname, uid_t owner, gid_t <a class="el" href="structgroup.html">group</a>)</td></tr>
+<tr class="memdesc:a7c080ffcae5180218dda2df501e0cb15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace the owner of a file. Tenok has one user, so only a request that names it can be granted.  <a href="unistd_8h.html#a7c080ffcae5180218dda2df501e0cb15">More...</a><br /></td></tr>
+<tr class="separator:a7c080ffcae5180218dda2df501e0cb15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12bcf555f6b2cbfe62828deb198a2b4a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unistd_8h.html#a12bcf555f6b2cbfe62828deb198a2b4a">lchown</a> (const char *pathname, uid_t owner, gid_t <a class="el" href="structgroup.html">group</a>)</td></tr>
+<tr class="memdesc:a12bcf555f6b2cbfe62828deb198a2b4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace the owner of a file without following a symbolic link. Tenok has no symbolic link, so this is <a class="el" href="unistd_8h.html#a7c080ffcae5180218dda2df501e0cb15" title="Replace the owner of a file. Tenok has one user, so only a request that names it can be granted.">chown()</a>  <a href="unistd_8h.html#a12bcf555f6b2cbfe62828deb198a2b4a">More...</a><br /></td></tr>
+<tr class="separator:a12bcf555f6b2cbfe62828deb198a2b4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a9ac8478abd0013aa5f514d9604722194"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ac8478abd0013aa5f514d9604722194">&#9670;&nbsp;</a></span>sysconf</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define sysconf&#160;&#160;&#160;_sysconf</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Report a value of the system that is decided when it is built. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>One of the <em>SC</em> values. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">long</td><td>The value on success and -1 when Tenok has no such value, with the reason left in errno. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="aa918cf234c33e52741d038f62d41897d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa918cf234c33e52741d038f62d41897d">&#9670;&nbsp;</a></span>access()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int access </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>pathname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>mode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check whether the calling task can reach a file the way it asks. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pathname</td><td>The pathname of the file to check. </td></tr>
+    <tr><td class="paramname">mode</td><td>F_OK, or the R_OK, W_OK and X_OK to check for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>0 on success and -1 on error, with the reason left in errno. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a03af571dfb595681bfa203c83385c07b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a03af571dfb595681bfa203c83385c07b">&#9670;&nbsp;</a></span>chdir()</h2>
 
@@ -179,7 +365,89 @@ Functions</h2></td></tr>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">int</td><td>0 on success and nonzero error number on error. </td></tr>
+    <tr><td class="paramname">int</td><td>0 on success and -1 on error, with the reason left in errno. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7c080ffcae5180218dda2df501e0cb15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c080ffcae5180218dda2df501e0cb15">&#9670;&nbsp;</a></span>chown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int chown </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>pathname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uid_t&#160;</td>
+          <td class="paramname"><em>owner</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gid_t&#160;</td>
+          <td class="paramname"><em>group</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Replace the owner of a file. Tenok has one user, so only a request that names it can be granted. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pathname</td><td>The pathname of the file. </td></tr>
+    <tr><td class="paramname">owner</td><td>The user to give it to, or -1 to leave it alone. </td></tr>
+    <tr><td class="paramname">group</td><td>The group to give it to, or -1 to leave it alone. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>0 on success and -1 on error, with the reason left in errno. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afb5a028bb4a392db1cb0815a0d909f8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb5a028bb4a392db1cb0815a0d909f8f">&#9670;&nbsp;</a></span>chroot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int chroot </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Make the given directory the root. The root of Tenok is the whole of what it mounted, with nothing outside to be shut away from. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The directory to make the root. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>-1 with errno set to ENOSYS. </td></tr>
   </table>
   </dd>
 </dl>
@@ -211,7 +479,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">int</td><td>0 on success and nonzero error number on error. </td></tr>
+    <tr><td class="paramname">int</td><td>0 on success and -1 on error, with the reason left in errno. </td></tr>
   </table>
   </dd>
 </dl>
@@ -243,7 +511,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">int</td><td>New file descriptor on success and nonzero error number on error. </td></tr>
+    <tr><td class="paramname">int</td><td>The new file descriptor on success and -1 on error, with the reason left in errno. </td></tr>
   </table>
   </dd>
 </dl>
@@ -286,7 +554,158 @@ Functions</h2></td></tr>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">int</td><td>New file descriptor on success and nonzero error number on error. </td></tr>
+    <tr><td class="paramname">int</td><td>The new file descriptor on success and -1 on error, with the reason left in errno. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a34f1a971391de72a34ec56bb0133ce2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34f1a971391de72a34ec56bb0133ce2d">&#9670;&nbsp;</a></span>execve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int execve </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>pathname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *const&#160;</td>
+          <td class="paramname"><em>argv</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *const&#160;</td>
+          <td class="paramname"><em>envp</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Replace the running program with the one the pathname names. No file of Tenok is in a format the system can execute, so the call always fails. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pathname</td><td>The pathname of the program. </td></tr>
+    <tr><td class="paramname">argv</td><td>The arguments to hand the program. </td></tr>
+    <tr><td class="paramname">envp</td><td>The environment to hand the program. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>-1 with errno set to ENOEXEC. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a99c68bc1f0de7e428c2e24023e669658"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99c68bc1f0de7e428c2e24023e669658">&#9670;&nbsp;</a></span>execvp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int execvp </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *const&#160;</td>
+          <td class="paramname"><em>argv</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Replace the running program with the one found by searching PATH for the file, the way <a class="el" href="unistd_8h.html#a34f1a971391de72a34ec56bb0133ce2d" title="Replace the running program with the one the pathname names. No file of Tenok is in a format the syst...">execve()</a> does. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>The name of the program to search for. </td></tr>
+    <tr><td class="paramname">argv</td><td>The arguments to hand the program. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>-1 with errno set to ENOEXEC. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1458f6f34fdef22870172278889af435"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1458f6f34fdef22870172278889af435">&#9670;&nbsp;</a></span>fchdir()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int fchdir </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Change the working directory to the one the descriptor names. Tenok keeps no way back from a descriptor to the name it was opened by. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fd</td><td>The descriptor of the directory. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>-1 with errno set to ENOSYS. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa4e4714e6e8927c80b2553a40094b6d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4e4714e6e8927c80b2553a40094b6d9">&#9670;&nbsp;</a></span>fork()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pid_t fork </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a child process, the way <a class="el" href="unistd_8h.html#a00de8c0545c31325a425f53371a56235" title="Create a child process. Tenok runs every task from the image it booted and has no way to make another...">vfork()</a> does not either. </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">pid_t</td><td>-1 with errno set to ENOSYS. </td></tr>
   </table>
   </dd>
 </dl>
@@ -324,26 +743,96 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">buf</td><td>Buffer space for storing path of the current working space. </td></tr>
     <tr><td class="paramname">size</td><td>Size of the buffer space. </td></tr>
+    <tr><td class="paramname">buf</td><td>Buffer space for storing path of the current working space, or a null pointer to ask for one that <a class="el" href="stdlib_8h.html#afbedc913aa4651b3c3b4b3aecd9b4711" title="Free a memory space.">free()</a> takes back. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">char</td><td>*: The function returns a pointer to a string containing the pathname of current working directory if success; otherwise it returns NULL. </td></tr>
+    <tr><td class="paramname">char</td><td>*: The buffer on success and a null pointer on error, with the reason left in errno. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a939cb25a305fe68aad9b365077f1a8c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a939cb25a305fe68aad9b365077f1a8c7">&#9670;&nbsp;</a></span>getpid()</h2>
+<a id="a58ca281cc6931c62e6a85e2edb5b4b49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58ca281cc6931c62e6a85e2edb5b4b49">&#9670;&nbsp;</a></span>getgid()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int getpid </td>
+          <td class="memname">gid_t getgid </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Report the group a task runs as, which on Tenok is always root. </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">gid_t</td><td>Always 0. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aacfa67f2aef6be4baceace6a00856d21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacfa67f2aef6be4baceace6a00856d21">&#9670;&nbsp;</a></span>getgroups()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getgroups </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gid_t&#160;</td>
+          <td class="paramname"><em>list</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Report the supplementary groups of the task. Tenok has one group and root is in it, so there is never a supplementary one. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>How many the list holds. </td></tr>
+    <tr><td class="paramname">list</td><td>For returning the groups. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>Always 0. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac61b207337ca21b3b309593fd1a0cb82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac61b207337ca21b3b309593fd1a0cb82">&#9670;&nbsp;</a></span>getpid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pid_t getpid </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -353,15 +842,186 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Return the ID of the calling task. </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">pid_t</td><td>The task ID. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac6d7f7ade00dcdc302b0da5664eee812"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6d7f7ade00dcdc302b0da5664eee812">&#9670;&nbsp;</a></span>getppid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pid_t getppid </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the ID of the task that started the calling one. Every task of Tenok is started by the one that brings the system up. </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">pid_t</td><td>Always 1. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2f517436c22ef73337d3de4920908c6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f517436c22ef73337d3de4920908c6c">&#9670;&nbsp;</a></span>getuid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uid_t getuid </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Report the user a task runs as, which on Tenok is always root. </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">uid_t</td><td>Always 0. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a49bb0c485f30ab14364721c9ce433bab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49bb0c485f30ab14364721c9ce433bab">&#9670;&nbsp;</a></span>isatty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int isatty </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tell whether a descriptor refers to a terminal. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">None</td><td></td></tr>
+    <tr><td class="paramname">fd</td><td>The file descriptor to provide. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">int</td><td>Task ID. </td></tr>
+    <tr><td class="paramname">int</td><td>One when it does, and zero when it does not, with the reason left in errno. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a12bcf555f6b2cbfe62828deb198a2b4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12bcf555f6b2cbfe62828deb198a2b4a">&#9670;&nbsp;</a></span>lchown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int lchown </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>pathname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uid_t&#160;</td>
+          <td class="paramname"><em>owner</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gid_t&#160;</td>
+          <td class="paramname"><em>group</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Replace the owner of a file without following a symbolic link. Tenok has no symbolic link, so this is <a class="el" href="unistd_8h.html#a7c080ffcae5180218dda2df501e0cb15" title="Replace the owner of a file. Tenok has one user, so only a request that names it can be granted.">chown()</a> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pathname</td><td>The pathname of the file. </td></tr>
+    <tr><td class="paramname">owner</td><td>The user to give it to, or -1 to leave it alone. </td></tr>
+    <tr><td class="paramname">group</td><td>The group to give it to, or -1 to leave it alone. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>0 on success and -1 on error, with the reason left in errno. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aaea63e7a4923ab57f205b6cf023c3fb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaea63e7a4923ab57f205b6cf023c3fb5">&#9670;&nbsp;</a></span>link()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int link </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>oldpath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>newpath</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Give a file a second name. Tenok gives a file one name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">oldpath</td><td>The file to name again. </td></tr>
+    <tr><td class="paramname">newpath</td><td>The name to give it. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>-1 with errno set to ENOSYS. </td></tr>
   </table>
   </dd>
 </dl>
@@ -411,7 +1071,39 @@ Functions</h2></td></tr>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">int</td><td>0 on success and nonzero error number on error. </td></tr>
+    <tr><td class="paramname">off_t</td><td>The new offset on success and -1 on error, with the reason left in errno. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3d8839f39526d15b100953d64cc08f10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d8839f39526d15b100953d64cc08f10">&#9670;&nbsp;</a></span>pipe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structpipe.html">pipe</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pipefd</em>[2]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a pipe, a stream that is written to through one descriptor and read from through the other. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pipefd</td><td>Where to store the two descriptors, the read end first and the write end second. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>0 on success and -1 on error, with the reason left in errno. </td></tr>
   </table>
   </dd>
 </dl>
@@ -461,7 +1153,243 @@ Functions</h2></td></tr>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">int</td><td>0 on success and nonzero error number on error. </td></tr>
+    <tr><td class="paramname">int</td><td>0 on success and -1 on error, with the reason left in errno. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad57ce189a001775443632a7841fe65c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad57ce189a001775443632a7841fe65c4">&#9670;&nbsp;</a></span>readlink()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int readlink </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>pathname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>bufsiz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read what a symbolic link stands for. Nothing a path of Tenok names is one. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pathname</td><td>The name to read. </td></tr>
+    <tr><td class="paramname">buf</td><td>Where to put what it stands for. </td></tr>
+    <tr><td class="paramname">bufsiz</td><td>The room there is for it. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>-1 with errno set to EINVAL, which is what POSIX says of a name that is not a symbolic link. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a570282ae7ba596263ec812b368d99b34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a570282ae7ba596263ec812b368d99b34">&#9670;&nbsp;</a></span>rmdir()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rmdir </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>pathname</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Delete a directory, which must be empty. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pathname</td><td>The pathname of the directory to remove. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>0 on success and -1 on error, with the reason left in errno. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae9f6ddd60c97865e00e2348be6aa5ac8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9f6ddd60c97865e00e2348be6aa5ac8">&#9670;&nbsp;</a></span>setegid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int setegid </td>
+          <td>(</td>
+          <td class="paramtype">gid_t&#160;</td>
+          <td class="paramname"><em>gid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Join the effective group of the given identifier, the way <a class="el" href="unistd_8h.html#a3116233500c2c34795d437eaf34b69b5" title="Join the group of the given identifier. Tenok has the one group, so only that one can be joined.">setgid()</a> does. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gid</td><td>The group to join. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>0 for the group Tenok runs as, and -1 with errno set to EPERM for any other. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0210e5429242210d14011a69cc2caab6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0210e5429242210d14011a69cc2caab6">&#9670;&nbsp;</a></span>seteuid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int seteuid </td>
+          <td>(</td>
+          <td class="paramtype">uid_t&#160;</td>
+          <td class="paramname"><em>uid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Become the effective user of the given identifier, the way <a class="el" href="unistd_8h.html#aa426fc963bb0a4f469eef61d9f0c4a26" title="Become the user of the given identifier. Tenok runs as the one user it has, so only that one can be b...">setuid()</a> does. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uid</td><td>The user to become. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>0 for the user Tenok runs as, and -1 with errno set to EPERM for any other. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3116233500c2c34795d437eaf34b69b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3116233500c2c34795d437eaf34b69b5">&#9670;&nbsp;</a></span>setgid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int setgid </td>
+          <td>(</td>
+          <td class="paramtype">gid_t&#160;</td>
+          <td class="paramname"><em>gid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Join the group of the given identifier. Tenok has the one group, so only that one can be joined. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gid</td><td>The group to join. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>0 for the group Tenok runs as, and -1 with errno set to EPERM for any other. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3dc7e94fe9c483eea915fbc0334be0b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dc7e94fe9c483eea915fbc0334be0b2">&#9670;&nbsp;</a></span>setsid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pid_t setsid </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Start a session. Tenok has the one console and no sessions to give it out to. </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">pid_t</td><td>-1 with errno set to ENOSYS. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa426fc963bb0a4f469eef61d9f0c4a26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa426fc963bb0a4f469eef61d9f0c4a26">&#9670;&nbsp;</a></span>setuid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int setuid </td>
+          <td>(</td>
+          <td class="paramtype">uid_t&#160;</td>
+          <td class="paramname"><em>uid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Become the user of the given identifier. Tenok runs as the one user it has, so only that one can be become. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uid</td><td>The user to become. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>0 for the user Tenok runs as, and -1 with errno set to EPERM for any other. </td></tr>
   </table>
   </dd>
 </dl>
@@ -500,6 +1428,131 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a85923fecf6e7f8cd74ed04597cd40f74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85923fecf6e7f8cd74ed04597cd40f74">&#9670;&nbsp;</a></span>symlink()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int symlink </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>linkpath</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Make a name that stands for another. Tenok has no symbolic link. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td>What the name would stand for. </td></tr>
+    <tr><td class="paramname">linkpath</td><td>The name to make. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>-1 with errno set to ENOSYS. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a959654523479c5f997e812b3cf055879"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a959654523479c5f997e812b3cf055879">&#9670;&nbsp;</a></span>ttyname_r()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ttyname_r </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>buflen</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Name the terminal the descriptor is open on. Tenok keeps no way back from a descriptor to the name it was opened by. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fd</td><td>The descriptor. </td></tr>
+    <tr><td class="paramname">buf</td><td>Where to put the name. </td></tr>
+    <tr><td class="paramname">buflen</td><td>The room there is for it. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>ENOSYS. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af3cee068f32a919cdd638e0578c1e5f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3cee068f32a919cdd638e0578c1e5f8">&#9670;&nbsp;</a></span>unlink()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int unlink </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>pathname</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Delete a name from the file system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pathname</td><td>The pathname of the file to remove. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>0 on success and -1 on error, with the reason left in errno. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ac0383719bafa9b5b2aa25fabc586bd1f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac0383719bafa9b5b2aa25fabc586bd1f">&#9670;&nbsp;</a></span>usleep()</h2>
 
@@ -526,6 +1579,32 @@ Functions</h2></td></tr>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">int</td><td>0 on success and nonzero error number on error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a00de8c0545c31325a425f53371a56235"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00de8c0545c31325a425f53371a56235">&#9670;&nbsp;</a></span>vfork()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pid_t vfork </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a child process. Tenok runs every task from the image it booted and has no way to make another, so the call always fails. </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">pid_t</td><td>-1 with errno set to ENOSYS. </td></tr>
   </table>
   </dd>
 </dl>
@@ -575,7 +1654,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">int</td><td>0 on success and nonzero error number on error. </td></tr>
+    <tr><td class="paramname">int</td><td>0 on success and -1 on error, with the reason left in errno. </td></tr>
   </table>
   </dd>
 </dl>

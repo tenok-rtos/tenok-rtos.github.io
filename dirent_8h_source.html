@@ -76,35 +76,56 @@ $(function() {
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define __DIRENT_H__</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="limits_8h.html">sys/limits.h</a>&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;kconfig.h&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/* Return type of the opendir() */</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="structdirstream.html">   13</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structdirstream.html">dirstream</a> {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">struct </span><a class="code" href="structinode.html">inode</a> *inode_dir;       <span class="comment">/* Directory inode */</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> *dentry_list; <span class="comment">/* List pointer of the dentry to return */</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;} <a class="code" href="structdirstream.html">DIR</a>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/* Return type of the readdir() */</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structdirent.html">   19</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structdirent.html">dirent</a> {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">char</span> d_name[NAME_MAX]; <span class="comment">/* File name */</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    uint32_t d_ino;        <span class="comment">/* The inode of the file */</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    uint8_t d_type;        <span class="comment">/* File type */</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="sys_2limits_8h.html">sys/limits.h</a>&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="stat_8h.html">sys/stat.h</a>&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;kconfig.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/* File types of d_type, which is the file type of the mode shifted down by</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * twelve bits</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define DT_UNKNOWN 0</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define DT_FIFO 1</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define DT_CHR 2</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define DT_DIR 4</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define DT_BLK 6</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define DT_REG 8</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define DT_LNK 10</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define DT_SOCK 12</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordtype">int</span> <a class="code" href="dirent_8h.html#a31b8a6d68fa7c8a3250d457aecf58a78">opendir</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *name, <a class="code" href="structdirstream.html">DIR</a> *dir);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">int</span> <a class="code" href="dirent_8h.html#ad8750d4bb13edc8ccf5315621d818bd2">readdir</a>(<a class="code" href="structdirstream.html">DIR</a> *dirp, <span class="keyword">struct</span> <a class="code" href="structdirent.html">dirent</a> *<a class="code" href="structdirent.html">dirent</a>);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="adirent_8h_html_a31b8a6d68fa7c8a3250d457aecf58a78"><div class="ttname"><a href="dirent_8h.html#a31b8a6d68fa7c8a3250d457aecf58a78">opendir</a></div><div class="ttdeci">int opendir(const char *name, DIR *dir)</div><div class="ttdoc">Open a directory stream corresponding to the directory name, and returns a pointer to the directory s...</div><div class="ttdef"><b>Definition:</b> file.c:85</div></div>
-<div class="ttc" id="adirent_8h_html_ad8750d4bb13edc8ccf5315621d818bd2"><div class="ttname"><a href="dirent_8h.html#ad8750d4bb13edc8ccf5315621d818bd2">readdir</a></div><div class="ttdeci">int readdir(DIR *dirp, struct dirent *dirent)</div><div class="ttdoc">Return a pointer to a dirent structure representing the next directory entry in the directory stream ...</div><div class="ttdef"><b>Definition:</b> file.c:90</div></div>
-<div class="ttc" id="alimits_8h_html"><div class="ttname"><a href="limits_8h.html">limits.h</a></div></div>
-<div class="ttc" id="astructdirent_html"><div class="ttname"><a href="structdirent.html">dirent</a></div><div class="ttdef"><b>Definition:</b> dirent.h:19</div></div>
-<div class="ttc" id="astructdirstream_html"><div class="ttname"><a href="structdirstream.html">dirstream</a></div><div class="ttdef"><b>Definition:</b> dirent.h:13</div></div>
-<div class="ttc" id="astructinode_html"><div class="ttname"><a href="structinode.html">inode</a></div><div class="ttdef"><b>Definition:</b> fs.h:82</div></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#define IFTODT(mode) (((mode) &amp;S_IFMT) &gt;&gt; 12)</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define DTTOIF(dirtype) ((dirtype) &lt;&lt; 12)</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">/* Return type of the readdir() */</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structdirent.html">   29</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structdirent.html">dirent</a> {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">char</span> d_name[NAME_MAX]; <span class="comment">/* File name */</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    uint32_t d_ino;        <span class="comment">/* The inode of the file */</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    uint8_t d_type;        <span class="comment">/* File type, one of the DT_ values above */</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/* Return type of the opendir(). The entry readdir() answers with lives here */</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="structdirstream.html">   36</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structdirstream.html">dirstream</a> {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">struct </span><a class="code" href="structinode.html">inode</a> *inode_dir;       <span class="comment">/* Directory inode */</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> *dentry_list; <span class="comment">/* List pointer of the dentry to return */</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">struct </span><a class="code" href="structdirent.html">dirent</a> entry;           <span class="comment">/* Storage of the entry readdir() returns */</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;} <a class="code" href="structdirstream.html">DIR</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<a class="code" href="structdirstream.html">DIR</a> *<a class="code" href="dirent_8h.html#a1632d8c06c14f295c6d9407b7fec67af">opendir</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *name);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">struct </span><a class="code" href="structdirent.html">dirent</a> *<a class="code" href="dirent_8h.html#a58257faf8b13b3f14558613c632b2373">readdir</a>(<a class="code" href="structdirstream.html">DIR</a> *dirp);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keywordtype">int</span> <a class="code" href="dirent_8h.html#aaeac2b41e8c2c3a5f91c9bd511a8c0a6">closedir</a>(<a class="code" href="structdirstream.html">DIR</a> *dirp);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="adirent_8h_html_a1632d8c06c14f295c6d9407b7fec67af"><div class="ttname"><a href="dirent_8h.html#a1632d8c06c14f295c6d9407b7fec67af">opendir</a></div><div class="ttdeci">DIR * opendir(const char *name)</div><div class="ttdoc">Open a directory stream corresponding to the directory name, and return a pointer to the directory st...</div><div class="ttdef"><b>Definition:</b> file.c:194</div></div>
+<div class="ttc" id="adirent_8h_html_a58257faf8b13b3f14558613c632b2373"><div class="ttname"><a href="dirent_8h.html#a58257faf8b13b3f14558613c632b2373">readdir</a></div><div class="ttdeci">struct dirent * readdir(DIR *dirp)</div><div class="ttdoc">Return the next entry of the directory stream. The entry belongs to the stream and is overwritten by ...</div><div class="ttdef"><b>Definition:</b> file.c:217</div></div>
+<div class="ttc" id="adirent_8h_html_aaeac2b41e8c2c3a5f91c9bd511a8c0a6"><div class="ttname"><a href="dirent_8h.html#aaeac2b41e8c2c3a5f91c9bd511a8c0a6">closedir</a></div><div class="ttdeci">int closedir(DIR *dirp)</div><div class="ttdoc">Close a directory stream and release what it holds.</div><div class="ttdef"><b>Definition:</b> file.c:225</div></div>
+<div class="ttc" id="astat_8h_html"><div class="ttname"><a href="stat_8h.html">stat.h</a></div></div>
+<div class="ttc" id="astructdirent_html"><div class="ttname"><a href="structdirent.html">dirent</a></div><div class="ttdef"><b>Definition:</b> dirent.h:29</div></div>
+<div class="ttc" id="astructdirstream_html"><div class="ttname"><a href="structdirstream.html">dirstream</a></div><div class="ttdef"><b>Definition:</b> dirent.h:36</div></div>
+<div class="ttc" id="astructinode_html"><div class="ttname"><a href="structinode.html">inode</a></div><div class="ttdef"><b>Definition:</b> fs.h:97</div></div>
 <div class="ttc" id="astructlist__head_html"><div class="ttname"><a href="structlist__head.html">list_head</a></div><div class="ttdef"><b>Definition:</b> list.h:111</div></div>
+<div class="ttc" id="asys_2limits_8h_html"><div class="ttname"><a href="sys_2limits_8h.html">limits.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

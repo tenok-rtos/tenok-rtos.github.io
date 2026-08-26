@@ -82,37 +82,47 @@ $(function() {
 <code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="stat_8h_source.html">sys/stat.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="types_8h_source.html">sys/types.h</a>&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="list_8h_source.html">common/list.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="wait_8h_source.html">kernel/wait.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="kernel_2time_8h_source.html">kernel/time.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="kernel_2wait_8h_source.html">kernel/wait.h</a>&gt;</code><br />
 <code>#include &quot;kconfig.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for fs.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="fs_8h__incl.png" border="0" usemap="#ainclude_2fs_2fs_8h" alt=""/></div>
 <map name="ainclude_2fs_2fs_8h" id="ainclude_2fs_2fs_8h">
-<area shape="rect" title=" " alt="" coords="913,5,1026,32"/>
-<area shape="rect" href="dirent_8h.html" title=" " alt="" coords="84,155,156,181"/>
-<area shape="rect" title=" " alt="" coords="439,304,510,331"/>
-<area shape="rect" title=" " alt="" coords="65,379,146,405"/>
-<area shape="rect" title=" " alt="" coords="1120,304,1203,331"/>
-<area shape="rect" title=" " alt="" coords="1511,379,1585,405"/>
-<area shape="rect" href="types_8h.html" title=" " alt="" coords="197,80,293,107"/>
-<area shape="rect" href="list_8h.html" title=" " alt="" coords="1444,304,1559,331"/>
-<area shape="rect" href="wait_8h.html" title=" " alt="" coords="1437,80,1544,107"/>
-<area shape="rect" href="limits_8h.html" title=" " alt="" coords="145,229,242,256"/>
-<area shape="rect" href="syslimits_8h.html" title=" " alt="" coords="114,304,233,331"/>
-<area shape="rect" href="kernel_8h.html" title=" " alt="" coords="910,155,1029,181"/>
-<area shape="rect" href="kernel_2sched_8h.html" title=" " alt="" coords="1489,155,1605,181"/>
-<area shape="rect" href="thread_8h.html" title=" " alt="" coords="1536,229,1656,256"/>
-<area shape="rect" href="pthread_8h.html" title=" " alt="" coords="1119,229,1203,256"/>
-<area shape="rect" href="kernel_2signal_8h.html" title=" " alt="" coords="970,229,1043,256"/>
-<area shape="rect" href="resource_8h.html" title=" " alt="" coords="561,229,677,256"/>
-<area shape="rect" href="task_8h.html" title=" " alt="" coords="701,229,763,256"/>
-<area shape="rect" href="util_8h.html" title=" " alt="" coords="369,229,485,256"/>
-<area shape="rect" href="kfifo_8h.html" title=" " alt="" coords="788,229,895,256"/>
-<area shape="rect" href="kernel_2time_8h.html" title=" " alt="" coords="1227,229,1335,256"/>
-<area shape="rect" href="tenok_2sys_2sched_8h.html" title=" " alt="" coords="1275,304,1373,331"/>
+<area shape="rect" title=" " alt="" coords="771,5,885,32"/>
+<area shape="rect" href="dirent_8h.html" title=" " alt="" coords="208,155,280,181"/>
+<area shape="rect" title=" " alt="" coords="738,528,809,555"/>
+<area shape="rect" title=" " alt="" coords="341,379,422,405"/>
+<area shape="rect" href="stat_8h.html" title=" " alt="" coords="93,229,179,256"/>
+<area shape="rect" href="types_8h.html" title=" " alt="" coords="132,453,228,480"/>
+<area shape="rect" title=" " alt="" coords="1255,304,1337,331"/>
+<area shape="rect" title=" " alt="" coords="881,379,956,405"/>
+<area shape="rect" title=" " alt="" coords="906,80,977,107"/>
+<area shape="rect" title=" " alt="" coords="1001,80,1065,107"/>
+<area shape="rect" href="list_8h.html" title=" " alt="" coords="861,304,976,331"/>
+<area shape="rect" href="kernel_2time_8h.html" title=" " alt="" coords="934,229,1042,256"/>
+<area shape="rect" href="kernel_2wait_8h.html" title=" " alt="" coords="775,80,881,107"/>
+<area shape="rect" href="sys_2limits_8h.html" title=" " alt="" coords="355,229,453,256"/>
+<area shape="rect" href="syslimits_8h.html" title=" " alt="" coords="355,304,474,331"/>
+<area shape="rect" href="tenok_2sys_2time_8h.html" title=" " alt="" coords="144,379,208,405"/>
+<area shape="rect" href="kernel_8h.html" title=" " alt="" coords="1141,155,1259,181"/>
+<area shape="rect" href="kernel_2sched_8h.html" title=" " alt="" coords="826,155,942,181"/>
+<area shape="rect" href="thread_8h.html" title=" " alt="" coords="528,229,648,256"/>
+<area shape="rect" href="pthread_8h.html" title=" " alt="" coords="673,229,757,256"/>
+<area shape="rect" href="kernel_2signal_8h.html" title=" " alt="" coords="1334,229,1407,256"/>
+<area shape="rect" href="resource_8h.html" title=" " alt="" coords="1142,229,1258,256"/>
+<area shape="rect" href="task_8h.html" title=" " alt="" coords="1525,453,1587,480"/>
+<area shape="rect" href="util_8h.html" title=" " alt="" coords="1621,453,1737,480"/>
+<area shape="rect" href="kfifo_8h.html" title=" " alt="" coords="1483,229,1589,256"/>
+<area shape="rect" href="tenok_2sys_2sched_8h.html" title=" " alt="" coords="549,304,648,331"/>
+<area shape="rect" href="tenok_2time_8h.html" title=" " alt="" coords="672,304,736,331"/>
+<area shape="rect" href="tenok_2signal_8h.html" title=" " alt="" coords="479,379,553,405"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -125,7 +135,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="rect" href="kernel_8h.html" title=" " alt="" coords="179,80,349,107"/>
 <area shape="rect" href="pipe_8h.html" title=" " alt="" coords="373,80,531,107"/>
 <area shape="rect" href="kernel_2poll_8h.html" title=" " alt="" coords="555,80,709,107"/>
-<area shape="rect" href="wait_8h.html" title=" " alt="" coords="185,155,343,181"/>
+<area shape="rect" href="kernel_2wait_8h.html" title=" " alt="" coords="185,155,343,181"/>
 </map>
 </div>
 </div>
@@ -155,12 +165,15 @@ Macros</h2></td></tr>
 <tr class="memitem:aad9d80518b8bb8a00143c8cfec3d7140"><td class="memItemLeft" align="right" valign="top"><a id="aad9d80518b8bb8a00143c8cfec3d7140"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>RDEV_ROOTFS</b>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:aad9d80518b8bb8a00143c8cfec3d7140"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1771d312d6a82d2144030a5d350fdb82"><td class="memItemLeft" align="right" valign="top"><a id="a1771d312d6a82d2144030a5d350fdb82"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>FILE_RESERVED_NUM</b>&#160;&#160;&#160;(THREAD_MAX + 3)</td></tr>
-<tr class="separator:a1771d312d6a82d2144030a5d350fdb82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4256368d883bbeae70b4b7ca8438ef09"><td class="memItemLeft" align="right" valign="top"><a id="a4256368d883bbeae70b4b7ca8438ef09"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>THREAD_PIPE_FD</b>(thread_id)&#160;&#160;&#160;(thread_id + 3)</td></tr>
-<tr class="separator:a4256368d883bbeae70b4b7ca8438ef09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3af3b460bf06b4769f991a0bec05265"><td class="memItemLeft" align="right" valign="top"><a id="af3af3b460bf06b4769f991a0bec05265"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>FS_DEFAULT_FILE_MODE</b>&#160;&#160;&#160;0644</td></tr>
+<tr class="separator:af3af3b460bf06b4769f991a0bec05265"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b573bf90484fdba8823964593fbbed9"><td class="memItemLeft" align="right" valign="top"><a id="a7b573bf90484fdba8823964593fbbed9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>FS_DEFAULT_DIR_MODE</b>&#160;&#160;&#160;0755</td></tr>
+<tr class="separator:a7b573bf90484fdba8823964593fbbed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec758e17aebdadabfad0705ef94ea8f4"><td class="memItemLeft" align="right" valign="top"><a id="aec758e17aebdadabfad0705ef94ea8f4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>FS_DEFAULT_UMASK</b>&#160;&#160;&#160;022</td></tr>
+<tr class="separator:aec758e17aebdadabfad0705ef94ea8f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -178,6 +191,13 @@ Enumerations</h2></td></tr>
 , <br />
 &#160;&#160;<b>FS_GET_CWD</b> = 5
 , <b>FS_CHANGE_DIR</b> = 6
+, <b>FS_MAKE_DIR</b> = 7
+, <b>FS_REMOVE</b> = 8
+, <br />
+&#160;&#160;<b>FS_STAT</b> = 9
+, <b>FS_RENAME</b> = 10
+, <b>FS_CHANGE_MODE</b> = 11
+, <b>FS_CHANGE_TIME</b> = 12
 <br />
  }</td></tr>
 <tr class="separator:a06fc87d81c62e9abb8790b6e5713c55b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -202,6 +222,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>register_chrdev</b> (c
 <tr class="memitem:a0aab5e2cd59bc8f9ba5b32e042b8fdad"><td class="memItemLeft" align="right" valign="top"><a id="a0aab5e2cd59bc8f9ba5b32e042b8fdad"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>register_blkdev</b> (char *name, struct <a class="el" href="structfile__operations.html">file_operations</a> *fops)</td></tr>
 <tr class="separator:a0aab5e2cd59bc8f9ba5b32e042b8fdad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cec9fe7a7abee0449655c90847bc65f"><td class="memItemLeft" align="right" valign="top"><a id="a2cec9fe7a7abee0449655c90847bc65f"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>file_is_opened</b> (struct <a class="el" href="structfile.html">file</a> *filp)</td></tr>
+<tr class="separator:a2cec9fe7a7abee0449655c90847bc65f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a342bba7eefdb265a1fc035e5d2f49e6e"><td class="memItemLeft" align="right" valign="top"><a id="a342bba7eefdb265a1fc035e5d2f49e6e"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>fs_read_dir</b> (<a class="el" href="structdirstream.html">DIR</a> *dirp, struct <a class="el" href="structdirent.html">dirent</a> *<a class="el" href="structdirent.html">dirent</a>)</td></tr>
 <tr class="separator:a342bba7eefdb265a1fc035e5d2f49e6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -211,9 +234,27 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>fs_get_block_addr
 <tr class="memitem:a3b9b9ec0a728ec61a05c34483eda393a"><td class="memItemLeft" align="right" valign="top"><a id="a3b9b9ec0a728ec61a05c34483eda393a"></a>
 uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>fs_file_append_block</b> (struct <a class="el" href="structinode.html">inode</a> *<a class="el" href="structinode.html">inode</a>)</td></tr>
 <tr class="separator:a3b9b9ec0a728ec61a05c34483eda393a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adad53dc5c7193dcd6629cde4ec9d452f"><td class="memItemLeft" align="right" valign="top"><a id="adad53dc5c7193dcd6629cde4ec9d452f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>request_create_file</b> (int thread_id, const char *path, uint8_t file_type)</td></tr>
-<tr class="separator:adad53dc5c7193dcd6629cde4ec9d452f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9af51131e0da063632f1b9e7ed71419e"><td class="memItemLeft" align="right" valign="top"><a id="a9af51131e0da063632f1b9e7ed71419e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>request_create_file</b> (int thread_id, const char *path, mode_t mode)</td></tr>
+<tr class="separator:a9af51131e0da063632f1b9e7ed71419e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10ae7d54a1749d194fd0f3f2b8fa3409"><td class="memItemLeft" align="right" valign="top"><a id="a10ae7d54a1749d194fd0f3f2b8fa3409"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>request_mkdir</b> (int thread_id, const char *path, mode_t mode)</td></tr>
+<tr class="separator:a10ae7d54a1749d194fd0f3f2b8fa3409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a781c40edb13357d42a1b3716a3a41a14"><td class="memItemLeft" align="right" valign="top"><a id="a781c40edb13357d42a1b3716a3a41a14"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>request_chmod</b> (int thread_id, const char *path, mode_t mode)</td></tr>
+<tr class="separator:a781c40edb13357d42a1b3716a3a41a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b989815977a1b62c5c9c2844b6e3e16"><td class="memItemLeft" align="right" valign="top"><a id="a2b989815977a1b62c5c9c2844b6e3e16"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>request_utime</b> (int thread_id, const char *path, uint32_t mtime)</td></tr>
+<tr class="separator:a2b989815977a1b62c5c9c2844b6e3e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8a5aaef64e335226429d9ce559d7585"><td class="memItemLeft" align="right" valign="top"><a id="ac8a5aaef64e335226429d9ce559d7585"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>request_remove</b> (int thread_id, const char *path, bool rm_dir)</td></tr>
+<tr class="separator:ac8a5aaef64e335226429d9ce559d7585"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abddd776fed37e1fcb52a6f3b93085428"><td class="memItemLeft" align="right" valign="top"><a id="abddd776fed37e1fcb52a6f3b93085428"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>request_stat</b> (int thread_id, const char *path, struct <a class="el" href="structstat.html">stat</a> *statbuf)</td></tr>
+<tr class="separator:abddd776fed37e1fcb52a6f3b93085428"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab48eaf61a362d13b811d3a3ef3062b63"><td class="memItemLeft" align="right" valign="top"><a id="ab48eaf61a362d13b811d3a3ef3062b63"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>request_rename</b> (int thread_id, const char *oldpath, const char *newpath)</td></tr>
+<tr class="separator:ab48eaf61a362d13b811d3a3ef3062b63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a322170cedd95d25cadbdef163d74d9bd"><td class="memItemLeft" align="right" valign="top"><a id="a322170cedd95d25cadbdef163d74d9bd"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>request_open_file</b> (int thread_id, const char *path)</td></tr>
 <tr class="separator:a322170cedd95d25cadbdef163d74d9bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -232,8 +273,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>request_chdir</b> (in
 <tr class="memitem:a2d40a3dace74d71e62c276b6d3d46c8c"><td class="memItemLeft" align="right" valign="top"><a id="a2d40a3dace74d71e62c276b6d3d46c8c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>filesysd</b> (void)</td></tr>
 <tr class="separator:a2d40a3dace74d71e62c276b6d3d46c8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac631d919599bc9f992d2827f18fa53c6"><td class="memItemLeft" align="right" valign="top"><a id="ac631d919599bc9f992d2827f18fa53c6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>fs_print_inode_bitmap</b> (void)</td></tr>
+<tr class="memitem:ac631d919599bc9f992d2827f18fa53c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fs_8h.html#ac631d919599bc9f992d2827f18fa53c6">fs_print_inode_bitmap</a> (void)</td></tr>
 <tr class="separator:ac631d919599bc9f992d2827f18fa53c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a556e62ce221dff8137a1ff0d651bed5d"><td class="memItemLeft" align="right" valign="top"><a id="a556e62ce221dff8137a1ff0d651bed5d"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>fs_print_block_bitmap</b> (void)</td></tr>
@@ -241,10 +281,33 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>fs_print_block_bitmap
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a7151550a4669a8f56b5d85b73089684a"><td class="memItemLeft" align="right" valign="top"><a id="a7151550a4669a8f56b5d85b73089684a"></a>
+struct <a class="el" href="structfile.html">file</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>thread_pipe</b> [THREAD_MAX]</td></tr>
+<tr class="separator:a7151550a4669a8f56b5d85b73089684a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada41265a0396ff18983699abd0f2f582"><td class="memItemLeft" align="right" valign="top"><a id="ada41265a0396ff18983699abd0f2f582"></a>
 enum  { ... } &#160;</td><td class="memItemRight" valign="bottom"><b>FS_SERVER_CMDS</b></td></tr>
 <tr class="separator:ada41265a0396ff18983699abd0f2f582"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ac631d919599bc9f992d2827f18fa53c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac631d919599bc9f992d2827f18fa53c6">&#9670;&nbsp;</a></span>fs_print_inode_bitmap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fs_print_inode_bitmap </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Debug only: </p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

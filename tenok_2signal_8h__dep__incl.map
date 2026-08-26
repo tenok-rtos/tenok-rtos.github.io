@@ -1,5 +1,18 @@
 <map id="include/tenok/signal.h" name="include/tenok/signal.h">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,171,32"/>
-<area shape="rect" id="node2" href="$tenok_2time_8h.html" title=" " alt="" coords="10,80,166,107"/>
-<area shape="rect" id="node3" href="$tenok_2sched_8h.html" title=" " alt="" coords="6,155,170,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="268,5,433,32"/>
+<area shape="rect" id="node2" href="$tenok_2poll_8h.html" title=" " alt="" coords="187,80,338,107"/>
+<area shape="rect" id="node3" href="$tenok_2time_8h.html" title=" " alt="" coords="362,80,518,107"/>
+<area shape="rect" id="node4" href="$tenok_2mqueue_8h.html" title=" " alt="" coords="52,155,231,181"/>
+<area shape="rect" id="node5" href="$pthread_8h.html" title=" " alt="" coords="255,155,431,181"/>
+<area shape="rect" id="node15" href="$tenok_2sched_8h.html" title=" " alt="" coords="455,155,619,181"/>
+<area shape="rect" id="node16" href="$tenok_2semaphore_8h.html" title=" " alt="" coords="643,155,842,181"/>
+<area shape="rect" id="node6" href="$kernel_8h.html" title=" " alt="" coords="135,229,305,256"/>
+<area shape="rect" id="node12" href="$stdio_8h.html" title=" " alt="" coords="385,304,543,331"/>
+<area shape="rect" id="node14" href="$reent_8h.html" title=" " alt="" coords="380,229,567,256"/>
+<area shape="rect" id="node7" href="$kernel_2wait_8h.html" title=" " alt="" coords="141,304,299,331"/>
+<area shape="rect" id="node8" href="$fs_8h.html" title=" " alt="" coords="199,379,313,405"/>
+<area shape="rect" id="node9" href="$reg__file_8h.html" title=" " alt="" coords="5,453,155,480"/>
+<area shape="rect" id="node10" href="$pipe_8h.html" title=" " alt="" coords="357,453,515,480"/>
+<area shape="rect" id="node11" href="$kernel_2poll_8h.html" title=" " alt="" coords="179,453,333,480"/>
+<area shape="rect" id="node13" href="$mntent_8h.html" title=" " alt="" coords="473,379,647,405"/>
 </map>
